@@ -556,9 +556,20 @@
             }
         }
 
+        /* Timer pulse animation */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
         /* ===========================================
            PRINT STYLESHEET
            =========================================== */
+        @page {
+            size: landscape;
+            margin: 0;
+        }
+
         @media print {
             html {
                 scroll-snap-type: none;
@@ -567,16 +578,17 @@
             body {
                 height: auto;
                 overflow: visible;
+                margin: 0;
             }
 
             .slide {
-                width: 100%;
-                height: auto;
-                min-height: 100vh;
+                width: 100vw;
+                height: 100vh;
                 page-break-after: always;
                 page-break-inside: avoid;
                 scroll-snap-align: none;
-                overflow: visible;
+                overflow: hidden;
+                box-sizing: border-box;
             }
 
             .slide:last-child {
@@ -597,18 +609,13 @@
             }
 
             /* Ensure backgrounds print */
-            .slide.accent-bg {
+            .slide, .slide.accent-bg {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
             .grid-bg {
                 display: none;
-            }
-
-            /* Adjust spacing for print */
-            .slide-content {
-                padding: 1.5in 1in;
             }
 
             /* Keep slide numbers */
@@ -1533,16 +1540,19 @@
     </section>
 
     <!-- ==========================================
-         SLIDE 41: Pair Share
+         SLIDE 41: Pair Share (with countdown timer)
          ========================================== -->
-    <section class="slide application">
+    <section class="slide application" id="timer-slide">
         <div class="progress" style="width: 82%"></div>
         <div class="slide-content" style="align-items: center; text-align: center;">
             <h2 class="reveal-item visible">Pair Share</h2>
             <p class="reveal-item visible" style="font-size: var(--h3-size); max-width: 600px; margin-top: var(--content-gap);">
                 Substantive policy question you might explore in this course using qual methods
             </p>
-            <p class="reveal-item visible" style="font-size: clamp(3rem, 10vw, 6rem); font-family: 'Archivo', sans-serif; font-weight: 800; margin-top: var(--content-gap); color: var(--accent);">05:00</p>
+            <div class="timer-container reveal-item visible" style="margin-top: var(--content-gap);">
+                <p id="countdown-display" style="font-size: clamp(3rem, 10vw, 6rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">05:00</p>
+                <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
+            </div>
         </div>
         <span class="slide-number">41</span>
     </section>
@@ -1777,6 +1787,150 @@
         }
 
         const presentation = new SlidePresentation();
+
+        // Print preparation - reveal all content before printing
+        window.addEventListener('beforeprint', () => {
+            document.querySelectorAll('.reveal-item').forEach(item => {
+                item.classList.add('visible');
+            });
+            document.body.classList.add('print-mode');
+        });
+
+        window.addEventListener('afterprint', () => {
+            document.body.classList.remove('print-mode');
+        });
+
+        // Keyboard shortcut: Cmd+Shift+P to prepare for print
+        document.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'p') {
+                e.preventDefault();
+                document.querySelectorAll('.reveal-item').forEach(item => {
+                    item.classList.add('visible');
+                });
+                alert('All slides revealed. Now use Cmd+P to print/save as PDF.\n\nTip: Enable "Background graphics" in print settings.');
+            }
+        });
+
+        // ===========================================
+        // COUNTDOWN TIMER
+        // ===========================================
+        class CountdownTimer {
+            constructor() {
+                this.display = document.getElementById('countdown-display');
+                this.hint = document.getElementById('timer-hint');
+                this.timerSlide = document.getElementById('timer-slide');
+                this.duration = 5 * 60; // 5 minutes in seconds
+                this.remaining = this.duration;
+                this.interval = null;
+                this.running = false;
+                this.audioContext = null;
+
+                if (this.display) {
+                    this.display.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent slide advance
+                        this.toggle();
+                    });
+                }
+            }
+
+            toggle() {
+                if (this.running) {
+                    this.pause();
+                } else {
+                    this.start();
+                }
+            }
+
+            start() {
+                if (this.remaining <= 0) {
+                    this.reset();
+                }
+                this.running = true;
+                this.hint.textContent = 'Click to pause';
+                this.display.style.transform = 'scale(1.02)';
+                setTimeout(() => this.display.style.transform = '', 100);
+
+                this.interval = setInterval(() => {
+                    this.remaining--;
+                    this.updateDisplay();
+
+                    if (this.remaining <= 0) {
+                        this.complete();
+                    }
+                }, 1000);
+            }
+
+            pause() {
+                this.running = false;
+                clearInterval(this.interval);
+                this.hint.textContent = 'Click to resume';
+            }
+
+            reset() {
+                this.remaining = this.duration;
+                this.updateDisplay();
+                this.hint.textContent = 'Click timer to start';
+            }
+
+            complete() {
+                clearInterval(this.interval);
+                this.running = false;
+                this.display.textContent = "Time's up!";
+                this.display.style.color = '#ff3300';
+                this.display.style.animation = 'pulse 1s ease-in-out 3';
+                this.hint.textContent = 'Click to reset';
+                this.playChime();
+            }
+
+            updateDisplay() {
+                const mins = Math.floor(this.remaining / 60);
+                const secs = this.remaining % 60;
+                this.display.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+                // Color change in last 30 seconds
+                if (this.remaining <= 30 && this.remaining > 0) {
+                    this.display.style.color = '#ff3300';
+                } else if (this.remaining > 30) {
+                    this.display.style.color = '';
+                }
+            }
+
+            playChime() {
+                // Gentle chime using Web Audio API
+                try {
+                    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+                    const playTone = (freq, startTime, duration) => {
+                        const oscillator = this.audioContext.createOscillator();
+                        const gainNode = this.audioContext.createGain();
+
+                        oscillator.connect(gainNode);
+                        gainNode.connect(this.audioContext.destination);
+
+                        oscillator.frequency.value = freq;
+                        oscillator.type = 'sine';
+
+                        // Gentle envelope
+                        gainNode.gain.setValueAtTime(0, startTime);
+                        gainNode.gain.linearRampToValueAtTime(0.3, startTime + 0.1);
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+
+                        oscillator.start(startTime);
+                        oscillator.stop(startTime + duration);
+                    };
+
+                    const now = this.audioContext.currentTime;
+                    // Gentle ascending chime (C5 - E5 - G5)
+                    playTone(523.25, now, 0.5);        // C5
+                    playTone(659.25, now + 0.3, 0.5);  // E5
+                    playTone(783.99, now + 0.6, 0.8);  // G5
+                } catch (e) {
+                    console.log('Audio not supported');
+                }
+            }
+        }
+
+        const timer = new CountdownTimer();
     </script>
 </body>
 </html>
