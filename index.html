@@ -5,627 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API-203M: Introduction | Prof. Liz McKenna</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* ===========================================
-           VIEWPORT FITTING
-           =========================================== */
-        html, body {
-            height: 100%;
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-snap-type: y mandatory;
-            scroll-behavior: smooth;
-        }
+    <link rel="stylesheet" href="styles.css">
 
-        :root {
-            /* Colors - Theory/Technique mode (RED) */
-            --accent: #ff3300;
-            /* Application/Practice mode would be: #5371ff */
-
-            --bg-white: #ffffff;
-            --bg-dark: #1a1a1a;
-            --bg-accent: var(--accent);
-            --text-primary: #0a0a0a;
-            --text-secondary: #555;
-            --text-light: #ffffff;
-            --grid-color: rgba(0,0,0,0.05);
-
-            /* Typography */
-            --title-size: clamp(2.25rem, 6.5vw, 5rem);
-            --h2-size: clamp(1.6rem, 4.5vw, 3rem);
-            --h3-size: clamp(1.2rem, 2.75vw, 1.85rem);
-            --body-size: clamp(1rem, 1.9vw, 1.3rem);
-            --small-size: clamp(0.8rem, 1.3vw, 1rem);
-
-            /* Spacing */
-            --slide-padding: clamp(1.5rem, 5vw, 5rem);
-            --content-gap: clamp(0.75rem, 2.5vw, 2rem);
-        }
-
-        /* ===========================================
-           SLIDES
-           =========================================== */
-        .slide {
-            width: 100vw;
-            height: 100vh;
-            height: 100dvh;
-            overflow: hidden;
-            scroll-snap-align: start;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            background: var(--bg-white);
-            font-family: 'Nunito', system-ui, sans-serif;
-            color: var(--text-primary);
-        }
-
-        .slide.dark {
-            background: var(--bg-dark);
-            color: var(--text-light);
-        }
-
-        .slide.accent-bg {
-            background: var(--bg-accent);
-            color: var(--text-light);
-        }
-
-        /* Application slides - blue accent */
-        .slide.application {
-            --accent: #5371ff;
-            --bg-accent: #5371ff;
-        }
-
-        /* Grid background */
-        .grid-bg {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(var(--grid-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: clamp(25px, 4vw, 50px) clamp(25px, 4vw, 50px);
-            pointer-events: none;
-        }
-
-        .slide-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-height: 100%;
-            overflow: hidden;
-            padding: var(--slide-padding);
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Geometric accents */
-        .accent-circle {
-            position: absolute;
-            width: clamp(60px, 12vw, 160px);
-            height: clamp(60px, 12vw, 160px);
-            border: 3px solid var(--accent);
-            border-radius: 50%;
-            top: clamp(2rem, 6vh, 5rem);
-            right: clamp(2rem, 6vw, 6rem);
-            pointer-events: none;
-        }
-
-        .accent-line {
-            position: absolute;
-            width: 3px;
-            height: clamp(50px, 10vh, 100px);
-            background: var(--text-primary);
-            bottom: clamp(2rem, 6vh, 5rem);
-            left: clamp(2rem, 6vw, 6rem);
-            pointer-events: none;
-        }
-
-        .slide.dark .accent-line,
-        .slide.accent-bg .accent-line {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .accent-dot {
-            position: absolute;
-            width: clamp(10px, 1.5vw, 16px);
-            height: clamp(10px, 1.5vw, 16px);
-            background: var(--accent);
-            border-radius: 50%;
-            bottom: calc(clamp(2rem, 6vh, 5rem) + clamp(50px, 10vh, 100px) + 1rem);
-            left: calc(clamp(2rem, 6vw, 6rem) - clamp(3px, 0.5vw, 6px));
-            pointer-events: none;
-        }
-
-        /* ===========================================
-           TYPOGRAPHY
-           =========================================== */
-        h1 {
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-size: var(--title-size);
-            font-weight: 800;
-            line-height: 0.95;
-            margin: 0 0 var(--content-gap);
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-        }
-
-        h1 .highlight { color: var(--accent); }
-        .slide.accent-bg h1 .highlight { color: var(--bg-dark); }
-
-        h2 {
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-size: var(--h2-size);
-            font-weight: 800;
-            margin: 0 0 var(--content-gap);
-            text-transform: uppercase;
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-size: var(--h3-size);
-            font-weight: 700;
-            margin: 0 0 calc(var(--content-gap) * 0.75);
-            text-transform: uppercase;
-        }
-
-        .meta {
-            font-size: var(--body-size);
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .slide.dark .meta,
-        .slide.accent-bg .meta {
-            color: rgba(255,255,255,0.7);
-        }
-
-        /* Lists */
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.4rem, 1.2vw, 0.9rem);
-        }
-
-        li {
-            font-size: var(--body-size);
-            line-height: 1.45;
-            display: flex;
-            align-items: flex-start;
-            gap: clamp(0.5rem, 1.5vw, 1rem);
-        }
-
-        li .num {
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-weight: 800;
-            font-size: var(--body-size);
-            color: var(--accent);
-            min-width: 1.75em;
-            flex-shrink: 0;
-        }
-
-        li .bullet {
-            color: var(--accent);
-            font-weight: 700;
-            min-width: 1em;
-            flex-shrink: 0;
-        }
-
-        li strong {
-            font-weight: 600;
-        }
-
-        /* Quote */
-        blockquote {
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-size: clamp(1.25rem, 3.5vw, 2.5rem);
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 0;
-            text-transform: uppercase;
-            max-width: 900px;
-        }
-
-        blockquote .highlight { color: var(--accent); }
-
-        cite {
-            display: block;
-            margin-top: var(--content-gap);
-            font-size: var(--body-size);
-            font-style: normal;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .slide.dark cite { color: rgba(255,255,255,0.6); }
-
-        /* Cards / Columns */
-        .columns {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-            gap: clamp(1rem, 2.5vw, 2rem);
-            margin-top: var(--content-gap);
-        }
-
-        .card {
-            background: rgba(0,0,0,0.03);
-            padding: clamp(1rem, 2vw, 1.5rem);
-            border-radius: 4px;
-            border-top: 3px solid var(--accent);
-        }
-
-        .card h3 {
-            font-size: clamp(0.9rem, 1.8vw, 1.2rem);
-            margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
-            color: var(--accent);
-        }
-
-        .card p, .card li {
-            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-        }
-
-        /* Section header slides */
-        .section-header h1 {
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            max-width: 80%;
-        }
-
-        /* ===========================================
-           PROGRESSIVE REVEAL
-           =========================================== */
-        .reveal-item {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.35s ease, transform 0.35s ease;
-        }
-
-        .reveal-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Step indicator */
-        .step-indicator {
-            position: absolute;
-            bottom: clamp(1rem, 3vw, 2rem);
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 5px;
-            z-index: 10;
-        }
-
-        .step-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.15);
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .slide.dark .step-dot,
-        .slide.accent-bg .step-dot {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .step-dot.active {
-            background: var(--accent);
-            transform: scale(1.3);
-        }
-
-        .step-dot.complete {
-            background: var(--text-secondary);
-        }
-
-        .slide.accent-bg .step-dot.active {
-            background: var(--bg-dark);
-        }
-
-        /* ===========================================
-           NAVIGATION
-           =========================================== */
-        .slide-number {
-            position: absolute;
-            bottom: clamp(1rem, 3vw, 2rem);
-            right: clamp(1rem, 3vw, 2rem);
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-size: var(--small-size);
-            font-weight: 700;
-            color: var(--text-secondary);
-            z-index: 10;
-        }
-
-        .slide.dark .slide-number,
-        .slide.accent-bg .slide-number {
-            color: rgba(255,255,255,0.5);
-        }
-
-        .progress {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: var(--accent);
-            z-index: 10;
-            transition: width 0.3s ease;
-        }
-
-        .slide.accent-bg .progress {
-            background: var(--bg-dark);
-        }
-
-        .nav-hint {
-            position: fixed;
-            bottom: clamp(0.75rem, 2vw, 1.25rem);
-            left: clamp(0.75rem, 2vw, 1.25rem);
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-size: clamp(0.6rem, 0.9vw, 0.75rem);
-            font-weight: 500;
-            color: rgba(0,0,0,0.35);
-            letter-spacing: 0.05em;
-            z-index: 100;
-        }
-
-        /* Mode indicator */
-        .mode-indicator {
-            position: absolute;
-            top: clamp(1rem, 3vw, 2rem);
-            left: clamp(1rem, 3vw, 2rem);
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-size: var(--small-size);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent);
-            z-index: 10;
-        }
-
-        .slide.dark .mode-indicator,
-        .slide.accent-bg .mode-indicator {
-            color: rgba(255,255,255,0.6);
-        }
-
-        /* ===========================================
-           MODULE TIMELINE
-           =========================================== */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 900px;
-            margin: var(--content-gap) 0;
-        }
-
-        .timeline-row {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            position: relative;
-        }
-
-        .timeline-bar {
-            display: flex;
-            width: 100%;
-            height: clamp(2.5rem, 5vh, 3.5rem);
-            border-radius: 2px;
-            overflow: hidden;
-            margin: clamp(0.75rem, 1.5vh, 1.25rem) 0;
-        }
-
-        .timeline-bar .week {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-weight: 700;
-            font-size: var(--small-size);
-            color: var(--text-light);
-            background: #ddd;
-            border-right: 2px solid var(--bg-white);
-        }
-
-        .timeline-bar .week:last-child {
-            border-right: none;
-        }
-
-        .timeline-bar .week.visible {
-            background: var(--accent);
-        }
-
-        .timeline-bar .week[data-week="1"].visible {
-            background: #5371ff;
-        }
-
-        .timeline-module {
-            flex: 1;
-            text-align: center;
-            padding: 0 clamp(0.25rem, 0.5vw, 0.5rem);
-        }
-
-        .timeline-module.top {
-            margin-bottom: clamp(0.5rem, 1vh, 1rem);
-        }
-
-        .timeline-module.bottom {
-            margin-top: clamp(0.5rem, 1vh, 1rem);
-        }
-
-        .timeline-module h4 {
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-size: clamp(0.9rem, 1.6vw, 1.1rem);
-            font-weight: 700;
-            margin: 0 0 0.25em;
-            color: var(--text-primary);
-        }
-
-        .timeline-module p {
-            font-size: clamp(0.75rem, 1.2vw, 0.95rem);
-            color: var(--text-secondary);
-            margin: 0;
-            line-height: 1.3;
-        }
-
-        .timeline-module .connector {
-            width: 2px;
-            height: clamp(1rem, 2vh, 1.5rem);
-            background: var(--text-secondary);
-            margin: 0.25rem auto;
-        }
-
-        .timeline-callout {
-            position: relative;
-            align-self: flex-start;
-            margin-top: clamp(0.75rem, 1.5vh, 1.25rem);
-            width: calc(33.333% - 4px); /* Span weeks 1 and 2 */
-            background: #e8edff;
-            border: 2px solid #5371ff;
-            padding: clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.5rem, 1vw, 1rem);
-            font-size: clamp(0.85rem, 1.35vw, 1.05rem);
-            text-align: center;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .timeline-callout strong {
-            display: block;
-            color: #5371ff;
-            margin-bottom: 0.2em;
-        }
-
-        .timeline-callout::before {
-            content: '';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
-            border-bottom: 12px solid #5371ff;
-        }
-
-        /* ===========================================
-           RESPONSIVE
-           =========================================== */
-        @media (max-height: 700px) {
-            :root {
-                --slide-padding: clamp(1rem, 4vw, 3rem);
-                --content-gap: clamp(0.5rem, 1.5vw, 1.25rem);
-            }
-            .accent-circle, .accent-line, .accent-dot { opacity: 0.4; }
-        }
-
-        @media (max-height: 550px) {
-            .accent-circle, .accent-line, .accent-dot, .grid-bg { display: none; }
-            :root {
-                --title-size: clamp(1.5rem, 5vw, 2.5rem);
-                --slide-padding: clamp(0.75rem, 3vw, 2rem);
-            }
-            .step-indicator { display: none; }
-        }
-
-        @media (max-width: 600px) {
-            .columns {
-                grid-template-columns: 1fr;
-            }
-            .timeline-module p {
-                display: none;
-            }
-            .timeline-module h4 {
-                font-size: clamp(0.75rem, 2.5vw, 0.9rem);
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal-item {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
-        }
-
-        /* Timer pulse animation */
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* ===========================================
-           PRINT STYLESHEET
-           =========================================== */
-        @page {
-            size: landscape;
-            margin: 0;
-        }
-
-        @media print {
-            html {
-                scroll-snap-type: none;
-            }
-
-            body {
-                height: auto;
-                overflow: visible;
-                margin: 0;
-            }
-
-            .slide {
-                width: 100vw;
-                height: 100vh;
-                page-break-after: always;
-                page-break-inside: avoid;
-                scroll-snap-align: none;
-                overflow: hidden;
-                box-sizing: border-box;
-            }
-
-            .slide:last-child {
-                page-break-after: auto;
-            }
-
-            /* Show all content */
-            .reveal-item {
-                opacity: 1 !important;
-                transform: none !important;
-            }
-
-            /* Hide navigation elements */
-            .nav-hint,
-            .step-indicator,
-            .progress {
-                display: none !important;
-            }
-
-            /* Ensure backgrounds print */
-            .slide, .slide.accent-bg {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .grid-bg {
-                display: none;
-            }
-
-            /* Keep slide numbers */
-            .slide-number {
-                position: absolute;
-                bottom: 0.5in;
-                right: 0.5in;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -639,12 +20,12 @@
         <div class="accent-line"></div>
         <div class="accent-dot"></div>
         <div class="slide-content">
-            <h1 class="reveal-item visible">Empirical<br>Methods <span class="highlight">II</span></h1>
-            <p class="meta reveal-item visible">Qualitative & Mixed Methods</p>
-            <p class="meta reveal-item visible" style="margin-top: 0.5em;">API-203M · Spring 2026 · Class #1: Introduction</p>
-            <p class="meta reveal-item visible" style="margin-top: 1em;">Prof. Liz McKenna · Harvard Kennedy School</p>
+            <h1>Empirical<br>Methods <span class="highlight">II</span></h1>
+            <p class="meta">Qualitative & Mixed Methods</p>
+            <p class="meta" style="margin-top: 0.5em;">API-203M · Spring 2026</p>
+            <span style="margin-top: 0.75em; align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(0.85rem, 1.4vw, 1.1rem); font-weight: 700; color: #5371ff;">Class 1: Introduction</span>
         </div>
-        <span class="slide-number">01</span>
+        <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
     </section>
 
     <!-- ==========================================
@@ -661,34 +42,128 @@
     <!-- ==========================================
          SLIDE 3: Why This Course
          ========================================== -->
-    <section class="slide" data-steps="4">
+    <section id="overview" class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
         <div class="progress" style="width: 6%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
         <div class="slide-content">
-            <h2 class="reveal-item">Why This Course?</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">→</span>Historically, HKS has not offered many qualitative methods classes — <strong>never as part of the core</strong></li>
-                <li class="reveal-item"><span class="bullet">→</span>Qualitative research can be done very well or very poorly — but <strong>few people are equipped</strong> to discern what makes for good/bad interviews, field notes, focus groups</li>
-                <li class="reveal-item"><span class="bullet">→</span>This module provides <strong>practical skills and knowledge</strong> about qualitative approaches and their <strong>relevance to policy making</strong></li>
-            </ul>
+            <h2 class="reveal-item">Why Does This Course Exist?</h2>
+            <div class="point-list">
+                <div class="reveal-item point-item">
+                    <span class="point-num">01</span>
+                    <div>
+                        <strong>A gap in the core curriculum</strong>
+                        <p>HKS has historically offered few qualitative methods classes (and never as part of the core before)</p>
+                    </div>
+                </div>
+                <div class="reveal-item point-item">
+                    <span class="point-num">02</span>
+                    <div>
+                        <strong>...but qualitative methods can offer rigorous, empirical tools</strong>
+                        <p>Among the most practically useful for understanding how policies actually work on the ground, helping reveal the <em>how</em> and <em>why</em> behind policy outcomes</p>
+                    </div>
+                </div>
+                <div class="reveal-item point-item">
+                    <span class="point-num">03</span>
+                    <div>
+                        <strong>Quality matters (and few can discern it)</strong>
+                        <p>Qual research can be done very well or very poorly, but few people are equipped to judge what makes for good interviews, field notes, and focus groups</p>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-item" style="margin-top: clamp(0.6rem, 1.5vw, 1rem); align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.25rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: var(--body-size); font-weight: 700; color: #5371ff;">This module provides practical skills and knowledge about qualitative approaches and their relevance to policy making</div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">03</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3a: Canonical Example — Moving to Opportunity
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 9%"></div>
+        <div class="slide-content">
+            <div class="case-study-layout">
+                <img class="case-study-img reveal-item" src="img/mto-housing.jpg" alt="Urban public housing buildings">
+                <div class="case-study-text">
+                    <p class="case-label reveal-item">Canonical Example</p>
+                    <h2 class="reveal-item">Moving to Opportunity</h2>
+                    <p>A landmark randomized experiment relocated families from high-poverty public housing to low-poverty neighborhoods. The <strong>quantitative</strong> evaluation found mental health improved for women and girls, but not for boys. No employment gains were detected.</p>
+                    <p>A companion <strong>qualitative</strong> study (Popkin et al., 2002) interviewed hundreds of families and revealed <em>why</em>: mothers described escaping constant gunfire and sexual predation. Girls gained freedom of movement; boys stayed tied to old neighborhood networks and gangs. Safety, not economic opportunity, was the mechanism.</p>
+                    <div class="case-insight"><strong>The numbers told you <em>whether</em> relocation changed outcomes. The interviews told you <em>how</em></strong> safety, stress, social networks, and parenting actually mediated those changes.</div>
+                    <p class="case-cite">Popkin, Harris & Cunningham, <a href="https://www.huduser.gov/portal/publications/pubasst/mtoqualf.html" target="_blank"><em>Families in Transition</em></a> (HUD, 2002) · Orr et al., <a href="https://www.huduser.gov/portal/publications/fairhsg/mtoFinal.html" target="_blank"><em>MTO Interim Impacts</em></a> (HUD, 2003)</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">04</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3b: Canonical Example — U.S. Census
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 11%"></div>
+        <div class="slide-content">
+            <div class="case-study-layout">
+                <img class="case-study-img reveal-item" src="img/census-community.jpg" alt="Diverse community members">
+                <div class="case-study-text">
+                    <p class="case-label reveal-item">Canonical Example</p>
+                    <h2 class="reveal-item">U.S. Census &amp; Hard-to-Count Populations</h2>
+                    <p>The Census Bureau knew <em>that</em> certain racial and ethnic groups were being undercounted, but not <em>why</em>. Ethnographic studies placed researchers in 29 communities, where they discovered the mechanisms: women concealed adult males on forms to protect welfare benefits; complex living arrangements made "household" definitions meaningless; distrust of government motivated nonresponse.</p>
+                    <p>These findings <strong>directly changed Census operations</strong>: rewritten household roster instructions, bilingual and community-based enumerators, questionnaire assistance at community locations, and expanded local partnerships. The Bureau's own staff called this culture shift "an important result of the ethnographic studies."</p>
+                    <div class="case-insight"><strong>Administrative systems often fail precisely where they know the least.</strong> Qualitative work helped the state redesign outreach, communication, and field operations for the 2000 and subsequent censuses.</div>
+                    <p class="case-cite">GAO, <a href="https://www.gao.gov/products/gao-03-455" target="_blank"><em>Ethnographic Studies Can Inform Agencies' Actions</em></a> (2003) · NRC, <a href="https://www.ncbi.nlm.nih.gov/books/NBK513804/" target="_blank"><em>Principles and Practices for a Federal Statistical Agency</em></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">05</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3c: Canonical Example — WHO Safe Childbirth
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 13%"></div>
+        <div class="slide-content">
+            <div class="case-study-layout">
+                <img class="case-study-img reveal-item" src="img/who-maternal.jpg" alt="Mother with newborn baby">
+                <div class="case-study-text">
+                    <p class="case-label reveal-item">Canonical Example</p>
+                    <h2 class="reveal-item">WHO Guidelines for a Positive Childbirth Experience</h2>
+                    <p>WHO childbirth guidelines historically relied on clinical trial data measuring mortality. But facility-based births were declining in some settings even as survival outcomes improved. <em>Why?</em></p>
+                    <p>Downe et al. (2018) synthesized <strong>35 qualitative studies across 19 countries</strong>, capturing the voices of 1,800+ women. Bohren et al. (2015) documented systematic mistreatment across 65 studies in 34 countries. Women revealed they wanted not just survival, but <strong>dignity, agency, companionship, and kind care</strong>.</p>
+                    <p>This was <strong>the first major WHO guideline to formally integrate qualitative evidence</strong> alongside RCTs, using the CERQual framework. It redefined success from "mother and baby survive" to a <strong>"positive childbirth experience."</strong></p>
+                    <div class="case-insight"><strong>RCTs could measure <em>whether</em> interventions reduced mortality. Only qualitative research could reveal <em>why</em> women avoided facilities</strong> and what "working" actually meant to the people affected.</div>
+                    <p class="case-cite">Downe et al., <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0194906" target="_blank"><em>What Matters to Women</em></a> (PLOS ONE, 2018) · <a href="https://www.who.int/publications/i/item/9789241550215" target="_blank">WHO Intrapartum Care Guidelines</a> (2018)</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">06</span>
     </section>
 
     <!-- ==========================================
          SLIDE 4: Learning Objectives Part 1
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 8%"></div>
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 15%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">Learning Objectives</h2>
             <div class="columns">
@@ -715,16 +190,17 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">04</span>
+        <span class="slide-number">07</span>
     </section>
 
     <!-- ==========================================
          SLIDE 5: Learning Objectives Part 2
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 10%"></div>
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 17%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">Learning Objectives</h2>
             <div class="columns">
@@ -748,25 +224,27 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">05</span>
+        <span class="slide-number">08</span>
     </section>
 
     <!-- ==========================================
          SLIDE 6: Today's Class Header
          ========================================== -->
     <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 12%"></div>
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 19%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Today's<br>Class</h1>
         </div>
-        <span class="slide-number">06</span>
+        <span class="slide-number">09</span>
     </section>
 
     <!-- ==========================================
          SLIDE 7: Class Overview
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 14%"></div>
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 21%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Class 1: Introduction</h2>
@@ -804,25 +282,27 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">07</span>
+        <span class="slide-number">10</span>
     </section>
 
     <!-- ==========================================
          SLIDE 8: Introductions Header
          ========================================== -->
-    <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 16%"></div>
+    <section id="intros" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 23%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Introductions</h1>
         </div>
-        <span class="slide-number">08</span>
+        <span class="slide-number">11</span>
     </section>
 
     <!-- ==========================================
          SLIDE 9: Who Am I - Research
          ========================================== -->
     <section class="slide" data-steps="3">
-        <div class="progress" style="width: 18%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 26%"></div>
         <div class="grid-bg"></div>
         <div class="accent-circle"></div>
         <div class="slide-content">
@@ -837,27 +317,29 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">09</span>
+        <span class="slide-number">12</span>
     </section>
 
     <!-- ==========================================
          SLIDE 10: Research Question
          ========================================== -->
     <section class="slide dark">
-        <div class="progress" style="width: 20%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 28%"></div>
         <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
             <blockquote class="reveal-item visible">
                 Why do some forms of <span class="highlight">civic engagement</span> promote democracy — while others don't?
             </blockquote>
         </div>
-        <span class="slide-number">10</span>
+        <span class="slide-number">13</span>
     </section>
 
     <!-- ==========================================
          SLIDE 11: Journey to Mixed Methods
          ========================================== -->
     <section class="slide" data-steps="2">
-        <div class="progress" style="width: 22%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 30%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">My Journey to Mixed Methods</h2>
@@ -869,14 +351,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">11</span>
+        <span class="slide-number">14</span>
     </section>
 
     <!-- ==========================================
          SLIDE 12: Mixed Methods Examples
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 24%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 32%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Mixed Methods in Practice</h2>
@@ -892,14 +375,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">12</span>
+        <span class="slide-number">15</span>
     </section>
 
     <!-- ==========================================
          SLIDE 13: About Me
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 26%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 34%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">A Little More About Me</h2>
@@ -915,14 +399,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">13</span>
+        <span class="slide-number">16</span>
     </section>
 
     <!-- ==========================================
          SLIDE 14: Teaching Team
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <div class="progress" style="width: 28%"></div>
+    <section class="slide" data-steps="7">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 36%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Our Teaching Team</h2>
@@ -932,12 +417,22 @@
                     <p>Ph.D. candidate, TF</p>
                 </div>
                 <div class="card reveal-item">
-                    <h3>Maraya Keny-Guyer</h3>
-                    <p>MPP2, CA</p>
+                    <h3>Liam Chai</h3>
+                    <p>CA</p>
                 </div>
                 <div class="card reveal-item">
-                    <h3>Rebecca Lin</h3>
-                    <p>MPP2, CA</p>
+                    <h3>Christina Iruela Lane</h3>
+                    <p>CA</p>
+                </div>
+            </div>
+            <div class="columns" style="margin-top: clamp(0.5rem, 1vw, 1rem);">
+                <div class="card reveal-item">
+                    <h3>Muhammad Irfan Sadiq</h3>
+                    <p>CA</p>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Dani Schulman</h3>
+                    <p>CA</p>
                 </div>
             </div>
         </div>
@@ -946,15 +441,19 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
             <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
         </div>
-        <span class="slide-number">14</span>
+        <span class="slide-number">17</span>
     </section>
 
     <!-- ==========================================
          SLIDE 15: Growth Mindset
          ========================================== -->
     <section class="slide" data-steps="2">
-        <div class="progress" style="width: 30%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 38%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">A Word on Learning Orientations</h2>
@@ -969,27 +468,29 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">15</span>
+        <span class="slide-number">18</span>
     </section>
 
     <!-- ==========================================
          SLIDE 16: Real World Header
          ========================================== -->
-    <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 32%"></div>
+    <section id="real-world" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 40%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Qual Methods<br>in the<br>Real World</h1>
         </div>
-        <span class="slide-number">16</span>
+        <span class="slide-number">19</span>
     </section>
 
     <!-- ==========================================
          SLIDE 17: Policy Use
          ========================================== -->
     <section class="slide" data-steps="3">
-        <div class="progress" style="width: 34%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 43%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">Increased Policy Use</h2>
             <p class="reveal-item" style="font-size: var(--body-size); max-width: 750px; line-height: 1.6; margin-bottom: var(--content-gap);">
@@ -1004,16 +505,17 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">17</span>
+        <span class="slide-number">20</span>
     </section>
 
     <!-- ==========================================
          SLIDE 18: Different Policy Areas
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 36%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 45%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">Different Policy Areas Value Different Methods</h2>
             <ul>
@@ -1029,14 +531,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">18</span>
+        <span class="slide-number">21</span>
     </section>
 
     <!-- ==========================================
          SLIDE 19: MPP2 Testimonial - Safira
          ========================================== -->
     <section class="slide" data-steps="2">
-        <div class="progress" style="width: 38%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 47%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h3 class="reveal-item" style="color: var(--accent);">MPP2 Reflections: Safira Putri</h3>
@@ -1048,14 +551,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">19</span>
+        <span class="slide-number">22</span>
     </section>
 
     <!-- ==========================================
          SLIDE 20: MPP2 Testimonial - Tom
          ========================================== -->
     <section class="slide" data-steps="2">
-        <div class="progress" style="width: 40%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 49%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h3 class="reveal-item" style="color: var(--accent);">MPP2 Reflections: Tom McGee</h3>
@@ -1067,14 +571,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">20</span>
+        <span class="slide-number">23</span>
     </section>
 
     <!-- ==========================================
          SLIDE 21: MPP2 Testimonial - James
          ========================================== -->
     <section class="slide" data-steps="2">
-        <div class="progress" style="width: 42%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 51%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h3 class="reveal-item" style="color: var(--accent);">MPP2 Reflections: James Schisler</h3>
@@ -1086,14 +591,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">21</span>
+        <span class="slide-number">24</span>
     </section>
 
     <!-- ==========================================
          SLIDE 22: Module Flow
          ========================================== -->
-    <section class="slide" data-steps="8">
-        <div class="progress" style="width: 44%"></div>
+    <section class="slide" data-steps="9">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 53%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center;">
             <h2 class="reveal-item" style="align-self: flex-start;">Module Flow & Content</h2>
@@ -1103,19 +609,20 @@
                 <div class="timeline-row">
                     <div class="timeline-module top reveal-item" data-group="1">
                         <h4>Introduction</h4>
-                        <p>Overview,<br>outstanding qual<br>research, ethics</p>
+                        <p>Overview,<br>outstanding qual<br>research</p>
                         <div class="connector"></div>
                     </div>
                     <div class="timeline-module top"></div>
+                    <div class="timeline-module top" style="flex: 0.5;"></div>
                     <div class="timeline-module top reveal-item" data-group="3">
                         <h4>Interviewing</h4>
-                        <p>Best practices,<br>asking good<br>questions, analyzing data</p>
+                        <p>Introduction +<br>Workshop observation</p>
                         <div class="connector"></div>
                     </div>
                     <div class="timeline-module top"></div>
                     <div class="timeline-module top reveal-item" data-group="5">
-                        <h4>Archival</h4>
-                        <p>Documents,<br>content analysis,<br>coding w/ generative AI</p>
+                        <h4>Focus Groups</h4>
+                        <p>Background, ethics,<br>simulation</p>
                         <div class="connector"></div>
                     </div>
                     <div class="timeline-module top"></div>
@@ -1125,6 +632,7 @@
                 <div class="timeline-bar">
                     <div class="week reveal-item" data-group="1">Week 1</div>
                     <div class="week reveal-item" data-group="2">2</div>
+                    <div class="week reveal-item" data-group="break" style="background: #888; flex: 0.5; font-size: clamp(0.6rem, 1vw, 0.8rem);">Break</div>
                     <div class="week reveal-item" data-group="3">3</div>
                     <div class="week reveal-item" data-group="4">4</div>
                     <div class="week reveal-item" data-group="5">5</div>
@@ -1136,27 +644,28 @@
                     <div class="timeline-module bottom"></div>
                     <div class="timeline-module bottom reveal-item" data-group="2">
                         <div class="connector"></div>
-                        <h4>Observation</h4>
-                        <p>Ethnography,<br>fieldwork,<br>direct/participant</p>
+                        <h4>Observation + Ethics</h4>
+                        <p>Ethnography,<br>fieldwork, Kaiser</p>
                     </div>
+                    <div class="timeline-module bottom" style="flex: 0.5;"></div>
                     <div class="timeline-module bottom"></div>
                     <div class="timeline-module bottom reveal-item" data-group="4">
                         <div class="connector"></div>
-                        <h4>Focus Groups</h4>
-                        <p>Design, content,<br>facilitation</p>
+                        <h4>Interviewing 2.0</h4>
+                        <p>Workshop<br>interview assignment</p>
                     </div>
                     <div class="timeline-module bottom"></div>
                     <div class="timeline-module bottom reveal-item" data-group="6">
                         <div class="connector"></div>
-                        <h4>Final</h4>
-                        <p>PAE proposal w/ at<br>least one qual method</p>
+                        <h4>Qual Coding + Wrap-Up</h4>
+                        <p>Coding workshop,<br>Anthropic guest lecture</p>
                     </div>
                 </div>
 
                 <!-- Assignment callout - appears last, points to Week 1 -->
                 <div class="timeline-callout reveal-item" data-group="7">
                     <strong>Assignment #1 (Policy Puzzle)</strong>
-                    due Monday, March 10 at 11:59PM
+                    due Monday, March 9 at 11:59PM
                 </div>
             </div>
         </div>
@@ -1169,26 +678,29 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
             <div class="step-dot"></div>
+            <div class="step-dot"></div>
         </div>
-        <span class="slide-number">22</span>
+        <span class="slide-number">25</span>
     </section>
 
     <!-- ==========================================
          SLIDE 23: Logistics Header
          ========================================== -->
-    <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 46%"></div>
+    <section id="logistics" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 55%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Course<br>Logistics</h1>
         </div>
-        <span class="slide-number">23</span>
+        <span class="slide-number">26</span>
     </section>
 
     <!-- ==========================================
          SLIDE 24: Logistics 1
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 48%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 57%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Logistics</h2>
@@ -1204,14 +716,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">24</span>
+        <span class="slide-number">27</span>
     </section>
 
     <!-- ==========================================
          SLIDE 25: Logistics 2
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 50%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 60%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Logistics</h2>
@@ -1227,14 +740,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">25</span>
+        <span class="slide-number">28</span>
     </section>
 
     <!-- ==========================================
          SLIDE 26: Logistics 3
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 52%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 62%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Logistics</h2>
@@ -1250,41 +764,44 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">26</span>
+        <span class="slide-number">29</span>
     </section>
 
     <!-- ==========================================
          SLIDE 27: Tech-Free Quote
          ========================================== -->
     <section class="slide dark">
-        <div class="progress" style="width: 54%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 64%"></div>
         <div class="slide-content" style="max-width: 850px;">
             <blockquote class="reveal-item visible" style="font-size: clamp(1rem, 2.5vw, 1.6rem); text-transform: none; font-weight: 500; line-height: 1.5;">
                 "In creating containers, we give members of this technology-crushed generation a fair chance to be with their own thoughts, until they've made something of them and felt the oldfangled dopamine hit that comes with <span class="highlight">assembling meaning</span>."
             </blockquote>
             <cite class="reveal-item visible">— NYT, "Tech-Free College Spaces"</cite>
         </div>
-        <span class="slide-number">27</span>
+        <span class="slide-number">30</span>
     </section>
 
     <!-- ==========================================
          SLIDE 28: Conceptual Intro Header
          ========================================== -->
-    <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 56%"></div>
+    <section id="concepts" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 66%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Conceptual<br>Introduction</h1>
         </div>
-        <span class="slide-number">28</span>
+        <span class="slide-number">31</span>
     </section>
 
     <!-- ==========================================
          SLIDE 29: Quant vs Qual
          ========================================== -->
     <section class="slide" data-steps="3">
-        <div class="progress" style="width: 58%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 68%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">Quant vs. Qual</h2>
             <div class="columns" style="margin-top: var(--content-gap);">
@@ -1303,16 +820,17 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">29</span>
+        <span class="slide-number">32</span>
     </section>
 
     <!-- ==========================================
          SLIDE 30: When Quant
          ========================================== -->
     <section class="slide" data-steps="5">
-        <div class="progress" style="width: 60%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 70%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">When Quantitative?</h2>
             <ul>
@@ -1329,16 +847,17 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">30</span>
+        <span class="slide-number">33</span>
     </section>
 
     <!-- ==========================================
          SLIDE 31: When Qual
          ========================================== -->
     <section class="slide" data-steps="5">
-        <div class="progress" style="width: 62%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 72%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">When Qualitative?</h2>
             <ul>
@@ -1355,41 +874,44 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">31</span>
+        <span class="slide-number">34</span>
     </section>
 
     <!-- ==========================================
          SLIDE 32: Mixed Methods Header
          ========================================== -->
     <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 64%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 74%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Mixed<br>Methods</h1>
         </div>
-        <span class="slide-number">32</span>
+        <span class="slide-number">35</span>
     </section>
 
     <!-- ==========================================
          SLIDE 33: Rao Quote
          ========================================== -->
     <section class="slide dark">
-        <div class="progress" style="width: 66%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 77%"></div>
         <div class="slide-content" style="max-width: 850px;">
             <blockquote class="reveal-item visible" style="font-size: clamp(1.1rem, 2.8vw, 1.8rem); text-transform: none; font-weight: 600; line-height: 1.4;">
                 "It's very silly to do an impact evaluation using some <span class="highlight">randomized controlled trial</span>, and not also do a <span class="highlight">deep ethnography</span> to understand <strong>why</strong> you got the results you got."
             </blockquote>
             <cite class="reveal-item visible">— Vijayendra Rao, World Bank</cite>
         </div>
-        <span class="slide-number">33</span>
+        <span class="slide-number">36</span>
     </section>
 
     <!-- ==========================================
          SLIDE 34: Two Approaches
          ========================================== -->
     <section class="slide" data-steps="3">
-        <div class="progress" style="width: 68%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 79%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">Two Approaches to Mixed Methods</h2>
             <div class="columns" style="margin-top: var(--content-gap);">
@@ -1410,16 +932,17 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">34</span>
+        <span class="slide-number">37</span>
     </section>
 
     <!-- ==========================================
          SLIDE 35: When Valuable - Confirmation
          ========================================== -->
     <section class="slide" data-steps="3">
-        <div class="progress" style="width: 70%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 81%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">When Are Mixed Methods Valuable?</h2>
             <h3 class="reveal-item" style="color: var(--accent); font-weight: 600;">Confirmation (Triangulation)</h3>
@@ -1433,16 +956,17 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">35</span>
+        <span class="slide-number">38</span>
     </section>
 
     <!-- ==========================================
          SLIDE 36: When Valuable - Complementarity
          ========================================== -->
     <section class="slide" data-steps="3">
-        <div class="progress" style="width: 72%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <div class="progress" style="width: 83%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+
         <div class="slide-content">
             <h2 class="reveal-item">When Are Mixed Methods Valuable?</h2>
             <h3 class="reveal-item" style="color: var(--accent); font-weight: 600;">Complementarity</h3>
@@ -1456,26 +980,27 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">36</span>
+        <span class="slide-number">39</span>
     </section>
 
     <!-- ==========================================
          SLIDE 37: Policy Puzzle Header
-         APPLICATION MODE - BLUE ACCENT
-         ========================================== -->
-    <section class="slide accent-bg section-header application">
-        <div class="progress" style="width: 74%"></div>
+         APPLICATION MODE - BLUE ACCENT         ========================================== -->
+    <section id="application" class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <div class="progress" style="width: 85%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Policy<br>Puzzle</h1>
         </div>
-        <span class="slide-number">37</span>
+        <span class="slide-number">40</span>
     </section>
 
     <!-- ==========================================
          SLIDE 38: Policy Puzzle Intro
          ========================================== -->
     <section class="slide application" data-steps="2">
-        <div class="progress" style="width: 76%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <div class="progress" style="width: 87%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Application</span>
         <div class="slide-content" style="align-items: center; text-align: center;">
@@ -1485,19 +1010,20 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">38</span>
+        <span class="slide-number">41</span>
     </section>
 
     <!-- ==========================================
          SLIDE 39: Assignment 1
          ========================================== -->
     <section class="slide application" data-steps="4">
-        <div class="progress" style="width: 78%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <div class="progress" style="width: 89%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Application</span>
         <div class="slide-content">
             <h2 class="reveal-item">Assignment #1: Policy Puzzle</h2>
-            <p class="reveal-item" style="font-size: var(--body-size); color: var(--accent); font-weight: 600; margin-bottom: 0.5em;">Due Monday, March 10 on Canvas by 11:59PM</p>
+            <p class="reveal-item" style="font-size: var(--body-size); color: var(--accent); font-weight: 600; margin-bottom: 0.5em;">Due Monday, March 9 on Canvas by 11:59PM</p>
             <ul>
                 <li class="reveal-item"><span class="bullet">→</span>Select a <strong>quantitative study</strong> related to any substantive topic</li>
                 <li class="reveal-item"><span class="bullet">→</span>Choose a <strong>how/why question or puzzle</strong> to explore qualitatively</li>
@@ -1510,14 +1036,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">39</span>
+        <span class="slide-number">42</span>
     </section>
 
     <!-- ==========================================
          SLIDE 40: Puzzle Examples
          ========================================== -->
     <section class="slide application" data-steps="5">
-        <div class="progress" style="width: 80%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <div class="progress" style="width: 91%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Application</span>
         <div class="slide-content">
@@ -1536,14 +1063,15 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">40</span>
+        <span class="slide-number">43</span>
     </section>
 
     <!-- ==========================================
          SLIDE 41: Pair Share (with countdown timer)
          ========================================== -->
     <section class="slide application" id="timer-slide">
-        <div class="progress" style="width: 82%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <div class="progress" style="width: 94%"></div>
         <div class="slide-content" style="align-items: center; text-align: center;">
             <h2 class="reveal-item visible">Pair Share</h2>
             <p class="reveal-item visible" style="font-size: var(--h3-size); max-width: 600px; margin-top: var(--content-gap);">
@@ -1554,25 +1082,27 @@
                 <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
             </div>
         </div>
-        <span class="slide-number">41</span>
+        <span class="slide-number">44</span>
     </section>
 
     <!-- ==========================================
          SLIDE 42: Next Class Header
          ========================================== -->
     <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 90%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <div class="progress" style="width: 96%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">For Next<br>Class</h1>
         </div>
-        <span class="slide-number">42</span>
+        <span class="slide-number">45</span>
     </section>
 
     <!-- ==========================================
          SLIDE 43: Readings
          ========================================== -->
     <section class="slide" data-steps="4">
-        <div class="progress" style="width: 94%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <div class="progress" style="width: 98%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">What is Outstanding Qualitative Research?</h2>
@@ -1589,13 +1119,14 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">43</span>
+        <span class="slide-number">46</span>
     </section>
 
     <!-- ==========================================
          SLIDE 44: Thank You
          ========================================== -->
     <section class="slide" data-steps="1">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
         <div class="progress" style="width: 100%"></div>
         <div class="grid-bg"></div>
         <div class="accent-circle"></div>
@@ -1607,7 +1138,7 @@
                 <p class="reveal-item visible">Office hours: Tuesdays, 1:30-3:00, T-308</p>
             </div>
         </div>
-        <span class="slide-number">44</span>
+        <span class="slide-number">47</span>
     </section>
 
     <div class="nav-hint">→ Next · ↓ Skip slide</div>
@@ -1615,322 +1146,6 @@
     <!-- ===========================================
          JAVASCRIPT: Progressive Reveal Controller
          =========================================== -->
-    <script>
-        class SlidePresentation {
-            constructor() {
-                this.slides = document.querySelectorAll('.slide');
-                this.currentSlide = 0;
-                this.currentStep = 0;
-                this.totalSlides = this.slides.length;
-
-                this.init();
-                this.bindEvents();
-            }
-
-            init() {
-                this.revealStep(this.slides[0], 0);
-                this.updateStepIndicator(this.slides[0]);
-            }
-
-            bindEvents() {
-                document.addEventListener('keydown', (e) => this.handleKey(e));
-                document.addEventListener('click', (e) => {
-                    if (e.target.tagName !== 'A') this.nextStep();
-                });
-
-                // Touch support
-                let touchStartY = 0;
-                document.addEventListener('touchstart', (e) => {
-                    touchStartY = e.touches[0].clientY;
-                });
-                document.addEventListener('touchend', (e) => {
-                    const diff = touchStartY - e.changedTouches[0].clientY;
-                    if (Math.abs(diff) > 50) {
-                        diff > 0 ? this.nextStep() : this.prevStep();
-                    }
-                });
-            }
-
-            handleKey(e) {
-                switch(e.key) {
-                    case 'ArrowRight':
-                    case ' ':
-                        e.preventDefault();
-                        this.nextStep();
-                        break;
-                    case 'ArrowLeft':
-                        e.preventDefault();
-                        this.prevStep();
-                        break;
-                    case 'ArrowDown':
-                    case 'PageDown':
-                        e.preventDefault();
-                        this.nextSlide();
-                        break;
-                    case 'ArrowUp':
-                    case 'PageUp':
-                        e.preventDefault();
-                        this.prevSlide();
-                        break;
-                }
-            }
-
-            getSlideSteps(slide) {
-                const items = slide.querySelectorAll('.reveal-item');
-                // Check if any items have data-group attribute
-                const hasGroups = Array.from(items).some(item => item.dataset.group);
-
-                if (hasGroups) {
-                    // Collect ungrouped items first (in DOM order)
-                    const ungroupedSteps = [];
-                    const groupedItems = new Map();
-
-                    items.forEach(item => {
-                        const group = item.dataset.group;
-                        if (group) {
-                            if (!groupedItems.has(group)) {
-                                groupedItems.set(group, []);
-                            }
-                            groupedItems.get(group).push(item);
-                        } else {
-                            // Ungrouped item = its own step
-                            ungroupedSteps.push([item]);
-                        }
-                    });
-
-                    // Sort groups numerically and add after ungrouped
-                    const sortedGroups = Array.from(groupedItems.keys()).sort((a, b) => {
-                        const numA = parseInt(a) || 0;
-                        const numB = parseInt(b) || 0;
-                        return numA - numB;
-                    });
-
-                    const groupedSteps = sortedGroups.map(group => groupedItems.get(group));
-                    return [...ungroupedSteps, ...groupedSteps];
-                }
-
-                // No groups, return items as single-element arrays
-                return Array.from(items).map(item => [item]);
-            }
-
-            revealStep(slide, stepIndex) {
-                const steps = this.getSlideSteps(slide);
-                steps.forEach((stepItems, i) => {
-                    stepItems.forEach(item => {
-                        item.classList.toggle('visible', i <= stepIndex);
-                    });
-                });
-                this.updateStepIndicator(slide, stepIndex);
-            }
-
-            updateStepIndicator(slide, currentStep = 0) {
-                const dots = slide.querySelectorAll('.step-dot');
-                dots.forEach((dot, i) => {
-                    dot.classList.remove('active', 'complete');
-                    if (i < currentStep) dot.classList.add('complete');
-                    else if (i === currentStep) dot.classList.add('active');
-                });
-            }
-
-            getStepCount(slide) {
-                return this.getSlideSteps(slide).length;
-            }
-
-            nextStep() {
-                const slide = this.slides[this.currentSlide];
-                const totalSteps = this.getStepCount(slide);
-
-                if (this.currentStep < totalSteps - 1) {
-                    this.currentStep++;
-                    this.revealStep(slide, this.currentStep);
-                } else {
-                    this.nextSlide();
-                }
-            }
-
-            prevStep() {
-                if (this.currentStep > 0) {
-                    this.currentStep--;
-                    this.revealStep(this.slides[this.currentSlide], this.currentStep);
-                } else if (this.currentSlide > 0) {
-                    this.prevSlide();
-                }
-            }
-
-            nextSlide() {
-                if (this.currentSlide < this.totalSlides - 1) {
-                    // Reveal all on current slide first
-                    const currentSlideEl = this.slides[this.currentSlide];
-                    const totalSteps = this.getStepCount(currentSlideEl);
-                    this.revealStep(currentSlideEl, totalSteps - 1);
-
-                    this.currentSlide++;
-                    this.currentStep = 0;
-                    this.slides[this.currentSlide].scrollIntoView({ behavior: 'smooth' });
-
-                    setTimeout(() => {
-                        this.revealStep(this.slides[this.currentSlide], 0);
-                    }, 300);
-                }
-            }
-
-            prevSlide() {
-                if (this.currentSlide > 0) {
-                    this.currentSlide--;
-                    const slide = this.slides[this.currentSlide];
-                    const totalSteps = this.getStepCount(slide);
-                    this.currentStep = totalSteps - 1;
-                    this.revealStep(slide, this.currentStep);
-                    slide.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        }
-
-        const presentation = new SlidePresentation();
-
-        // Print preparation - reveal all content before printing
-        window.addEventListener('beforeprint', () => {
-            document.querySelectorAll('.reveal-item').forEach(item => {
-                item.classList.add('visible');
-            });
-            document.body.classList.add('print-mode');
-        });
-
-        window.addEventListener('afterprint', () => {
-            document.body.classList.remove('print-mode');
-        });
-
-        // Keyboard shortcut: Cmd+Shift+P to prepare for print
-        document.addEventListener('keydown', (e) => {
-            if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'p') {
-                e.preventDefault();
-                document.querySelectorAll('.reveal-item').forEach(item => {
-                    item.classList.add('visible');
-                });
-                alert('All slides revealed. Now use Cmd+P to print/save as PDF.\n\nTip: Enable "Background graphics" in print settings.');
-            }
-        });
-
-        // ===========================================
-        // COUNTDOWN TIMER
-        // ===========================================
-        class CountdownTimer {
-            constructor() {
-                this.display = document.getElementById('countdown-display');
-                this.hint = document.getElementById('timer-hint');
-                this.timerSlide = document.getElementById('timer-slide');
-                this.duration = 5 * 60; // 5 minutes in seconds
-                this.remaining = this.duration;
-                this.interval = null;
-                this.running = false;
-                this.audioContext = null;
-
-                if (this.display) {
-                    this.display.addEventListener('click', (e) => {
-                        e.stopPropagation(); // Prevent slide advance
-                        this.toggle();
-                    });
-                }
-            }
-
-            toggle() {
-                if (this.running) {
-                    this.pause();
-                } else {
-                    this.start();
-                }
-            }
-
-            start() {
-                if (this.remaining <= 0) {
-                    this.reset();
-                }
-                this.running = true;
-                this.hint.textContent = 'Click to pause';
-                this.display.style.transform = 'scale(1.02)';
-                setTimeout(() => this.display.style.transform = '', 100);
-
-                this.interval = setInterval(() => {
-                    this.remaining--;
-                    this.updateDisplay();
-
-                    if (this.remaining <= 0) {
-                        this.complete();
-                    }
-                }, 1000);
-            }
-
-            pause() {
-                this.running = false;
-                clearInterval(this.interval);
-                this.hint.textContent = 'Click to resume';
-            }
-
-            reset() {
-                this.remaining = this.duration;
-                this.updateDisplay();
-                this.hint.textContent = 'Click timer to start';
-            }
-
-            complete() {
-                clearInterval(this.interval);
-                this.running = false;
-                this.display.textContent = "Time's up!";
-                this.display.style.color = '#ff3300';
-                this.display.style.animation = 'pulse 1s ease-in-out 3';
-                this.hint.textContent = 'Click to reset';
-                this.playChime();
-            }
-
-            updateDisplay() {
-                const mins = Math.floor(this.remaining / 60);
-                const secs = this.remaining % 60;
-                this.display.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-
-                // Color change in last 30 seconds
-                if (this.remaining <= 30 && this.remaining > 0) {
-                    this.display.style.color = '#ff3300';
-                } else if (this.remaining > 30) {
-                    this.display.style.color = '';
-                }
-            }
-
-            playChime() {
-                // Gentle chime using Web Audio API
-                try {
-                    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-                    const playTone = (freq, startTime, duration) => {
-                        const oscillator = this.audioContext.createOscillator();
-                        const gainNode = this.audioContext.createGain();
-
-                        oscillator.connect(gainNode);
-                        gainNode.connect(this.audioContext.destination);
-
-                        oscillator.frequency.value = freq;
-                        oscillator.type = 'sine';
-
-                        // Gentle envelope
-                        gainNode.gain.setValueAtTime(0, startTime);
-                        gainNode.gain.linearRampToValueAtTime(0.3, startTime + 0.1);
-                        gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
-
-                        oscillator.start(startTime);
-                        oscillator.stop(startTime + duration);
-                    };
-
-                    const now = this.audioContext.currentTime;
-                    // Gentle ascending chime (C5 - E5 - G5)
-                    playTone(523.25, now, 0.5);        // C5
-                    playTone(659.25, now + 0.3, 0.5);  // E5
-                    playTone(783.99, now + 0.6, 0.8);  // G5
-                } catch (e) {
-                    console.log('Audio not supported');
-                }
-            }
-        }
-
-        const timer = new CountdownTimer();
-    </script>
+    <script src="slides.js"></script>
 </body>
 </html>
