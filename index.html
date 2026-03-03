@@ -43,7 +43,7 @@
          SLIDE 3: Why This Course
          ========================================== -->
     <section id="overview" class="slide" data-steps="5">
-        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 6%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
@@ -83,24 +83,29 @@
     <!-- ==========================================
          SLIDE 3a: Canonical Example — Moving to Opportunity
          ========================================== -->
-    <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 9%"></div>
         <div class="slide-content">
-            <div class="case-study-layout">
-                <img class="case-study-img reveal-item" src="img/mto-housing.jpg" alt="Urban public housing buildings">
+            <div class="case-study-layout" style="align-items: start; flex: 0;">
+                <div style="display: flex; flex-direction: column; gap: clamp(0.5rem, 1vw, 0.75rem);">
+                    <img src="img/hud-logo.png" alt="U.S. Department of Housing and Urban Development" style="width: clamp(80px, 10vw, 130px); opacity: 0.7;">
+                    <a href="https://www.nytimes.com/interactive/2015/05/03/upshot/the-best-and-worst-places-to-grow-up-how-your-area-compares.html" target="_blank"><img class="case-study-img visible" src="img/mto1.png" alt="NYT interactive map: The Best and Worst Places to Grow Up"></a>
+                    <p class="case-cite" style="margin-top: 0;"><a href="https://www.nytimes.com/interactive/2015/05/03/upshot/the-best-and-worst-places-to-grow-up-how-your-area-compares.html" target="_blank" style="color: #5371ff;"><em>NYT, "The Best and Worst Places to Grow Up"</em></a></p>
+                </div>
                 <div class="case-study-text">
-                    <p class="case-label reveal-item">Canonical Example</p>
+                    <p class="case-label visible">Canonical Example</p>
                     <h2 class="reveal-item">Moving to Opportunity</h2>
-                    <p>A landmark randomized experiment relocated families from high-poverty public housing to low-poverty neighborhoods. The <strong>quantitative</strong> evaluation found mental health improved for women and girls, but not for boys. No employment gains were detected.</p>
-                    <p>A companion <strong>qualitative</strong> study (Popkin et al., 2002) interviewed hundreds of families and revealed <em>why</em>: mothers described escaping constant gunfire and sexual predation. Girls gained freedom of movement; boys stayed tied to old neighborhood networks and gangs. Safety, not economic opportunity, was the mechanism.</p>
-                    <div class="case-insight"><strong>The numbers told you <em>whether</em> relocation changed outcomes. The interviews told you <em>how</em></strong> safety, stress, social networks, and parenting actually mediated those changes.</div>
-                    <p class="case-cite">Popkin, Harris & Cunningham, <a href="https://www.huduser.gov/portal/publications/pubasst/mtoqualf.html" target="_blank"><em>Families in Transition</em></a> (HUD, 2002) · Orr et al., <a href="https://www.huduser.gov/portal/publications/fairhsg/mtoFinal.html" target="_blank"><em>MTO Interim Impacts</em></a> (HUD, 2003)</p>
+                    <p class="reveal-item" style="margin-top: 0.6em;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.4em;">—</span>A landmark <strong>randomized housing mobility experiment</strong> sponsored by HUD (N=4,604 low-income families assigned vouchers to move to higher-opportunity neighborhoods).</p>
+                    <p class="reveal-item" style="margin-top: 0.8em;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.4em;">—</span>The <strong>quantitative</strong> evaluation found significant long-term gains: improved physical health, mental health (with differential gender impacts among youth), and increased college attendance and earnings for children exposed young (but null or negative effects for older teens).</p>
+                    <div class="case-insight reveal-item" style="margin-top: 0.8em;">Core mechanisms uncovered by qualitative MTO research:</div>
+                    <div class="case-insight reveal-item" style="margin-top: 0; border-left: 3px solid var(--accent); padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); background: rgba(255, 51, 0, 0.06); border-radius: 0 4px 4px 0;">stress reduction via safety; gendered adaptation to new environments; norm and expectation transmission; loss and reconfiguration of social capital; institutional friction and discrimination; developmental timing (childhood exposure matters most).<p style="margin: 0.5em 0 0 0; font-size: clamp(0.8rem, 1.4vw, 0.95rem); line-height: 1.45; color: var(--text-primary);" class="reveal-item" data-group="final">The numbers told you <em>whether</em> relocation changed outcomes, and the interviews helped explain <em>how</em> and <em>why</em>.</p></div>
+                    <p class="case-cite reveal-item" data-group="final">HUD, <a href="https://www.huduser.gov/publications/pdf/MTOFHD_fullreport_v2.pdf" target="_blank"><em>Moving to Opportunity Final Impacts Report</em></a> (2011) · Chetty, Hendren &amp; Katz, <a href="https://www2.nber.org/mtopublic/final/MTO_IRS_2015.pdf" target="_blank"><em>The Effects of Exposure to Better Neighborhoods on Children</em></a> (2016)</p>
                 </div>
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">04</span>
     </section>
@@ -108,24 +113,28 @@
     <!-- ==========================================
          SLIDE 3b: Canonical Example — U.S. Census
          ========================================== -->
-    <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 11%"></div>
         <div class="slide-content">
-            <div class="case-study-layout">
-                <img class="case-study-img reveal-item" src="img/census-community.jpg" alt="Diverse community members">
+            <div class="case-study-layout" style="align-items: start; flex: 0;">
+                <div style="display: flex; flex-direction: column; gap: clamp(0.5rem, 1vw, 0.75rem);">
+                    <img class="case-study-img visible" src="img/census1.jpeg" alt="Census enumeration" style="max-height: 25vh;">
+                    <img class="case-study-img visible" src="img/census2.png" alt="Census hard-to-count communities" style="max-height: 25vh;">
+                </div>
                 <div class="case-study-text">
-                    <p class="case-label reveal-item">Canonical Example</p>
+                    <p class="case-label visible">Canonical Example</p>
                     <h2 class="reveal-item">U.S. Census &amp; Hard-to-Count Populations</h2>
-                    <p>The Census Bureau knew <em>that</em> certain racial and ethnic groups were being undercounted, but not <em>why</em>. Ethnographic studies placed researchers in 29 communities, where they discovered the mechanisms: women concealed adult males on forms to protect welfare benefits; complex living arrangements made "household" definitions meaningless; distrust of government motivated nonresponse.</p>
-                    <p>These findings <strong>directly changed Census operations</strong>: rewritten household roster instructions, bilingual and community-based enumerators, questionnaire assistance at community locations, and expanded local partnerships. The Bureau's own staff called this culture shift "an important result of the ethnographic studies."</p>
-                    <div class="case-insight"><strong>Administrative systems often fail precisely where they know the least.</strong> Qualitative work helped the state redesign outreach, communication, and field operations for the 2000 and subsequent censuses.</div>
-                    <p class="case-cite">GAO, <a href="https://www.gao.gov/products/gao-03-455" target="_blank"><em>Ethnographic Studies Can Inform Agencies' Actions</em></a> (2003) · NRC, <a href="https://www.ncbi.nlm.nih.gov/books/NBK513804/" target="_blank"><em>Principles and Practices for a Federal Statistical Agency</em></a></p>
+                    <p class="reveal-item" style="margin-top: 0.6em;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.4em;">—</span>The Census Bureau knew <em>that</em> certain racial and ethnic groups were being undercounted, but not <em>why</em>.</p>
+                    <p class="reveal-item" style="margin-top: 0.8em;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.4em;">—</span>Ethnographic studies placed researchers in <strong>29 communities</strong>, where they discovered the mechanisms: complex living arrangements made "household" definitions meaningless; distrust of government motivated nonresponse, etc.</p>
+                    <div class="case-insight reveal-item" style="margin-top: 0.8em;">Administrative systems often fail precisely where they know the least.</div>
+                    <div class="case-insight reveal-item" style="margin-top: 0; border-left: 3px solid var(--accent); padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); background: rgba(255, 51, 0, 0.06); border-radius: 0 4px 4px 0;">Qualitative work helped the state redesign outreach, communication, and field operations for the 2000 and subsequent censuses: rewritten household roster instructions, bilingual and community-based enumerators, questionnaire assistance at community locations, and expanded local partnerships.<p style="margin: 0.5em 0 0 0; font-size: clamp(0.8rem, 1.4vw, 0.95rem); line-height: 1.45; color: var(--text-primary);" class="reveal-item" data-group="final">The numbers described <em>what</em> was being missed, the ethnographies helped inform <em>why</em> and <em>how to fix it</em>.</p></div>
+                    <p class="case-cite reveal-item" data-group="final">GAO, <a href="https://www.gao.gov/products/gao-03-455" target="_blank"><em>Ethnographic Studies Can Inform Agencies' Actions</em></a> (2003) · NRC, <a href="https://www.ncbi.nlm.nih.gov/books/NBK513804/" target="_blank"><em>Principles and Practices for a Federal Statistical Agency</em></a> · U.S. Census Bureau, <a href="https://www.census.gov/newsroom/blogs/random-samplings/2023/10/understanding-undercounted-populations.html" target="_blank"><em>Understanding Undercounted Populations</em></a> (2023)</p>
                 </div>
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">05</span>
     </section>
@@ -133,25 +142,25 @@
     <!-- ==========================================
          SLIDE 3c: Canonical Example — WHO Safe Childbirth
          ========================================== -->
-    <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 13%"></div>
         <div class="slide-content">
-            <div class="case-study-layout">
-                <img class="case-study-img reveal-item" src="img/who-maternal.jpg" alt="Mother with newborn baby">
+            <div class="case-study-layout" style="align-items: center; flex: 0;">
+                <img class="case-study-img visible" src="img/who2.jpg" alt="WHO childbirth care" style="object-fit: contain; max-height: 50vh;">
                 <div class="case-study-text">
-                    <p class="case-label reveal-item">Canonical Example</p>
+                    <p class="case-label visible">Canonical Example</p>
                     <h2 class="reveal-item">WHO Guidelines for a Positive Childbirth Experience</h2>
-                    <p>WHO childbirth guidelines historically relied on clinical trial data measuring mortality. But facility-based births were declining in some settings even as survival outcomes improved. <em>Why?</em></p>
-                    <p>Downe et al. (2018) synthesized <strong>35 qualitative studies across 19 countries</strong>, capturing the voices of 1,800+ women. Bohren et al. (2015) documented systematic mistreatment across 65 studies in 34 countries. Women revealed they wanted not just survival, but <strong>dignity, agency, companionship, and kind care</strong>.</p>
-                    <p>This was <strong>the first major WHO guideline to formally integrate qualitative evidence</strong> alongside RCTs, using the CERQual framework. It redefined success from "mother and baby survive" to a <strong>"positive childbirth experience."</strong></p>
-                    <div class="case-insight"><strong>RCTs could measure <em>whether</em> interventions reduced mortality. Only qualitative research could reveal <em>why</em> women avoided facilities</strong> and what "working" actually meant to the people affected.</div>
-                    <p class="case-cite">Downe et al., <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0194906" target="_blank"><em>What Matters to Women</em></a> (PLOS ONE, 2018) · <a href="https://www.who.int/publications/i/item/9789241550215" target="_blank">WHO Intrapartum Care Guidelines</a> (2018)</p>
+                    <p class="reveal-item" style="margin-top: 0.6em;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.4em;">—</span>WHO childbirth guidelines historically relied on clinical trial data measuring mortality, but facility-based births were declining even as survival outcomes improved. <em>So why did women continue to avoid birth facilities?</em></p>
+                    <p class="reveal-item" style="margin-top: 0.8em;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.4em;">—</span>Downe et al. (2018) synthesized <strong>35 qualitative studies across 19 countries</strong>, capturing the voices of 1,800+ women. Bohren et al. (2015) documented systematic mistreatment across 65 studies in 34 countries. Women revealed they wanted not just survival, but <strong>dignity, agency, companionship, and kind care</strong>.</p>
+                    <div class="case-insight reveal-item" style="margin-top: 0.8em;">The first major WHO guideline to formally integrate qualitative evidence alongside RCTs, using the <a href="https://www.cerqual.org/" target="_blank" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">CERQual</a> framework.</div>
+                    <div class="case-insight reveal-item" style="margin-top: 0; border-left: 3px solid var(--accent); padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); background: rgba(255, 51, 0, 0.06); border-radius: 0 4px 4px 0;">Redefined success from "mother and baby survive" to a "positive childbirth experience."<p style="margin: 0.5em 0 0 0; font-size: clamp(0.8rem, 1.4vw, 0.95rem); line-height: 1.45; color: var(--text-primary);" class="reveal-item" data-group="final">RCTs could measure <em>whether</em> interventions reduced mortality, while qualitative research helped reveal <em>why</em> women avoided facilities and what "working" actually meant to the people affected.</p></div>
+                    <p class="case-cite reveal-item" data-group="final">Downe et al., <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0194906" target="_blank"><em>What Matters to Women</em></a> (PLOS ONE, 2018) · <a href="https://www.who.int/publications/i/item/9789241550215" target="_blank">WHO Intrapartum Care Guidelines</a> (2018)</p>
                 </div>
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">06</span>
     </section>
@@ -159,79 +168,56 @@
     <!-- ==========================================
          SLIDE 4: Learning Objectives Part 1
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="12">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 15%"></div>
         <div class="grid-bg"></div>
 
         <div class="slide-content">
-            <h2 class="reveal-item">Learning Objectives</h2>
+            <h2 class="reveal-item">Learning Objectives for This Course</h2>
             <div class="columns">
                 <div class="card reveal-item">
-                    <h3>Understand the Craft</h3>
-                    <p>Develop critical <strong>evaluation skills</strong> to discern high-quality vs. low-quality qualitative research</p>
-                    <p style="margin-top: 0.5em;">Formalize qualitative <strong>reasoning skills</strong></p>
+                    <h3><span class="point-num" style="font-size: inherit;">01</span> Understand the Craft</h3>
+                    <p class="reveal-item">Develop critical <strong>evaluation skills</strong> to discern high-quality vs. low-quality qualitative research</p>
+                    <p class="reveal-item" style="margin-top: 0.5em;">Formalize qualitative <strong>reasoning skills</strong> (mechanisms, integrate qual evidence with quant causal inference...)</p>
                 </div>
                 <div class="card reveal-item">
-                    <h3>Practical Skills</h3>
-                    <p>Familiarize you with <strong>foundational qualitative approaches</strong> & their complementary strengths & weaknesses</p>
-                    <p style="margin-top: 0.5em;"><strong>Experiential learning</strong>: observation, interview, focus group, archives</p>
+                    <h3><span class="point-num" style="font-size: inherit;">02</span> Practical Skills</h3>
+                    <p class="reveal-item">Familiarize you with <strong>foundational qualitative approaches</strong> &amp; their complementary strengths &amp; weaknesses</p>
+                    <p class="reveal-item" style="margin-top: 0.5em;"><strong>Experiential learning</strong>: observation (ethnographic methods), interview, focus group, archives</p>
                 </div>
                 <div class="card reveal-item">
-                    <h3>Application</h3>
-                    <p>Explore the <strong>usefulness (and pitfalls)</strong> of qual methods in formulation, analysis, and implementation of public policy</p>
-                    <p style="margin-top: 0.5em;">Explore how quant + qual can be complementary (<strong>mixed methods</strong>)</p>
-                </div>
-            </div>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-        </div>
-        <span class="slide-number">07</span>
-    </section>
-
-    <!-- ==========================================
-         SLIDE 5: Learning Objectives Part 2
-         ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
-        <div class="progress" style="width: 17%"></div>
-        <div class="grid-bg"></div>
-
-        <div class="slide-content">
-            <h2 class="reveal-item">Learning Objectives</h2>
-            <div class="columns">
-                <div class="card reveal-item">
-                    <h3>Ethics</h3>
+                    <h3><span class="point-num" style="font-size: inherit;">03</span> Ethics</h3>
                     <p>Understand the <strong>ethical implications</strong> of qual research, including considerations related to consent, confidentiality, and representation</p>
                 </div>
+            </div>
+            <div class="columns" style="margin-top: clamp(0.5rem, 1vw, 1rem);">
                 <div class="card reveal-item">
-                    <h3>Strategic Thinking</h3>
+                    <h3><span class="point-num" style="font-size: inherit;">04</span> Strategic Thinking</h3>
                     <p>Consider how qualitative insights can <strong>enhance strategy formulation</strong> and policy innovation</p>
+                    <p class="reveal-item" style="margin-top: 0.5em;">Explore how quant + qual can be complementary (<strong>mixed methods</strong>)</p>
                 </div>
                 <div class="card reveal-item">
-                    <h3>Capstone Project</h3>
+                    <h3><span class="point-num" style="font-size: inherit;">05</span> Capstone Project</h3>
                     <p>The final will serve as a <strong>bridge to your PAE</strong> (and maybe your summer internship): propose a project related to a real-world policy issue/client</p>
+                </div>
+                <div class="card reveal-item application" style="border-top-color: #5371ff;">
+                    <h3 style="color: #5371ff;"><span class="point-num" style="color: #5371ff; font-size: inherit;">06</span> AI and Qual Methods</h3>
+                    <p>State-of-the-art exposure to AI applications in qualitative research (how AI can support data collection, transcription, coding, exploratory analysis, workflows, transparency and reproducibility, pattern detection... while critically assessing its limitations, biases, and ethical risks)</p>
                 </div>
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
-        <span class="slide-number">08</span>
+        <span class="slide-number">07</span>
     </section>
 
     <!-- ==========================================
          SLIDE 6: Today's Class Header
          ========================================== -->
     <section class="slide accent-bg section-header">
-        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 19%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Today's<br>Class</h1>
@@ -242,8 +228,8 @@
     <!-- ==========================================
          SLIDE 7: Class Overview
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="15">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 21%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
@@ -252,35 +238,34 @@
                 <div class="card reveal-item">
                     <h3>Overview</h3>
                     <ul>
-                        <li><span class="bullet">•</span>Introductions</li>
-                        <li><span class="bullet">•</span>Qual methods in the real-world</li>
-                        <li><span class="bullet">•</span>Course arc</li>
-                        <li><span class="bullet">•</span>Course logistics</li>
+                        <li class="reveal-item"><span class="bullet">•</span>Why this course? &#10003;</li>
+                        <li class="reveal-item"><span class="bullet">•</span>Learning objectives &#10003;</li>
+                        <li class="reveal-item" style="position: relative;"><span class="bullet">•</span>Teaching team introductions<span class="reveal-item" data-group="last" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #e8edff; border: 2px solid #5371ff; border-radius: 4px; display: flex; align-items: center; padding-left: 0.5em; font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; color: #5371ff; z-index: 5; margin: -2px -4px; box-sizing: content-box;">Teaching team introductions</span></li>
+                        <li class="reveal-item"><span class="bullet">•</span>Qual methods in the real-world</li>
+                        <li class="reveal-item"><span class="bullet">•</span>Course arc &amp; logistics</li>
                     </ul>
                 </div>
                 <div class="card reveal-item">
                     <h3>Conceptual Intro</h3>
                     <ul>
-                        <li><span class="bullet">•</span>Quant vs. qual</li>
-                        <li><span class="bullet">•</span>Mixed methods</li>
-                        <li><span class="bullet">•</span>Mixed data collection</li>
-                        <li><span class="bullet">•</span>Mixed data analysis</li>
+                        <li class="reveal-item"><span class="bullet">•</span>Quant vs. qual</li>
+                        <li class="reveal-item"><span class="bullet">•</span>Mixed methods</li>
+                        <li class="reveal-item" style="padding-left: 1.5em; font-size: 0.9em;"><span class="bullet">•</span>Mixed data collection</li>
+                        <li class="reveal-item" style="padding-left: 1.5em; font-size: 0.9em;"><span class="bullet">•</span>Mixed data analysis</li>
                     </ul>
                 </div>
                 <div class="card reveal-item">
                     <h3>Looking Ahead</h3>
                     <ul>
-                        <li><span class="bullet">•</span>Brainstorm your policy puzzle</li>
-                        <li><span class="bullet">•</span>Prep for Small & Calarco</li>
+                        <li class="reveal-item"><span class="bullet">•</span>Brainstorm your policy puzzle (Assignment #1)</li>
+                        <li class="reveal-item"><span class="bullet">•</span>Prep for Thursday's class</li>
+                        <li class="reveal-item"><span class="bullet">•</span>Q&amp;A</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">10</span>
     </section>
@@ -289,7 +274,7 @@
          SLIDE 8: Introductions Header
          ========================================== -->
     <section id="intros" class="slide accent-bg section-header">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 23%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Introductions</h1>
@@ -300,139 +285,220 @@
     <!-- ==========================================
          SLIDE 9: Who Am I - Research
          ========================================== -->
-    <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 26%"></div>
         <div class="grid-bg"></div>
-        <div class="accent-circle"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">Who Am I?</h2>
-            <h3 class="reveal-item" style="font-weight: 400; text-transform: none;">Authoritarianism in global perspective</h3>
-            <ul style="margin-top: var(--content-gap);">
-                <li class="reveal-item"><span class="num">01</span><strong>Indonesia</strong> · <strong>India</strong> · <strong>USA</strong> · <strong>Brazil</strong> · <strong>Philippines</strong></li>
-            </ul>
+        <div class="slide-content" style="justify-content: center;">
+            <div style="display: grid; grid-template-columns: minmax(150px, 0.28fr) 1fr; gap: clamp(1.2rem, 2.5vw, 2rem); align-items: center; flex: 0;">
+                <!-- Left: images -->
+                <div style="display: flex; flex-direction: column; gap: clamp(0.5rem, 1vw, 0.75rem); align-items: center;">
+                    <a href="https://cities.harvard.edu/initiatives/civic-power-lab/" target="_blank" class="reveal-item" data-group="1"><img src="img/lablogo.png" alt="Civic Power Lab" style="width: 100%; max-width: 180px; border-radius: 8px;"></a>
+                    <img src="img/voting-rights.jpg" alt="Voting rights march" class="reveal-item" data-group="4" style="width: 100%; max-width: 180px; border-radius: 6px; object-fit: cover;">
+                    <img src="img/ohio.jpg" alt="Ohio" class="reveal-item" data-group="6" style="width: 100%; max-width: 180px; border-radius: 6px; object-fit: cover;">
+                    <img src="img/brazil-family.jpg" alt="Brazil" class="reveal-item" data-group="6" style="width: 100%; max-width: 180px; border-radius: 6px; object-fit: cover;">
+                </div>
+                <!-- Right: bio text -->
+                <div style="line-height: 1.45; color: var(--text-primary); font-size: clamp(0.9rem, 1.5vw, 1.1rem);">
+                    <h2 class="reveal-item" data-group="1" style="font-size: clamp(1.5rem, 2.8vw, 2rem); margin: 0 0 0.1em 0;">Liz McKenna</h2>
+                    <p class="reveal-item" data-group="1" style="margin: 0; color: var(--text-secondary); font-size: clamp(0.9rem, 1.5vw, 1.1rem); line-height: 1.45;">
+                        Assistant Professor of Public Policy · Harvard Kennedy School<br>
+                        Faculty Director, <a href="https://cities.harvard.edu/initiatives/civic-power-lab/" target="_blank" style="color: #5371ff; text-decoration: none;">Civic Power Lab</a>
+                    </p>
+                    <p class="reveal-item" data-group="2" style="margin: 1em 0 0.6em 0; color: var(--text-secondary); font-size: clamp(0.78rem, 1.2vw, 0.92rem);">
+                        Taubman 308 · <a href="https://calendly.com/liz_mckenna/office-hours?month=2026-03&date=2026-03-03" target="_blank" style="color: #5371ff; text-decoration: none;">Sign up for office hours</a>
+                    </p>
+                    <!-- Sociologist -->
+                    <p class="reveal-item" data-group="3" style="margin: 0.5em 0 1em 0;">Sociologist and mixed methods researcher who studies how civil society can both strengthen and undermine democracy (primarily in the US and Brazil)</p>
+                    <!-- Books -->
+                    <div class="reveal-item" data-group="4" style="margin: 0 0 1em 0;">
+                        <p style="margin: 0 0 0.15em 0;">Two books on democratic organizing:</p>
+                        <div style="padding-left: 1.2em; font-size: clamp(0.75rem, 1.2vw, 0.9rem); line-height: 1.4; margin-top: 0.1em;">
+                            <span style="color: #ff3300;">•</span> <a href="https://global.oup.com/academic/product/groundbreakers-9780199394609" target="_blank" style="color: #5371ff; text-decoration: none;">Groundbreakers</a>, Oxford University Press (2014)<br>
+                            <span style="color: #ff3300;">•</span> <a href="https://press.uchicago.edu/ucp/books/book/chicago/P/bo68659118.html" target="_blank" style="color: #5371ff; text-decoration: none;">Prisms of the People</a>, University of Chicago Press (2021)
+                        </div>
+                    </div>
+                    <!-- Current projects -->
+                    <div class="reveal-item" data-group="5" style="margin: 0 0 1em 0;">
+                        <p style="margin: 0 0 0.15em 0;">Current projects:</p>
+                        <div style="padding-left: 1.2em; font-size: clamp(0.75rem, 1.2vw, 0.9rem); line-height: 1.4; margin-top: 0.1em;">
+                            <span style="color: #ff3300;">•</span> Large-N organizing microdata database (mixed methods collaboration with 40 movement organizations on political efficacy)<br>
+                            <span style="color: #ff3300;">•</span> AI and the future of social movement studies<br>
+                            <span style="color: #ff3300;">•</span> The Mamdani campaign<br>
+                            <span style="color: #ff3300;">•</span> Digital tools and protest mobilization<br>
+                            <span style="color: #ff3300;">•</span> The role of philanthropy, donors, and civil society
+                        </div>
+                    </div>
+                    <!-- World of practice -->
+                    <div class="reveal-item" data-group="6" style="margin: 0;">
+                        <p style="margin: 0 0 0.15em 0;">World of practice:</p>
+                        <div style="padding-left: 1.2em; font-size: clamp(0.75rem, 1.2vw, 0.9rem); line-height: 1.4; margin-top: 0.1em;">
+                            <span style="color: #ff3300;">•</span> 5+ participatory action research projects with movement organizations<br>
+                            <span style="color: #ff3300;">•</span> Former organizer (political campaigns, rural Ohio, economic solidarity cooperative in Brazil)
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">12</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 10: Research Question
+         SLIDE 10: Authoritarianism in Global Perspective
          ========================================== -->
-    <section class="slide dark">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 28%"></div>
-        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
-            <blockquote class="reveal-item visible">
-                Why do some forms of <span class="highlight">civic engagement</span> promote democracy — while others don't?
-            </blockquote>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; align-items: center; text-align: center;">
+            <p class="reveal-item" style="margin: 0; align-self: flex-start; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(0.85rem, 1.4vw, 1.05rem); font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;">My Journey to Mixed Methods Research</p>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+                <h2 class="reveal-item" style="margin: 0 0 clamp(0.8rem, 1.5vw, 1.2rem) 0; font-size: clamp(1.4rem, 2.6vw, 2rem); color: var(--text-primary);">Authoritarianism in Global Perspective</h2>
+                <img src="img/authoritarianism.png" alt="Indonesia, India, USA, Brazil, Philippines" class="reveal-item" style="width: 95%; max-width: 900px; object-fit: contain;">
+                <div class="reveal-item" style="margin-top: clamp(0.8rem, 1.5vw, 1.2rem); display: inline-block; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 6px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(0.95rem, 1.6vw, 1.2rem); font-weight: 600; color: #5371ff; line-height: 1.5; max-width: 750px;">
+                    Puzzle: procedural democracy can create the conditions of its own demise.
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">13</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 11: Journey to Mixed Methods
+         SLIDE 11: Research Question
          ========================================== -->
-    <section class="slide" data-steps="2">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide dark" data-steps="2" style="position: relative;">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 30%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">My Journey to Mixed Methods</h2>
-            <p class="reveal-item" style="font-size: var(--body-size); max-width: 700px; line-height: 1.6;">
-                Started in Brazil studying social movements, participatory budgeting, and the Workers' Party. Combined <strong>ethnographic fieldwork</strong> with <strong>network analysis</strong> and <strong>large-N organizational data</strong> to understand how civic engagement shapes — and is shaped by — political change.
-            </p>
+        <div class="reveal-item" style="position: absolute; inset: 0; background: url('img/bsb.jpg') center/cover no-repeat; opacity: 0.4;"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center; position: relative; z-index: 1;">
+            <div class="reveal-item" style="background: rgba(0,0,0,0.78); padding: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 3.5rem); border-radius: 8px; max-width: 750px;">
+                <blockquote style="font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.3rem, 3vw, 2.2rem); font-weight: 700; color: #fff; line-height: 1.4; margin: 0;">
+                    Why do some forms of <span style="color: #ff3300;">civic engagement</span> promote democracy while others undermine it?
+                </blockquote>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">14</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 12: Mixed Methods Examples
+         SLIDE 12: Qual Exploratory
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 32%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">Mixed Methods in Practice</h2>
-            <ul>
-                <li class="reveal-item"><span class="num">01</span><strong>Fieldwork</strong> — Participant observation at protests, rallies, organizational meetings</li>
-                <li class="reveal-item"><span class="num">02</span><strong>Interviews</strong> — 100+ conversations with activists across the political spectrum</li>
-                <li class="reveal-item"><span class="num">03</span><strong>Network analysis</strong> — Mapping organizational connections to understand political shifts</li>
-            </ul>
+        <div class="slide-content" style="justify-content: flex-start; align-items: center; text-align: center;">
+            <p class="reveal-item" data-group="1" style="margin: 0; align-self: flex-start; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(0.85rem, 1.4vw, 1.05rem); font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;">My Journey to Mixed Methods Research</p>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+                <h2 class="reveal-item" data-group="1" style="margin: 0 0 clamp(0.8rem, 1.5vw, 1.2rem) 0; font-size: clamp(1.4rem, 2.6vw, 2rem); color: var(--text-primary);">Qual Exploratory</h2>
+                <img src="img/qual.png" alt="Qualitative fieldwork in Brazil" class="reveal-item" data-group="1" style="width: 95%; max-width: 900px; object-fit: contain; border-radius: 6px;">
+                <div style="text-align: left; max-width: 750px; margin: clamp(0.6rem, 1vw, 0.8rem) auto 0; font-size: clamp(0.95rem, 1.55vw, 1.15rem); line-height: 1.55;">
+                    <p class="reveal-item" data-group="2" style="margin: 0 0 0.35em 0;"><span style="color: #ff3300; margin-right: 0.3em;">•</span>Started in Brazil studying social movements, participatory budgeting, and the Workers' Party</p>
+                    <p class="reveal-item" data-group="3" style="margin: 0;"><span style="color: #ff3300; margin-right: 0.3em;">•</span>Ethnography &amp; interviews</p>
+                </div>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">15</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 13: About Me
+         SLIDE 13: Network Analysis
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 34%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">A Little More About Me</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Civic Power Lab</strong> — Affiliated with Center for Public Leadership and Bloomberg Center</li>
-                <li class="reveal-item"><span class="bullet">→</span>Large <strong>organizing dataset</strong> (mixed methods)</li>
-                <li class="reveal-item"><span class="bullet">→</span>Prior to academia: worked as an <strong>organizer</strong> (political campaigns, economic solidarity cooperative in Brazil)</li>
-            </ul>
+        <div class="slide-content" style="justify-content: flex-start; align-items: center; text-align: center;">
+            <p class="reveal-item" data-group="1" style="margin: 0; align-self: flex-start; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(0.85rem, 1.4vw, 1.05rem); font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;">My Journey to Mixed Methods Research</p>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+                <h2 class="reveal-item" data-group="1" style="margin: 0 0 clamp(0.8rem, 1.5vw, 1.2rem) 0; font-size: clamp(1.4rem, 2.6vw, 2rem); color: var(--text-primary);">Network Analysis</h2>
+                <img src="img/network.png" alt="Social network analysis of Brazilian political organizations" class="reveal-item" data-group="1" style="width: 90%; max-width: 850px; object-fit: contain;">
+                <div style="text-align: left; max-width: 750px; margin: clamp(0.6rem, 1vw, 0.8rem) auto 0; font-size: clamp(0.95rem, 1.55vw, 1.15rem); line-height: 1.55;">
+                    <p class="reveal-item" data-group="2" style="margin: 0 0 0.35em 0;"><span style="color: #ff3300; margin-right: 0.3em;">•</span>Combined ethnographic fieldwork with network analysis and large-N organizational data to understand how civic engagement influences (and is influenced by) political change</p>
+                    <p class="reveal-item" data-group="3" style="margin: 0;"><span style="color: #ff3300; margin-right: 0.3em;">•</span>Observe and quantify political shifts using social network analysis</p>
+                </div>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">16</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 13b: Organizational Ethnography
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
+        <div class="progress" style="width: 35%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; align-items: center; text-align: center;">
+            <p class="reveal-item" data-group="1" style="margin: 0; align-self: flex-start; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(0.85rem, 1.4vw, 1.05rem); font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;">My Journey to Mixed Methods Research</p>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+                <h2 class="reveal-item" data-group="1" style="margin: 0 0 clamp(0.8rem, 1.5vw, 1.2rem) 0; font-size: clamp(1.4rem, 2.6vw, 2rem); color: var(--text-primary);">Organizational Ethnography</h2>
+                <img src="img/org-ethnography.png" alt="Organizational ethnography — Brazilian political ephemera" class="reveal-item" data-group="1" style="width: 95%; max-width: 900px; object-fit: contain; border-radius: 6px;">
+                <div style="text-align: left; max-width: 750px; margin: clamp(0.6rem, 1vw, 0.8rem) auto 0; font-size: clamp(0.95rem, 1.55vw, 1.15rem); line-height: 1.55;">
+                    <p class="reveal-item" data-group="2" style="margin: 0;"><span style="color: #ff3300; margin-right: 0.3em;">•</span>Shed light on mechanisms that explain SNA shifts over time</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">17</span>
     </section>
 
     <!-- ==========================================
          SLIDE 14: Teaching Team
          ========================================== -->
     <section class="slide" data-steps="7">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 36%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Our Teaching Team</h2>
-            <div class="columns">
-                <div class="card reveal-item">
-                    <h3>Katie Tucker</h3>
-                    <p>Ph.D. candidate, TF</p>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(0.5rem, 1vw, 0.8rem); width: 100%;">
+                <div class="card reveal-item" style="display: flex; flex-direction: column; align-items: center; padding: clamp(0.4rem, 0.8vw, 0.6rem);">
+                    <img src="img/katie.png" alt="Katie Tucker" style="width: clamp(60px, 7vw, 95px); height: clamp(60px, 7vw, 95px); border-radius: 50%; object-fit: cover; margin-bottom: 0.3em;">
+                    <h3 style="font-size: clamp(0.75rem, 1.3vw, 0.95rem); margin-bottom: 0.1em;">Katie Tucker</h3>
+                    <p style="font-size: clamp(0.65rem, 1vw, 0.8rem); margin: 0;">TF, PhD Candidate</p>
+                    <p style="margin-top: 0.2em; font-size: clamp(0.6rem, 0.9vw, 0.72rem); color: #5371ff; font-weight: 600; line-height: 1.3;">Grading, model assignments</p>
                 </div>
-                <div class="card reveal-item">
-                    <h3>Liam Chai</h3>
-                    <p>CA</p>
+                <div class="card reveal-item" style="display: flex; flex-direction: column; align-items: center; padding: clamp(0.4rem, 0.8vw, 0.6rem);">
+                    <img src="img/liam.png" alt="Liam Chai" style="width: clamp(60px, 7vw, 95px); height: clamp(60px, 7vw, 95px); border-radius: 50%; object-fit: cover; margin-bottom: 0.3em;">
+                    <h3 style="font-size: clamp(0.75rem, 1.3vw, 0.95rem); margin-bottom: 0.1em;">Liam Chai</h3>
+                    <p style="font-size: clamp(0.65rem, 1vw, 0.8rem); margin: 0;">CA</p>
+                    <p style="margin-top: 0.2em; font-size: clamp(0.6rem, 0.9vw, 0.72rem); color: #5371ff; font-weight: 600; line-height: 1.3;">Canvas</p>
                 </div>
-                <div class="card reveal-item">
-                    <h3>Christina Iruela Lane</h3>
-                    <p>CA</p>
+                <div class="card reveal-item" style="display: flex; flex-direction: column; align-items: center; padding: clamp(0.4rem, 0.8vw, 0.6rem);">
+                    <img src="img/muhammad.png" alt="Muhammad Irfan Sadiq" style="width: clamp(60px, 7vw, 95px); height: clamp(60px, 7vw, 95px); border-radius: 50%; object-fit: cover; margin-bottom: 0.3em;">
+                    <h3 style="font-size: clamp(0.75rem, 1.3vw, 0.95rem); margin-bottom: 0.1em;">Muhammad Irfan Sadiq</h3>
+                    <p style="font-size: clamp(0.65rem, 1vw, 0.8rem); margin: 0;">CA</p>
+                    <p style="margin-top: 0.2em; font-size: clamp(0.6rem, 0.9vw, 0.72rem); color: #5371ff; font-weight: 600; line-height: 1.3;">Absence tracking</p>
                 </div>
-            </div>
-            <div class="columns" style="margin-top: clamp(0.5rem, 1vw, 1rem);">
-                <div class="card reveal-item">
-                    <h3>Muhammad Irfan Sadiq</h3>
-                    <p>CA</p>
+                <div class="card reveal-item" style="display: flex; flex-direction: column; align-items: center; padding: clamp(0.4rem, 0.8vw, 0.6rem);">
+                    <img src="img/christina.jpg" alt="Christina Iruela Lane" style="width: clamp(60px, 7vw, 95px); height: clamp(60px, 7vw, 95px); border-radius: 50%; object-fit: cover; margin-bottom: 0.3em;">
+                    <h3 style="font-size: clamp(0.75rem, 1.3vw, 0.95rem); margin-bottom: 0.1em;">Christina Iruela Lane</h3>
+                    <p style="font-size: clamp(0.65rem, 1vw, 0.8rem); margin: 0;">CA</p>
+                    <p style="margin-top: 0.2em; font-size: clamp(0.6rem, 0.9vw, 0.72rem); color: #5371ff; font-weight: 600; line-height: 1.3;">Teachly &amp; participation</p>
                 </div>
-                <div class="card reveal-item">
-                    <h3>Dani Schulman</h3>
-                    <p>CA</p>
+                <div class="card reveal-item" style="display: flex; flex-direction: column; align-items: center; padding: clamp(0.4rem, 0.8vw, 0.6rem);">
+                    <img src="img/dani.png" alt="Dani Schulman" style="width: clamp(60px, 7vw, 95px); height: clamp(60px, 7vw, 95px); border-radius: 50%; object-fit: cover; margin-bottom: 0.3em;">
+                    <h3 style="font-size: clamp(0.75rem, 1.3vw, 0.95rem); margin-bottom: 0.1em;">Dani Schulman</h3>
+                    <p style="font-size: clamp(0.65rem, 1vw, 0.8rem); margin: 0;">CA</p>
+                    <p style="margin-top: 0.2em; font-size: clamp(0.6rem, 0.9vw, 0.72rem); color: #5371ff; font-weight: 600; line-height: 1.3;">Teachly &amp; participation</p>
                 </div>
             </div>
         </div>
@@ -451,22 +517,26 @@
     <!-- ==========================================
          SLIDE 15: Growth Mindset
          ========================================== -->
-    <section class="slide" data-steps="2">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros" class="active">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#overview" class="active">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 38%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">A Word on Learning Orientations</h2>
-            <blockquote class="reveal-item" style="font-size: clamp(1rem, 2.5vw, 1.75rem); text-transform: none; font-weight: 600;">
-                "Failure is an <span class="highlight">opportunity to grow</span>."<br>
-                "I can <span class="highlight">learn</span> to do anything I want."<br>
-                "Challenges help me to <span class="highlight">grow</span>."
-            </blockquote>
-            <cite class="reveal-item">— Carol Dweck, Mindset (2006)</cite>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <div style="flex: 0;">
+                <h2 class="reveal-item" data-group="1" style="margin: 0 0 0.3em 0;">A Word on Learning Orientations...</h2>
+                <p class="reveal-item" data-group="1" style="margin: 0 0 clamp(0.8rem, 1.5vw, 1.2rem) 0; font-size: clamp(0.75rem, 1.2vw, 0.9rem); color: var(--text-secondary);">
+                    <a href="https://psycnet.apa.org/record/2006-08575-000" target="_blank" style="color: #5371ff; text-decoration: none;">Dweck (2006)</a>
+                </p>
+                <div style="display: flex; justify-content: center; align-items: flex-end; gap: clamp(0.5rem, 2vw, 2rem); max-width: 900px; margin: 0 auto;">
+                    <!-- Fixed Mindset — appears first -->
+                    <div class="reveal-item" data-group="2" style="flex: 1; max-width: 380px;"><img src="img/dweck1.png" alt="Fixed Mindset" style="width: 100%; display: block;"></div>
+                    <!-- Growth Mindset — appears second -->
+                    <div class="reveal-item" data-group="3" style="flex: 1; max-width: 380px;"><img src="img/dweck2.png" alt="Growth Mindset" style="width: 100%; display: block;"></div>
+                </div>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">18</span>
     </section>
@@ -475,7 +545,7 @@
          SLIDE 16: Real World Header
          ========================================== -->
     <section id="real-world" class="slide accent-bg section-header">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 40%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Qual Methods<br>in the<br>Real World</h1>
@@ -484,125 +554,231 @@
     </section>
 
     <!-- ==========================================
-         SLIDE 17: Policy Use
+         SLIDE 17: Qualitative Evidence — GAO
          ========================================== -->
-    <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="10">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 43%"></div>
         <div class="grid-bg"></div>
 
-        <div class="slide-content">
-            <h2 class="reveal-item">Increased Policy Use</h2>
-            <p class="reveal-item" style="font-size: var(--body-size); max-width: 750px; line-height: 1.6; margin-bottom: var(--content-gap);">
-                <strong>Ethnography</strong>: qualitative research method used to understand the culture and practices of a group, community or organization, often through participation, close observation, and interviewing
-            </p>
-            <p class="reveal-item" style="font-size: var(--body-size); color: var(--text-secondary);">
-                GAO Report (2003): Federal agencies using ethnographic studies include Commerce, Defense, HHS, HUD, and more.
-            </p>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item" data-group="1" style="margin-bottom: 0.3em;">Qualitative Evidence in Federal Decision-Making</h2>
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: clamp(1rem, 2vw, 1.5rem); flex: 1; align-items: center;">
+                <!-- Left: GAO report cover -->
+                <div class="reveal-item" data-group="1" style="align-self: center;">
+                    <img src="img/GAOIMG.png" alt="GAO Report: Ethnographic Studies Can Inform Agencies' Actions (2003)" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+                    <a href="https://www.gao.gov/assets/gao-03-455.pdf" target="_blank" style="font-size: clamp(0.6rem, 0.9vw, 0.75rem); color: #5371ff; text-decoration: none; margin-top: 0.3em; display: block; text-align: center;">GAO-03-455 (2003)</a>
+                </div>
+                <!-- Right: Content -->
+                <div style="display: flex; flex-direction: column; gap: clamp(0.3rem, 0.6vw, 0.5rem);">
+                    <!-- Blue ethnography definition box -->
+                    <div class="reveal-item" data-group="2" style="background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.35rem, 0.7vw, 0.5rem) clamp(0.6rem, 1.2vw, 0.9rem); border-radius: 4px; font-size: clamp(0.8rem, 1.3vw, 1rem); line-height: 1.45; color: #333;">
+                        <strong style="color: #5371ff;">Ethnography</strong>: qualitative research method used to understand the culture and practices of a group, community or organization, often through participation, close observation, and interviewing
+                    </div>
+                    <!-- Agency items — one by one -->
+                    <div class="reveal-item" data-group="3" style="background: rgba(255,51,0,0.05); border-left: 3px solid var(--accent); padding: clamp(0.25rem, 0.5vw, 0.35rem) clamp(0.5rem, 1vw, 0.75rem); border-radius: 0 3px 3px 0; font-size: clamp(0.78rem, 1.2vw, 0.95rem); line-height: 1.4;">
+                        <strong>Bureau of the Census</strong> — Studied urban/rural hard-to-count populations to understand why undercounts occur and improve enumeration methods
+                    </div>
+                    <div class="reveal-item" data-group="4" style="background: rgba(255,51,0,0.05); border-left: 3px solid var(--accent); padding: clamp(0.25rem, 0.5vw, 0.35rem) clamp(0.5rem, 1vw, 0.75rem); border-radius: 0 3px 3px 0; font-size: clamp(0.78rem, 1.2vw, 0.95rem); line-height: 1.4;">
+                        <strong>National Marine Fisheries Service</strong> — Assessed social/cultural impacts of fishery management plans on fishing communities
+                    </div>
+                    <div class="reveal-item" data-group="5" style="background: rgba(255,51,0,0.05); border-left: 3px solid var(--accent); padding: clamp(0.25rem, 0.5vw, 0.35rem) clamp(0.5rem, 1vw, 0.75rem); border-radius: 0 3px 3px 0; font-size: clamp(0.78rem, 1.2vw, 0.95rem); line-height: 1.4;">
+                        <strong>Dept. of Defense</strong> (Defense Human Resources Activity) — Explored factors affecting youths' propensity to join the military to better target recruitment
+                    </div>
+                    <div class="reveal-item" data-group="6" style="background: rgba(255,51,0,0.05); border-left: 3px solid var(--accent); padding: clamp(0.25rem, 0.5vw, 0.35rem) clamp(0.5rem, 1vw, 0.75rem); border-radius: 0 3px 3px 0; font-size: clamp(0.78rem, 1.2vw, 0.95rem); line-height: 1.4;">
+                        <strong>Naval Health Research Center</strong> — Studied health and performance of personnel in extreme isolation (Antarctica) to improve conditions and outcomes
+                    </div>
+                    <div class="reveal-item" data-group="7" style="background: rgba(255,51,0,0.05); border-left: 3px solid var(--accent); padding: clamp(0.25rem, 0.5vw, 0.35rem) clamp(0.5rem, 1vw, 0.75rem); border-radius: 0 3px 3px 0; font-size: clamp(0.78rem, 1.2vw, 0.95rem); line-height: 1.4;">
+                        <strong>Admin. for Children &amp; Families</strong> (HHS) — Examined how Early Head Start children and families experienced a Montessori program and context for interpreting quantitative results
+                    </div>
+                    <div class="reveal-item" data-group="8" style="background: rgba(255,51,0,0.05); border-left: 3px solid var(--accent); padding: clamp(0.25rem, 0.5vw, 0.35rem) clamp(0.5rem, 1vw, 0.75rem); border-radius: 0 3px 3px 0; font-size: clamp(0.78rem, 1.2vw, 0.95rem); line-height: 1.4;">
+                        <strong>CDC</strong> — Used rapid ethnographic assessments in local STI outbreaks to develop tailored intervention strategies
+                    </div>
+                    <div class="reveal-item" data-group="9" style="background: rgba(255,51,0,0.05); border-left: 3px solid var(--accent); padding: clamp(0.25rem, 0.5vw, 0.35rem) clamp(0.5rem, 1vw, 0.75rem); border-radius: 0 3px 3px 0; font-size: clamp(0.78rem, 1.2vw, 0.95rem); line-height: 1.4;">
+                        <strong>Centers for Medicare &amp; Medicaid Services</strong> (HHS) — Investigated nursing staff recruitment/retention and management practices in long-term care facilities
+                    </div>
+                    <div class="reveal-item" data-group="10" style="background: rgba(255,51,0,0.05); border-left: 3px solid var(--accent); padding: clamp(0.25rem, 0.5vw, 0.35rem) clamp(0.5rem, 1vw, 0.75rem); border-radius: 0 3px 3px 0; font-size: clamp(0.78rem, 1.2vw, 0.95rem); line-height: 1.4;">
+                        <strong>National Institute on Drug Abuse</strong> — Gathered detailed information on drug use patterns and emerging trends among drug-using populations
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">20</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 18: Different Policy Areas
+         SLIDE 18: Method Preferences — Security
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 45%"></div>
         <div class="grid-bg"></div>
 
-        <div class="slide-content">
-            <h2 class="reveal-item">Different Policy Areas Value Different Methods</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Security officials</strong> most likely to find ethnography and case studies helpful</li>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Trade policymakers</strong> most receptive to statistical approaches</li>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Policy analysis</strong> (usually mixed) valued across all areas</li>
-            </ul>
-            <cite class="reveal-item">— Avey et al. 2021</cite>
+        <div class="slide-content" style="justify-content: center; padding-top: clamp(1.5rem, 4vw, 3rem);">
+            <h2 class="reveal-item" data-group="1" style="color: var(--accent); margin-bottom: 0.2em;">Different Policy Areas Value Different Methods</h2>
+            <div class="reveal-item" data-group="2" style="font-size: clamp(0.8rem, 1.4vw, 1rem); line-height: 1.5; color: var(--text-secondary); margin-bottom: clamp(0.4rem, 1vw, 0.8rem);">
+                <a href="https://academic.oup.com/isq/article-abstract/66/1/sqab057/6321904?redirectedFrom=fulltext#no-access-message" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 700;">Avey et al. (2022)</a>
+                <span style="margin-left: 0.3em;">Survey of 616 officials in several dozen agencies in 2017–18, 17% response rate.</span>
+            </div>
+            <div class="reveal-item" data-group="3" style="display: grid; grid-template-columns: 3fr 2fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); flex: 1; align-items: center;">
+                <img src="img/method_preferences_security.png" alt="Method Preferences: Security" style="width: 100%; border-radius: 6px;">
+                <div style="display: flex; flex-direction: column; gap: clamp(0.4rem, 0.8vw, 0.6rem);">
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Most skeptical of abstract and technical methods.
+                    </div>
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Highest confidence in contextual judgment: area studies, ethnography, history.
+                    </div>
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Uses research more as framework than as direct instrument.
+                    </div>
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Security stands apart from trade and development in methodological taste.
+                    </div>
+                </div>
+            </div>
+            <span style="font-size: clamp(0.55rem, 0.85vw, 0.7rem); color: var(--text-secondary); margin-top: auto;">Source: Avey et al. (2022) close approximation; replication data unavailable on Dataverse</span>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">21</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 19: MPP2 Testimonial - Safira
+         SLIDE 18b: Method Preferences — Development
          ========================================== -->
     <section class="slide" data-steps="2">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
-        <div class="progress" style="width: 47%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
+        <div class="progress" style="width: 46%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h3 class="reveal-item" style="color: var(--accent);">MPP2 Reflections: Safira Putri</h3>
-            <blockquote class="reveal-item" style="font-size: clamp(0.95rem, 2vw, 1.35rem); text-transform: none; font-weight: 500; line-height: 1.5;">
-                "I led a qualitative impact evaluation for Pratham Education Foundation's Second Chance Program. Drawing from my learnings in API203M, I used <span class="highlight">Focus Group Discussions</span> to directly engage with alumni... It shows how valuable class learnings can be in a real-world setting."
-            </blockquote>
+
+        <div class="slide-content" style="justify-content: center; padding-top: clamp(1.5rem, 4vw, 3rem);">
+            <h2 class="reveal-item" data-group="1" style="color: var(--accent); margin-bottom: 0.4em;">Different Policy Areas Value Different Methods</h2>
+            <div class="reveal-item" data-group="2" style="display: grid; grid-template-columns: 3fr 2fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); flex: 1; align-items: center;">
+                <img src="img/method_preferences_development.png" alt="Method Preferences: Development" style="width: 100%; border-radius: 6px;">
+                <div style="display: flex; flex-direction: column; gap: clamp(0.4rem, 0.8vw, 0.6rem);">
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Broadly pluralist, but applied.
+                    </div>
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Policy analysis leads; contextual methods remain central.
+                    </div>
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>More open to quant than security, but less quant-centric than trade.
+                    </div>
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Best fit: methods that help design and implement policy in real-world settings.
+                    </div>
+                </div>
+            </div>
+            <span style="font-size: clamp(0.55rem, 0.85vw, 0.7rem); color: var(--text-secondary); margin-top: auto;">Source: Avey et al. (2022) close approximation; replication data unavailable on Dataverse</span>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">22</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 20: MPP2 Testimonial - Tom
+         SLIDE 18c: Method Preferences — Trade
          ========================================== -->
     <section class="slide" data-steps="2">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
-        <div class="progress" style="width: 49%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
+        <div class="progress" style="width: 47%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h3 class="reveal-item" style="color: var(--accent);">MPP2 Reflections: Tom McGee</h3>
-            <blockquote class="reveal-item" style="font-size: clamp(0.95rem, 2vw, 1.35rem); text-transform: none; font-weight: 500; line-height: 1.5;">
-                "During my summer internship with the OECD, I conducted a review of countries' National Hydrogen Strategies. <span class="highlight">Qualitative coding</span> allowed me to carry out an initial analysis of the strategies' key themes..."
-            </blockquote>
+
+        <div class="slide-content" style="justify-content: center; padding-top: clamp(1.5rem, 4vw, 3rem);">
+            <h2 class="reveal-item" data-group="1" style="color: var(--accent); margin-bottom: 0.4em;">Different Policy Areas Value Different Methods</h2>
+            <div class="reveal-item" data-group="2" style="display: grid; grid-template-columns: 3fr 2fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); flex: 1; align-items: center;">
+                <img src="img/method_preferences_trade.png" alt="Method Preferences: Trade" style="width: 100%; border-radius: 6px;">
+                <div style="display: flex; flex-direction: column; gap: clamp(0.4rem, 0.8vw, 0.6rem);">
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Most quant-friendly domain.
+                    </div>
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Policy analysis and quantitative analysis are co-equal leaders.
+                    </div>
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Surveys are valued much more highly here than in security.
+                    </div>
+                    <div style="font-size: clamp(0.85rem, 1.4vw, 1.1rem); line-height: 1.5; color: var(--text-primary);">
+                        <span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Trade favors methods that enable measurement and direct policy calibration.
+                    </div>
+                </div>
+            </div>
+            <span style="font-size: clamp(0.55rem, 0.85vw, 0.7rem); color: var(--text-secondary); margin-top: auto;">Source: Avey et al. (2022) close approximation; replication data unavailable on Dataverse</span>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">23</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 21: MPP2 Testimonial - James
+         SLIDE 19: MPP Alumni Testimonials
          ========================================== -->
-    <section class="slide" data-steps="2">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
-        <div class="progress" style="width: 51%"></div>
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
+        <div class="progress" style="width: 48%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h3 class="reveal-item" style="color: var(--accent);">MPP2 Reflections: James Schisler</h3>
-            <blockquote class="reveal-item" style="font-size: clamp(0.95rem, 2vw, 1.35rem); text-transform: none; font-weight: 500; line-height: 1.5;">
-                "As a Dukakis Fellow in the Missouri governor's office, I held <span class="highlight">focus groups</span> with early career employees and <span class="highlight">interviews</span> with senior employees. I also got in the habit of writing myself a quick 'memory memo' after every meeting, which made a world of difference..."
-            </blockquote>
+        <div class="slide-content" style="justify-content: center;">
+            <h3 class="reveal-item" data-group="1" style="color: var(--accent); margin-bottom: clamp(0.5rem, 1.2vw, 1rem);">MPP Alumni Reflections</h3>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.6rem, 1.5vw, 1.2rem); align-items: start;">
+                <!-- Safira -->
+                <div class="reveal-item" data-group="2" style="background: #f8f8f8; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-top: 3px solid var(--accent);">
+                    <div style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; font-size: clamp(0.8rem, 1.3vw, 1rem); margin-bottom: 0.4em;">Safira Putri</div>
+                    <div style="font-size: clamp(0.72rem, 1.15vw, 0.9rem); line-height: 1.5; color: var(--text-secondary);">
+                        "I led a qualitative impact evaluation for Pratham Education Foundation's Second Chance Program. I used <span class="highlight">Focus Group Discussions</span> to directly engage with alumni... It shows how valuable class learnings can be in a real-world setting."
+                    </div>
+                </div>
+                <!-- Tom -->
+                <div class="reveal-item" data-group="3" style="background: #f8f8f8; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-top: 3px solid var(--accent);">
+                    <div style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; font-size: clamp(0.8rem, 1.3vw, 1rem); margin-bottom: 0.4em;">Tom McGee</div>
+                    <div style="font-size: clamp(0.72rem, 1.15vw, 0.9rem); line-height: 1.5; color: var(--text-secondary);">
+                        "During my summer internship with the OECD, I conducted a review of countries' National Hydrogen Strategies. <span class="highlight">Qualitative coding</span> allowed me to carry out an initial analysis of the strategies' key themes..."
+                    </div>
+                </div>
+                <!-- James -->
+                <div class="reveal-item" data-group="4" style="background: #f8f8f8; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-top: 3px solid var(--accent);">
+                    <div style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; font-size: clamp(0.8rem, 1.3vw, 1rem); margin-bottom: 0.4em;">James Schisler</div>
+                    <div style="font-size: clamp(0.72rem, 1.15vw, 0.9rem); line-height: 1.5; color: var(--text-secondary);">
+                        "As a Dukakis Fellow in the Missouri governor's office, I held <span class="highlight">focus groups</span> with early career employees and <span class="highlight">interviews</span> with senior employees. I also got in the habit of writing myself a quick 'memory memo' after every meeting..."
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">24</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 22: Module Flow
+         SLIDE 22: Logistics Header
          ========================================== -->
-    <section class="slide" data-steps="9">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world" class="active">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section id="logistics" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
+        <div class="progress" style="width: 53%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Course<br>Logistics</h1>
+        </div>
+        <span class="slide-number">25</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 22b: Module Flow
+         ========================================== -->
+    <section class="slide" data-steps="8">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 53%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center;">
-            <h2 class="reveal-item" style="align-self: flex-start;">Module Flow & Content</h2>
+            <h2 class="reveal-item" style="align-self: flex-start;">Module Flow &amp; Content</h2>
 
             <div class="timeline">
                 <!-- Top row modules (odd weeks: 1, 3, 5) -->
@@ -614,13 +790,13 @@
                     </div>
                     <div class="timeline-module top"></div>
                     <div class="timeline-module top" style="flex: 0.5;"></div>
-                    <div class="timeline-module top reveal-item" data-group="3">
+                    <div class="timeline-module top reveal-item" data-group="4">
                         <h4>Interviewing</h4>
-                        <p>Introduction +<br>Workshop observation</p>
+                        <p>Introduction +<br>workshop observation</p>
                         <div class="connector"></div>
                     </div>
                     <div class="timeline-module top"></div>
-                    <div class="timeline-module top reveal-item" data-group="5">
+                    <div class="timeline-module top reveal-item" data-group="6">
                         <h4>Focus Groups</h4>
                         <p>Background, ethics,<br>simulation</p>
                         <div class="connector"></div>
@@ -632,11 +808,11 @@
                 <div class="timeline-bar">
                     <div class="week reveal-item" data-group="1">Week 1</div>
                     <div class="week reveal-item" data-group="2">2</div>
-                    <div class="week reveal-item" data-group="break" style="background: #888; flex: 0.5; font-size: clamp(0.6rem, 1vw, 0.8rem);">Break</div>
-                    <div class="week reveal-item" data-group="3">3</div>
-                    <div class="week reveal-item" data-group="4">4</div>
-                    <div class="week reveal-item" data-group="5">5</div>
-                    <div class="week reveal-item" data-group="6">6</div>
+                    <div class="week reveal-item" data-group="3" style="background: #888; flex: 0.5; font-size: clamp(0.6rem, 1vw, 0.8rem);">Break</div>
+                    <div class="week reveal-item" data-group="4">3</div>
+                    <div class="week reveal-item" data-group="5">4</div>
+                    <div class="week reveal-item" data-group="6">5</div>
+                    <div class="week reveal-item" data-group="7">6</div>
                 </div>
 
                 <!-- Bottom row modules (even weeks: 2, 4, 6) -->
@@ -645,160 +821,122 @@
                     <div class="timeline-module bottom reveal-item" data-group="2">
                         <div class="connector"></div>
                         <h4>Observation + Ethics</h4>
-                        <p>Ethnography,<br>fieldwork, Kaiser</p>
+                        <p>Ethnography,<br>fieldwork</p>
                     </div>
                     <div class="timeline-module bottom" style="flex: 0.5;"></div>
                     <div class="timeline-module bottom"></div>
-                    <div class="timeline-module bottom reveal-item" data-group="4">
+                    <div class="timeline-module bottom reveal-item" data-group="5">
                         <div class="connector"></div>
                         <h4>Interviewing 2.0</h4>
                         <p>Workshop<br>interview assignment</p>
                     </div>
                     <div class="timeline-module bottom"></div>
-                    <div class="timeline-module bottom reveal-item" data-group="6">
+                    <div class="timeline-module bottom reveal-item" data-group="7">
                         <div class="connector"></div>
                         <h4>Qual Coding + Wrap-Up</h4>
                         <p>Coding workshop,<br>Anthropic guest lecture</p>
                     </div>
                 </div>
 
-                <!-- Assignment callout - appears last, points to Week 1 -->
-                <div class="timeline-callout reveal-item" data-group="7">
+                <!-- Assignment callout - appears last -->
+                <div class="timeline-callout reveal-item" data-group="8">
                     <strong>Assignment #1 (Policy Puzzle)</strong>
                     due Monday, March 9 at 11:59PM
                 </div>
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-        </div>
-        <span class="slide-number">25</span>
-    </section>
-
-    <!-- ==========================================
-         SLIDE 23: Logistics Header
-         ========================================== -->
-    <section id="logistics" class="slide accent-bg section-header">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
-        <div class="progress" style="width: 55%"></div>
-        <div class="slide-content">
-            <h1 class="reveal-item visible">Course<br>Logistics</h1>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">26</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 24: Logistics 1
+         SLIDE 24: Logistics (combined)
          ========================================== -->
     <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
-        <div class="progress" style="width: 57%"></div>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
+        <div class="progress" style="width: 58%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">Logistics</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Canvas & Syllabus</strong> — Home base for readings and assignments</li>
-                <li class="reveal-item"><span class="bullet">→</span><strong>In Class</strong> — Please stay in assigned seats (aids participation tracking)</li>
-                <li class="reveal-item"><span class="bullet">→</span><strong>PollEv.com/mckenna</strong> — Occasional real-time participation</li>
-            </ul>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item" data-group="1">Logistics</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.6rem, 1.2vw, 1rem); align-items: start;">
+                <!-- Card 1: Resources -->
+                <div class="reveal-item" data-group="2" style="background: #f8f8f8; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-top: 3px solid var(--accent);">
+                    <div style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; font-size: clamp(0.8rem, 1.3vw, 1rem); color: var(--accent); margin-bottom: 0.5em;">Resources</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.4em; font-size: clamp(0.7rem, 1.1vw, 0.88rem); line-height: 1.45; color: var(--text-primary);">
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><a href="https://canvas.harvard.edu/courses/167659" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 600;">Canvas</a> — home base for readings &amp; assignments</div>
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><a href="https://docs.google.com/document/d/1O_urqAtw1X7qvXKhXuc1-5LI8KKnGtaDNoJZsGWvWiQ/edit?tab=t.0" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 600;">Syllabus</a> — full schedule, policies, assignments</div>
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><strong>Slides</strong> — posted as PDF on Canvas and to <a href="https://github.com/lizmckenna/api203m-slides" target="_blank" style="color: #5371ff; text-decoration: none;">GitHub Pages as HTML</a></div>
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><strong>Course Materials</strong> — <a href="https://harvardcoopbooks.bncollege.com/course-material/course-finder?_ga=2.70740819.2146704850.1671810376-1806616061.1671810376" target="_blank" style="color: #5371ff; text-decoration: none;">Harvard Coop</a> and <a href="https://canvas.harvard.edu/courses/167659" target="_blank" style="color: #5371ff; text-decoration: none;">Canvas</a></div>
+                    </div>
+                </div>
+                <!-- Card 2: Expectations -->
+                <div class="reveal-item" data-group="3" style="background: #f8f8f8; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-top: 3px solid var(--accent);">
+                    <div style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; font-size: clamp(0.8rem, 1.3vw, 1rem); color: var(--accent); margin-bottom: 0.5em;">Expectations</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.4em; font-size: clamp(0.7rem, 1.1vw, 0.88rem); line-height: 1.45; color: var(--text-primary);">
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><strong>Attendance + Participation (25%)</strong> — MPP core absence policy applies</div>
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><strong>Come Prepared</strong> — cold and warm calling; come with thoughts to share</div>
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><strong>Assigned Seats</strong> — please stay in assigned seats (aids participation tracking)</div>
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><a href="https://pollev.com/mckenna" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 600;">PollEv.com/mckenna</a> — occasional real-time participation</div>
+                    </div>
+                </div>
+                <!-- Card 3: Support & Policies -->
+                <div class="reveal-item" data-group="4" style="background: #f8f8f8; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-top: 3px solid var(--accent);">
+                    <div style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; font-size: clamp(0.8rem, 1.3vw, 1rem); color: var(--accent); margin-bottom: 0.5em;">Support &amp; Policies</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.4em; font-size: clamp(0.7rem, 1.1vw, 0.88rem); line-height: 1.45; color: var(--text-primary);">
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><strong>Office Hours</strong> — Prof. McKenna via <a href="https://calendly.com/liz_mckenna/office-hours" target="_blank" style="color: #5371ff; text-decoration: none;">Calendly</a>; CAs and TF by appointment</div>
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><strong>No Lecture Recordings</strong> — slides posted right after class</div>
+                        <div><span style="color: var(--accent); font-weight: 700; margin-right: 0.3em;">•</span><strong>Tech Policy</strong> — no laptops; reach out to <a href="https://www.hks.harvard.edu/educational-programs/student-services/accessibility-services" target="_blank" style="color: #5371ff; text-decoration: none;">HKS Accessibility Services</a> for accommodation</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">27</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 25: Logistics 2
-         ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
-        <div class="progress" style="width: 60%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">Logistics</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Attendance + Participation (25%)</strong> — MPP core absence policy applies</li>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Come Prepared</strong> — Cold and warm calling; come with thoughts to share</li>
-                <li class="reveal-item"><span class="bullet">→</span><strong>No Lecture Recordings</strong> — Slides posted right after class</li>
-            </ul>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-        </div>
-        <span class="slide-number">28</span>
-    </section>
-
-    <!-- ==========================================
-         SLIDE 26: Logistics 3
-         ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
-        <div class="progress" style="width: 62%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">Logistics</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Tech Policy</strong> — No laptops (reach out if you need accommodation)</li>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Office Hours</strong> — Prof. McKenna uses Calendly; CAs and TF by appointment</li>
-                <li class="reveal-item"><span class="bullet">→</span><strong>Course Materials</strong> — Available on Canvas and Harvard Coop</li>
-            </ul>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-            <div class="step-dot"></div>
-        </div>
-        <span class="slide-number">29</span>
-    </section>
-
-    <!-- ==========================================
          SLIDE 27: Tech-Free Quote
          ========================================== -->
-    <section class="slide dark">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+    <section class="slide dark" data-steps="3">
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics" class="active">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 64%"></div>
-        <div class="slide-content" style="max-width: 850px;">
-            <blockquote class="reveal-item visible" style="font-size: clamp(1rem, 2.5vw, 1.6rem); text-transform: none; font-weight: 500; line-height: 1.5;">
-                "In creating containers, we give members of this technology-crushed generation a fair chance to be with their own thoughts, until they've made something of them and felt the oldfangled dopamine hit that comes with <span class="highlight">assembling meaning</span>."
-            </blockquote>
-            <cite class="reveal-item visible">— NYT, "Tech-Free College Spaces"</cite>
+        <div class="slide-content" style="max-width: 950px; flex-direction: row; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem);">
+            <img src="img/nyt-tech-free.png" alt="NYT: What Happened When My Yale Students Gave Up Their Phones for Four Weeks" class="reveal-item visible" style="width: clamp(180px, 22vw, 300px); border-radius: 8px; flex-shrink: 0;">
+            <div style="display: flex; flex-direction: column; gap: clamp(0.8rem, 1.5vw, 1.2rem); font-size: clamp(0.9rem, 2vw, 1.35rem); text-transform: none; font-weight: 500; line-height: 1.6;">
+                <div class="reveal-item" data-group="1" style="margin: 0;">"I'm no longer certain that the content of my course is where my greatest impact as a teacher lies...</div>
+                <div class="reveal-item" data-group="2" style="margin: 0;">In creating containers, we give members of this technology-crushed generation a fair chance to be with their own thoughts, until they've made something of them and felt <span style="color: var(--accent); font-weight: 700;">the oldfangled dopamine hit that comes with assembling meaning</span>.</div>
+                <div class="reveal-item" data-group="3" style="margin: 0;">I don't know what we owe our students if not that."</div>
+                <cite class="reveal-item" data-group="3" style="font-size: clamp(0.75rem, 1.3vw, 1rem);">— Colleen Kinder, <a href="https://www.nytimes.com/2025/12/19/opinion/tech-free-college-spaces.html" target="_blank" style="color: #5371ff; text-decoration: none;"><em>NYT</em>, "What Happened When My Yale Students Gave Up Their Phones"</a></cite>
+            </div>
         </div>
-        <span class="slide-number">30</span>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">28</span>
     </section>
 
     <!-- ==========================================
          SLIDE 28: Conceptual Intro Header
          ========================================== -->
     <section id="concepts" class="slide accent-bg section-header">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 66%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Conceptual<br>Introduction</h1>
         </div>
-        <span class="slide-number">31</span>
+        <span class="slide-number">29</span>
     </section>
 
     <!-- ==========================================
          SLIDE 29: Quant vs Qual
          ========================================== -->
     <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 68%"></div>
         <div class="grid-bg"></div>
 
@@ -820,14 +958,14 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">32</span>
+        <span class="slide-number">30</span>
     </section>
 
     <!-- ==========================================
          SLIDE 30: When Quant
          ========================================== -->
     <section class="slide" data-steps="5">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 70%"></div>
         <div class="grid-bg"></div>
 
@@ -847,14 +985,14 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">33</span>
+        <span class="slide-number">31</span>
     </section>
 
     <!-- ==========================================
          SLIDE 31: When Qual
          ========================================== -->
     <section class="slide" data-steps="5">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 72%"></div>
         <div class="grid-bg"></div>
 
@@ -874,26 +1012,26 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">34</span>
+        <span class="slide-number">32</span>
     </section>
 
     <!-- ==========================================
          SLIDE 32: Mixed Methods Header
          ========================================== -->
     <section class="slide accent-bg section-header">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 74%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Mixed<br>Methods</h1>
         </div>
-        <span class="slide-number">35</span>
+        <span class="slide-number">33</span>
     </section>
 
     <!-- ==========================================
          SLIDE 33: Rao Quote
          ========================================== -->
     <section class="slide dark">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 77%"></div>
         <div class="slide-content" style="max-width: 850px;">
             <blockquote class="reveal-item visible" style="font-size: clamp(1.1rem, 2.8vw, 1.8rem); text-transform: none; font-weight: 600; line-height: 1.4;">
@@ -901,14 +1039,14 @@
             </blockquote>
             <cite class="reveal-item visible">— Vijayendra Rao, World Bank</cite>
         </div>
-        <span class="slide-number">36</span>
+        <span class="slide-number">34</span>
     </section>
 
     <!-- ==========================================
          SLIDE 34: Two Approaches
          ========================================== -->
     <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 79%"></div>
         <div class="grid-bg"></div>
 
@@ -932,14 +1070,14 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">37</span>
+        <span class="slide-number">35</span>
     </section>
 
     <!-- ==========================================
          SLIDE 35: When Valuable - Confirmation
          ========================================== -->
     <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 81%"></div>
         <div class="grid-bg"></div>
 
@@ -956,14 +1094,14 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">38</span>
+        <span class="slide-number">36</span>
     </section>
 
     <!-- ==========================================
          SLIDE 36: When Valuable - Complementarity
          ========================================== -->
     <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts" class="active">Mixed Methods</a><a href="#application">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 83%"></div>
         <div class="grid-bg"></div>
 
@@ -980,26 +1118,26 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">39</span>
+        <span class="slide-number">37</span>
     </section>
 
     <!-- ==========================================
          SLIDE 37: Policy Puzzle Header
          APPLICATION MODE - BLUE ACCENT         ========================================== -->
     <section id="application" class="slide accent-bg section-header application">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 85%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Policy<br>Puzzle</h1>
         </div>
-        <span class="slide-number">40</span>
+        <span class="slide-number">38</span>
     </section>
 
     <!-- ==========================================
          SLIDE 38: Policy Puzzle Intro
          ========================================== -->
     <section class="slide application" data-steps="2">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 87%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Application</span>
@@ -1010,14 +1148,14 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">41</span>
+        <span class="slide-number">39</span>
     </section>
 
     <!-- ==========================================
          SLIDE 39: Assignment 1
          ========================================== -->
     <section class="slide application" data-steps="4">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 89%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Application</span>
@@ -1036,14 +1174,14 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">42</span>
+        <span class="slide-number">40</span>
     </section>
 
     <!-- ==========================================
          SLIDE 40: Puzzle Examples
          ========================================== -->
     <section class="slide application" data-steps="5">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 91%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Application</span>
@@ -1063,14 +1201,14 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">43</span>
+        <span class="slide-number">41</span>
     </section>
 
     <!-- ==========================================
          SLIDE 41: Pair Share (with countdown timer)
          ========================================== -->
     <section class="slide application" id="timer-slide">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 94%"></div>
         <div class="slide-content" style="align-items: center; text-align: center;">
             <h2 class="reveal-item visible">Pair Share</h2>
@@ -1082,26 +1220,26 @@
                 <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
             </div>
         </div>
-        <span class="slide-number">44</span>
+        <span class="slide-number">42</span>
     </section>
 
     <!-- ==========================================
          SLIDE 42: Next Class Header
          ========================================== -->
     <section class="slide accent-bg section-header">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 96%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">For Next<br>Class</h1>
         </div>
-        <span class="slide-number">45</span>
+        <span class="slide-number">43</span>
     </section>
 
     <!-- ==========================================
          SLIDE 43: Readings
          ========================================== -->
     <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 98%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
@@ -1119,14 +1257,14 @@
             <div class="step-dot"></div>
             <div class="step-dot"></div>
         </div>
-        <span class="slide-number">46</span>
+        <span class="slide-number">44</span>
     </section>
 
     <!-- ==========================================
          SLIDE 44: Thank You
          ========================================== -->
     <section class="slide" data-steps="1">
-        <nav class="section-nav"><a href="#overview">Overview</a><a href="#intros">Intros</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a></nav>
+        <nav class="section-nav"><a href="#overview">Overview</a><a href="#real-world">Real World</a><a href="#logistics">Logistics</a><a href="#concepts">Mixed Methods</a><a href="#application" class="active">Assignment #1</a><a href="#appendix" style="width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--text-secondary); opacity: 0.4; padding: 0; font-size: 0; line-height: 0; margin-left: auto;" title="Appendix"></a></nav>
         <div class="progress" style="width: 100%"></div>
         <div class="grid-bg"></div>
         <div class="accent-circle"></div>
@@ -1138,7 +1276,21 @@
                 <p class="reveal-item visible">Office hours: Tuesdays, 1:30-3:00, T-308</p>
             </div>
         </div>
-        <span class="slide-number">47</span>
+        <span class="slide-number">45</span>
+    </section>
+
+    <!-- ==========================================
+         APPENDIX
+         ========================================== -->
+    <section id="appendix" class="slide">
+        <div class="progress" style="width: 100%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <h2 style="margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem); color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">Appendix</h2>
+            <img src="img/flowchart.png" alt="Flowchart" style="width: 95%; max-width: 1000px; object-fit: contain;">
+            <p style="margin-top: 0.3em; font-size: clamp(0.65rem, 1vw, 0.78rem); color: var(--text-secondary);">(McKenna 2026)</p>
+        </div>
+        <span class="slide-number" style="opacity: 0.3;">A1</span>
     </section>
 
     <div class="nav-hint">→ Next · ↓ Skip slide</div>
