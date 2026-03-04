@@ -129,12 +129,12 @@
         <div class="progress" style="width: 13%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
-            <h2 class="reveal-item" data-group="1">Two Approaches to Mixed Methods</h2>
+            <h2 class="reveal-item visible">Two Approaches to Mixed Methods</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); align-items: center;">
-                <div class="card reveal-item" data-group="2" style="align-self: start;">
+                <div class="card reveal-item" data-group="1" style="align-self: start;">
                     <h3>Mixed Data Analysis</h3>
                     <p>Two or more analytical strategies on the same data</p>
-                    <p style="margin-top: 0.5em; color: var(--text-secondary);">Example: Quantitative text analysis + Archival/content analysis</p>
+                    <p class="reveal-item" data-group="2" style="margin-top: 0.5em; color: var(--text-secondary);">Example: Quantitative text analysis + Archival/content analysis</p>
                 </div>
                 <img src="img/mixed-analysis.png" alt="How Twitter Feels" class="reveal-item" data-group="2" style="width: 100%; border-radius: 6px;">
             </div>
@@ -215,44 +215,48 @@
     </section>
 
     <!-- SLIDE 10: Sequential Designs -->
-    <section class="slide" data-steps="12">
+    <section class="slide" data-steps="10">
         <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 22%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item" data-group="1">Design and Sequencing</h2>
-            <div style="display: flex; flex-direction: column; gap: clamp(0.8rem, 1.5vw, 1.2rem); margin-top: clamp(0.5rem, 1vw, 0.8rem);">
+            <div style="display: flex; flex-direction: column; gap: clamp(0.5rem, 1vw, 0.8rem); margin-top: clamp(0.3rem, 0.6vw, 0.5rem);">
                 <!-- Row 1: Sequential Explanatory -->
-                <div style="background: #fafafa; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem);">
-                    <div class="reveal-item" data-group="1" style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-size: var(--body-size); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary); margin-bottom: 0.3em;">Sequential Explanatory Design</div>
-                    <div style="display: flex; align-items: center; gap: clamp(0.4rem, 0.8vw, 0.6rem); flex-wrap: wrap;">
-                        <div class="reveal-item" data-group="2" style="background: #ff3300; color: white; padding: 0.35em 1em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUANT</div>
-                        <div class="reveal-item" data-group="3" style="font-size: clamp(1.5rem, 3vw, 2.5rem); color: #888;">&rarr;</div>
-                        <div class="reveal-item" data-group="3" style="background: #5371ff; color: white; padding: 0.35em 1em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUAL</div>
-                        <div class="reveal-item" data-group="4" style="margin-left: clamp(0.5rem, 1vw, 1rem); font-size: var(--small-size); color: var(--text-secondary); line-height: 1.3;">Interpretation of QUANT results using QUAL research</div>
+                <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1rem, 2vw, 1.5rem); align-items: center;">
+                    <div style="background: #fafafa; border-radius: 8px; padding: clamp(0.5rem, 1vw, 0.8rem);">
+                        <div class="reveal-item" data-group="1" style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-size: var(--body-size); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary); margin-bottom: 0.3em;">Sequential Explanatory Design</div>
+                        <div style="display: flex; align-items: center; gap: clamp(0.4rem, 0.8vw, 0.6rem); flex-wrap: wrap;">
+                            <div class="reveal-item" data-group="2" style="background: #ff3300; color: white; padding: 0.35em 1em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUANT</div>
+                            <div class="reveal-item" data-group="3" style="font-size: clamp(1.5rem, 3vw, 2.5rem); color: #888;">&rarr;</div>
+                            <div class="reveal-item" data-group="3" style="background: #5371ff; color: white; padding: 0.35em 1em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUAL</div>
+                            <div class="reveal-item" data-group="4" style="margin-left: clamp(0.5rem, 1vw, 1rem); font-size: var(--small-size); color: var(--text-secondary); line-height: 1.3;">Interpretation of QUANT results using QUAL research</div>
+                        </div>
                     </div>
-                    <div class="reveal-item" data-group="5" style="display: flex; align-items: center; gap: 0.6em; margin-top: 0.4em;">
-                        <img src="img/taylor.jpg" alt="Taylor et al." style="width: clamp(50px, 5vw, 75px); height: clamp(50px, 5vw, 75px); border-radius: 50%; object-fit: cover;">
-                        <a href="https://journals.sagepub.com/doi/abs/10.1177/000312240907400602" target="_blank" style="color: #5371ff; text-decoration: none; font-size: var(--small-size); line-height: 1.3;">Taylor et al. (2009) — <em>Culture and Mobilization</em></a>
+                    <div class="reveal-item" data-group="5" style="display: flex; flex-direction: column; align-items: center; gap: 0.4em;">
+                        <img src="img/taylor.jpg" alt="Taylor et al." style="width: clamp(100px, 12vw, 180px); height: clamp(100px, 12vw, 180px); border-radius: 50%; object-fit: cover; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+                        <a href="https://journals.sagepub.com/doi/abs/10.1177/000312240907400602" target="_blank" style="color: #5371ff; text-decoration: none; font-size: var(--small-size); line-height: 1.3; text-align: center;">Taylor et al. (2009)<br><em>Culture and Mobilization</em></a>
                     </div>
                 </div>
                 <!-- Row 2: Sequential Exploratory -->
-                <div style="background: #fafafa; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem);">
-                    <div class="reveal-item" data-group="7" style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-size: var(--body-size); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary); margin-bottom: 0.3em;">Sequential Exploratory Design</div>
-                    <div style="display: flex; align-items: center; gap: clamp(0.4rem, 0.8vw, 0.6rem); flex-wrap: wrap;">
-                        <div class="reveal-item" data-group="8" style="background: #5371ff; color: white; padding: 0.35em 1em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUAL</div>
-                        <div class="reveal-item" data-group="9" style="font-size: clamp(1.5rem, 3vw, 2.5rem); color: #888;">&rarr;</div>
-                        <div class="reveal-item" data-group="9" style="background: #ff3300; color: white; padding: 0.35em 1em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUANT</div>
-                        <div class="reveal-item" data-group="10" style="margin-left: clamp(0.5rem, 1vw, 1rem); font-size: var(--small-size); color: var(--text-secondary); line-height: 1.3;">Transfer or generalization of QUAL results using QUANT results</div>
+                <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1rem, 2vw, 1.5rem); align-items: center;">
+                    <div style="background: #fafafa; border-radius: 8px; padding: clamp(0.5rem, 1vw, 0.8rem);">
+                        <div class="reveal-item" data-group="6" style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-size: var(--body-size); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary); margin-bottom: 0.3em;">Sequential Exploratory Design</div>
+                        <div style="display: flex; align-items: center; gap: clamp(0.4rem, 0.8vw, 0.6rem); flex-wrap: wrap;">
+                            <div class="reveal-item" data-group="7" style="background: #5371ff; color: white; padding: 0.35em 1em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUAL</div>
+                            <div class="reveal-item" data-group="8" style="font-size: clamp(1.5rem, 3vw, 2.5rem); color: #888;">&rarr;</div>
+                            <div class="reveal-item" data-group="8" style="background: #ff3300; color: white; padding: 0.35em 1em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUANT</div>
+                            <div class="reveal-item" data-group="9" style="margin-left: clamp(0.5rem, 1vw, 1rem); font-size: var(--small-size); color: var(--text-secondary); line-height: 1.3;">Transfer or generalization of QUAL results using QUANT results</div>
+                        </div>
                     </div>
-                    <div class="reveal-item" data-group="11" style="display: flex; align-items: center; gap: 0.6em; margin-top: 0.4em;">
-                        <img src="img/small.jpg" alt="Small et al." style="width: clamp(50px, 5vw, 75px); height: clamp(50px, 5vw, 75px); border-radius: 50%; object-fit: cover;">
-                        <a href="https://www.mariosmall.com/unanticipated-gains" target="_blank" style="color: #5371ff; text-decoration: none; font-size: var(--small-size); line-height: 1.3;">Small (2009) — <em>Unanticipated Gains</em></a>
+                    <div class="reveal-item" data-group="10" style="display: flex; flex-direction: column; align-items: center; gap: 0.4em;">
+                        <img src="img/small.jpg" alt="Small" style="width: clamp(100px, 12vw, 180px); height: clamp(100px, 12vw, 180px); border-radius: 50%; object-fit: cover; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+                        <a href="https://www.mariosmall.com/unanticipated-gains" target="_blank" style="color: #5371ff; text-decoration: none; font-size: var(--small-size); line-height: 1.3; text-align: center;">Small (2009)<br><em>Unanticipated Gains</em></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">10</span>
     </section>
 
@@ -273,10 +277,10 @@
                     </div>
                     <div style="text-align: center; font-size: clamp(1.5rem, 3vw, 2.5rem); color: #888;">&darr;</div>
                     <div style="text-align: center; font-size: var(--small-size); color: var(--text-secondary); line-height: 1.4; padding: 0.4em 0.8em; border: 2px solid #e0e0e0; border-radius: 4px; background: white;">Comparison of QUANT and QUAL results</div>
-                    <a href="https://www.irp.wisc.edu/publications/focus/pdfs/foc232i.pdf" target="_blank" style="font-size: var(--small-size); color: #5371ff; text-decoration: none; font-weight: 600;">Pager (2003)</a>
                 </div>
-                <div class="reveal-item visible">
+                <div class="reveal-item visible" style="display: flex; flex-direction: column; align-items: center; gap: 0.5em;">
                     <a href="https://www.irp.wisc.edu/publications/focus/pdfs/foc232i.pdf" target="_blank"><img src="img/pager.jpg" alt="Pager study callback rates" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);"></a>
+                    <a href="https://www.irp.wisc.edu/publications/focus/pdfs/foc232i.pdf" target="_blank" style="font-size: var(--small-size); color: #5371ff; text-decoration: none; font-weight: 600;">Pager (2003)</a>
                 </div>
             </div>
         </div>
@@ -318,7 +322,7 @@
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 31%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+        <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item">Prior Criteria: King, Keohane, and Verba (1994)</h2>
             <div class="columns" style="margin-top: clamp(0.3rem, 0.8vw, 0.6rem);">
                 <div class="card reveal-item" style="padding: clamp(0.8rem, 1.5vw, 1.2rem);">
@@ -331,7 +335,7 @@
                 </div>
                 <div class="card reveal-item" style="padding: clamp(0.8rem, 1.5vw, 1.2rem);">
                     <h3>Efficiency</h3>
-                    <p>Answer the research question as directly as possible</p>
+                    <p>Answer the research question as quickly and directly as possible</p>
                 </div>
             </div>
             <div class="reveal-item" style="margin-top: clamp(0.4rem, 1vw, 0.8rem); align-self: center; text-align: center; background: rgba(255, 51, 0, 0.06); border: 2px solid var(--accent); padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.25rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: var(--body-size); font-weight: 700; color: var(--accent);">What do you think of these criteria as applied to qual research?</div>
@@ -368,7 +372,7 @@
         <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
             <h2 class="reveal-item visible">Yet, Invaluable Policy Insights</h2>
             <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; margin-top: clamp(0.3rem, 0.8vw, 0.5rem);">
-                <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5; text-align: center;">
+                <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
                     <div class="reveal-item visible"><span style="color: #22a867; font-weight: 700;">&check;</span> Highlighted previously unnoticed dynamics of housing instability, directly influencing housing policies.</div>
                     <div class="reveal-item visible"><span style="color: #22a867; font-weight: 700;">&check;</span> Shifted policy discourse toward recognizing eviction as a cause&mdash;not just a consequence&mdash;of poverty.</div>
                     <div class="reveal-item visible"><span style="color: #22a867; font-weight: 700;">&check;</span> Led to tangible impacts: tenants' rights advocacy, rental assistance programs, and legal representation policies nationwide.</div>
@@ -383,7 +387,7 @@
     <section class="slide dark" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img/joinery.png') center/cover no-repeat;">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 38%"></div>
-        <div class="slide-content" style="max-width: 850px; align-items: center; text-align: center; justify-content: center;">
+        <div class="slide-content" style="max-width: 850px; margin: 0 auto; align-items: center; text-align: center; justify-content: center;">
             <blockquote class="reveal-item visible" style="font-size: var(--h2-size); text-transform: none; font-weight: 600; line-height: 1.4;">
                 "One can come to appreciate exquisite Japanese joinery without ever laying hands on a saw."
             </blockquote>
@@ -393,13 +397,12 @@
     </section>
 
     <!-- SLIDE 18: Indicators (all blue cards) -->
-    <section class="slide" data-steps="6">
+    <section class="slide" data-steps="5">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 40%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
-            <h2 class="reveal-item">Indicators of Sound Qualitative Research</h2>
-            <p class="reveal-item" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.2em;">Small and Calarco's framework</p>
+            <h2 class="reveal-item" style="font-size: var(--h3-size);">Indicators of Sound Qualitative Research</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.5rem, 1vw, 0.8rem); margin-top: clamp(0.3rem, 0.8vw, 0.5rem);">
                 <div class="card reveal-item" style="border-top: 4px solid #5371ff; padding: clamp(0.5rem, 1vw, 0.8rem);">
                     <h3 style="color: #5371ff;">1. Cognitive Empathy</h3>
@@ -425,7 +428,7 @@
                 </div>
             </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">18</span>
     </section>
 
@@ -453,7 +456,7 @@
     </section>
 
     <!-- SLIDE 20: Heterogeneity (1: "Among...", 2: title, 3: "The extent...") -->
-    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)), url('img/heterogeneity.png') center/cover no-repeat;">
+    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('img/heterogeneity.png') center/cover no-repeat;">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 44%"></div>
         <div class="slide-content" style="align-items: center; justify-content: center;">
@@ -468,7 +471,7 @@
     </section>
 
     <!-- SLIDE 21: Palpability (1: "Highly ____", 2: title, 3: "The degree...") -->
-    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)), url('img/palpability.png') center/cover no-repeat;">
+    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('img/palpability.png') center/cover no-repeat;">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 47%"></div>
         <div class="slide-content" style="align-items: center; justify-content: center;">
@@ -483,7 +486,7 @@
     </section>
 
     <!-- SLIDE 22: Cognitive Empathy (1: "What people...", 2: title, 3: "The degree...") -->
-    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)), url('img/cog%20empathy.png') center/cover no-repeat;">
+    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('img/cog%20empathy.png') center/cover no-repeat;">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 49%"></div>
         <div class="slide-content" style="align-items: center; justify-content: center;">
@@ -498,7 +501,7 @@
     </section>
 
     <!-- SLIDE 23: Follow-up (1: "Good qual...", 2: title, 3: "The extent...") -->
-    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)), url('img/follow%20up.png') center/cover no-repeat;">
+    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('img/follow%20up.png') center/cover no-repeat;">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 51%"></div>
         <div class="slide-content" style="align-items: center; justify-content: center;">
@@ -513,7 +516,7 @@
     </section>
 
     <!-- SLIDE 24: Self-Awareness (1: "Who a researcher...", 2: title, 3: "Sound...") -->
-    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)), url('img/self%20awareness.png') center/cover no-repeat;">
+    <section class="slide" data-steps="3" style="background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('img/self%20awareness.png') center/cover no-repeat;">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 53%"></div>
         <div class="slide-content" style="align-items: center; justify-content: center;">
@@ -539,11 +542,11 @@
     <section class="slide application" data-steps="2">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Evaluating Qual</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 58%"></div>
-        <div class="slide-content" style="justify-content: center; align-items: center;">
-            <h2 class="reveal-item visible">Data Evaluation Handout</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2vw, 2rem); margin-top: clamp(0.5rem, 1vw, 0.8rem);">
-                <img src="img/qual%20lit%201.png" alt="Qualitative Literacy Handout — Page 1" class="reveal-item" data-group="1" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
-                <img src="img/qual%20lit%202.png" alt="Qualitative Literacy Handout — Page 2" class="reveal-item" data-group="2" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+        <div class="slide-content" style="justify-content: center; align-items: center; padding: clamp(0.5rem, 1vw, 1rem);">
+            <h3 class="reveal-item visible" style="font-size: var(--body-size); margin-bottom: 0.3em;">Data Evaluation Handout</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.5rem, 1vw, 1rem); flex: 1; align-items: center;">
+                <img src="img/qual%20lit%201.png" alt="Qualitative Literacy Handout — Page 1" class="reveal-item" data-group="1" style="width: 100%; max-height: 78vh; object-fit: contain; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+                <img src="img/qual%20lit%202.png" alt="Qualitative Literacy Handout — Page 2" class="reveal-item" data-group="2" style="width: 100%; max-height: 78vh; object-fit: contain; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
             </div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
@@ -624,7 +627,7 @@
     </section>
 
     <!-- SLIDE 32: In-Person Observation Ideas -->
-    <section class="slide" data-steps="5">
+    <section class="slide" data-steps="10">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research">Evaluating Qual</a><a href="#looking-ahead" class="active">Looking Ahead</a></nav>
         <div class="progress" style="width: 76%"></div>
         <div class="grid-bg"></div>
@@ -634,13 +637,16 @@
                 <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Medicare/Medicaid community health centers</div>
                 <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>HUD-funded public housing meetings</div>
                 <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Community action offices, job training sites</div>
-                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Meals on Wheels / SNAP offices, protest mobilizations, public transit</div>
-                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Immigrant / diaspora neighborhoods, Haymarket / Boston Public Market</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Meals on Wheels / SNAP offices</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Protest mobilizations</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Public transit</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Immigrant / diaspora neighborhoods</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Haymarket / Boston Public Market</div>
                 <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&bull;</span>Cafe, student center, extracurricular meeting</div>
                 <div class="reveal-item" style="margin-top: 0.3em; font-style: italic; color: var(--text-secondary); font-size: var(--small-size);">No classroom observations; de-identify all participants</div>
             </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">32</span>
     </section>
 
@@ -674,24 +680,23 @@
     </section>
 
     <!-- SLIDE 34: For Next Class -->
-    <section class="slide" data-steps="3">
+    <section class="slide" data-steps="1">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research">Evaluating Qual</a><a href="#looking-ahead" class="active">Looking Ahead</a></nav>
         <div class="progress" style="width: 88%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
-            <h2 class="reveal-item">For Next Class</h2>
-            <div class="reveal-item" style="margin-top: clamp(0.4rem, 1vw, 0.6rem); align-self: flex-start; background: rgba(255, 51, 0, 0.06); border: 2px solid var(--accent); padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.25rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: var(--body-size); font-weight: 700; color: var(--accent);">Class 3: Observation &mdash; Tuesday, March 10</div>
+            <h2 class="reveal-item visible">For Next Class</h2>
+            <div class="reveal-item visible" style="align-self: flex-start; background: rgba(255, 51, 0, 0.06); border: 2px solid var(--accent); padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.25rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: var(--body-size); font-weight: 700; color: var(--accent);">Class 3: Observation &mdash; Tuesday, March 10</div>
             <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1rem, 2vw, 2rem); align-items: start; margin-top: clamp(0.3rem, 0.8vw, 0.5rem);">
                 <div style="display: flex; flex-direction: column; gap: 0.5em; font-size: var(--body-size); line-height: 1.5;">
-                    <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Assignment #1 (Policy Puzzle)</strong> due Monday, March 9 by 11:59pm on Canvas</div>
-                    <div class="reveal-item" data-group="2"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Reading:</strong> <a href="https://hollis.harvard.edu/primo-explore/fulldisplay?docid=01HVD_ALMA212512863870003941&context=L&vid=HVD2&lang=en_US&search_scope=everything&adaptor=Local%20Search%20Engine&tab=everything&query=any,contains,listenign%20to%20people%20lareau&offset=0" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 600;">Lareau, Annette (2021). <em>Listening to People.</em></a> University of Chicago Press.</div>
-                    <div class="reveal-item" data-group="2" style="padding-left: 1.5em;"><span style="color: var(--text-secondary); margin-right: 0.4em;">&ndash;</span>Chapter 6: Learning to Do Participant Observation</div>
-                    <div class="reveal-item" data-group="2" style="padding-left: 1.5em;"><span style="color: var(--text-secondary); margin-right: 0.4em;">&ndash;</span>Chapter 7: Writing High-Quality Field Notes</div>
+                    <div class="reveal-item" data-group="1"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Reading:</strong> <a href="https://hollis.harvard.edu/primo-explore/fulldisplay?docid=01HVD_ALMA212512863870003941&context=L&vid=HVD2&lang=en_US&search_scope=everything&adaptor=Local%20Search%20Engine&tab=everything&query=any,contains,listenign%20to%20people%20lareau&offset=0" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 600;">Lareau, Annette (2021). <em>Listening to People.</em></a> University of Chicago Press.</div>
+                    <div class="reveal-item" data-group="1" style="padding-left: 1.5em;"><span style="color: var(--text-secondary); margin-right: 0.4em;">&ndash;</span>Chapter 6: Learning to Do Participant Observation</div>
+                    <div class="reveal-item" data-group="1" style="padding-left: 1.5em;"><span style="color: var(--text-secondary); margin-right: 0.4em;">&ndash;</span>Chapter 7: Writing High-Quality Field Notes</div>
                 </div>
-                <img src="img/lareau.jpg" alt="Listening to People by Annette Lareau" class="reveal-item" data-group="2" style="width: clamp(100px, 12vw, 170px); border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); flex-shrink: 0;">
+                <img src="img/lareau.jpg" alt="Listening to People by Annette Lareau" class="reveal-item" data-group="1" style="width: clamp(100px, 12vw, 170px); border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); flex-shrink: 0;">
             </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div></div>
         <span class="slide-number">34</span>
     </section>
 
