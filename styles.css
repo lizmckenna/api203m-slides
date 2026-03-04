@@ -29,12 +29,12 @@ html {
     --text-light: #ffffff;
     --grid-color: rgba(0,0,0,0.05);
 
-    /* Typography — lecture-hall scale (Littauer 140) */
-    --title-size: clamp(2.5rem, 7vw, 5.5rem);
-    --h2-size: clamp(2rem, 5.5vw, 3.75rem);
-    --h3-size: clamp(1.5rem, 3.5vw, 2.4rem);
-    --body-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    --small-size: clamp(1rem, 1.8vw, 1.3rem);
+    /* Typography */
+    --title-size: clamp(2.25rem, 6.5vw, 5rem);
+    --h2-size: clamp(1.6rem, 4.5vw, 3rem);
+    --h3-size: clamp(1.2rem, 2.75vw, 1.85rem);
+    --body-size: clamp(1rem, 1.9vw, 1.3rem);
+    --small-size: clamp(0.8rem, 1.3vw, 1rem);
 
     /* Spacing */
     --slide-padding: clamp(1.5rem, 5vw, 5rem);
@@ -256,7 +256,7 @@ li strong {
 }
 
 .point-item p {
-    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-size: clamp(0.85rem, 1.6vw, 1.05rem);
     line-height: 1.45;
     color: var(--text-secondary);
     margin: 0.15em 0 0 0;
@@ -299,7 +299,7 @@ li strong {
 }
 
 .case-study-text p {
-    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-size: clamp(0.85rem, 1.6vw, 1.05rem);
     line-height: 1.5;
     color: var(--text-secondary);
     margin: 0.4em 0;
@@ -311,13 +311,13 @@ li strong {
     background: rgba(255, 51, 0, 0.06);
     border-left: 3px solid var(--accent);
     border-radius: 0 4px 4px 0;
-    font-size: clamp(1rem, 1.9vw, 1.3rem);
+    font-size: clamp(0.8rem, 1.4vw, 0.95rem);
     line-height: 1.45;
     color: var(--text-primary);
 }
 
 .case-study-text .case-cite {
-    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+    font-size: clamp(0.65rem, 1.1vw, 0.8rem);
     color: var(--text-secondary);
     margin-top: clamp(0.3rem, 0.8vw, 0.5rem);
 }
@@ -344,7 +344,7 @@ li strong {
 /* Quote */
 blockquote {
     font-family: 'Archivo', system-ui, sans-serif;
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(1.25rem, 3.5vw, 2.5rem);
     font-weight: 700;
     line-height: 1.2;
     margin: 0;
@@ -382,13 +382,13 @@ cite {
 }
 
 .card h3 {
-    font-size: clamp(1.15rem, 2.3vw, 1.6rem);
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
     margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
     color: var(--accent);
 }
 
 .card p, .card li {
-    font-size: clamp(1.1rem, 2.1vw, 1.5rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 /* Section header slides */
@@ -486,7 +486,7 @@ cite {
     bottom: clamp(0.75rem, 2vw, 1.25rem);
     left: clamp(0.75rem, 2vw, 1.25rem);
     font-family: 'Archivo', system-ui, sans-serif;
-    font-size: clamp(0.7rem, 1.1vw, 0.85rem);
+    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
     font-weight: 500;
     color: rgba(0,0,0,0.35);
     letter-spacing: 0.05em;
@@ -523,7 +523,7 @@ cite {
     gap: clamp(0.4rem, 0.8vw, 0.75rem);
     z-index: 20;
     font-family: 'Archivo', system-ui, sans-serif;
-    font-size: clamp(0.65rem, 1vw, 0.85rem);
+    font-size: clamp(0.55rem, 0.85vw, 0.7rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -599,7 +599,7 @@ cite {
     border: 2px solid #5371ff;
     padding: clamp(0.35rem, 0.8vw, 0.5rem) clamp(0.4rem, 0.8vw, 0.6rem);
     font-family: 'Archivo', system-ui, sans-serif;
-    font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+    font-size: clamp(0.7rem, 1.1vw, 0.85rem);
     font-weight: 700;
     text-align: center;
     border-radius: 4px;
@@ -627,7 +627,7 @@ cite {
     right: clamp(1rem, 3vw, 2rem);
     text-align: right;
     font-family: 'Archivo', system-ui, sans-serif;
-    font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+    font-size: clamp(0.7rem, 1.1vw, 0.85rem);
     font-weight: 600;
     color: var(--text-secondary);
     line-height: 1.5;
@@ -703,14 +703,14 @@ cite {
 
 .timeline-module h4 {
     font-family: 'Archivo', system-ui, sans-serif;
-    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
     font-weight: 700;
     margin: 0 0 0.25em;
     color: var(--text-primary);
 }
 
 .timeline-module p {
-    font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+    font-size: clamp(0.75rem, 1.2vw, 0.95rem);
     color: var(--text-secondary);
     margin: 0;
     line-height: 1.3;
@@ -731,7 +731,7 @@ cite {
     background: #e8edff;
     border: 2px solid #5371ff;
     padding: clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.5rem, 1vw, 1rem);
-    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    font-size: clamp(0.85rem, 1.35vw, 1.05rem);
     text-align: center;
     border-radius: 4px;
     box-sizing: border-box;
@@ -778,8 +778,8 @@ cite {
 
 @media (max-width: 768px) {
     :root {
-        --body-size: clamp(1rem, 2.5vw, 1.35rem);
-        --h2-size: clamp(1.4rem, 4vw, 2rem);
+        --body-size: clamp(0.85rem, 2.2vw, 1.1rem);
+        --h2-size: clamp(1.1rem, 3.5vw, 1.6rem);
     }
     ul { gap: clamp(0.3rem, 1vw, 0.6rem); }
     li { gap: clamp(0.3rem, 1vw, 0.6rem); }
