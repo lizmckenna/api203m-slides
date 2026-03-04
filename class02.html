@@ -6,7 +6,16 @@
     <title>API-203M: Qualitative Literacy | Prof. Liz McKenna</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
+    <style>
+        /* Projection-scale typography overrides for lecture hall */
+        :root {
+            --title-size: clamp(2.5rem, 7vw, 5.5rem);
+            --h2-size: clamp(2rem, 5.5vw, 3.75rem);
+            --h3-size: clamp(1.5rem, 3.5vw, 2.4rem);
+            --body-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            --small-size: clamp(1rem, 1.8vw, 1.3rem);
+        }
+    </style>
 </head>
 <body>
 
@@ -17,9 +26,9 @@
         <div class="progress" style="width: 2%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
-            <h1>Qualitative<br><span class="highlight">Literacy</span></h1>
+            <h1>Empirical<br>Methods <span class="highlight">II</span></h1>
             <p class="meta">What Is Outstanding Qualitative Research?</p>
-            <p class="meta" style="margin-top: 0.5em;">API-203M · Spring 2026 · Class #2: Qualitative Literacy</p>
+            <p class="meta" style="margin-top: 0.5em;">API-203M &middot; Spring 2026</p>
             <span style="margin-top: 0.75em; align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.1rem, 1.8vw, 1.35rem); font-weight: 700; color: #5371ff;">Class 2: Qualitative Literacy</span>
         </div>
         <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
@@ -28,9 +37,9 @@
     <!-- ==========================================
          SLIDE 2: Roadmap
          ========================================== -->
-    <section class="slide" data-steps="15">
+    <section class="slide" data-steps="12">
         <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 5%"></div>
+        <div class="progress" style="width: 4%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Class 2: Qualitative Literacy</h2>
@@ -38,46 +47,44 @@
                 <div class="card reveal-item">
                     <h3>Mixed Methods</h3>
                     <ul>
-                        <li class="reveal-item"><span class="bullet">•</span>Quant vs. qual</li>
-                        <li class="reveal-item"><span class="bullet">•</span>Mixed methods</li>
-                        <li class="reveal-item"><span class="bullet">•</span>Mixed data collection</li>
-                        <li class="reveal-item"><span class="bullet">•</span>Mixed data analysis</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Mixed methods</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Mixed data collection</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Mixed data analysis</li>
                     </ul>
                 </div>
                 <div class="card reveal-item">
                     <h3>Outstanding Qual Research</h3>
                     <ul>
-                        <li class="reveal-item"><span class="bullet">•</span>What makes qual research rigorous?</li>
-                        <li class="reveal-item"><span class="bullet">•</span>Heterogeneity</li>
-                        <li class="reveal-item"><span class="bullet">•</span>Palpability</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>What makes qual research rigorous?</li>
+                        <li class="reveal-item" style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Heterogeneity</li>
+                        <li class="reveal-item" style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Palpability</li>
                     </ul>
                 </div>
                 <div class="card reveal-item">
                     <h3>Looking Ahead</h3>
                     <ul>
-                        <li class="reveal-item"><span class="bullet">•</span>Policy Puzzle (Assignment #1)</li>
-                        <li class="reveal-item"><span class="bullet">•</span>Prep for next class</li>
-                        <li class="reveal-item"><span class="bullet">•</span>Q&amp;A</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Policy Puzzle (Assignment #1) &amp; prep</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Next class</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">02</span>
     </section>
 
     <!-- ==========================================
-         SECTION 1: Mixed Methods (recovered from Class 1)
+         SECTION 1: Mixed Methods
          ========================================== -->
 
     <!-- ==========================================
-         Mixed Methods Header
+         SLIDE 3: Mixed Methods Header
          ========================================== -->
     <section id="mixed-methods" class="slide accent-bg section-header">
         <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 8%"></div>
+        <div class="progress" style="width: 7%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Mixed<br>Methods</h1>
         </div>
@@ -85,30 +92,29 @@
     </section>
 
     <!-- ==========================================
-         SLIDE: Rao Quote
+         SLIDE 4: Rao Quote
          ========================================== -->
     <section class="slide dark">
         <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 10%"></div>
+        <div class="progress" style="width: 9%"></div>
         <div class="slide-content" style="max-width: 950px; margin: 0 auto; flex-direction: row; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem);">
             <img src="img/rao.png" alt="Vijayendra Rao, World Bank" style="width: clamp(150px, 18vw, 250px); border-radius: 8px; flex-shrink: 0;">
             <div style="display: flex; flex-direction: column;">
                 <blockquote style="font-size: clamp(1.1rem, 2.8vw, 1.8rem); text-transform: none; font-weight: 600; line-height: 1.4;">
                     "It's very silly to do an impact evaluation using some <span class="highlight">randomized controlled trial</span>, and not also do a <span class="highlight">deep ethnography</span> to understand <strong>why</strong> you got the results you got."
                 </blockquote>
-                <cite>— Vijayendra Rao, World Bank · <a href="https://thefamiliarstrange.com/2018/05/28/ep-15-vijayendra-rao/" target="_blank" style="color: #5371ff; text-decoration: none;"><em>The Familiar Strange</em> podcast</a></cite>
+                <cite>— Vijayendra Rao, World Bank &middot; <a href="https://thefamiliarstrange.com/2018/05/28/ep-15-vijayendra-rao/" target="_blank" style="color: #5371ff; text-decoration: none;"><em>The Familiar Strange</em> podcast</a></cite>
             </div>
         </div>
         <span class="slide-number">04</span>
     </section>
 
     <!-- ==========================================
-         SLIDE: Two Approaches — Mixed Data Collection
+         SLIDE 5: Two Approaches — Mixed Data Collection
          ========================================== -->
-    <!-- Mixed Data Collection -->
     <section class="slide" data-steps="3">
         <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 12%"></div>
+        <div class="progress" style="width: 11%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item">Two Approaches to Mixed Methods</h2>
@@ -127,23 +133,22 @@
         <span class="slide-number">05</span>
     </section>
 
-    <!-- Mixed Data Analysis -->
+    <!-- ==========================================
+         SLIDE 6: Mixed Data Analysis (single image)
+         ========================================== -->
     <section class="slide" data-steps="2">
         <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 14%"></div>
+        <div class="progress" style="width: 13%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item" data-group="1">Two Approaches to Mixed Methods</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); align-items: start;">
-                <div style="display: flex; flex-direction: column; gap: clamp(0.5rem, 1vw, 0.8rem);">
-                    <div class="card reveal-item" data-group="2" style="align-self: start;">
-                        <h3>Mixed Data Analysis</h3>
-                        <p>Two or more analytical strategies on the same data</p>
-                        <p style="margin-top: 0.5em; font-size: 0.9em; color: var(--text-secondary);">Example: Quantitative text analysis + Archival/content analysis</p>
-                    </div>
-                    <img src="img/2024.png" alt="2024 research example" class="reveal-item" data-group="2" style="width: 100%; border-radius: 6px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); align-items: center;">
+                <div class="card reveal-item" data-group="2" style="align-self: start;">
+                    <h3>Mixed Data Analysis</h3>
+                    <p>Two or more analytical strategies on the same data</p>
+                    <p style="margin-top: 0.5em; font-size: 0.9em; color: var(--text-secondary);">Example: Quantitative text analysis + Archival/content analysis</p>
                 </div>
-                <img src="img/mixed-analysis.png" alt="Mixed data analysis: sentiment analysis + archival" class="reveal-item" data-group="2" style="width: 100%; border-radius: 6px;">
+                <img src="img/mixed-analysis.png" alt="How Twitter Feels — mixed data analysis" class="reveal-item" data-group="2" style="width: 100%; border-radius: 6px;">
             </div>
         </div>
         <div class="step-indicator">
@@ -153,7 +158,7 @@
     </section>
 
     <!-- ==========================================
-         SLIDE: When Valuable - Confirmation
+         SLIDE 7: When Valuable - Confirmation
          ========================================== -->
     <section class="slide" data-steps="5">
         <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
@@ -166,9 +171,9 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); align-items: center; margin-top: auto; margin-bottom: auto;">
                 <div class="card" style="align-self: start;">
                     <div style="display: flex; flex-direction: column; gap: 0.6em; font-size: var(--body-size); line-height: 1.5;">
-                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Verify findings from one type of data with another type</div>
-                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Conflicting findings can be <strong>generative</strong></div>
-                        <div class="reveal-item" data-group="3"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span><a href="https://www.irp.wisc.edu/publications/focus/pdfs/foc232i.pdf" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 600;">Pager (2005)</a>: audit study of employment discrimination — field experiment + in-depth interviews revealed how race and criminal record interact in hiring</div>
+                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&bull;</span>Verify findings from one type of data with another type</div>
+                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&bull;</span>Conflicting findings can be <strong>generative</strong></div>
+                        <div class="reveal-item" data-group="3"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&bull;</span><a href="https://www.irp.wisc.edu/publications/focus/pdfs/foc232i.pdf" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 600;">Pager (2005)</a>: audit study of employment discrimination — field experiment + in-depth interviews revealed how race and criminal record interact in hiring</div>
                     </div>
                 </div>
                 <a href="https://www.irp.wisc.edu/publications/focus/pdfs/foc232i.pdf" target="_blank" class="reveal-item" data-group="3"><img src="img/pager.jpg" alt="Devah Pager — audit study of employment discrimination" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);"></a>
@@ -181,7 +186,7 @@
     </section>
 
     <!-- ==========================================
-         Pager Study: Why Both Methods Matter
+         SLIDE 8: Pager Study: Why Both Methods Matter
          ========================================== -->
     <section class="slide" data-steps="9">
         <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
@@ -194,17 +199,17 @@
                 <div class="reveal-item" data-group="1" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); background: #fff0ee; border-bottom: 2px solid #e0e0e0; border-right: 1px solid #e0e0e0; font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; color: #ff3300;">What the audit experiment showed</div>
                 <div class="reveal-item" data-group="1" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); background: #e8edff; border-bottom: 2px solid #e0e0e0; font-family: 'Archivo', system-ui, sans-serif; font-weight: 700; color: #5371ff;">What the interviews added</div>
                 <!-- Row 1 -->
-                <div class="reveal-item" data-group="2" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.3em;">•</span>Discrimination was real in actual hiring</div>
-                <div class="reveal-item" data-group="3" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0;"><span style="color: #5371ff; font-weight: 700; margin-right: 0.3em;">•</span>How employers made sense of applicants; helped explain heterogeneity in practices among employers</div>
+                <div class="reveal-item" data-group="2" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.3em;">&bull;</span>Discrimination was real in actual hiring</div>
+                <div class="reveal-item" data-group="3" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0;"><span style="color: #5371ff; font-weight: 700; margin-right: 0.3em;">&bull;</span>How employers made sense of applicants; helped explain heterogeneity in practices among employers</div>
                 <!-- Row 2 -->
-                <div class="reveal-item" data-group="4" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.3em;">•</span>A criminal record sharply reduced callbacks</div>
-                <div class="reveal-item" data-group="5" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0;"><span style="color: #5371ff; font-weight: 700; margin-right: 0.3em;">•</span>Surfaced employers' stereotypes and ideas about risk, trust, and reliability</div>
+                <div class="reveal-item" data-group="4" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.3em;">&bull;</span>A criminal record sharply reduced callbacks</div>
+                <div class="reveal-item" data-group="5" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0;"><span style="color: #5371ff; font-weight: 700; margin-right: 0.3em;">&bull;</span>Surfaced employers' stereotypes and ideas about risk, trust, and reliability</div>
                 <!-- Row 3 -->
-                <div class="reveal-item" data-group="6" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.3em;">•</span>Black applicants with a record faced the greatest penalty</div>
-                <div class="reveal-item" data-group="7" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0;"><span style="color: #5371ff; font-weight: 700; margin-right: 0.3em;">•</span>Revealed the gap between stated attitudes and actual behavior</div>
+                <div class="reveal-item" data-group="6" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.3em;">&bull;</span>Black applicants with a record faced the greatest penalty</div>
+                <div class="reveal-item" data-group="7" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-bottom: 1px solid #e0e0e0;"><span style="color: #5371ff; font-weight: 700; margin-right: 0.3em;">&bull;</span>Revealed the gap between stated attitudes and actual behavior</div>
                 <!-- Row 4 -->
-                <div class="reveal-item" data-group="8" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-right: 1px solid #e0e0e0;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.3em;">•</span>The experiment identified and quantified the pattern</div>
-                <div class="reveal-item" data-group="9" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem);"><span style="color: #5371ff; font-weight: 700; margin-right: 0.3em;">•</span>The interviews helped uncover the mechanisms, meanings, and justifications behind that pattern</div>
+                <div class="reveal-item" data-group="8" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem); border-right: 1px solid #e0e0e0;"><span style="color: #ff3300; font-weight: 700; margin-right: 0.3em;">&bull;</span>The experiment identified and quantified the pattern</div>
+                <div class="reveal-item" data-group="9" style="padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem);"><span style="color: #5371ff; font-weight: 700; margin-right: 0.3em;">&bull;</span>The interviews helped uncover the mechanisms, meanings, and justifications behind that pattern</div>
             </div>
         </div>
         <div class="step-indicator">
@@ -216,7 +221,7 @@
     </section>
 
     <!-- ==========================================
-         SLIDE: When Valuable - Complementarity
+         SLIDE 9: When Valuable - Complementarity
          ========================================== -->
     <section class="slide" data-steps="6">
         <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
@@ -229,10 +234,10 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); align-items: center; margin-top: auto; margin-bottom: auto;">
                 <div class="card" style="align-self: start;">
                     <div style="display: flex; flex-direction: column; gap: 0.6em; font-size: var(--body-size); line-height: 1.5;">
-                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>One type of data can <strong>compensate</strong> for weaknesses of another</div>
-                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Cohen (2016) on wartime sexual violence</div>
-                        <div class="reveal-item" data-group="3"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span>Han, McKenna, Oyakawa (2021) on social movement power-building</div>
-                        <div class="reveal-item" data-group="4"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">•</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X17302115" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 600;">Rao, Ananthpur, and Malik (2017)</a>: RCT of civic engagement in South India — quant measured participation rates, qual revealed <em>how</em> caste and gender norms shaped who actually participated and why</div>
+                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&bull;</span>One type of data can <strong>compensate</strong> for weaknesses of another</div>
+                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&bull;</span>Cohen (2016) on wartime sexual violence</div>
+                        <div class="reveal-item" data-group="3"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&bull;</span>Han, McKenna, Oyakawa (2021) on social movement power-building</div>
+                        <div class="reveal-item" data-group="4"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&bull;</span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X17302115" target="_blank" style="color: #5371ff; text-decoration: none; font-weight: 600;">Rao, Ananthpur, and Malik (2017)</a>: RCT of civic engagement in South India — quant measured participation rates, qual revealed <em>how</em> caste and gender norms shaped who actually participated and why</div>
                     </div>
                 </div>
                 <a href="https://www.sciencedirect.com/science/article/abs/pii/S0305750X17302115" target="_blank" class="reveal-item" data-group="4"><img src="img/complementarity.png" alt="Complementarity in mixed methods" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);"></a>
@@ -245,48 +250,128 @@
     </section>
 
     <!-- ==========================================
-         SECTION 2: Outstanding Qual Research
+         SLIDE 10: Design and Sequencing — Sequential Designs
          ========================================== -->
-
-    <!-- ==========================================
-         SLIDE 8: Outstanding Qual Research Section Header
-         ========================================== -->
-    <section id="qual-research" class="slide accent-bg section-header">
-        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 24%"></div>
-        <div class="slide-content">
-            <h1 class="reveal-item visible">Outstanding<br>Qual Research</h1>
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 22%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Design and Sequencing</h2>
+            <div style="display: flex; flex-direction: column; gap: clamp(1.2rem, 2.5vw, 2rem); margin-top: clamp(0.5rem, 1.5vw, 1rem);">
+                <!-- Row 1: Sequential Explanatory -->
+                <div class="reveal-item" style="display: flex; flex-direction: column; gap: 0.6rem; background: #fafafa; border-radius: 8px; padding: clamp(0.8rem, 1.5vw, 1.2rem);">
+                    <div style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-size: var(--small-size); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary);">Sequential Explanatory Design</div>
+                    <div style="display: flex; align-items: center; gap: clamp(0.5rem, 1vw, 0.8rem); flex-wrap: wrap;">
+                        <div style="background: #ff3300; color: white; padding: 0.4em 1.2em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUANT</div>
+                        <div style="font-size: clamp(1.5rem, 3vw, 2.5rem); color: #888;">&rarr;</div>
+                        <div style="background: #5371ff; color: white; padding: 0.4em 1.2em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUAL</div>
+                        <div style="margin-left: clamp(0.5rem, 1.5vw, 1.5rem); font-size: var(--small-size); color: var(--text-secondary); line-height: 1.4;">Interpretation of QUANT results using QUAL research</div>
+                    </div>
+                    <cite style="font-size: var(--small-size); color: var(--text-secondary);">Taylor et al. (2009)</cite>
+                </div>
+                <!-- Row 2: Sequential Exploratory -->
+                <div class="reveal-item" style="display: flex; flex-direction: column; gap: 0.6rem; background: #fafafa; border-radius: 8px; padding: clamp(0.8rem, 1.5vw, 1.2rem);">
+                    <div style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-size: var(--small-size); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary);">Sequential Exploratory Design</div>
+                    <div style="display: flex; align-items: center; gap: clamp(0.5rem, 1vw, 0.8rem); flex-wrap: wrap;">
+                        <div style="background: #5371ff; color: white; padding: 0.4em 1.2em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUAL</div>
+                        <div style="font-size: clamp(1.5rem, 3vw, 2.5rem); color: #888;">&rarr;</div>
+                        <div style="background: #ff3300; color: white; padding: 0.4em 1.2em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUANT</div>
+                        <div style="margin-left: clamp(0.5rem, 1.5vw, 1.5rem); font-size: var(--small-size); color: var(--text-secondary); line-height: 1.4;">Transfer or generalization of QUAL results using QUANT results</div>
+                    </div>
+                    <cite style="font-size: var(--small-size); color: var(--text-secondary);">Small et al. (2008)</cite>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">10</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 9: Why Identify Sound Qualitative Work?
+         SLIDE 11: Design and Sequencing — Convergent Design
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 27%"></div>
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#mixed-methods" class="active">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 24%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
-        <div class="slide-content">
-            <h2 class="reveal-item">Why Identify What Constitutes Sound Qualitative Work?</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>As a policymaker or leader</strong> &mdash; You must decide whether to allocate resources to an analysis, evaluate its design, and assess its likelihood of producing defensible evidence</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>As a researcher or practitioner</strong> &mdash; You want to produce work that stands up to scrutiny to make a persuasive case to policymakers, practitioners, and others about a policy, finding, or recommendation</li>
-            </ul>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Design and Sequencing</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); align-items: center; margin-top: clamp(0.5rem, 1.5vw, 1rem);">
+                <!-- Left: Convergent diagram -->
+                <div class="reveal-item" style="display: flex; flex-direction: column; gap: 0.8rem; background: #fafafa; border-radius: 8px; padding: clamp(0.8rem, 1.5vw, 1.2rem);">
+                    <div style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-size: var(--small-size); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-primary);">Convergent Design</div>
+                    <div style="display: flex; align-items: center; gap: clamp(0.5rem, 1vw, 0.8rem); justify-content: center;">
+                        <div style="background: #ff3300; color: white; padding: 0.4em 1.2em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUANT</div>
+                        <div style="font-size: var(--body-size); font-weight: 700; color: #888;">+</div>
+                        <div style="background: #5371ff; color: white; padding: 0.4em 1.2em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">QUAL</div>
+                    </div>
+                    <div style="text-align: center; font-size: clamp(1.5rem, 3vw, 2.5rem); color: #888;">&darr;</div>
+                    <div style="text-align: center; font-size: var(--small-size); color: var(--text-secondary); line-height: 1.4; padding: 0.4em 0.8em; border: 2px solid #e0e0e0; border-radius: 4px; background: white;">Comparison of QUANT and QUAL results</div>
+                    <cite style="font-size: var(--small-size); color: var(--text-secondary);">Pager (2003)</cite>
+                </div>
+                <!-- Right: Pager chart image -->
+                <div class="reveal-item" data-group="3">
+                    <img src="img/pager.jpg" alt="Pager study callback rates — White vs Black, Criminal Record vs No Record" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+                </div>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">11</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 10: Prior Criteria — KKV
+         SECTION 2: Outstanding Qual Research
+         ========================================== -->
+
+    <!-- ==========================================
+         SLIDE 12: Outstanding Qual Research Section Header
+         ========================================== -->
+    <section id="qual-research" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 27%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Outstanding<br>Qual Research</h1>
+        </div>
+        <span class="slide-number">12</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 13: Why Identify Sound Qualitative Work? (two-card redesign)
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 29%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Why Identify What Constitutes Sound Qualitative Work?</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); margin-top: clamp(0.5rem, 1.5vw, 1rem);">
+                <div class="card reveal-item" style="border-left: 5px solid #ff3300; padding: clamp(1rem, 2vw, 1.5rem);">
+                    <h3 style="color: #ff3300; margin-bottom: 0.5em;">As a policymaker or leader</h3>
+                    <p style="font-size: var(--body-size); line-height: 1.5;">You must decide whether to allocate resources to an analysis, evaluate its design, and assess the defensibility of the evidence.</p>
+                </div>
+                <div class="card reveal-item" style="border-left: 5px solid #5371ff; padding: clamp(1rem, 2vw, 1.5rem);">
+                    <h3 style="color: #5371ff; margin-bottom: 0.5em;">As a researcher or practitioner</h3>
+                    <p style="font-size: var(--body-size); line-height: 1.5;">You want to produce work that stands up to scrutiny and makes a persuasive case to policymakers, practitioners, and others.</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">13</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 14: Prior Criteria — KKV
          ========================================== -->
     <section class="slide" data-steps="5">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 30%"></div>
+        <div class="progress" style="width: 31%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Theory</span>
         <div class="slide-content">
@@ -305,222 +390,139 @@
                     <p>Research should answer the research question as directly as possible, without unnecessary expenditure of time, effort, or financial resources</p>
                 </div>
             </div>
-            <div class="reveal-item" style="margin-top: clamp(0.6rem, 1.5vw, 1rem); align-self: flex-start; background: rgba(255, 51, 0, 0.06); border: 2px solid var(--accent); padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.25rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: var(--body-size); font-weight: 700; color: var(--accent);">Why might these criteria have been considered controversial?</div>
+            <div class="reveal-item" style="margin-top: clamp(0.6rem, 1.5vw, 1rem); align-self: flex-start; background: rgba(255, 51, 0, 0.06); border: 2px solid var(--accent); padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.25rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: var(--body-size); font-weight: 700; color: var(--accent);">What do you think of these criteria as applied to qual research?</div>
         </div>
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
-        <span class="slide-number">12</span>
+        <span class="slide-number">14</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 11: KKV vs. Desmond's Evicted
+         SLIDE 15: KKV Criteria Applied — Desmond's Evicted
          ========================================== -->
     <section class="slide" data-steps="4">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
         <div class="progress" style="width: 33%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Theory</span>
-        <div class="slide-content">
-            <h2 class="reveal-item">KKV Criteria vs. Desmond's <em>Evicted</em></h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Reliability?</strong> &mdash; Desmond's deeply embedded ethnography of eviction experiences in Milwaukee can't be precisely replicated</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Efficiency?</strong> &mdash; Extensive fieldwork is inefficient compared to quantitative survey methods</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Lack of bias?</strong> &mdash; Desmond's direct involvement with participants and empathetic portrayal may introduce subjectivity. Yet the work provided invaluable policy insights: highlighting previously unnoticed dynamics of housing instability, shifting policy discourse toward recognizing eviction as a <em>cause</em> of poverty, and leading to tangible impacts such as advocacy for tenants' rights and legal representation policies.</li>
-            </ul>
-            <!-- TODO: Add Evicted book cover image -->
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">KKV Criteria Applied: Desmond's <em>Evicted</em></h2>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;">
+                <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                    <div class="reveal-item"><span style="color: #ff3300; font-weight: 700; margin-right: 0.4em;">&cross;</span><strong>Reliability:</strong> Desmond's deeply embedded ethnography of eviction experiences in Milwaukee can't be precisely replicated</div>
+                    <div class="reveal-item"><span style="color: #ff3300; font-weight: 700; margin-right: 0.4em;">&cross;</span><strong>Efficiency:</strong> Extensive fieldwork is inefficient compared to quantitative survey methods</div>
+                    <div class="reveal-item"><span style="color: #ff3300; font-weight: 700; margin-right: 0.4em;">&cross;</span><strong>Lack of bias:</strong> Desmond's direct involvement with participants and landlords, and empathetic portrayal of their experiences, may introduce subjectivity, violating positivist standards.</div>
+                </div>
+                <img src="img/desmond.png" alt="Evicted by Matthew Desmond" style="width: clamp(140px, 16vw, 220px); border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); flex-shrink: 0;">
+            </div>
         </div>
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
-        </div>
-        <span class="slide-number">13</span>
-    </section>
-
-    <!-- ==========================================
-         SLIDE 12: Small and Calarco Quote
-         ========================================== -->
-    <section class="slide dark">
-        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 36%"></div>
-        <div class="slide-content" style="max-width: 850px;">
-            <blockquote class="reveal-item visible" style="font-size: clamp(1.1rem, 2.8vw, 1.8rem); text-transform: none; font-weight: 600; line-height: 1.4;">
-                "One can come to appreciate exquisite Japanese joinery without ever laying hands on a saw."
-            </blockquote>
-            <cite class="reveal-item visible">&mdash; Small and Calarco (p. 18)</cite>
-        </div>
-        <span class="slide-number">14</span>
-    </section>
-
-    <!-- ==========================================
-         SLIDE 13: Indicators of Sound Qualitative Research
-         ========================================== -->
-    <section class="slide" data-steps="7">
-        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 39%"></div>
-        <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
-        <div class="slide-content">
-            <h2 class="reveal-item">Indicators of Sound Qualitative Research</h2>
-            <p class="reveal-item" style="font-size: var(--body-size); color: var(--text-secondary); margin-top: 0.5em;">Small and Calarco's framework for evaluating ethnographic and interview research:</p>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Cognitive empathy</strong> &mdash; The degree to which the researcher understood those observed close to how they understand themselves</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Heterogeneity</strong> &mdash; The extent to which the people or places depicted are represented as diverse</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Palpability</strong> &mdash; The degree to which the evidence presented is not abstract but concrete</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Follow-up</strong> &mdash; The extent to which the researcher collected data to answer unanticipated questions that arose during data collection</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Self-awareness</strong> &mdash; The degree to which the researcher recognized how their own identity affects access, interpretation, and data</li>
-            </ul>
-            <!-- TODO: Add Qualitative Literacy book cover image -->
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">15</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 14: Exposure
+         SLIDE 16: Yet, Invaluable Policy Insights — Desmond's Evicted
          ========================================== -->
-    <section class="slide" data-steps="3">
+    <section class="slide" data-steps="4">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 42%"></div>
+        <div class="progress" style="width: 36%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Theory</span>
-        <div class="slide-content">
-            <h2 class="reveal-item">Exposure: The Precondition</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Exposure</strong> is the precondition for all good qualitative research and analysis &mdash; the researcher must spend sufficient time in the field or with participants</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>Without adequate exposure, none of the five indicators can be meaningfully achieved</li>
-            </ul>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Yet, Invaluable Policy Insights</h2>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;">
+                <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                    <div class="reveal-item"><span style="color: #22a867; font-weight: 700; margin-right: 0.4em;">&check;</span>Highlighted previously unnoticed dynamics of housing instability, directly influencing housing policies.</div>
+                    <div class="reveal-item"><span style="color: #22a867; font-weight: 700; margin-right: 0.4em;">&check;</span>Shifted policy discourse toward recognizing eviction as a cause&mdash;not just a consequence&mdash;of poverty.</div>
+                    <div class="reveal-item"><span style="color: #22a867; font-weight: 700; margin-right: 0.4em;">&check;</span>Led to tangible impacts, such as advocacy for tenants' rights, rental assistance programs, and legal representation policies nationwide.</div>
+                </div>
+                <img src="img/desmond.png" alt="Evicted by Matthew Desmond" style="width: clamp(140px, 16vw, 220px); border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); flex-shrink: 0;">
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">16</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 15: Heterogeneity Deep Dive
+         SLIDE 17: Small and Calarco Quote — Joinery (full-bleed background)
          ========================================== -->
-    <section class="slide" data-steps="3">
+    <section class="slide dark" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img/joinery.png') center/cover no-repeat;">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 45%"></div>
-        <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
-        <div class="slide-content">
-            <h2 class="reveal-item">Heterogeneity</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>The extent to which the people or places depicted are represented as <strong>diverse</strong></li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>"Among both interview-based and participant observation studies, those that uncover little or no <strong>______</strong> are ultimately unconvincing." &mdash; Small and Calarco (2022)</li>
-            </ul>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        <div class="progress" style="width: 38%"></div>
+        <div class="slide-content" style="max-width: 850px; align-items: center; text-align: center; justify-content: center;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(1.3rem, 3.2vw, 2.2rem); text-transform: none; font-weight: 600; line-height: 1.4;">
+                "One can come to appreciate exquisite Japanese joinery without ever laying hands on a saw."
+            </blockquote>
+            <cite class="reveal-item visible">&mdash; Small and Calarco (p. 18)</cite>
         </div>
         <span class="slide-number">17</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 16: Palpability Deep Dive
+         SLIDE 18: Indicators of Sound Qualitative Research (5-card grid)
          ========================================== -->
-    <section class="slide" data-steps="3">
+    <section class="slide" data-steps="6">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 48%"></div>
+        <div class="progress" style="width: 40%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Theory</span>
-        <div class="slide-content">
-            <h2 class="reveal-item">Palpability</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>The degree to which the evidence presented is <strong>not abstract but concrete</strong></li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>Highly <strong>palpable</strong> evidence brings the reader close to what the participants actually experience &mdash; Small and Calarco (2022)</li>
-            </ul>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Indicators of Sound Qualitative Research</h2>
+            <p class="reveal-item" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.3em;">Small and Calarco's framework for evaluating ethnographic and interview research</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.6rem, 1.2vw, 1rem); margin-top: clamp(0.5rem, 1vw, 0.8rem);">
+                <div class="card reveal-item" style="border-top: 4px solid #ff3300; padding: clamp(0.6rem, 1.2vw, 1rem);">
+                    <h3 style="font-size: var(--body-size); margin-bottom: 0.3em;">1. Cognitive Empathy</h3>
+                    <p style="font-size: var(--small-size); line-height: 1.4;">Understood those observed close to how they understand themselves</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem);">
+                    <h3 style="font-size: var(--body-size); margin-bottom: 0.3em;">2. Heterogeneity</h3>
+                    <p style="font-size: var(--small-size); line-height: 1.4;">People or places depicted are represented as diverse</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #ff9900; padding: clamp(0.6rem, 1.2vw, 1rem);">
+                    <h3 style="font-size: var(--body-size); margin-bottom: 0.3em;">3. Palpability</h3>
+                    <p style="font-size: var(--small-size); line-height: 1.4;">Evidence presented is not abstract but concrete</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #22a867; padding: clamp(0.6rem, 1.2vw, 1rem);">
+                    <h3 style="font-size: var(--body-size); margin-bottom: 0.3em;">4. Follow-up</h3>
+                    <p style="font-size: var(--small-size); line-height: 1.4;">Collected data to answer unanticipated questions during research</p>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr; gap: clamp(0.6rem, 1.2vw, 1rem); margin-top: clamp(0.6rem, 1.2vw, 1rem);">
+                <div class="card reveal-item" style="border-top: 4px solid #9b59b6; padding: clamp(0.6rem, 1.2vw, 1rem);">
+                    <h3 style="font-size: var(--body-size); margin-bottom: 0.3em;">5. Self-awareness</h3>
+                    <p style="font-size: var(--small-size); line-height: 1.4;">Recognized how the researcher's own identity affects access, interpretation, and data</p>
+                </div>
+            </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">18</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 17: Cognitive Empathy Deep Dive
+         SLIDE 19: Data Evaluation Exercise Header
          ========================================== -->
-    <section class="slide" data-steps="3">
+    <section class="slide accent-bg section-header application">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 51%"></div>
-        <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
+        <div class="progress" style="width: 42%"></div>
         <div class="slide-content">
-            <h2 class="reveal-item">Cognitive Empathy</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>The degree to which the researcher came to understand those observed close to how they understand <strong>themselves</strong></li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>What people perceive, what it means to them, what motivates them &mdash; see what they see, understand what they understand</li>
-            </ul>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <h1 class="reveal-item visible">Data Evaluation<br>Exercise</h1>
         </div>
         <span class="slide-number">19</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 18: Follow-up Deep Dive
-         ========================================== -->
-    <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 54%"></div>
-        <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
-        <div class="slide-content">
-            <h2 class="reveal-item">Follow-up</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>The extent to which the researcher collected data to answer <strong>unanticipated questions</strong> that arose during data collection &mdash; Small and Calarco (2022)</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>Good qualitative researchers remain responsive to surprises in the field and adjust their inquiry accordingly</li>
-            </ul>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
-        </div>
-        <span class="slide-number">20</span>
-    </section>
-
-    <!-- ==========================================
-         SLIDE 19: Self-Awareness Deep Dive
-         ========================================== -->
-    <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 57%"></div>
-        <div class="grid-bg"></div>
-        <span class="mode-indicator">Theory</span>
-        <div class="slide-content">
-            <h2 class="reveal-item">Self-Awareness</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>"<strong>Who [a researcher is]</strong> &mdash; their gender, race, height and weight, level of extraversion, grace or awkwardness, hairstyle, clothing, vocabulary and intonation, class background, religion, fundamental beliefs, sympathy or disdain for others, and ignorance, and every other aspect of their identity &mdash; affects <strong>how easily they reach others, what others do and say in front of them, and how they interpret what they have heard or observed.</strong>" (p. 119)</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span>Sound qualitative research requires the researcher to acknowledge and reflect on these dynamics</li>
-            </ul>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
-        </div>
-        <span class="slide-number">21</span>
-    </section>
-
-    <!-- ==========================================
-         SLIDE 20: Data Evaluation Exercise Header
-         ========================================== -->
-    <section class="slide accent-bg section-header application">
-        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 60%"></div>
-        <div class="slide-content">
-            <h1 class="reveal-item visible">Data Evaluation<br>Exercise</h1>
-        </div>
-        <span class="slide-number">22</span>
-    </section>
-
-    <!-- ==========================================
-         SLIDE 21: Exercise Timer (15 min)
+         SLIDE 20: Exercise Timer (15 min)
          ========================================== -->
     <section class="slide application" id="timer-slide">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 63%"></div>
+        <div class="progress" style="width: 44%"></div>
         <div class="slide-content" style="align-items: center; text-align: center;">
             <h2 class="reveal-item visible">Qualitative Literacy Handout</h2>
             <p class="reveal-item visible" style="font-size: var(--h3-size); max-width: 600px; margin-top: var(--content-gap);">
@@ -531,27 +533,27 @@
                 <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
             </div>
         </div>
-        <span class="slide-number">23</span>
+        <span class="slide-number">20</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 22: Debrief Header
+         SLIDE 21: Debrief Header
          ========================================== -->
     <section class="slide accent-bg section-header application">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 66%"></div>
+        <div class="progress" style="width: 47%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Debrief</h1>
         </div>
-        <span class="slide-number">24</span>
+        <span class="slide-number">21</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 23: Debrief Discussion
+         SLIDE 22: Debrief Discussion
          ========================================== -->
     <section class="slide application" data-steps="3">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
-        <div class="progress" style="width: 69%"></div>
+        <div class="progress" style="width: 49%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Application</span>
         <div class="slide-content">
@@ -564,33 +566,164 @@
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
+        <span class="slide-number">22</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 23: Exposure — The Precondition
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 51%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Exposure: The Precondition</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center; margin-top: clamp(0.5rem, 1.5vw, 1rem);">
+                <div style="display: flex; flex-direction: column; gap: clamp(0.8rem, 1.5vw, 1.2rem);">
+                    <div class="reveal-item" style="background: rgba(255, 51, 0, 0.06); border: 2px solid var(--accent); padding: clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 6px; font-size: var(--body-size); line-height: 1.5;">
+                        <strong>Exposure</strong> is the precondition for all good qualitative research and analysis &mdash; the researcher must spend sufficient time in the field or with participants.
+                    </div>
+                    <div class="reveal-item" style="background: rgba(255, 51, 0, 0.06); border: 2px solid var(--accent); padding: clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 6px; font-size: var(--body-size); line-height: 1.5;">
+                        Without adequate exposure, none of the five indicators can be meaningfully achieved.
+                    </div>
+                </div>
+                <img src="img/exposure.png" alt="Exposure — time and immersion in the field" class="reveal-item" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">23</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 24: Heterogeneity Deep Dive
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 53%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Heterogeneity</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>The extent to which the people or places depicted are represented as <strong>diverse</strong></li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>"Among both interview-based and participant observation studies, those that uncover little or no <strong>______</strong> are ultimately unconvincing." &mdash; Small and Calarco (2022)</li>
+            </ul>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">24</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 25: Palpability Deep Dive
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 56%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Palpability</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>The degree to which the evidence presented is <strong>not abstract but concrete</strong></li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>Highly <strong>palpable</strong> evidence brings the reader close to what the participants actually experience &mdash; Small and Calarco (2022)</li>
+            </ul>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
         <span class="slide-number">25</span>
     </section>
 
-    <!-- TODO: Add additional debrief/discussion slides as needed -->
+    <!-- ==========================================
+         SLIDE 26: Cognitive Empathy Deep Dive
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 58%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Cognitive Empathy</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>The degree to which the researcher came to understand those observed close to how they understand <strong>themselves</strong></li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>What people perceive, what it means to them, what motivates them &mdash; see what they see, understand what they understand</li>
+            </ul>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">26</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 27: Follow-up Deep Dive
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 61%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Follow-up</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>The extent to which the researcher collected data to answer <strong>unanticipated questions</strong> that arose during data collection &mdash; Small and Calarco (2022)</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>Good qualitative researchers remain responsive to surprises in the field and adjust their inquiry accordingly</li>
+            </ul>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">27</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 28: Self-Awareness Deep Dive
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research" class="active">Qual Research</a><a href="#looking-ahead">Looking Ahead</a></nav>
+        <div class="progress" style="width: 64%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Self-Awareness</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>"<strong>Who [a researcher is]</strong> &mdash; their gender, race, height and weight, level of extraversion, grace or awkwardness, hairstyle, clothing, vocabulary and intonation, class background, religion, fundamental beliefs, sympathy or disdain for others, and ignorance, and every other aspect of their identity &mdash; affects <strong>how easily they reach others, what others do and say in front of them, and how they interpret what they have heard or observed.</strong>" (p. 119)</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>Sound qualitative research requires the researcher to acknowledge and reflect on these dynamics</li>
+            </ul>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">28</span>
+    </section>
 
     <!-- ==========================================
          SECTION 3: Looking Ahead
          ========================================== -->
 
     <!-- ==========================================
-         SLIDE 24: Looking Ahead Section Header
+         SLIDE 29: Looking Ahead Section Header
          ========================================== -->
     <section id="looking-ahead" class="slide accent-bg section-header">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead" class="active">Looking Ahead</a></nav>
-        <div class="progress" style="width: 73%"></div>
+        <div class="progress" style="width: 69%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Looking<br>Ahead</h1>
         </div>
-        <span class="slide-number">26</span>
+        <span class="slide-number">29</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 25: Assignment #1 — Policy Puzzle
+         SLIDE 30: Assignment #1 — Policy Puzzle
          ========================================== -->
     <section class="slide application" data-steps="5">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead" class="active">Looking Ahead</a></nav>
-        <div class="progress" style="width: 76%"></div>
+        <div class="progress" style="width: 73%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Application</span>
         <div class="slide-content">
@@ -605,15 +738,15 @@
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
-        <span class="slide-number">27</span>
+        <span class="slide-number">30</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 26: In-Person Observation Ideas
+         SLIDE 31: In-Person Observation Ideas
          ========================================== -->
     <section class="slide application" data-steps="5">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead" class="active">Looking Ahead</a></nav>
-        <div class="progress" style="width: 79%"></div>
+        <div class="progress" style="width: 78%"></div>
         <div class="grid-bg"></div>
         <span class="mode-indicator">Application</span>
         <div class="slide-content">
@@ -628,11 +761,11 @@
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
-        <span class="slide-number">28</span>
+        <span class="slide-number">31</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 27: Pair Share Timer (5 min)
+         SLIDE 32: Pair Share Timer (5 min)
          ========================================== -->
     <section class="slide application" id="pairshare-timer-slide">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead" class="active">Looking Ahead</a></nav>
@@ -647,11 +780,11 @@
                 <p id="pairshare-timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
             </div>
         </div>
-        <span class="slide-number">29</span>
+        <span class="slide-number">32</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 28: For Next Class
+         SLIDE 33: For Next Class
          ========================================== -->
     <section class="slide" data-steps="4">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead" class="active">Looking Ahead</a></nav>
@@ -665,16 +798,15 @@
                 <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Assignment #1 (Policy Puzzle)</strong> due Monday, March 10 by midnight on Canvas</li>
                 <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Reading:</strong> Preparation materials for observation methods (see Canvas)</li>
             </ul>
-            <!-- TODO: Update with specific reading assignments from syllabus -->
         </div>
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
-        <span class="slide-number">30</span>
+        <span class="slide-number">33</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 29: Thank You
+         SLIDE 34: Thank You
          ========================================== -->
     <section class="slide">
         <nav class="section-nav"><a href="#mixed-methods">Mixed Methods</a><a href="#qual-research">Qual Research</a><a href="#looking-ahead" class="active">Looking Ahead</a></nav>
@@ -684,14 +816,14 @@
             <h1 style="font-size: clamp(2.5rem, 7vw, 5rem);">Thank You!</h1>
             <div style="margin-top: var(--content-gap); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 700; color: #5371ff;">Questions?</div>
             <div style="margin-top: calc(var(--content-gap) * 1.5); font-size: var(--body-size); color: var(--text-secondary);">
-                <p><strong>Prof. Liz McKenna</strong> · emckenna@hks.harvard.edu</p>
+                <p><strong>Prof. Liz McKenna</strong> &middot; emckenna@hks.harvard.edu</p>
                 <p>Office hours: Tuesdays, 1:30-3:00, T-308</p>
             </div>
         </div>
-        <span class="slide-number">31</span>
+        <span class="slide-number">34</span>
     </section>
 
-    <div class="nav-hint">&rarr; Next · &darr; Skip slide</div>
+    <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
 
     <!-- ===========================================
          JAVASCRIPT: Progressive Reveal Controller
