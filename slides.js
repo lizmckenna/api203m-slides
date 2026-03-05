@@ -197,6 +197,18 @@ class SlidePresentation {
 // Initialize presentation
 const presentation = new SlidePresentation();
 
+// Prevent address bar from reappearing in fullscreen
+document.addEventListener('scroll', (e) => {
+    if (document.fullscreenElement) {
+        e.preventDefault();
+    }
+}, { passive: false });
+
+// Smooth scroll override to prevent browser UI triggers
+document.querySelectorAll('.slide').forEach(slide => {
+    slide.style.scrollBehavior = 'auto';
+});
+
 // Print preparation - reveal all content before printing
 window.addEventListener('beforeprint', () => {
     document.querySelectorAll('.reveal-item').forEach(item => {
