@@ -63,20 +63,20 @@ class SlidePresentation {
         switch(e.key) {
             case 'ArrowRight':
             case ' ':
+            case 'PageDown':  // Wireless clickers send PageDown
                 e.preventDefault();
                 this.nextStep();
                 break;
             case 'ArrowLeft':
+            case 'PageUp':    // Wireless clickers send PageUp
                 e.preventDefault();
                 this.prevStep();
                 break;
             case 'ArrowDown':
-            case 'PageDown':
                 e.preventDefault();
                 this.nextSlide();
                 break;
             case 'ArrowUp':
-            case 'PageUp':
                 e.preventDefault();
                 this.prevSlide();
                 break;
