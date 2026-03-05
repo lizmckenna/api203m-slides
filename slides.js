@@ -229,7 +229,7 @@ class CountdownTimer {
         this.display = document.getElementById('countdown-display');
         this.hint = document.getElementById('timer-hint');
         this.timerSlide = document.getElementById('timer-slide');
-        this.duration = 5 * 60; // 5 minutes in seconds
+        this.duration = 10 * 60; // 10 minutes in seconds
         this.remaining = this.duration;
         this.interval = null;
         this.running = false;
