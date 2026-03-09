@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-203M: Observation | Prof. Liz McKenna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --title-size: clamp(3.5rem, 9vw, 7rem);
+            --h2-size: clamp(2.8rem, 7vw, 5rem);
+            --h3-size: clamp(2rem, 4.5vw, 3.2rem);
+            --body-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            --small-size: clamp(1.3rem, 2.4vw, 1.8rem);
+        }
+        .card h3 { font-size: var(--h3-size); }
+        .card p, .card li { font-size: var(--body-size); line-height: 1.4; }
+        .section-nav a[href="#assignment2"] {
+            color: #5371ff !important;
+            opacity: 0.6;
+        }
+        .section-nav a[href="#assignment2"]:hover {
+            opacity: 1;
+            background: rgba(83,113,255,0.08);
+        }
+        .section-nav a[href="#assignment2"].active {
+            opacity: 1;
+            color: #5371ff !important;
+            background: rgba(83,113,255,0.12);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 01: Police Video -->
+    <section class="slide dark">
+        <div class="progress" style="width: 3%"></div>
+        <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 3vw, 2rem);">
+            <div style="position: relative; width: 100%; max-width: 1200px; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: url('img/obs-police-thumb.jpg') center/cover no-repeat;">
+                <iframe src="https://www.youtube-nocookie.com/embed/OMOGaugKpzs?rel=0&amp;mute=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <span class="slide-number">01</span>
+    </section>
+
+    <!-- SLIDE 02: Title -->
+    <section class="slide" data-section="title">
+        <div class="progress" style="width: 6%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h1>Empirical<br>Methods <span class="highlight">II</span></h1>
+            <p class="meta">Qualitative and Mixed Methods</p>
+            <p class="meta" style="margin-top: 0.5em;">API-203M &middot; Spring 2026</p>
+            <span style="margin-top: 0.75em; align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; color: #5371ff;">Class 3: Observation</span>
+        </div>
+        <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
+    </section>
+
+    <!-- SLIDE 03: Timeline (no fragments — all visible) -->
+    <section class="slide">
+        <div class="progress" style="width: 8%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; padding-top: clamp(2.5rem, 5vw, 4rem);">
+            <h2 style="align-self: flex-start;">Module Flow &amp; Content</h2>
+
+            <div class="timeline">
+                <div class="timeline-row">
+                    <div class="timeline-module top">
+                        <h4>Introduction</h4>
+                        <p>Overview,<br>outstanding qual<br>research</p>
+                        <div class="connector"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top" style="flex: 0.5;"></div>
+                    <div class="timeline-module top">
+                        <h4>Interviewing</h4>
+                        <p>Introduction +<br>workshop observation</p>
+                        <div class="connector"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top">
+                        <h4>Focus Groups</h4>
+                        <p>Background, ethics,<br>simulation</p>
+                        <div class="connector"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                </div>
+
+                <div class="timeline-bar">
+                    <div class="week" style="background: #5371ff;" data-week="1">Week 1</div>
+                    <div class="week" style="background: var(--accent); border: 3px solid #fff; box-shadow: 0 0 0 3px var(--accent);">2</div>
+                    <div class="week" style="background: #888; flex: 0.5; font-size: clamp(0.8rem, 1.3vw, 1rem);">Break</div>
+                    <div class="week" style="background: var(--accent);">3</div>
+                    <div class="week" style="background: var(--accent);">4</div>
+                    <div class="week" style="background: var(--accent);">5</div>
+                    <div class="week" style="background: var(--accent);">6</div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector"></div>
+                        <h4>Observation + Ethics</h4>
+                        <p>Ethnography,<br>fieldwork</p>
+                    </div>
+                    <div class="timeline-module bottom" style="flex: 0.5;"></div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector"></div>
+                        <h4>Interviewing 2.0</h4>
+                        <p>Workshop<br>interview assignment</p>
+                    </div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector"></div>
+                        <h4>Qual Coding + Wrap-Up</h4>
+                        <p>Coding workshop,<br>Anthropic guest lecture</p>
+                    </div>
+                </div>
+
+                <!-- YOU ARE HERE callout under Week 2 -->
+                <div class="timeline-here-callout" style="margin-left: 15.4%;">YOU ARE HERE</div>
+
+                <!-- Assignment #1 ✓ -->
+                <div class="timeline-callout" style="width: calc(15.4% - 4px); opacity: 0.5; background: #f0f0f0; border-color: #999;">
+                    <strong style="color: #999;">&#10003; Assignment #1 (Policy Puzzle)</strong>
+                    <span style="color: #888; font-size: clamp(0.75rem, 1.1vw, 0.9rem);">submitted</span>
+                </div>
+
+                <!-- Assignment #2 callout -->
+                <div class="timeline-callout" style="margin-left: 22%; width: calc(25% - 4px);">
+                    <strong>Assignment #2 (Observation)</strong>
+                    due Wednesday, March 25 at 11:59PM
+                </div>
+            </div>
+        </div>
+        <span class="slide-number">03</span>
+    </section>
+
+    <!-- SLIDE 04: Roadmap -->
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 11%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Class 3: Observation</h2>
+            <div class="columns" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="card reveal-item">
+                    <h3>Ethnography</h3>
+                    <p>Background on the method</p>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Examples</h3>
+                    <p>Policy-relevant ethnography</p>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Ethics</h3>
+                    <p>Guidelines for observation</p>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Field Notes</h3>
+                    <p>Good vs. inadequate notes</p>
+                </div>
+                <div class="card reveal-item" style="border-top-color: #5371ff;">
+                    <h3 style="color: #5371ff;">Assignment #2</h3>
+                    <p>Observation assignment &amp; spring break!</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">04</span>
+    </section>
+
+    <!-- SLIDE 05: Section Header — Ethnography -->
+    <section id="ethnography" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 14%"></div>
+        <div class="slide-content"><h1 class="reveal-item visible">Ethnography</h1></div>
+        <span class="slide-number">05</span>
+    </section>
+
+    <!-- SLIDE 06: What is ethnography / observation? -->
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 17%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">Ethnography &amp; Observation</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: clamp(0.3rem, 0.8vw, 0.5rem);">
+                <div>
+                    <h3 class="reveal-item" style="color: var(--accent); margin-bottom: 0.5em;">What is ethnography?</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span>Researcher is part of a social setting for a <strong>prolonged period</strong> &mdash; working, eating, partying, attending religious services</div>
+                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span>Goal: understand the people (norms, values, behavior) in the study &mdash; <em>&ldquo;Deep hanging out&rdquo;</em> (Rosaldo, 1994)</div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="reveal-item" style="color: var(--accent); margin-bottom: 0.5em;">What is observation?</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                        <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span>Can be <strong>episodic</strong> (less in depth) &mdash; not necessarily immersive (e.g., observe spaces and places by visiting briefly)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">06</span>
+    </section>
+
+    <!-- SLIDE 07: Situations suited for ethnography -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 19%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">When to Use Ethnography or Observation</h2>
+            <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>New topics</strong> where little is known</div>
+                <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span>Important <strong>differences between insiders and outsiders</strong>, especially those obscured from public view</div>
+                <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Exploratory studies</strong> &mdash; deep insight into contexts, relationships, behaviors</div>
+                <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span>Uniquely rich insights into <strong>gaps between observed and revealed preferences</strong></div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">07</span>
+    </section>
+
+    <!-- SLIDE 08: Advantages & Disadvantages -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 22%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Advantages &amp; Disadvantages</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="border-top-color: #22c55e;">
+                    <h3 style="color: #22c55e;">Advantages</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.6em; font-size: var(--body-size); line-height: 1.4;">
+                        <div><span style="color: #22c55e; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>&ldquo;Thick description&rdquo;</strong> of complex phenomena</div>
+                        <div><span style="color: #22c55e; font-weight: 700; margin-right: 0.4em;">&bull;</span>Range of perspectives among group (<strong>heterogeneity</strong>)</div>
+                        <div><span style="color: #22c55e; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>High internal validity</strong> (when done well) = deep insight</div>
+                    </div>
+                </div>
+                <div class="card reveal-item" style="border-top-color: #ef4444;">
+                    <h3 style="color: #ef4444;">Disadvantages</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.6em; font-size: var(--body-size); line-height: 1.4;">
+                        <div><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>Protracted</strong> &mdash; can take a very long time to earn trust</div>
+                        <div><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>Difficult:</strong> highly ethnographer-dependent</div>
+                        <div><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span>Ethics &amp; bias always concerns</div>
+                        <div><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>Low external validity</strong> (usually non-random sampling)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">08</span>
+    </section>
+
+    <!-- SLIDE 09: Key Considerations -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 25%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Key Considerations</h2>
+            <div class="columns">
+                <div class="card reveal-item">
+                    <h3>Sampling</h3>
+                    <p>Deep analysis of one group or place, but not necessarily representative or generalizable</p>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Veracity</h3>
+                    <p>Does the presence of a researcher change the behavior of the study population?</p>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Reliability</h3>
+                    <p>Did the researcher understand what they think they saw and heard? Insider vs. outsider perspective?</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">09</span>
+    </section>
+
+    <!-- SLIDE 10: Section Header — Examples -->
+    <section id="examples" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples" class="active">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 28%"></div>
+        <div class="slide-content"><h1 class="reveal-item visible">Examples</h1></div>
+        <span class="slide-number">10</span>
+    </section>
+
+    <!-- SLIDE 11: Policy-relevant ethnography examples -->
+    <section class="slide" data-steps="7">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples" class="active">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 31%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">Policy-Relevant Ethnography</h2>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1rem, 2vw, 2rem); align-items: start;">
+                <div class="point-list">
+                    <div class="point-item reveal-item"><span class="point-num">01</span><div><strong>Fenno (1978)</strong><p>Classic study of US Congress members; generated research ideas through direct observation</p></div></div>
+                    <div class="point-item reveal-item"><span class="point-num">02</span><div><strong>Ehrenreich</strong><p>Impact of 1996 welfare reform on the working poor; worked two low-wage jobs for two years</p></div></div>
+                    <div class="point-item reveal-item"><span class="point-num">03</span><div><strong>Cramer (2016)</strong><p>Rural perspectives on politics; 5 years observing in diners, churches, and gas stations</p></div></div>
+                    <div class="point-item reveal-item"><span class="point-num">04</span><div><strong>Buford (1990)</strong><p>Football hooliganism; 8 years of witnessing and participating in violence</p></div></div>
+                    <div class="point-item reveal-item"><span class="point-num">05</span><div><strong>Nathan (2019)</strong><p>Immersed in campus culture at a liberal arts school; interviews with 100+ students</p></div></div>
+                    <div class="point-item reveal-item"><span class="point-num">06</span><div><strong>Sociologist as paramedic</strong><p>Worked two years as a paramedic to understand fragmented health care delivery</p></div></div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; flex-shrink: 0;">
+                    <img src="img/obs-ethnography-ex-1.jpg" alt="Ethnography example" style="width: clamp(120px, 14vw, 200px); border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <img src="img/obs-ethnography-ex-2.png" alt="Ethnography example" style="width: clamp(120px, 14vw, 200px); border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">11</span>
+    </section>
+
+    <!-- SLIDE 12: Participant Observation Photos -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples" class="active">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 33%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center;">
+            <h2 class="reveal-item visible">Participant Observation in Practice</h2>
+            <div class="reveal-item visible" style="display: flex; gap: clamp(1rem, 2vw, 2rem); justify-content: center; align-items: center; flex-wrap: wrap;">
+                <img src="img/obs-participant-1.png" alt="Participant observation example" style="max-height: 55vh; max-width: 45%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
+                <img src="img/obs-participant-2.png" alt="Participant observation example" style="max-height: 55vh; max-width: 45%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
+            </div>
+        </div>
+        <span class="slide-number">12</span>
+    </section>
+
+    <!-- SLIDE 13: Taylor & Bogdan Quote -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples" class="active">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 36%"></div>
+        <div class="slide-content" style="max-width: 950px; margin: 0 auto;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(1.4rem, 3.2vw, 2.4rem); text-transform: none; font-weight: 600; line-height: 1.4;">
+                &ldquo;Those who want to use qualitative methods because they seem <span class="highlight">easier</span> than quantitative methods are in for a <span class="highlight">rude awakening</span>.&rdquo;
+            </blockquote>
+            <cite class="reveal-item visible" style="font-size: var(--body-size);">&mdash; Taylor &amp; Bogdan (1984)</cite>
+        </div>
+        <span class="slide-number">13</span>
+    </section>
+
+    <!-- SLIDE 14: Section Header — Ethics -->
+    <section id="ethics" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics" class="active">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 39%"></div>
+        <div class="slide-content"><h1 class="reveal-item visible">Ethics</h1></div>
+        <span class="slide-number">14</span>
+    </section>
+
+    <!-- SLIDE 15: Three Principles -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics" class="active">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 42%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Ethics and Observation</h2>
+            <div class="columns">
+                <div class="card reveal-item">
+                    <h3>Respect for Persons</h3>
+                    <p>Individuals should be treated as autonomous agents; persons with diminished autonomy are entitled to protection</p>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Beneficence</h3>
+                    <p>Do no harm; maximize possible benefits and minimize possible harms to subjects</p>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Justice</h3>
+                    <p>Fair distribution of the burdens and benefits of research; who bears the risks and who receives the benefits?</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">15</span>
+    </section>
+
+    <!-- SLIDE 16: Fujii Quote -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics" class="active">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 44%"></div>
+        <div class="slide-content" style="max-width: 950px; margin: 0 auto;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(1.2rem, 2.8vw, 2rem); text-transform: none; font-weight: 600; line-height: 1.4;">
+                &ldquo;When researchers insert themselves, even as observers, they <span class="highlight">alter the social landscape</span>. They do so by drawing attention to those in their orbit, such as key informants, research assistants, and interpreters. Such attention may be a <span class="highlight">boon to some</span>, but a <span class="highlight">threat to others</span>.&rdquo;
+            </blockquote>
+            <cite class="reveal-item visible" style="font-size: var(--body-size);">&mdash; Fujii, p. 720</cite>
+        </div>
+        <span class="slide-number">16</span>
+    </section>
+
+    <!-- SLIDE 17: Ethical Considerations for Assignment -->
+    <section class="slide application" data-steps="5">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics" class="active">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 47%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Application</span>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">Ethical Considerations for Your Assignment</h2>
+            <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Public settings only</strong> &mdash; in ethnographies of private settings, obtain consent from individuals/groups being studied</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Anonymize data</strong> &mdash; field notes and memo should not contain identifying information unless essential and consent has been given</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Non-intervention</strong> &mdash; as much as possible, observe the natural course of events</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Sensitivity to context</strong> &mdash; some behaviors might be considered more private, even in a public setting</div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">17</span>
+    </section>
+
+    <!-- SLIDE 18: Section Header — Field Notes -->
+    <section id="field-notes" class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes" class="active">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 50%"></div>
+        <div class="slide-content"><h1 class="reveal-item visible">Field<br>Notes</h1></div>
+        <span class="slide-number">18</span>
+    </section>
+
+    <!-- SLIDE 19: Thick Description -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes" class="active">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 53%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">What Is &ldquo;Thick Description&rdquo;?</h2>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1rem, 2vw, 2rem); align-items: start;">
+                <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                    <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Show rather than tell</strong> &mdash; use evocative language when describing a field site</div>
+                    <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Be as specific as possible</strong> &mdash; avoid general or abstract words</div>
+                    <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Use examples, descriptions, and quotations</strong> to make the experience concrete for the reader</div>
+                </div>
+                <img src="img/obs-thick-desc-1.png" alt="Thick description example" style="width: clamp(140px, 16vw, 240px); border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            </div>
+            <cite class="reveal-item visible" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;">Vanderbilt Writing Studio (2012)</cite>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">19</span>
+    </section>
+
+    <!-- SLIDE 20: WRITE Framework (progressive letter reveal) -->
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes" class="active">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 56%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">Writing High-Quality Notes (Lareau)</h2>
+            <div class="point-list">
+                <div class="point-item reveal-item">
+                    <span class="point-num" style="font-size: var(--h3-size);">W</span>
+                    <div>
+                        <strong>Who, What, When, Where, How</strong>
+                        <p>The basic facts of what you observed</p>
+                    </div>
+                </div>
+                <div class="point-item reveal-item">
+                    <span class="point-num" style="font-size: var(--h3-size);">R</span>
+                    <div>
+                        <strong>Reaction</strong>
+                        <p>Responses to questions and to responses</p>
+                    </div>
+                </div>
+                <div class="point-item reveal-item">
+                    <span class="point-num" style="font-size: var(--h3-size);">I</span>
+                    <div>
+                        <strong>Inaction</strong>
+                        <p>Silence or non-verbal responses</p>
+                    </div>
+                </div>
+                <div class="point-item reveal-item">
+                    <span class="point-num" style="font-size: var(--h3-size);">T</span>
+                    <div>
+                        <strong>Timing</strong>
+                        <p>Speed of speaking; joking</p>
+                    </div>
+                </div>
+                <div class="point-item reveal-item">
+                    <span class="point-num" style="font-size: var(--h3-size);">E</span>
+                    <div>
+                        <strong>Emotions</strong>
+                        <p>Non-verbal signs of emotion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">20</span>
+    </section>
+
+    <!-- SLIDE 21: Vague to Thick table -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes" class="active">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 58%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center;">
+            <h2 class="reveal-item visible">Moving from Vague to &ldquo;Thick&rdquo;</h2>
+            <img class="reveal-item visible" src="img/obs-vague-to-thick.png" alt="Vague to thick description comparison" style="max-height: 60vh; max-width: 90%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+            <cite class="reveal-item visible" style="font-size: var(--small-size); color: var(--text-secondary);">Adapted from Vanderbilt Writing Studio (2012)</cite>
+        </div>
+        <span class="slide-number">21</span>
+    </section>
+
+    <!-- SLIDE 22: Avoiding conclusive statements -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes" class="active">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 61%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center;">
+            <h2 class="reveal-item visible">Avoiding Conclusive Statements</h2>
+            <img class="reveal-item visible" src="img/obs-avoiding-conclusions.png" alt="Avoiding conclusive statements table" style="max-height: 60vh; max-width: 90%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+            <cite class="reveal-item visible" style="font-size: var(--small-size); color: var(--text-secondary);">Adapted from Vanderbilt Writing Studio (2012)</cite>
+        </div>
+        <span class="slide-number">22</span>
+    </section>
+
+    <!-- SLIDE 23: What could be vs what is -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes" class="active">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 64%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center;">
+            <h2 class="reveal-item visible">What Could Be vs. What Is Happening</h2>
+            <img class="reveal-item visible" src="img/obs-what-could-be.png" alt="What could be vs what is table" style="max-height: 60vh; max-width: 90%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+            <cite class="reveal-item visible" style="font-size: var(--small-size); color: var(--text-secondary);">Adapted from Vanderbilt Writing Studio (2012)</cite>
+        </div>
+        <span class="slide-number">23</span>
+    </section>
+
+    <!-- SLIDE 24: Field Notes Example 1 -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes" class="active">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 67%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(2rem, 4vw, 3rem);">
+            <h2 class="reveal-item visible" style="font-size: var(--h3-size);">Example Field Notes</h2>
+            <div class="reveal-item visible" style="display: grid; grid-template-columns: 1fr; gap: 0; background: #f8f8f8; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-top: 3px solid var(--accent); font-size: clamp(0.85rem, 1.5vw, 1.1rem); line-height: 1.45;">
+                <div style="margin-bottom: 0.5em;"><strong style="color: var(--accent);">6:29 PM</strong> &mdash; While the cashier bills the customers, a family enters the store. Presumably, the husband, his wife in a shalwar kameez outfit and their two children &mdash; a boy and a girl, both of whom seem like 7&ndash;8 years old. The kids are effervescent and bubbly as soon as they enter the store, running in between the aisles as though they know the place well. The parents make their way to the oil/ghee section, and they start discussing which brand is the most cost-effective.</div>
+                <div style="margin-bottom: 0.5em;"><strong style="color: var(--accent);">6:33 PM</strong> &mdash; The parents continue to go through the aisles, picking up specific spices, pickles, rice and legumes. Intermittently, the children grab snacks from the snack aisle. The parents emphatically refuse most of the snacks but allow both children to choose one brand of fried snack they can mutually decide.</div>
+                <div><strong style="color: var(--accent);">6:37 PM</strong> &mdash; The family go through the store almost mechanically. They speak in Hindi and tell the cashier to extend a hello to his father. The cashier then lets the children choose one candy each &mdash; they happily choose a tamarind lollipop each.</div>
+            </div>
+            <div class="reveal-item visible" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em; text-align: right;">&mdash; Abeera Ahmed &middot; Foodland, Cambridge, MA &middot; Sunday, March 5, 2023</div>
+        </div>
+        <span class="slide-number">24</span>
+    </section>
+
+    <!-- SLIDE 25: Field Notes Example 2 -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes" class="active">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 69%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(2rem, 4vw, 3rem);">
+            <h2 class="reveal-item visible" style="font-size: var(--h3-size);">Example Field Notes</h2>
+            <div class="reveal-item visible" style="background: #f8f8f8; border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-top: 3px solid var(--accent); font-size: clamp(0.85rem, 1.5vw, 1.1rem); line-height: 1.45;">
+                <p style="margin: 0 0 0.5em;">The room is a spacious auditorium with wood paneled floors covered in a fading finish dotted with folding tables for people to congregate. I am standing at the front of the room near the door at the top of the staircase ushering people towards the food line and answering any questions.</p>
+                <p style="margin: 0 0 0.5em;">The style of dress is not that different from what you might see at the typical Sunday mass: most people dressed in modest, casual clothing with weather appropriate jackets. Prominent urban streetwear brands like Jordan and True Religion are some of the most common styles.</p>
+                <p style="margin: 0;">Most people seeking assistance were women &mdash; either alone or with children &mdash; as well as some two parent family units and the occasional single man. Children skewed younger in age with most looking to be in early adolescence roughly 10 years old and below. While the Church welcomes anyone, there were no unaccompanied minors or single young people.</p>
+            </div>
+            <div class="reveal-item visible" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em; text-align: right;">&mdash; Jaime Cobham &middot; St. Athanasius Church, Brooklyn &middot; Sunday, March 5, 2023</div>
+        </div>
+        <span class="slide-number">25</span>
+    </section>
+
+    <!-- SLIDE 26: Section Header — Assignment #2 (blue) -->
+    <section id="assignment2" class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 72%"></div>
+        <div class="slide-content"><h1 class="reveal-item visible">Assignment<br><span class="highlight">#2</span></h1></div>
+        <span class="slide-number">26</span>
+    </section>
+
+    <!-- SLIDE 27: Assignment Part 1 -->
+    <section class="slide application" data-steps="4">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 75%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Application</span>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">Assignment #2: Observation <span style="font-size: var(--small-size); opacity: 0.7;">Part 1 of 3</span></h2>
+            <div class="reveal-item" style="align-self: flex-start; background: rgba(83,113,255,0.08); border: 2px solid #5371ff; padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: var(--small-size); font-weight: 700; color: #5371ff; margin-bottom: 0.5em;">Due Wednesday, March 25 at 11:59PM</div>
+            <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Observe</strong> a social location of your choosing once for at least <strong>60 minutes</strong></div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span>During your visit, <strong>unobtrusively write short notes</strong>. For some settings, you might not be able to write extensive notes until after you leave</div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">27</span>
+    </section>
+
+    <!-- SLIDE 28: Assignment Part 2 -->
+    <section class="slide application" data-steps="2">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 78%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Application</span>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">Part 2: Reflection Memo</h2>
+            <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span>Write a <strong>reflection memo</strong> (~250 words) that surfaces some key themes and analytic observations from your initial observation</div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">28</span>
+    </section>
+
+    <!-- SLIDE 29: Assignment Part 3 -->
+    <section class="slide application" data-steps="5">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 81%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Application</span>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">Part 3: Cover Note</h2>
+            <div class="reveal-item" style="font-size: var(--body-size); color: var(--text-secondary); margin-bottom: 0.5em;">Write a cover note (~250 words) that describes:</div>
+            <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Where</strong> (and when) you did your observation</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Why</strong> you chose this location</div>
+                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span>What you saw as <strong>markers or themes</strong> related to your policy puzzle &mdash; and what your observations imply about causes or consequences (<strong>induce a hypothesis</strong>)</div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">29</span>
+    </section>
+
+    <!-- SLIDE 30: Combine & Submit -->
+    <section class="slide application" data-steps="5">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 83%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Application</span>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">Combine &amp; Submit</h2>
+            <div class="reveal-item" style="font-size: var(--body-size); color: var(--text-secondary); margin-bottom: 0.5em;">Combine the following into a single PDF and submit on Canvas:</div>
+            <div class="point-list">
+                <div class="point-item reveal-item"><span class="point-num" style="color: #5371ff;">01</span><div><strong>Your 250-word cover note</strong></div></div>
+                <div class="point-item reveal-item"><span class="point-num" style="color: #5371ff;">02</span><div><strong>Your 250-word reflection memo</strong></div></div>
+                <div class="point-item reveal-item"><span class="point-num" style="color: #5371ff;">03</span><div><strong>Your typed field notes</strong></div></div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">30</span>
+    </section>
+
+    <!-- SLIDE 31: Site Examples + Reflection Memo Example -->
+    <section class="slide application" data-steps="3">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 86%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Application</span>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(2rem, 4vw, 3rem);">
+            <h2 class="reveal-item">Be Creative (but Safe) in Choosing Your Site</h2>
+            <div class="reveal-item" style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1rem, 2vw, 1.5rem); align-items: start;">
+                <div style="background: rgba(83,113,255,0.05); border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-left: 3px solid #5371ff;">
+                    <p style="font-size: var(--small-size); font-weight: 700; color: #5371ff; margin: 0 0 0.3em; font-family: 'Archivo', system-ui, sans-serif;">EXAMPLE REFLECTION MEMO</p>
+                    <p style="font-size: clamp(0.85rem, 1.5vw, 1.1rem); line-height: 1.45; margin: 0 0 0.4em;">The greatest themes I saw in my observation was not from the protestors themselves but from the people walking through them. Men passing through seemed more likely to make loud jokes; the women walking through consistently kept their eyes to the ground as if to avoid inviting attention.</p>
+                    <p style="font-size: clamp(0.85rem, 1.5vw, 1.1rem); line-height: 1.45; margin: 0;">From this observation, even if protest movements do not interact with women seeking services, their <strong>presence would likely deter women</strong> from seeking in-clinic care. In areas where protestors are more likely, women may be more likely to pursue telehealth abortions.</p>
+                </div>
+                <img src="img/obs-protest-example.jpg" alt="Protest observation example" style="width: clamp(140px, 16vw, 240px); border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            </div>
+            <div class="reveal-item" style="margin-top: 0.5em; font-size: var(--small-size); color: var(--text-secondary); display: flex; align-items: center; gap: 0.5em;">
+                <img src="img/obs-site-icon.png" alt="" style="width: 20px; height: 20px;">
+                Interested in income inequality? Could observe spaces in Harvard Square
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">31</span>
+    </section>
+
+    <!-- SLIDE 32: Lareau Chapter Reference -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 89%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
+            <h2 class="reveal-item">Resources for This Assignment</h2>
+            <div class="reveal-item" style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;">
+                <div>
+                    <blockquote style="font-size: clamp(1.1rem, 2.2vw, 1.6rem); text-transform: none; font-weight: 600; line-height: 1.4; border-left: 3px solid var(--accent); padding-left: 1em; margin-bottom: 1em;">
+                        &ldquo;The goal of writing field notes is to convey, using words, your experience so that others may experience too, albeit in a different fashion, as you show them your data.&rdquo;
+                    </blockquote>
+                    <p style="font-size: var(--body-size); line-height: 1.5;">
+                        <strong>Reading:</strong> Lareau, Annette (2021). <em>Listening to People.</em><br>
+                        <span style="color: var(--text-secondary);">Ch. 6: Learning to Do Participant Observation</span><br>
+                        <span style="color: var(--text-secondary);">Ch. 7: Writing High-Quality Field Notes</span>
+                    </p>
+                    <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;">+ Examples from other student submissions on Canvas</p>
+                </div>
+                <img src="img/obs-lareau-book.png" alt="Listening to People by Annette Lareau" style="width: clamp(140px, 16vw, 220px); border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15);">
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">32</span>
+    </section>
+
+    <!-- SLIDE 33: Looking Ahead Timeline -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 92%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(2.5rem, 5vw, 4rem);">
+            <h2 class="reveal-item">Looking Ahead</h2>
+            <div style="display: flex; flex-direction: column; gap: clamp(0.4rem, 1vw, 0.8rem);">
+                <div class="reveal-item" style="display: flex; align-items: center; gap: 1em; background: rgba(83,113,255,0.06); border: 2px solid #5371ff; padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px;">
+                    <span style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; color: #5371ff; font-size: var(--body-size); min-width: 6em;">Mar 16&ndash;20</span>
+                    <span style="font-size: var(--body-size); font-weight: 600;">Spring Break &mdash; Have a great break!</span>
+                </div>
+                <div class="reveal-item" style="display: flex; align-items: center; gap: 1em; background: rgba(255,51,0,0.04); border: 2px solid var(--accent); padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px;">
+                    <span style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; color: var(--accent); font-size: var(--body-size); min-width: 6em;">Tue Mar 24</span>
+                    <span style="font-size: var(--body-size);"><strong>Class 5:</strong> Interviewing &mdash; Introduction</span>
+                </div>
+                <div class="reveal-item" style="display: flex; align-items: center; gap: 1em; background: rgba(83,113,255,0.06); border: 2px solid #5371ff; padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px;">
+                    <span style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; color: #5371ff; font-size: var(--body-size); min-width: 6em;">Wed Mar 25</span>
+                    <span style="font-size: var(--body-size); font-weight: 700; color: #5371ff;">Assignment #2 (Observation) due at 11:59PM</span>
+                </div>
+            </div>
+            <p class="reveal-item visible" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 1em;">Suggestion: Schedule your observation during or soon after spring break, but don&rsquo;t wait until the last minute &mdash; you&rsquo;ll need time to type up your notes and write the reflection memo.</p>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">33</span>
+    </section>
+
+    <!-- SLIDE 34: Questions -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 94%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h1 class="reveal-item visible" style="font-size: clamp(2.5rem, 7vw, 5rem);">Questions?</h1>
+            <p class="reveal-item visible" style="font-size: var(--body-size); color: var(--text-secondary); margin-top: var(--content-gap);">Your project, the assignment arc, anything else?</p>
+        </div>
+        <span class="slide-number">34</span>
+    </section>
+
+    <!-- SLIDE 35: Small Group Ethics Discussion (Timer) -->
+    <section class="slide application" id="timer-slide">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 97%"></div>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h2 class="reveal-item visible">Small Group Discussion</h2>
+            <p class="reveal-item visible" style="font-size: var(--h3-size); max-width: 700px; margin-top: var(--content-gap);">
+                What are some <strong>ethical guardrails</strong> that will be important for you to maintain when you do your observation and interview assignments?
+            </p>
+            <div class="timer-container reveal-item visible" style="margin-top: var(--content-gap);">
+                <p id="countdown-display" style="font-size: clamp(3rem, 10vw, 6rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">10:00</p>
+                <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
+            </div>
+        </div>
+        <span class="slide-number">35</span>
+    </section>
+
+    <!-- SLIDE 36: Thank You -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 100%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h1 style="font-size: clamp(2.5rem, 7vw, 5rem);">Thank You!</h1>
+            <div style="margin-top: var(--content-gap); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 700; color: #5371ff;">Have a great spring break!</div>
+            <div style="margin-top: calc(var(--content-gap) * 1.5); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.5rem, 1vw, 1rem); text-align: left; font-size: clamp(0.8rem, 1.4vw, 1.05rem); max-width: 800px; width: 100%;">
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Prof. Liz McKenna</strong></p>
+                    <p style="margin: 0; color: var(--text-secondary);">emckenna@hks.harvard.edu</p>
+                    <p style="margin: 0.3em 0 0; color: var(--text-secondary); font-size: clamp(0.7rem, 1.2vw, 0.9rem);">Office hours: via Calendly, T-308 or Zoom</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Katie Tucker</strong> <span style="color: #5371ff;">(TF)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary);">ktucker@g.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Liam Chai</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary);">liam_chai@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Christina Iruela Lane</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary);">ciruelalane@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Muhammad Irfan Sadiq</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary);">muhammadirfansadiq@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Dani Schulman</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary);">danielaschulman@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Jessica De Simone</strong> <span style="color: var(--text-secondary);">(FA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary);">jessica_de_simone@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(0.7rem, 1.2vw, 0.9rem);">TF/CAs available by appointment</p>
+                </div>
+            </div>
+        </div>
+        <span class="slide-number">36</span>
+    </section>
+
+    <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
+
+    <script src="slides.js"></script>
+</body>
+</html>
