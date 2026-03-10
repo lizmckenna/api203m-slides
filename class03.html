@@ -339,7 +339,7 @@
                         <td class="reveal-item" data-group="0" style="background: #5371ff; color: white; font-weight: 700; text-align: center; padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px 0 0 0; vertical-align: middle;">High<br>Internal</td>
                         <td class="reveal-item" data-group="1" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 1px solid #ddd; vertical-align: top; background: #f8f8f8;">
                             <strong style="color: #5371ff;">Deep but narrow</strong><br>
-                            Rich account of one unusual setting &mdash; convincing locally, may not generalize
+                            Rich account of one unusual setting. Convincing locally, may not generalize
                         </td>
                         <td class="reveal-item" data-group="3" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 1px solid #ddd; vertical-align: top; background: rgba(83,113,255,0.06);">
                             <strong style="color: #22c55e;">The ideal</strong><br>
@@ -350,11 +350,11 @@
                         <td class="reveal-item" data-group="0" style="background: #5371ff; color: white; font-weight: 700; text-align: center; padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 0 0 0 4px; vertical-align: middle;">Low<br>Internal</td>
                         <td class="reveal-item" data-group="4" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 1px solid #ddd; vertical-align: top; background: rgba(255,51,0,0.04);">
                             <strong style="color: var(--accent);">Thin &amp; narrow</strong><br>
-                            Shaky local account, no broader claim &mdash; weak all around
+                            Shaky local account, no broader claim. Weak all around
                         </td>
                         <td class="reveal-item" data-group="2" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 1px solid #ddd; vertical-align: top; background: #f8f8f8;">
                             <strong style="color: #b8860b;">Overreach</strong><br>
-                            Broad claims from thin fieldwork &mdash; ambitious but evidence too shallow
+                            Broad claims from thin fieldwork. Ambitious but evidence too shallow
                         </td>
                     </tr>
                 </tbody>
@@ -1000,6 +1000,32 @@
             timer.duration = 5 * 60;
             timer.remaining = 5 * 60;
         }
+
+        // Wireless presenter/clicker support
+        // Many clickers send Enter, period, or b — add those as advance triggers
+        // Also ensure focus stays on document so keystrokes are captured
+        document.body.setAttribute('tabindex', '0');
+        document.body.focus();
+        window.addEventListener('focus', () => document.body.focus());
+        window.addEventListener('click', () => document.body.focus());
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === 'F5') {
+                e.preventDefault();
+                presentation.nextStep();
+            }
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                presentation.prevStep();
+            }
+        });
+
+        // Ensure no element steals focus from the presentation
+        document.addEventListener('focusin', (e) => {
+            if (e.target !== document.body && !e.target.closest('#countdown-display')) {
+                document.body.focus();
+            }
+        });
     </script>
 </body>
 </html>
