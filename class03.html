@@ -29,8 +29,8 @@
             color: #5371ff !important;
             background: rgba(83,113,255,0.12);
         }
-        /* Hide Assignment 1 when Assignment 2 is revealed */
-        .assign-swap:has(.assign2.visible) .reveal-item:not(.assign2) {
+        /* Hide Assignment 1 when next assignment is revealed */
+        .assign-swap:has(.assign-next.visible) .reveal-item:not(.assign-next) {
             opacity: 0 !important;
             transform: translateY(15px) !important;
             pointer-events: none;
@@ -61,93 +61,92 @@
             <span style="margin-top: 0.75em; align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; color: #5371ff;">Class 3: Observation</span>
         </div>
         <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
-        <span class="slide-number">02</span>
     </section>
 
     <!-- SLIDE 03: Timeline (click-through assignments) -->
     <section class="slide" data-steps="3">
         <div class="progress" style="width: 8%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="align-items: center; padding-top: clamp(1.5rem, 3vw, 2.5rem);">
-            <h2 class="reveal-item" style="align-self: flex-start; font-size: clamp(3rem, 6vw, 4.5rem);">Module Flow &amp; Content</h2>
+        <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
+            <h2 class="reveal-item" style="align-self: flex-start; font-size: clamp(2.8rem, 5vw, 3.8rem); margin-bottom: clamp(0.5rem, 1vw, 0.75rem);">Module Flow &amp; Content</h2>
 
-            <div class="timeline" style="max-width: 1100px;">
+            <div class="timeline" style="max-width: 100%; width: 100%;">
                 <div class="timeline-row">
                     <div class="timeline-module top">
-                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Introduction</h4>
-                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Overview,<br>outstanding qual<br>research</p>
-                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Introduction</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Overview,<br>outstanding qual<br>research</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
                     </div>
                     <div class="timeline-module top"></div>
                     <div class="timeline-module top" style="flex: 0.5;"></div>
                     <div class="timeline-module top">
-                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Interviewing</h4>
-                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Introduction +<br>workshop observation</p>
-                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Introduction +<br>workshop observation</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
                     </div>
                     <div class="timeline-module top"></div>
                     <div class="timeline-module top">
-                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Focus Groups</h4>
-                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Background, ethics,<br>simulation</p>
-                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Focus Groups</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Background, ethics,<br>simulation</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
                     </div>
                     <div class="timeline-module top"></div>
                 </div>
 
-                <div class="timeline-bar" style="height: clamp(3.2rem, 6.5vh, 5rem);">
-                    <div class="week" style="background: var(--accent);">1</div>
-                    <div class="week" style="background: #5371ff; border: 3px solid #fff; box-shadow: 0 0 0 3px #5371ff;">Week 2</div>
+                <div class="timeline-bar" style="height: clamp(3.5rem, 7vh, 5.5rem);">
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">1</div>
+                    <div class="week" style="background: #5371ff; border: 3px solid #fff; box-shadow: 0 0 0 3px #5371ff; font-size: clamp(1.2rem, 2vw, 1.6rem);">Week 2</div>
                     <div class="week" style="background: #888; flex: 0.5; font-size: clamp(1rem, 1.6vw, 1.3rem);">Break</div>
-                    <div class="week" style="background: var(--accent);">3</div>
-                    <div class="week" style="background: var(--accent);">4</div>
-                    <div class="week" style="background: var(--accent);">5</div>
-                    <div class="week" style="background: var(--accent);">6</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">3</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">4</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">5</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">6</div>
                 </div>
 
                 <div class="timeline-row">
                     <div class="timeline-module bottom"></div>
                     <div class="timeline-module bottom">
-                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
-                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Observation + Ethics</h4>
-                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Ethnography,<br>fieldwork</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Observation + Ethics</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Ethnography,<br>fieldwork</p>
                     </div>
                     <div class="timeline-module bottom" style="flex: 0.5;"></div>
                     <div class="timeline-module bottom"></div>
                     <div class="timeline-module bottom">
-                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
-                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Interviewing 2.0</h4>
-                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Workshop<br>interview assignment</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing 2.0</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Workshop<br>interview assignment</p>
                     </div>
                     <div class="timeline-module bottom"></div>
                     <div class="timeline-module bottom">
-                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
-                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Qual Coding + Wrap-Up</h4>
-                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Coding workshop,<br>Anthropic guest lecture</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Qual Coding + Wrap-Up</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Coding workshop,<br>Anthropic guest lecture</p>
                     </div>
                 </div>
 
                 <!-- YOU ARE HERE callout under Week 2 -->
-                <div class="timeline-here-callout" style="margin-left: 15.4%; font-size: clamp(0.95rem, 1.5vw, 1.2rem); padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.6rem, 1.2vw, 1rem);">YOU ARE HERE</div>
+                <div class="timeline-here-callout" style="margin-left: 15.4%; font-size: clamp(1rem, 1.6vw, 1.3rem); padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.7rem, 1.4vw, 1.1rem);">YOU ARE HERE</div>
 
                 <!-- Assignment callouts — swap container -->
-                <div class="assign-swap" style="position: relative; width: 100%; min-height: clamp(4.5rem, 9vh, 7rem); margin-top: clamp(0.5rem, 1vh, 0.75rem);">
+                <div class="assign-swap" style="position: relative; width: 100%; min-height: clamp(5rem, 10vh, 8rem); margin-top: clamp(0.5rem, 1vh, 0.75rem);">
 
                     <!-- Assignment #1 ✓ (click 1: appears) -->
-                    <div class="reveal-item" style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #f0f0f0; border: 2px solid #aaa; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1rem, 1.5vw, 1.2rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                    <div class="reveal-item" style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #f0f0f0; border: 2px solid #aaa; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
                         <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 12px solid #aaa;"></div>
                         <strong style="color: #666; display: block;">&#10003; Assignment #1</strong>
-                        <span style="color: #888; font-size: clamp(0.85rem, 1.2vw, 1rem);">submitted</span>
+                        <span style="color: #888; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
                     </div>
 
-                    <!-- Assignment #2 (click 2: appears, #1 hides via CSS :has) -->
-                    <div class="reveal-item assign2" style="position: absolute; left: 36%; top: 0; width: calc(22%); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1rem, 1.5vw, 1.2rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
-                        <!-- Long arrow pointing up to Week 3 -->
-                        <div style="position: absolute; top: -44px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;">
+                    <!-- Assignment #3 (click 2: appears, #1 hides via CSS :has) -->
+                    <div class="reveal-item assign-next" style="position: absolute; left: 51%; top: 0; width: calc(22%); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <!-- Long arrow pointing up to Week 4 -->
+                        <div style="position: absolute; top: -48px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;">
                             <div style="width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #5371ff;"></div>
-                            <div style="width: 2px; height: 30px; background: #5371ff;"></div>
+                            <div style="width: 2px; height: 34px; background: #5371ff;"></div>
                         </div>
-                        <strong style="color: #5371ff; display: block;">Assignment #2 (Observation)</strong>
-                        <span style="font-size: clamp(0.85rem, 1.2vw, 1rem);">due Wed, March 25</span>
+                        <strong style="color: #5371ff; display: block;">Assignment #3 (Interview)</strong>
+                        <span style="font-size: clamp(0.9rem, 1.3vw, 1.1rem);">due Wed, April 2</span>
                     </div>
                 </div>
             </div>
@@ -156,35 +155,40 @@
     </section>
 
     <!-- SLIDE 04: Roadmap -->
-    <section class="slide" data-steps="8">
+    <section class="slide" data-steps="10">
         <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
         <div class="progress" style="width: 11%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
-            <h2 class="reveal-item">Class 3: Observation</h2>
+            <h2 class="reveal-item" data-group="0">Class 3: Observation</h2>
             <div class="columns" style="grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem);">
-                <div class="card reveal-item" style="padding-bottom: clamp(1.2rem, 2.5vw, 2rem);">
-                    <h3>Ethnography</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
-                        <li class="reveal-item" style="padding: 0.3em 0; font-size: var(--body-size); color: var(--text-secondary);">Background on the method</li>
-                        <li class="reveal-item" style="padding: 0.3em 0; font-size: var(--body-size); color: var(--text-secondary);">Policy-relevant ethnography examples</li>
-                    </ul>
+                <div style="position: relative;">
+                    <div class="card reveal-item" data-group="1" style="padding-bottom: clamp(1.2rem, 2.5vw, 2rem);">
+                        <h3>Ethnography</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
+                            <li class="reveal-item" data-group="2" style="padding: 0.3em 0; font-size: var(--body-size); color: var(--text-secondary);">Background on the method</li>
+                            <li class="reveal-item" data-group="3" style="padding: 0.3em 0; font-size: var(--body-size); color: var(--text-secondary);">Policy-relevant ethnography examples</li>
+                        </ul>
+                    </div>
+                    <!-- Blue highlight overlay — final step -->
+                    <div class="reveal-item" data-group="9" style="position: absolute; inset: -6px; border: 3px solid #5371ff; border-radius: 12px; background: rgba(83, 113, 255, 0.08); pointer-events: none; z-index: 2;"></div>
                 </div>
-                <div class="card reveal-item">
+                <div class="card reveal-item" data-group="4">
                     <h3>Ethics</h3>
                     <p>Guidelines for observation</p>
                 </div>
-                <div class="card reveal-item" style="padding-bottom: clamp(1.2rem, 2.5vw, 2rem);">
+                <div class="card reveal-item" data-group="5" style="padding-bottom: clamp(1.2rem, 2.5vw, 2rem);">
                     <h3>Field Notes</h3>
                     <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
-                        <li class="reveal-item" style="padding: 0.3em 0; font-size: var(--body-size); color: var(--text-secondary);">Lareau: thick description</li>
-                        <li class="reveal-item" style="padding: 0.3em 0; font-size: var(--body-size); color: #5371ff; font-weight: 600;">Assignment #2: Observation</li>
+                        <li class="reveal-item" data-group="6" style="padding: 0.3em 0; font-size: var(--body-size); color: var(--text-secondary);">Lareau: <em>Listening to People</em></li>
+                        <li class="reveal-item" data-group="7" style="padding: 0.3em 0 0 1.5em; font-size: clamp(1.3rem, 2.6vw, 1.9rem); color: var(--text-secondary);">Thick description</li>
+                        <li class="reveal-item" data-group="8" style="padding: 0.3em 0 0 1.5em; font-size: clamp(1.3rem, 2.6vw, 1.9rem); color: var(--text-secondary);">W.R.I.T.E.</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">04</span>
     </section>
@@ -261,23 +265,23 @@
         <div class="progress" style="width: 22%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
-            <h2 class="reveal-item">Advantages &amp; Disadvantages</h2>
+            <h2 class="reveal-item" data-group="0">Advantages &amp; Disadvantages</h2>
             <div class="columns" style="grid-template-columns: 1fr 1fr;">
                 <div class="card reveal-item" style="border-top-color: #22c55e;" data-group="1">
                     <h3 style="color: #22c55e;">Advantages</h3>
                     <div style="display: flex; flex-direction: column; gap: 0.6em; font-size: var(--body-size); line-height: 1.4;">
-                        <div class="reveal-item"><span style="color: #22c55e; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>&ldquo;Thick description&rdquo;</strong> of complex phenomena</div>
-                        <div class="reveal-item"><span style="color: #22c55e; font-weight: 700; margin-right: 0.4em;">&bull;</span>Range of perspectives among group (<strong>heterogeneity</strong>)</div>
-                        <div class="reveal-item"><span style="color: #22c55e; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>High internal validity</strong> (when done well) = deep insight</div>
+                        <div class="reveal-item" data-group="2"><span style="color: #22c55e; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>&ldquo;Thick description&rdquo;</strong> of complex phenomena</div>
+                        <div class="reveal-item" data-group="3"><span style="color: #22c55e; font-weight: 700; margin-right: 0.4em;">&bull;</span>Range of perspectives among group (<strong>heterogeneity</strong>)</div>
+                        <div class="reveal-item" data-group="4"><span style="color: #22c55e; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>High internal validity</strong> (when done well) = deep insight</div>
                     </div>
                 </div>
                 <div class="card reveal-item" style="border-top-color: #ef4444;" data-group="1">
                     <h3 style="color: #ef4444;">Disadvantages</h3>
                     <div style="display: flex; flex-direction: column; gap: 0.6em; font-size: var(--body-size); line-height: 1.4;">
-                        <div class="reveal-item"><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>Protracted</strong> &mdash; can take a very long time to earn trust</div>
-                        <div class="reveal-item"><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>Difficult:</strong> highly ethnographer-dependent</div>
-                        <div class="reveal-item"><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span>Ethics &amp; bias always concerns</div>
-                        <div class="reveal-item"><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>Low external validity</strong> (usually non-random sampling)</div>
+                        <div class="reveal-item" data-group="5"><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>Protracted</strong> &mdash; can take a very long time to earn trust</div>
+                        <div class="reveal-item" data-group="6"><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>Difficult:</strong> highly ethnographer-dependent</div>
+                        <div class="reveal-item" data-group="7"><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span>Ethics &amp; bias always concerns</div>
+                        <div class="reveal-item" data-group="8"><span style="color: #ef4444; font-weight: 700; margin-right: 0.4em;">&bull;</span><strong>Low external validity</strong> (usually non-random sampling)</div>
                     </div>
                 </div>
             </div>
