@@ -29,8 +29,13 @@
             color: #5371ff !important;
             background: rgba(83,113,255,0.12);
         }
-        /* Hide Assignment 1 when next assignment is revealed */
-        .assign-swap:has(.assign-next.visible) .reveal-item:not(.assign-next) {
+        /* Assignment swap: each new one hides the previous */
+        .assign-swap:has(.assign2.visible) .assign1 {
+            opacity: 0 !important;
+            transform: translateY(15px) !important;
+            pointer-events: none;
+        }
+        .assign-swap:has(.assign3.visible) .assign2 {
             opacity: 0 !important;
             transform: translateY(15px) !important;
             pointer-events: none;
@@ -63,8 +68,8 @@
         <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
     </section>
 
-    <!-- SLIDE 03: Timeline (click-through assignments) -->
-    <section class="slide" data-steps="3">
+    <!-- SLIDE 03: Timeline (click-through assignments: 1 → 2 → 3) -->
+    <section class="slide" data-steps="4">
         <div class="progress" style="width: 8%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
@@ -128,18 +133,29 @@
                 <!-- YOU ARE HERE callout under Week 2 -->
                 <div class="timeline-here-callout" style="margin-left: 15.4%; font-size: clamp(1rem, 1.6vw, 1.3rem); padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.7rem, 1.4vw, 1.1rem);">YOU ARE HERE</div>
 
-                <!-- Assignment callouts — swap container -->
+                <!-- Assignment callouts — 3-step swap container -->
                 <div class="assign-swap" style="position: relative; width: 100%; min-height: clamp(5rem, 10vh, 8rem); margin-top: clamp(0.5rem, 1vh, 0.75rem);">
 
-                    <!-- Assignment #1 ✓ (click 1: appears) -->
-                    <div class="reveal-item" style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #f0f0f0; border: 2px solid #aaa; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                    <!-- Assignment #1 ✓ (click 1: appears, recedes when #2 appears) -->
+                    <div class="reveal-item assign1" style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #f0f0f0; border: 2px solid #aaa; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
                         <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 12px solid #aaa;"></div>
                         <strong style="color: #666; display: block;">&#10003; Assignment #1</strong>
                         <span style="color: #888; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
                     </div>
 
-                    <!-- Assignment #3 (click 2: appears, #1 hides via CSS :has) -->
-                    <div class="reveal-item assign-next" style="position: absolute; left: 51%; top: 0; width: calc(22%); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                    <!-- Assignment #2 (click 2: appears, #1 recedes; recedes when #3 appears) -->
+                    <div class="reveal-item assign2" style="position: absolute; left: 36%; top: 0; width: calc(22%); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <!-- Long arrow pointing up to Week 3 -->
+                        <div style="position: absolute; top: -48px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;">
+                            <div style="width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #5371ff;"></div>
+                            <div style="width: 2px; height: 34px; background: #5371ff;"></div>
+                        </div>
+                        <strong style="color: #5371ff; display: block;">Assignment #2 (Observation)</strong>
+                        <span style="font-size: clamp(0.9rem, 1.3vw, 1.1rem);">due Wed, March 25</span>
+                    </div>
+
+                    <!-- Assignment #3 (click 3: appears, #2 recedes) -->
+                    <div class="reveal-item assign3" style="position: absolute; left: 51%; top: 0; width: calc(22%); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
                         <!-- Long arrow pointing up to Week 4 -->
                         <div style="position: absolute; top: -48px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;">
                             <div style="width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #5371ff;"></div>
@@ -250,7 +266,7 @@
                 <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>New topics</strong> where little is known</div>
                 <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span>Important <strong>differences between insiders and outsiders</strong>, especially those obscured from public view</div>
                 <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Exploratory studies</strong> &mdash; deep insight into contexts, relationships, behaviors</div>
-                <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span>Uniquely rich insights into <strong>gaps between observed and revealed preferences</strong></div>
+                <div class="reveal-item"><span style="color: var(--accent); font-weight: 700; margin-right: 0.4em;">&rarr;</span>Uniquely rich insights into <strong>gaps between stated and revealed preferences</strong></div>
             </div>
         </div>
         <div class="step-indicator">
