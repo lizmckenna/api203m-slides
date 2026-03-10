@@ -41,14 +41,6 @@
             pointer-events: none;
         }
         /* Book cover swap: only show the latest visible image */
-        .book-stack img.reveal-item.visible {
-            opacity: 0 !important;
-            transform: none !important;
-        }
-        .book-stack img.reveal-item.visible:last-of-type {
-            opacity: 1 !important;
-        }
-        /* Override: among visible images, only show the highest-grouped one */
         .book-stack:has([data-group="2"].visible) [data-group="1"].visible { opacity: 0 !important; }
         .book-stack:has([data-group="3"].visible) [data-group="2"].visible { opacity: 0 !important; }
         .book-stack:has([data-group="4"].visible) [data-group="3"].visible { opacity: 0 !important; }
@@ -327,6 +319,53 @@
         <span class="slide-number">08</span>
     </section>
 
+    <!-- SLIDE 08b: Internal vs External Validity 2x2 -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
+        <div class="progress" style="width: 24%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item" data-group="0" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">The Ethnographer&rsquo;s Tradeoff</h2>
+            <table style="width: 100%; border-collapse: collapse; font-size: clamp(1.3rem, 2.4vw, 1.9rem); line-height: 1.45;">
+                <thead>
+                    <tr class="reveal-item" data-group="0">
+                        <th style="width: 18%; padding: clamp(0.5rem, 1vw, 0.8rem);"></th>
+                        <th style="background: var(--accent); color: white; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: center; width: 41%; font-weight: 700; border-radius: 4px 0 0 0;">Low External Validity</th>
+                        <th style="background: var(--accent); color: white; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: center; width: 41%; font-weight: 700; border-radius: 0 4px 0 0;">High External Validity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="reveal-item" data-group="0" style="background: #5371ff; color: white; font-weight: 700; text-align: center; padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px 0 0 0; vertical-align: middle;">High<br>Internal</td>
+                        <td class="reveal-item" data-group="1" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 1px solid #ddd; vertical-align: top; background: #f8f8f8;">
+                            <strong style="color: #5371ff;">Deep but narrow</strong><br>
+                            Rich account of one unusual setting &mdash; convincing locally, may not generalize
+                        </td>
+                        <td class="reveal-item" data-group="3" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 1px solid #ddd; vertical-align: top; background: rgba(83,113,255,0.06);">
+                            <strong style="color: #22c55e;">The ideal</strong><br>
+                            Got the case right AND identified a mechanism that travels to other settings
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="reveal-item" data-group="0" style="background: #5371ff; color: white; font-weight: 700; text-align: center; padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 0 0 0 4px; vertical-align: middle;">Low<br>Internal</td>
+                        <td class="reveal-item" data-group="4" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 1px solid #ddd; vertical-align: top; background: rgba(255,51,0,0.04);">
+                            <strong style="color: var(--accent);">Thin &amp; narrow</strong><br>
+                            Shaky local account, no broader claim &mdash; weak all around
+                        </td>
+                        <td class="reveal-item" data-group="2" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 1px solid #ddd; vertical-align: top; background: #f8f8f8;">
+                            <strong style="color: #b8860b;">Overreach</strong><br>
+                            Broad claims from thin fieldwork &mdash; ambitious but evidence too shallow
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">08b</span>
+    </section>
+
     <!-- SLIDE 09: Key Considerations -->
     <section class="slide" data-steps="4">
         <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
@@ -466,7 +505,7 @@
         <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics" class="active">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
         <div class="progress" style="width: 44%"></div>
         <div class="slide-content" style="max-width: 1100px; margin: 0 auto;">
-            <blockquote class="reveal-item visible" style="font-size: clamp(2.2rem, 5.5vw, 4.2rem); text-transform: none; font-weight: 600; line-height: 1.35;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(2rem, 4.5vw, 3.5rem); text-transform: none; font-weight: 600; line-height: 1.35;">
                 &ldquo;When researchers insert themselves, even as observers, they <span class="highlight">alter the social landscape</span>. They do so by drawing attention to those in their orbit, such as key informants, research assistants, and interpreters. Such attention may be a <span class="highlight">boon to some</span>, but a <span class="highlight">threat to others</span>.&rdquo;
             </blockquote>
             <cite class="reveal-item visible" style="font-size: clamp(1.4rem, 2.8vw, 2rem);">&mdash; Fujii, p. 720</cite>
@@ -479,7 +518,7 @@
         <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics" class="active">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
         <div class="progress" style="width: 47%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Application</span>
+
         <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item">Ethical Considerations for Your Assignment</h2>
             <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
@@ -539,42 +578,45 @@
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item" style="font-size: clamp(2.8rem, 5.5vw, 4rem);">Writing High-Quality Notes (Lareau)</h2>
-            <div class="point-list">
-                <div class="point-item reveal-item">
-                    <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">W</span>
-                    <div>
-                        <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Who, What, When, Where, How</strong>
-                        <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">The basic facts of what you observed</p>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; width: 100%;">
+                <div class="point-list">
+                    <div class="point-item reveal-item">
+                        <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">W</span>
+                        <div>
+                            <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Who, What, When, Where, How</strong>
+                            <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">The basic facts of what you observed</p>
+                        </div>
+                    </div>
+                    <div class="point-item reveal-item">
+                        <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">R</span>
+                        <div>
+                            <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Reaction</strong>
+                            <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Responses to questions and to responses</p>
+                        </div>
+                    </div>
+                    <div class="point-item reveal-item">
+                        <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">I</span>
+                        <div>
+                            <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Inaction</strong>
+                            <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Silence or non-verbal responses</p>
+                        </div>
+                    </div>
+                    <div class="point-item reveal-item">
+                        <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">T</span>
+                        <div>
+                            <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Timing</strong>
+                            <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Speed of speaking; joking</p>
+                        </div>
+                    </div>
+                    <div class="point-item reveal-item">
+                        <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">E</span>
+                        <div>
+                            <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Emotions</strong>
+                            <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Non-verbal signs of emotion</p>
+                        </div>
                     </div>
                 </div>
-                <div class="point-item reveal-item">
-                    <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">R</span>
-                    <div>
-                        <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Reaction</strong>
-                        <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Responses to questions and to responses</p>
-                    </div>
-                </div>
-                <div class="point-item reveal-item">
-                    <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">I</span>
-                    <div>
-                        <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Inaction</strong>
-                        <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Silence or non-verbal responses</p>
-                    </div>
-                </div>
-                <div class="point-item reveal-item">
-                    <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">T</span>
-                    <div>
-                        <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Timing</strong>
-                        <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Speed of speaking; joking</p>
-                    </div>
-                </div>
-                <div class="point-item reveal-item">
-                    <span class="point-num" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">E</span>
-                    <div>
-                        <strong style="font-size: clamp(1.5rem, 2.8vw, 2.2rem);">Emotions</strong>
-                        <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Non-verbal signs of emotion</p>
-                    </div>
-                </div>
+                <img src="img/lareau.jpg" alt="Listening to People by Annette Lareau" style="width: clamp(160px, 20vw, 280px); border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); margin-top: 1rem;">
             </div>
         </div>
         <div class="step-indicator">
@@ -590,11 +632,11 @@
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item" data-group="0">Moving from Vague to &ldquo;Thick&rdquo;</h2>
-            <table style="width: 100%; border-collapse: collapse; font-size: clamp(1.3rem, 2.4vw, 1.9rem); line-height: 1.5;">
+            <table style="width: 100%; border-collapse: collapse; font-size: clamp(1.5rem, 2.8vw, 2.2rem); line-height: 1.5;">
                 <thead>
                     <tr class="reveal-item" data-group="1">
-                        <th style="background: #c0392b; color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; width: 50%; font-weight: 700; border-radius: 4px 0 0 0;">Too vague</th>
-                        <th style="background: #2980b9; color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; width: 50%; font-weight: 700; border-radius: 0 4px 0 0;">Thicker description</th>
+                        <th style="background: var(--accent); color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: center; width: 50%; font-weight: 700; border-radius: 4px 0 0 0;">Too vague</th>
+                        <th style="background: #5371ff; color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: center; width: 50%; font-weight: 700; border-radius: 0 4px 0 0;">Thicker description</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -608,8 +650,8 @@
                     </tr>
                 </tbody>
             </table>
-            <cite style="font-size: clamp(1rem, 1.6vw, 1.3rem); color: #999; margin-top: 0.5em; align-self: flex-start;">Adapted from Vanderbilt Writing Studio (2012)</cite>
         </div>
+        <cite style="position: absolute; bottom: clamp(0.5rem, 1vw, 0.8rem); left: clamp(1rem, 2vw, 1.5rem); font-size: clamp(0.8rem, 1.2vw, 1rem); color: #bbb;">Adapted from Vanderbilt (2012)</cite>
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
@@ -623,11 +665,11 @@
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item" data-group="0">Avoiding Conclusive Statements</h2>
-            <table style="width: 100%; border-collapse: collapse; font-size: clamp(1.2rem, 2.2vw, 1.7rem); line-height: 1.5;">
+            <table style="width: 100%; border-collapse: collapse; font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.5;">
                 <thead>
                     <tr class="reveal-item" data-group="1">
-                        <th style="background: #c0392b; color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; width: 40%; font-weight: 700; border-radius: 4px 0 0 0;">Too conclusive</th>
-                        <th style="background: #2980b9; color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; width: 60%; font-weight: 700; border-radius: 0 4px 0 0;">Thicker description</th>
+                        <th style="background: var(--accent); color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: center; width: 40%; font-weight: 700; border-radius: 4px 0 0 0;">Too conclusive</th>
+                        <th style="background: #5371ff; color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: center; width: 60%; font-weight: 700; border-radius: 0 4px 0 0;">Thicker description</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -641,8 +683,8 @@
                     </tr>
                 </tbody>
             </table>
-            <cite style="font-size: clamp(1rem, 1.6vw, 1.3rem); color: #999; margin-top: 0.5em; align-self: flex-start;">Adapted from Vanderbilt Writing Studio (2012)</cite>
         </div>
+        <cite style="position: absolute; bottom: clamp(0.5rem, 1vw, 0.8rem); left: clamp(1rem, 2vw, 1.5rem); font-size: clamp(0.8rem, 1.2vw, 1rem); color: #bbb;">Adapted from Vanderbilt (2012)</cite>
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
@@ -656,11 +698,11 @@
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item" data-group="0">What Could Be vs. What Is Happening</h2>
-            <table style="width: 100%; border-collapse: collapse; font-size: clamp(1.2rem, 2.2vw, 1.7rem); line-height: 1.5;">
+            <table style="width: 100%; border-collapse: collapse; font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.5;">
                 <thead>
                     <tr class="reveal-item" data-group="1">
-                        <th style="background: #c0392b; color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; width: 40%; font-weight: 700; border-radius: 4px 0 0 0;">Too vague</th>
-                        <th style="background: #2980b9; color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; width: 60%; font-weight: 700; border-radius: 0 4px 0 0;">Thicker description</th>
+                        <th style="background: var(--accent); color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: center; width: 40%; font-weight: 700; border-radius: 4px 0 0 0;">Too vague</th>
+                        <th style="background: #5371ff; color: white; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: center; width: 60%; font-weight: 700; border-radius: 0 4px 0 0;">Thicker description</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -674,8 +716,8 @@
                     </tr>
                 </tbody>
             </table>
-            <cite style="font-size: clamp(1rem, 1.6vw, 1.3rem); color: #999; margin-top: 0.5em; align-self: flex-start;">Adapted from Vanderbilt Writing Studio (2012)</cite>
         </div>
+        <cite style="position: absolute; bottom: clamp(0.5rem, 1vw, 0.8rem); left: clamp(1rem, 2vw, 1.5rem); font-size: clamp(0.8rem, 1.2vw, 1rem); color: #bbb;">Adapted from Vanderbilt (2012)</cite>
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
@@ -730,18 +772,26 @@
         <span class="slide-number">26</span>
     </section>
 
-    <!-- SLIDE 27: Assignment Part 1 -->
+    <!-- SLIDE 27: Assignment #2 — All 3 Parts -->
     <section class="slide application" data-steps="4">
         <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
         <div class="progress" style="width: 75%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Application</span>
-        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
-            <h2 class="reveal-item">Assignment #2: Observation <span style="font-size: var(--small-size); opacity: 0.7;">Part 1 of 3</span></h2>
-            <div class="reveal-item" style="align-self: flex-start; background: rgba(83,113,255,0.08); border: 2px solid #5371ff; padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: var(--small-size); font-weight: 700; color: #5371ff; margin-bottom: 0.5em;">Due Wednesday, March 25 at 11:59PM</div>
-            <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
-                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Observe</strong> a social location of your choosing once for at least <strong>60 minutes</strong></div>
-                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span>During your visit, <strong>unobtrusively write short notes</strong>. For some settings, you might not be able to write extensive notes until after you leave</div>
+        <div class="slide-content" style="justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
+            <h2 class="reveal-item" data-group="0" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">Assignment #2: Observation</h2>
+            <div style="display: flex; flex-direction: column; gap: clamp(0.6rem, 1.2vw, 1rem); width: 100%;">
+                <div class="card reveal-item" data-group="1" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border-left: 4px solid #5371ff;">
+                    <h3 style="font-size: clamp(1.6rem, 3vw, 2.2rem); color: #5371ff; margin-bottom: 0.3em;">Part 1: Field Notes</h3>
+                    <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.4;"><strong>Observe</strong> a social location for at least <strong>60 minutes</strong>. During your visit, <strong>unobtrusively write short notes</strong>.</p>
+                </div>
+                <div class="card reveal-item" data-group="2" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border-left: 4px solid #5371ff;">
+                    <h3 style="font-size: clamp(1.6rem, 3vw, 2.2rem); color: #5371ff; margin-bottom: 0.3em;">Part 2: Reflection Memo</h3>
+                    <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.4;">Write a <strong>reflection memo</strong> (~250 words) surfacing key themes and analytic observations.</p>
+                </div>
+                <div class="card reveal-item" data-group="3" style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border-left: 4px solid #5371ff;">
+                    <h3 style="font-size: clamp(1.6rem, 3vw, 2.2rem); color: #5371ff; margin-bottom: 0.3em;">Part 3: Cover Note</h3>
+                    <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.4;">Write a cover note (~250 words): <strong>where &amp; when</strong>, <strong>why</strong> you chose this location, <strong>markers or themes</strong> related to your policy puzzle.</p>
+                </div>
             </div>
         </div>
         <div class="step-indicator">
@@ -750,103 +800,76 @@
         <span class="slide-number">27</span>
     </section>
 
-    <!-- SLIDE 28: Assignment Part 2 -->
-    <section class="slide application" data-steps="2">
+    <!-- SLIDE 28: Combine & Submit -->
+    <section class="slide application" data-steps="4">
         <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
         <div class="progress" style="width: 78%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Application</span>
-        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
-            <h2 class="reveal-item">Part 2: Reflection Memo</h2>
-            <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
-                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span>Write a <strong>reflection memo</strong> (~250 words) that surfaces some key themes and analytic observations from your initial observation</div>
+        <div class="slide-content" style="justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
+            <h2 class="reveal-item" data-group="0" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">Combine &amp; Submit</h2>
+            <div class="card reveal-item" data-group="1" style="padding: clamp(1rem, 2vw, 1.5rem); font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.5; border-left: 4px solid #5371ff;">
+                <p style="color: var(--text-secondary); margin-bottom: 0.8em;">Combine the following into a <strong>single PDF</strong> and submit on Canvas:</p>
+                <div style="display: flex; flex-direction: column; gap: 0.5em;">
+                    <div class="reveal-item" data-group="1"><span style="color: #5371ff; font-weight: 800; margin-right: 0.5em;">01</span> <strong>Your 250-word cover note</strong></div>
+                    <div class="reveal-item" data-group="2"><span style="color: #5371ff; font-weight: 800; margin-right: 0.5em;">02</span> <strong>Your 250-word reflection memo</strong></div>
+                    <div class="reveal-item" data-group="3"><span style="color: #5371ff; font-weight: 800; margin-right: 0.5em;">03</span> <strong>Your typed field notes</strong></div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">28</span>
+    </section>
+
+    <!-- SLIDE 29: Site Examples + Reflection Memo Example -->
+    <section class="slide application" data-steps="2">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 81%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
+            <h2 class="reveal-item" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">Be Creative (but Safe) in Choosing Your Site</h2>
+            <div class="reveal-item" style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1rem, 2vw, 1.5rem); align-items: start;">
+                <div style="background: rgba(83,113,255,0.05); border-radius: 8px; padding: clamp(1rem, 2vw, 1.5rem); border-left: 4px solid #5371ff;">
+                    <p style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); font-weight: 700; color: #5371ff; margin: 0 0 0.5em; font-family: 'Archivo', system-ui, sans-serif;">EXAMPLE REFLECTION MEMO</p>
+                    <p style="font-size: clamp(1.2rem, 2.2vw, 1.7rem); line-height: 1.5; margin: 0 0 0.5em;">The greatest themes I saw in my observation was not from the protestors themselves but from the people walking through them. Men passing through seemed more likely to make loud jokes; the women walking through consistently kept their eyes to the ground as if to avoid inviting attention.</p>
+                    <p style="font-size: clamp(1.2rem, 2.2vw, 1.7rem); line-height: 1.5; margin: 0;">From this observation, even if protest movements do not interact with women seeking services, their <strong>presence would likely deter women</strong> from seeking in-clinic care. In areas where protestors are more likely, women may be more likely to pursue telehealth abortions.</p>
+                </div>
+                <img src="img/obs-protest-example.jpg" alt="Protest observation example" style="width: clamp(160px, 20vw, 280px); border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             </div>
         </div>
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div>
         </div>
-        <span class="slide-number">28</span>
-    </section>
-
-    <!-- SLIDE 29: Assignment Part 3 -->
-    <section class="slide application" data-steps="5">
-        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
-        <div class="progress" style="width: 81%"></div>
-        <div class="grid-bg"></div>
-        <span class="mode-indicator">Application</span>
-        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
-            <h2 class="reveal-item">Part 3: Cover Note</h2>
-            <div class="reveal-item" style="font-size: var(--body-size); color: var(--text-secondary); margin-bottom: 0.5em;">Write a cover note (~250 words) that describes:</div>
-            <div style="display: flex; flex-direction: column; gap: 0.8em; font-size: var(--body-size); line-height: 1.5;">
-                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Where</strong> (and when) you did your observation</div>
-                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span><strong>Why</strong> you chose this location</div>
-                <div class="reveal-item"><span style="color: #5371ff; font-weight: 700; margin-right: 0.4em;">&rarr;</span>What you saw as <strong>markers or themes</strong> related to your policy puzzle &mdash; and what your observations imply about causes or consequences (<strong>induce a hypothesis</strong>)</div>
-            </div>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
-        </div>
         <span class="slide-number">29</span>
     </section>
 
-    <!-- SLIDE 30: Combine & Submit -->
-    <section class="slide application" data-steps="5">
+    <!-- SLIDE 30: Income Inequality Example -->
+    <section class="slide application">
         <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
         <div class="progress" style="width: 83%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Application</span>
-        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
-            <h2 class="reveal-item">Combine &amp; Submit</h2>
-            <div class="reveal-item" style="font-size: var(--body-size); color: var(--text-secondary); margin-bottom: 0.5em;">Combine the following into a single PDF and submit on Canvas:</div>
-            <div class="point-list">
-                <div class="point-item reveal-item"><span class="point-num" style="color: #5371ff;">01</span><div><strong>Your 250-word cover note</strong></div></div>
-                <div class="point-item reveal-item"><span class="point-num" style="color: #5371ff;">02</span><div><strong>Your 250-word reflection memo</strong></div></div>
-                <div class="point-item reveal-item"><span class="point-num" style="color: #5371ff;">03</span><div><strong>Your typed field notes</strong></div></div>
+        <div class="slide-content" style="align-items: center; justify-content: center; text-align: center;">
+            <h2 class="reveal-item visible" style="font-size: clamp(2.5rem, 5.5vw, 4rem);">Interested in income inequality?</h2>
+            <p class="reveal-item visible" style="font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--text-secondary); margin-bottom: 1em;">Could observe spaces in Harvard Square&hellip;</p>
+            <div class="reveal-item visible" style="display: flex; align-items: center; justify-content: center; gap: clamp(2rem, 5vw, 4rem);">
+                <img src="img/IHOP-Logo.png" alt="IHOP" style="height: clamp(100px, 18vw, 200px); object-fit: contain;">
+                <img src="img/tatte_logo.webp" alt="Tatte" style="height: clamp(100px, 18vw, 200px); object-fit: contain;">
             </div>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">30</span>
     </section>
 
-    <!-- SLIDE 31: Site Examples + Reflection Memo Example -->
-    <section class="slide application" data-steps="3">
+    <!-- SLIDE 31: Lareau Chapter Reference -->
+    <section class="slide" data-steps="2">
         <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
         <div class="progress" style="width: 86%"></div>
         <div class="grid-bg"></div>
-        <span class="mode-indicator">Application</span>
-        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(2rem, 4vw, 3rem);">
-            <h2 class="reveal-item">Be Creative (but Safe) in Choosing Your Site</h2>
-            <div class="reveal-item" style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1rem, 2vw, 1.5rem); align-items: start;">
-                <div style="background: rgba(83,113,255,0.05); border-radius: 8px; padding: clamp(0.6rem, 1.2vw, 1rem); border-left: 3px solid #5371ff;">
-                    <p style="font-size: var(--small-size); font-weight: 700; color: #5371ff; margin: 0 0 0.3em; font-family: 'Archivo', system-ui, sans-serif;">EXAMPLE REFLECTION MEMO</p>
-                    <p style="font-size: clamp(0.85rem, 1.5vw, 1.1rem); line-height: 1.45; margin: 0 0 0.4em;">The greatest themes I saw in my observation was not from the protestors themselves but from the people walking through them. Men passing through seemed more likely to make loud jokes; the women walking through consistently kept their eyes to the ground as if to avoid inviting attention.</p>
-                    <p style="font-size: clamp(0.85rem, 1.5vw, 1.1rem); line-height: 1.45; margin: 0;">From this observation, even if protest movements do not interact with women seeking services, their <strong>presence would likely deter women</strong> from seeking in-clinic care. In areas where protestors are more likely, women may be more likely to pursue telehealth abortions.</p>
-                </div>
-                <img src="img/obs-protest-example.jpg" alt="Protest observation example" style="width: clamp(140px, 16vw, 240px); border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            </div>
-            <div class="reveal-item" style="margin-top: 0.5em; font-size: var(--small-size); color: var(--text-secondary); display: flex; align-items: center; gap: 0.5em;">
-                <img src="img/obs-site-icon.png" alt="" style="width: 20px; height: 20px;">
-                Interested in income inequality? Could observe spaces in Harvard Square
-            </div>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
-        </div>
-        <span class="slide-number">31</span>
-    </section>
-
-    <!-- SLIDE 32: Lareau Chapter Reference -->
-    <section class="slide" data-steps="2">
-        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
-        <div class="progress" style="width: 89%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(3rem, 8vw, 6rem);">
-            <h2 class="reveal-item">Resources for This Assignment</h2>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">Resources for This Assignment</h2>
             <div class="reveal-item" style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;">
                 <div>
-                    <blockquote style="font-size: clamp(1.1rem, 2.2vw, 1.6rem); text-transform: none; font-weight: 600; line-height: 1.4; border-left: 3px solid var(--accent); padding-left: 1em; margin-bottom: 1em;">
+                    <blockquote style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); text-transform: none; font-weight: 600; line-height: 1.4; border-left: 3px solid var(--accent); padding-left: 1em; margin-bottom: 1em;">
                         &ldquo;The goal of writing field notes is to convey, using words, your experience so that others may experience too, albeit in a different fashion, as you show them your data.&rdquo;
                     </blockquote>
                     <p style="font-size: var(--body-size); line-height: 1.5;">
@@ -856,57 +879,56 @@
                     </p>
                     <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;">+ Examples from other student submissions on Canvas</p>
                 </div>
-                <img src="img/obs-lareau-book.png" alt="Listening to People by Annette Lareau" style="width: clamp(140px, 16vw, 220px); border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15);">
+                <img src="img/lareau.jpg" alt="Listening to People by Annette Lareau" style="width: clamp(200px, 25vw, 350px); border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15);">
             </div>
         </div>
         <div class="step-indicator">
             <div class="step-dot"></div><div class="step-dot"></div>
         </div>
+        <span class="slide-number">31</span>
+    </section>
+
+    <!-- SLIDE 32: Looking Ahead Timeline -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
+        <div class="progress" style="width: 89%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item" data-group="0" style="font-size: clamp(2.5rem, 5vw, 3.5rem);">Looking Ahead</h2>
+            <div style="display: flex; flex-direction: column; gap: clamp(0.5rem, 1vw, 0.8rem);">
+                <div class="reveal-item" data-group="1" style="display: flex; align-items: center; gap: 1em; background: rgba(255,51,0,0.04); border: 2px solid var(--accent); padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 4px;">
+                    <span style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; color: var(--accent); font-size: clamp(1.4rem, 2.6vw, 2rem); min-width: 7em;">Thu Mar 12</span>
+                    <span style="font-size: clamp(1.4rem, 2.6vw, 2rem);"><strong>Class 04:</strong> Ethics &mdash; <em>Interview assignment introduced</em></span>
+                </div>
+                <div class="reveal-item" data-group="2" style="display: flex; align-items: center; gap: 1em; background: rgba(83,113,255,0.06); border: 2px solid #5371ff; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 4px;">
+                    <span style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; color: #5371ff; font-size: clamp(1.4rem, 2.6vw, 2rem); min-width: 7em;">Mar 16&ndash;20</span>
+                    <span style="font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 600; color: #5371ff;">Spring Break</span>
+                </div>
+                <div class="reveal-item" data-group="3" style="display: flex; align-items: center; gap: 1em; background: #fdf6e3; border: 2px solid #b8860b; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 4px;">
+                    <span style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; color: #b8860b; font-size: clamp(1.4rem, 2.6vw, 2rem); min-width: 7em;">Wed Mar 25</span>
+                    <span style="font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 700; color: #b8860b;">Assignment #2 (Observation) due at 11:59PM</span>
+                </div>
+            </div>
+            <p class="reveal-item" data-group="4" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); color: var(--text-secondary); margin-top: 1em;">Suggestion: Schedule your observation during or soon after spring break &mdash; don&rsquo;t wait until the last minute. Start thinking about your interviewee &mdash; we&rsquo;ll discuss on Thursday.</p>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
         <span class="slide-number">32</span>
     </section>
 
-    <!-- SLIDE 33: Looking Ahead Timeline -->
-    <section class="slide" data-steps="4">
+    <!-- SLIDE 33: Questions -->
+    <section class="slide">
         <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
         <div class="progress" style="width: 92%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="justify-content: flex-start; padding-top: clamp(2.5rem, 5vw, 4rem);">
-            <h2 class="reveal-item">Looking Ahead</h2>
-            <div style="display: flex; flex-direction: column; gap: clamp(0.4rem, 1vw, 0.8rem);">
-                <div class="reveal-item" style="display: flex; align-items: center; gap: 1em; background: rgba(83,113,255,0.06); border: 2px solid #5371ff; padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px;">
-                    <span style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; color: #5371ff; font-size: var(--body-size); min-width: 6em;">Mar 16&ndash;20</span>
-                    <span style="font-size: var(--body-size); font-weight: 600;">Spring Break &mdash; Have a great break!</span>
-                </div>
-                <div class="reveal-item" style="display: flex; align-items: center; gap: 1em; background: rgba(255,51,0,0.04); border: 2px solid var(--accent); padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px;">
-                    <span style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; color: var(--accent); font-size: var(--body-size); min-width: 6em;">Tue Mar 24</span>
-                    <span style="font-size: var(--body-size);"><strong>Class 5:</strong> Interviewing &mdash; Introduction</span>
-                </div>
-                <div class="reveal-item" style="display: flex; align-items: center; gap: 1em; background: rgba(83,113,255,0.06); border: 2px solid #5371ff; padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem); border-radius: 4px;">
-                    <span style="font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; color: #5371ff; font-size: var(--body-size); min-width: 6em;">Wed Mar 25</span>
-                    <span style="font-size: var(--body-size); font-weight: 700; color: #5371ff;">Assignment #2 (Observation) due at 11:59PM</span>
-                </div>
-            </div>
-            <p class="reveal-item visible" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 1em;">Suggestion: Schedule your observation during or soon after spring break, but don&rsquo;t wait until the last minute &mdash; you&rsquo;ll need time to type up your notes and write the reflection memo.</p>
-        </div>
-        <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h1 class="reveal-item visible" style="font-size: clamp(2.5rem, 7vw, 5rem);">Questions?</h1>
         </div>
         <span class="slide-number">33</span>
     </section>
 
-    <!-- SLIDE 34: Questions -->
-    <section class="slide">
-        <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
-        <div class="progress" style="width: 94%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content" style="align-items: center; text-align: center;">
-            <h1 class="reveal-item visible" style="font-size: clamp(2.5rem, 7vw, 5rem);">Questions?</h1>
-            <p class="reveal-item visible" style="font-size: var(--body-size); color: var(--text-secondary); margin-top: var(--content-gap);">Your project, the assignment arc, anything else?</p>
-        </div>
-        <span class="slide-number">34</span>
-    </section>
-
-    <!-- SLIDE 35: Small Group Ethics Discussion (Timer) -->
+    <!-- SLIDE 34: Small Group Ethics Discussion (Timer) -->
     <section class="slide application" id="timer-slide">
         <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
         <div class="progress" style="width: 97%"></div>
@@ -916,61 +938,68 @@
                 What are some <strong>ethical guardrails</strong> that will be important for you to maintain when you do your observation and interview assignments?
             </p>
             <div class="timer-container reveal-item visible" style="margin-top: var(--content-gap);">
-                <p id="countdown-display" style="font-size: clamp(3rem, 10vw, 6rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">10:00</p>
+                <p id="countdown-display" style="font-size: clamp(3rem, 10vw, 6rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">05:00</p>
                 <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
             </div>
         </div>
-        <span class="slide-number">35</span>
+        <span class="slide-number">34</span>
     </section>
 
-    <!-- SLIDE 36: Thank You -->
+    <!-- SLIDE 35: Thank You -->
     <section class="slide">
         <nav class="section-nav"><a href="#ethnography">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2" class="active">Assignment #2</a></nav>
         <div class="progress" style="width: 100%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; text-align: center;">
             <h1 style="font-size: clamp(2.5rem, 7vw, 5rem);">Thank You!</h1>
-            <div style="margin-top: var(--content-gap); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 700; color: #5371ff;">Have a great spring break!</div>
-            <div style="margin-top: calc(var(--content-gap) * 1.5); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.5rem, 1vw, 1rem); text-align: left; font-size: clamp(0.8rem, 1.4vw, 1.05rem); max-width: 800px; width: 100%;">
+            <div style="margin-top: var(--content-gap); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: #5371ff;">See you on Thursday!</div>
+            <div style="margin-top: calc(var(--content-gap) * 1.5); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; font-size: clamp(1.2rem, 2.2vw, 1.7rem); max-width: 900px; width: 100%;">
                 <div>
                     <p style="margin: 0 0 0.3em;"><strong>Prof. Liz McKenna</strong></p>
-                    <p style="margin: 0; color: var(--text-secondary);">emckenna@hks.harvard.edu</p>
-                    <p style="margin: 0.3em 0 0; color: var(--text-secondary); font-size: clamp(0.7rem, 1.2vw, 0.9rem);">Office hours: via Calendly, T-308 or Zoom</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">emckenna@hks.harvard.edu</p>
+                    <p style="margin: 0.3em 0 0; color: var(--text-secondary); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">Office hours: via Calendly, T-308 or Zoom</p>
                 </div>
                 <div>
                     <p style="margin: 0 0 0.3em;"><strong>Katie Tucker</strong> <span style="color: #5371ff;">(TF)</span></p>
-                    <p style="margin: 0; color: var(--text-secondary);">ktucker@g.harvard.edu</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">ktucker@g.harvard.edu</p>
                 </div>
                 <div>
                     <p style="margin: 0 0 0.3em;"><strong>Liam Chai</strong> <span style="color: var(--accent);">(CA)</span></p>
-                    <p style="margin: 0; color: var(--text-secondary);">liam_chai@hks.harvard.edu</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">liam_chai@hks.harvard.edu</p>
                 </div>
                 <div>
                     <p style="margin: 0 0 0.3em;"><strong>Christina Iruela Lane</strong> <span style="color: var(--accent);">(CA)</span></p>
-                    <p style="margin: 0; color: var(--text-secondary);">ciruelalane@hks.harvard.edu</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">ciruelalane@hks.harvard.edu</p>
                 </div>
                 <div>
                     <p style="margin: 0 0 0.3em;"><strong>Muhammad Irfan Sadiq</strong> <span style="color: var(--accent);">(CA)</span></p>
-                    <p style="margin: 0; color: var(--text-secondary);">muhammadirfansadiq@hks.harvard.edu</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">muhammadirfansadiq@hks.harvard.edu</p>
                 </div>
                 <div>
                     <p style="margin: 0 0 0.3em;"><strong>Dani Schulman</strong> <span style="color: var(--accent);">(CA)</span></p>
-                    <p style="margin: 0; color: var(--text-secondary);">danielaschulman@hks.harvard.edu</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">danielaschulman@hks.harvard.edu</p>
                 </div>
                 <div>
                     <p style="margin: 0 0 0.3em;"><strong>Jessica De Simone</strong> <span style="color: var(--text-secondary);">(FA)</span></p>
-                    <p style="margin: 0; color: var(--text-secondary);">jessica_de_simone@hks.harvard.edu</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">jessica_de_simone@hks.harvard.edu</p>
                 </div>
                 <div>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(0.7rem, 1.2vw, 0.9rem);">TF/CAs available by appointment</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">TF/CAs available by appointment</p>
                 </div>
             </div>
         </div>
-        <span class="slide-number">36</span>
+        <span class="slide-number">35</span>
     </section>
 
     <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
 
     <script src="slides.js"></script>
+    <script>
+        // Override timer to 5 minutes for this class
+        if (timer) {
+            timer.duration = 5 * 60;
+            timer.remaining = 5 * 60;
+        }
+    </script>
 </body>
 </html>
