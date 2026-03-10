@@ -29,6 +29,12 @@
             color: #5371ff !important;
             background: rgba(83,113,255,0.12);
         }
+        /* Hide Assignment 1 when Assignment 2 is revealed */
+        .assign-swap:has(.assign2.visible) .reveal-item:not(.assign2) {
+            opacity: 0 !important;
+            transform: translateY(15px) !important;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -58,40 +64,40 @@
         <span class="slide-number">02</span>
     </section>
 
-    <!-- SLIDE 03: Timeline (no fragments — all visible) -->
-    <section class="slide">
+    <!-- SLIDE 03: Timeline (click-through assignments) -->
+    <section class="slide" data-steps="3">
         <div class="progress" style="width: 8%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="align-items: center; padding-top: clamp(2.5rem, 5vw, 4rem);">
-            <h2 style="align-self: flex-start;">Module Flow &amp; Content</h2>
+        <div class="slide-content" style="align-items: center; padding-top: clamp(1.5rem, 3vw, 2.5rem);">
+            <h2 class="reveal-item" style="align-self: flex-start; font-size: clamp(3rem, 6vw, 4.5rem);">Module Flow &amp; Content</h2>
 
-            <div class="timeline">
+            <div class="timeline" style="max-width: 1100px;">
                 <div class="timeline-row">
                     <div class="timeline-module top">
-                        <h4>Introduction</h4>
-                        <p>Overview,<br>outstanding qual<br>research</p>
-                        <div class="connector"></div>
+                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Introduction</h4>
+                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Overview,<br>outstanding qual<br>research</p>
+                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
                     </div>
                     <div class="timeline-module top"></div>
                     <div class="timeline-module top" style="flex: 0.5;"></div>
                     <div class="timeline-module top">
-                        <h4>Interviewing</h4>
-                        <p>Introduction +<br>workshop observation</p>
-                        <div class="connector"></div>
+                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Interviewing</h4>
+                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Introduction +<br>workshop observation</p>
+                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
                     </div>
                     <div class="timeline-module top"></div>
                     <div class="timeline-module top">
-                        <h4>Focus Groups</h4>
-                        <p>Background, ethics,<br>simulation</p>
-                        <div class="connector"></div>
+                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Focus Groups</h4>
+                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Background, ethics,<br>simulation</p>
+                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
                     </div>
                     <div class="timeline-module top"></div>
                 </div>
 
-                <div class="timeline-bar">
-                    <div class="week" style="background: #5371ff;" data-week="1">Week 1</div>
-                    <div class="week" style="background: var(--accent); border: 3px solid #fff; box-shadow: 0 0 0 3px var(--accent);">2</div>
-                    <div class="week" style="background: #888; flex: 0.5; font-size: clamp(0.8rem, 1.3vw, 1rem);">Break</div>
+                <div class="timeline-bar" style="height: clamp(3.2rem, 6.5vh, 5rem);">
+                    <div class="week" style="background: var(--accent);">1</div>
+                    <div class="week" style="background: #5371ff; border: 3px solid #fff; box-shadow: 0 0 0 3px #5371ff;">Week 2</div>
+                    <div class="week" style="background: #888; flex: 0.5; font-size: clamp(1rem, 1.6vw, 1.3rem);">Break</div>
                     <div class="week" style="background: var(--accent);">3</div>
                     <div class="week" style="background: var(--accent);">4</div>
                     <div class="week" style="background: var(--accent);">5</div>
@@ -101,38 +107,48 @@
                 <div class="timeline-row">
                     <div class="timeline-module bottom"></div>
                     <div class="timeline-module bottom">
-                        <div class="connector"></div>
-                        <h4>Observation + Ethics</h4>
-                        <p>Ethnography,<br>fieldwork</p>
+                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
+                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Observation + Ethics</h4>
+                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Ethnography,<br>fieldwork</p>
                     </div>
                     <div class="timeline-module bottom" style="flex: 0.5;"></div>
                     <div class="timeline-module bottom"></div>
                     <div class="timeline-module bottom">
-                        <div class="connector"></div>
-                        <h4>Interviewing 2.0</h4>
-                        <p>Workshop<br>interview assignment</p>
+                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
+                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Interviewing 2.0</h4>
+                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Workshop<br>interview assignment</p>
                     </div>
                     <div class="timeline-module bottom"></div>
                     <div class="timeline-module bottom">
-                        <div class="connector"></div>
-                        <h4>Qual Coding + Wrap-Up</h4>
-                        <p>Coding workshop,<br>Anthropic guest lecture</p>
+                        <div class="connector" style="height: clamp(1.2rem, 2.5vh, 2rem);"></div>
+                        <h4 style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">Qual Coding + Wrap-Up</h4>
+                        <p style="font-size: clamp(1rem, 1.6vw, 1.3rem);">Coding workshop,<br>Anthropic guest lecture</p>
                     </div>
                 </div>
 
                 <!-- YOU ARE HERE callout under Week 2 -->
-                <div class="timeline-here-callout" style="margin-left: 15.4%;">YOU ARE HERE</div>
+                <div class="timeline-here-callout" style="margin-left: 15.4%; font-size: clamp(0.95rem, 1.5vw, 1.2rem); padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.6rem, 1.2vw, 1rem);">YOU ARE HERE</div>
 
-                <!-- Assignment #1 ✓ -->
-                <div class="timeline-callout" style="width: calc(15.4% - 4px); opacity: 0.5; background: #f0f0f0; border-color: #999;">
-                    <strong style="color: #999;">&#10003; Assignment #1 (Policy Puzzle)</strong>
-                    <span style="color: #888; font-size: clamp(0.75rem, 1.1vw, 0.9rem);">submitted</span>
-                </div>
+                <!-- Assignment callouts — swap container -->
+                <div class="assign-swap" style="position: relative; width: 100%; min-height: clamp(4.5rem, 9vh, 7rem); margin-top: clamp(0.5rem, 1vh, 0.75rem);">
 
-                <!-- Assignment #2 callout -->
-                <div class="timeline-callout" style="margin-left: 22%; width: calc(25% - 4px);">
-                    <strong>Assignment #2 (Observation)</strong>
-                    due Wednesday, March 25 at 11:59PM
+                    <!-- Assignment #1 ✓ (click 1: appears) -->
+                    <div class="reveal-item" style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #f0f0f0; border: 2px solid #aaa; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1rem, 1.5vw, 1.2rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 12px solid #aaa;"></div>
+                        <strong style="color: #666; display: block;">&#10003; Assignment #1</strong>
+                        <span style="color: #888; font-size: clamp(0.85rem, 1.2vw, 1rem);">submitted</span>
+                    </div>
+
+                    <!-- Assignment #2 (click 2: appears, #1 hides via CSS :has) -->
+                    <div class="reveal-item assign2" style="position: absolute; left: 36%; top: 0; width: calc(22%); background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1rem, 1.5vw, 1.2rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <!-- Long arrow pointing up to Week 3 -->
+                        <div style="position: absolute; top: -44px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;">
+                            <div style="width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid #5371ff;"></div>
+                            <div style="width: 2px; height: 30px; background: #5371ff;"></div>
+                        </div>
+                        <strong style="color: #5371ff; display: block;">Assignment #2 (Observation)</strong>
+                        <span style="font-size: clamp(0.85rem, 1.2vw, 1rem);">due Wed, March 25</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,37 +156,35 @@
     </section>
 
     <!-- SLIDE 04: Roadmap -->
-    <section class="slide" data-steps="6">
+    <section class="slide" data-steps="8">
         <nav class="section-nav"><a href="#ethnography" class="active">Ethnography</a><a href="#examples">Examples</a><a href="#ethics">Ethics</a><a href="#field-notes">Field Notes</a><a href="#assignment2">Assignment #2</a></nav>
         <div class="progress" style="width: 11%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
             <h2 class="reveal-item">Class 3: Observation</h2>
-            <div class="columns" style="grid-template-columns: repeat(5, 1fr);">
-                <div class="card reveal-item">
+            <div class="columns" style="grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem);">
+                <div class="card reveal-item" style="padding-bottom: clamp(1.2rem, 2.5vw, 2rem);">
                     <h3>Ethnography</h3>
-                    <p>Background on the method</p>
-                </div>
-                <div class="card reveal-item">
-                    <h3>Examples</h3>
-                    <p>Policy-relevant ethnography</p>
+                    <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
+                        <li class="reveal-item" style="padding: 0.3em 0; font-size: var(--body-size); color: var(--text-secondary);">Background on the method</li>
+                        <li class="reveal-item" style="padding: 0.3em 0; font-size: var(--body-size); color: var(--text-secondary);">Policy-relevant ethnography examples</li>
+                    </ul>
                 </div>
                 <div class="card reveal-item">
                     <h3>Ethics</h3>
                     <p>Guidelines for observation</p>
                 </div>
-                <div class="card reveal-item">
+                <div class="card reveal-item" style="padding-bottom: clamp(1.2rem, 2.5vw, 2rem);">
                     <h3>Field Notes</h3>
-                    <p>Good vs. inadequate notes</p>
-                </div>
-                <div class="card reveal-item" style="border-top-color: #5371ff;">
-                    <h3 style="color: #5371ff;">Assignment #2</h3>
-                    <p>Observation assignment &amp; spring break!</p>
+                    <ul style="list-style: none; padding: 0; margin: 0.5em 0 0 0;">
+                        <li class="reveal-item" style="padding: 0.3em 0; font-size: var(--body-size); color: var(--text-secondary);">Lareau: thick description</li>
+                        <li class="reveal-item" style="padding: 0.3em 0; font-size: var(--body-size); color: #5371ff; font-weight: 600;">Assignment #2: Observation</li>
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">04</span>
     </section>
