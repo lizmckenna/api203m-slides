@@ -241,7 +241,13 @@ class CountdownTimer {
         this.display = document.getElementById('countdown-display');
         this.hint = document.getElementById('timer-hint');
         this.timerSlide = document.getElementById('timer-slide');
-        this.duration = 10 * 60; // 10 minutes in seconds
+        // Parse duration from display text (e.g. "05:00" → 300s, "10:00" → 600s)
+        if (this.display) {
+            const match = this.display.textContent.trim().match(/(\d+):(\d+)/);
+            this.duration = match ? parseInt(match[1]) * 60 + parseInt(match[2]) : 5 * 60;
+        } else {
+            this.duration = 5 * 60;
+        }
         this.remaining = this.duration;
         this.interval = null;
         this.running = false;
