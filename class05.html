@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-203M: Interviewing | Prof. Liz McKenna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Projection-scale typography — sized for back-row legibility */
+        :root {
+            --title-size: clamp(3.5rem, 9vw, 7rem);
+            --h2-size: clamp(2.8rem, 7vw, 5rem);
+            --h3-size: clamp(2rem, 4.5vw, 3.2rem);
+            --body-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            --small-size: clamp(1.3rem, 2.4vw, 1.8rem);
+        }
+        /* Override card styles for projection */
+        .card h3 { font-size: var(--h3-size); }
+        .card p, .card li { font-size: var(--body-size); line-height: 1.4; }
+
+        /* Image placeholder styling */
+        .img-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-family: 'Nunito', sans-serif;
+            font-size: var(--small-size);
+            text-align: center;
+            padding: 1rem;
+        }
+        .img-placeholder.dark-ph {
+            background: #2a2a2a;
+            border-color: #555;
+            color: #aaa;
+        }
+
+        /* Interview types table */
+        .interview-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--body-size);
+            margin-top: 1em;
+        }
+        .interview-table th, .interview-table td {
+            padding: clamp(0.6rem, 1.5vw, 1.2rem) clamp(0.8rem, 2vw, 1.5rem);
+            text-align: center;
+            border: 2px solid #e0e0e0;
+        }
+        .interview-table th {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            color: white;
+        }
+        .interview-table th:nth-child(2) { background: var(--accent); }
+        .interview-table th:nth-child(3) { background: #ff9900; }
+        .interview-table th:nth-child(4) { background: #ffdd00; color: #333; }
+        .interview-table td:first-child {
+            text-align: left;
+            font-weight: 700;
+            background: #e8f4f8;
+            font-family: 'Archivo', sans-serif;
+        }
+        .check { color: #22c55e; font-size: 2em; }
+        .cross { color: #ef4444; font-size: 2em; }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         SLIDE 1: Title
+         ========================================== -->
+    <section class="slide" data-section="title">
+        <div class="progress" style="width: 2%"></div>
+        <div class="grid-bg"></div>
+        <div class="accent-circle"></div>
+        <div class="accent-line"></div>
+        <div class="accent-dot"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Empirical<br>Methods <span class="highlight">II</span></h1>
+            <p class="meta reveal-item visible">Qualitative and Mixed Methods</p>
+            <p class="meta reveal-item visible" style="margin-top: 0.5em;">API-203M &middot; Spring 2026</p>
+            <span class="reveal-item visible" style="margin-top: 0.75em; align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; color: #5371ff;">Class 5: Interviewing</span>
+        </div>
+        <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2: Agenda / Roadmap
+         ========================================== -->
+    <section class="slide" data-steps="14">
+        <nav class="section-nav"><a href="#logistics" class="active">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 5%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Class 5: Interviewing</h2>
+            <div class="columns">
+                <div class="card reveal-item">
+                    <h3>FAQs &amp; Logistics</h3>
+                    <ul>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>More policy puzzle examples</li>
+                        <li class="reveal-item" style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>FAQ about Assignment #2</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Interviewing as Art &amp; Science</h3>
+                    <ul>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Interviewing as a method</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Listening</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Developing your interview guide</li>
+                        <li class="reveal-item" style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Probes</li>
+                        <li class="reveal-item" style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Avoiding &ldquo;why&rdquo;</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Your Interview</h3>
+                    <ul>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Assignment #3</li>
+                        <li class="reveal-item" style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Who to interview</li>
+                        <li class="reveal-item" style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Consent</li>
+                        <li class="reveal-item" style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Transcription</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="reveal-item" style="margin-top: 1em; align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 6px; font-family: 'Archivo', sans-serif; font-size: var(--body-size); font-weight: 700; color: #5371ff;">Up first &rarr; Logistics &amp; Puzzles</div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">1</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3: Module Flow
+         ========================================== -->
+    <section class="slide" data-steps="5" id="logistics">
+        <nav class="section-nav"><a href="#logistics" class="active">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 8%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
+            <h2 class="reveal-item" style="align-self: flex-start; font-size: clamp(2.8rem, 5vw, 3.8rem); margin-bottom: clamp(0.5rem, 1vw, 0.75rem);">Module Flow &amp; Content</h2>
+
+            <div class="timeline" style="max-width: 100%; width: 100%;">
+                <div class="timeline-row">
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Introduction</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Overview,<br>outstanding qual<br>research</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top" style="flex: 0.5;"></div>
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Introduction +<br>workshop observation</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Focus Groups</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Background, ethics,<br>simulation</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                </div>
+
+                <div class="timeline-bar" style="height: clamp(3.5rem, 7vh, 5.5rem);">
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">1</div>
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">2</div>
+                    <div class="week" style="background: #888; flex: 0.5; font-size: clamp(1rem, 1.6vw, 1.3rem);">Break</div>
+                    <div class="week" style="background: #5371ff; border: 3px solid #fff; box-shadow: 0 0 0 3px #5371ff; font-size: clamp(1.2rem, 2vw, 1.6rem);">Week 3</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">4</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">5</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">6</div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Observation + Ethics</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Ethnography,<br>fieldwork</p>
+                    </div>
+                    <div class="timeline-module bottom" style="flex: 0.5;"></div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing 2.0</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Workshop<br>interview assignment</p>
+                    </div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Qual Coding + Wrap-Up</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Coding workshop,<br>Anthropic guest lecture</p>
+                    </div>
+                </div>
+
+                <!-- YOU ARE HERE callout under Week 3 -->
+                <div class="timeline-here-callout reveal-item" style="margin-left: 38%; font-size: clamp(1rem, 1.6vw, 1.3rem); padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.7rem, 1.4vw, 1.1rem);">YOU ARE HERE</div>
+
+                <!-- Assignment callouts -->
+                <div style="position: relative; width: 100%; min-height: clamp(5rem, 10vh, 8rem); margin-top: clamp(0.5rem, 1vh, 0.75rem);">
+                    <div class="reveal-item" style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #4caf50; display: block;">&#10003; Assignment #1</strong>
+                        <span style="color: #4caf50; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
+                    </div>
+                    <div class="reveal-item" style="position: absolute; left: 16%; top: 0; width: calc(20%); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #4caf50; display: block;">&#10003; Assignment #2</strong>
+                        <span style="color: #4caf50; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
+                    </div>
+                    <div class="reveal-item" style="position: absolute; left: 55%; top: 0; width: calc(22%); background: #fdf6e3; border: 2px solid #b8860b; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #b8860b; display: block;">Assignment #3 (Interview)</strong>
+                        <span style="color: #b8860b; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">Due Wed Apr 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">2</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4: Section Header — Example Submissions
+         ========================================== -->
+    <section class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#logistics" class="active">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 11%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Example<br>Submission</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Observation &amp; interview plan based on puzzle</p>
+        </div>
+        <span class="slide-number">3</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: Student Example Placeholder
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#logistics" class="active">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 14%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <h2 class="reveal-item">Student Example</h2>
+            <div class="reveal-item" style="background: #f8f9fa; border: 2px dashed #ccc; border-radius: 12px; padding: clamp(2rem, 4vw, 3rem); text-align: center; max-width: 700px;">
+                <p style="font-size: var(--h3-size); color: #888; margin: 0;">Student puzzle example slides go here</p>
+                <p style="font-size: var(--body-size); color: #aaa; margin-top: 0.5em;">Replace with SP26 student work before class</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">4</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6: Section Header — Assignment #2 FAQ
+         ========================================== -->
+    <section class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#logistics" class="active">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 17%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Assignment<br>#2 FAQ</h1>
+        </div>
+        <span class="slide-number">5</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7: Assignment #2 Expectations
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#logistics" class="active">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 20%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Assignment #2: Expectations</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>At least <strong>60 minutes of observation</strong> (could be multiple sites) to produce a clean, expanded version of <strong>high quality field notes</strong> (~3-5 pages single-spaced)</li>
+                <li class="reveal-item" style="padding-left: 1.5em; font-size: var(--small-size); color: var(--text-secondary);"><span class="bullet">&ndash;</span><em>Not simply a transcription! You are collecting the metadata of the observation</em></li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>Assignment #2 = <strong>cover note</strong> (details and why this site) + <strong>thoughtful reflection</strong> + <strong>fieldnotes</strong> in a single PDF</li>
+            </ul>
+            <div class="reveal-item" style="margin-top: 1em; background: #fdf6e3; border: 2px solid #b8860b; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 6px; font-size: var(--body-size); font-weight: 600; color: #b8860b; align-self: flex-end;">Bring your full assignment (printed out) to class on Thursday!</div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">6</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: Writing High Quality Notes (Lareau)
+         ========================================== -->
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#logistics" class="active">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 22%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <div class="reveal-item" style="background: #fdf6e3; padding: clamp(0.6rem, 1.2vw, 0.8rem) clamp(1rem, 2vw, 1.2rem); border-radius: 4px; font-size: var(--small-size); margin-bottom: 0.5em;">
+                <strong>Lareau (Chapter 6):</strong> &ldquo;The goal of writing field notes is to convey, using words, your experience so that others may experience too, albeit in a different fashion, as you show them your data.&rdquo; (pp. 194)
+            </div>
+            <h2 class="reveal-item" style="background: #5371ff; color: white; padding: clamp(0.4rem, 1vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 4px; align-self: flex-start;">Writing High Quality Notes (Lareau)</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet" style="color: var(--accent); font-weight: 800;">W:</span> <strong>Who, what, when, where, how</strong></li>
+                <li class="reveal-item"><span class="bullet" style="color: var(--accent); font-weight: 800;">R:</span> <strong>Reaction</strong> (responses to questions and to responses)</li>
+                <li class="reveal-item"><span class="bullet" style="color: var(--accent); font-weight: 800;">I:</span> <strong>Inaction</strong> (silence or non-verbal responses)</li>
+                <li class="reveal-item"><span class="bullet" style="color: var(--accent); font-weight: 800;">T:</span> <strong>Timing</strong> (speed of speaking; joking)</li>
+                <li class="reveal-item"><span class="bullet" style="color: var(--accent); font-weight: 800;">E:</span> <strong>Emotions</strong> (non-verbal signs of emotion)</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">7</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: Assignment #2 Reminders
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#logistics" class="active">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 25%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Assignment #2: Reminders</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>You will <strong>not be penalized</strong> for conducting an observation that, for whatever reason, does not yield a plethora of direct insights into your policy puzzle. You can <strong>reflect</strong> on why this happened as part of the assignment.</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>The spirit and purpose of the assignment is to <strong>practice the technique</strong>, learn to write rich/thick field notes, and reflect on the method&rsquo;s strengths and drawbacks.</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">8</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 10: Agenda Checkpoint (entering Interviewing)
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 27%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Class 5: Interviewing</h2>
+            <div class="columns">
+                <div class="card reveal-item" style="opacity: 0.4;">
+                    <h3>FAQs &amp; Logistics</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>More policy puzzle examples</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>FAQ about Assignment #2</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border: 3px solid var(--accent);">
+                    <h3>Interviewing as Art &amp; Science</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Interviewing as a method</li>
+                        <li><span class="bullet">&bull;</span>Listening</li>
+                        <li><span class="bullet">&bull;</span>Developing your interview guide</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Probes</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Avoiding &ldquo;why&rdquo;</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="opacity: 0.4;">
+                    <h3>Your Interview</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Assignment #3</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Who to interview</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Consent</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Transcription</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">9</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 11: Section Header — Interviewing as Method/Science
+         ========================================== -->
+    <section class="slide accent-bg section-header application" id="interviewing-science">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 30%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Interviewing as a<br>method/science</h1>
+        </div>
+        <span class="slide-number">10</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 12: Types of Interviews
+         ========================================== -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 33%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Types of interviews</h2>
+            <table class="interview-table reveal-item">
+                <thead>
+                    <tr>
+                        <th style="background: #e8f4f8; color: #333;"></th>
+                        <th>Structured interview</th>
+                        <th>Semi-structured interview</th>
+                        <th>Unstructured interview</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="reveal-item">
+                        <td>Fixed questions</td>
+                        <td><span class="check">&#10004;</span></td>
+                        <td><span class="check">&#10004;</span></td>
+                        <td><span class="cross">&#10008;</span></td>
+                    </tr>
+                    <tr class="reveal-item">
+                        <td>Fixed order of questions</td>
+                        <td><span class="check">&#10004;</span></td>
+                        <td><span class="cross">&#10008;</span></td>
+                        <td><span class="cross">&#10008;</span></td>
+                    </tr>
+                    <tr class="reveal-item">
+                        <td>Fixed number of questions</td>
+                        <td><span class="check">&#10004;</span></td>
+                        <td><span class="cross">&#10008;</span></td>
+                        <td><span class="cross">&#10008;</span></td>
+                    </tr>
+                    <tr class="reveal-item">
+                        <td>Option to ask additional questions</td>
+                        <td><span class="cross">&#10008;</span></td>
+                        <td><span class="check">&#10004;</span></td>
+                        <td><span class="check">&#10004;</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">11</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 13: Why Interview? (Meaning)
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 36%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Why interview?</h2>
+            <div style="display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;">
+                <div class="img-placeholder reveal-item" style="width: clamp(200px, 25vw, 350px); height: clamp(150px, 20vw, 250px); background: linear-gradient(135deg, #0a1628, #1a3a5c); border: none; color: #7ec8e3; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; font-family: 'Archivo', sans-serif; letter-spacing: 0.1em;">MEANING</div>
+                <div>
+                    <ul>
+                        <li class="reveal-item"><span class="bullet">&rarr;</span>Understand the <em>meaning</em> your respondents attach to life&rsquo;s events and experiences</li>
+                        <li class="reveal-item"><span class="bullet">&rarr;</span>&ldquo;How did that make you feel?&rdquo;</li>
+                        <li class="reveal-item"><span class="bullet">&rarr;</span>&ldquo;Digging deep&rdquo; to find how a person&rsquo;s unique experience sheds light on your puzzle/research question</li>
+                    </ul>
+                    <p class="reveal-item" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;">Lareau, Chapter 5</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">12</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 14: Why Interview? (Mechanisms + Survey Design)
+         ========================================== -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 39%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Why interview?</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem);">
+                <div class="reveal-item">
+                    <ul>
+                        <li><span class="bullet">&rarr;</span><strong>Identify causal mechanisms</strong> and trace processes that are not evident in other forms of data &rarr; theory building</li>
+                    </ul>
+                    <div style="background: #f8f9fa; border-left: 4px solid var(--accent); padding: clamp(0.5rem, 1vw, 0.8rem); margin-top: 0.5em; font-size: var(--small-size);">
+                        <strong>Cohen (2016):</strong> What does it mean for sexual violence to be a &ldquo;tool of war&rdquo; from the perspective of the armed fighters?
+                    </div>
+                </div>
+                <div class="reveal-item">
+                    <ul>
+                        <li><span class="bullet">&rarr;</span><strong>Aid in survey design</strong> and interpretation</li>
+                    </ul>
+                    <div style="background: #f8f9fa; border-left: 4px solid #5371ff; padding: clamp(0.5rem, 1vw, 0.8rem); margin-top: 0.5em; font-size: var(--small-size);">
+                        <strong>Jung and Cohen (2020):</strong> Survey showed that many people in Port-au-Prince receive basic services from gangs. How does this affect people&rsquo;s perceptions of the gangs&rsquo; legitimacy, and the legitimacy of other actors who are supposed to be providing these services (the state, NGOs, the UN, church groups)?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">13</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 15: Other Reasons? (Discussion prompt)
+         ========================================== -->
+    <section class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 41%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Other reasons?</h1>
+        </div>
+        <span class="slide-number">14</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 16: Other Reasons (List)
+         ========================================== -->
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 44%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Other reasons</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>You want to get <strong>very detailed information</strong></li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>You anticipate <strong>wanting to ask follow-up questions</strong> based on responses</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>You plan to ask questions that require <strong>lengthy explanation</strong></li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>You are studying a <strong>complex</strong> (or potentially <strong>confusing</strong>) topic to respondents that make it difficult to construct a one-size-fits-all survey</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>You are studying <em><strong>processes</strong></em>, such as <em>how</em> people make decisions</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">15</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 17: Section Header — Interviewing as Art
+         ========================================== -->
+    <section class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 47%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Interviewing as<br>an art</h1>
+        </div>
+        <span class="slide-number">16</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 18: Margaret Mead Quote
+         ========================================== -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 49%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; max-width: 900px; margin: 0 auto;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(2rem, 4.5vw, 3.5rem); text-transform: none; font-weight: 600; line-height: 1.4; text-align: center; font-family: 'Archivo', sans-serif;">
+                &ldquo;What people <strong>say</strong>, what people <strong>do</strong>, and <strong>what they say they do</strong> are entirely different things.&rdquo;
+            </blockquote>
+            <cite class="reveal-item visible" style="font-size: var(--h3-size); color: #aaa; margin-top: 1em;">&mdash; Margaret Mead</cite>
+        </div>
+        <span class="slide-number">17</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 19: On Listening (Video Reference)
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 52%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <h2 class="reveal-item">On listening&hellip;</h2>
+            <div class="img-placeholder reveal-item" style="width: min(700px, 80vw); aspect-ratio: 16/9; background: #1a1a1a; border: none; color: #aaa; flex-direction: column;">
+                <p style="font-size: var(--h3-size); margin: 0;">Video: On the Art of Listening</p>
+                <p style="font-size: var(--body-size); margin-top: 0.5em; color: #888;">Kimberly Adams &middot; Terry Gross &middot; Michael Barbaro</p>
+                <p style="font-size: var(--small-size); margin-top: 0.5em; color: #666;">[Play in class]</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">18</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 20: Shoah Foundation Interview Comparison
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 54%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <h2 class="reveal-item">Listening in Practice: Shoah Foundation</h2>
+            <div class="reveal-item" style="background: #1a1a1a; border-radius: 12px; padding: clamp(1.5rem, 3vw, 2.5rem); text-align: center; max-width: 800px; color: #fff;">
+                <p style="font-size: var(--h3-size); margin: 0 0 0.5em;">USC Shoah Foundation &mdash; Visual History Archive</p>
+                <p style="font-size: var(--body-size); color: #ccc; margin: 0 0 0.5em;">Testimony #62087 &middot; Start at <strong style="color: #5371ff;">53:49</strong></p>
+                <p style="font-size: var(--small-size); color: #888; margin: 0;">vha.usc.edu &middot; [Ensure audio works before class]</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">19</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 21: Section Header — Developing an Interview Guide
+         ========================================== -->
+    <section class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 56%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Developing an<br>interview guide</h1>
+        </div>
+        <span class="slide-number">20</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 22: How Many Questions
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 59%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">How many questions in an interview guide?</h2>
+            <div style="display: flex; flex-direction: column; gap: clamp(1rem, 2vw, 1.5rem); margin-top: 1em;">
+                <div class="reveal-item" style="display: flex; align-items: center; gap: clamp(1rem, 2vw, 1.5rem);">
+                    <span style="background: var(--accent); color: white; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size); white-space: nowrap;">90-120 MINUTE INTERVIEW</span>
+                    <span style="font-size: var(--body-size);">~12 main questions plus probes</span>
+                </div>
+                <div class="reveal-item" style="display: flex; align-items: center; gap: clamp(1rem, 2vw, 1.5rem);">
+                    <span style="background: var(--accent); color: white; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size); white-space: nowrap;">60 MINUTE INTERVIEW</span>
+                    <span style="font-size: var(--body-size);">~8-10 main questions plus probes</span>
+                </div>
+                <div class="reveal-item" style="display: flex; align-items: center; gap: clamp(1rem, 2vw, 1.5rem);">
+                    <span style="background: var(--accent); color: white; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size); white-space: nowrap;">30 MINUTE INTERVIEW</span>
+                    <span style="font-size: var(--body-size);">~5 main questions plus probes</span>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">21</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 23: Example Guide from Listening to People (1)
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 62%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Example guide from <em>Listening to People</em></h2>
+            <div class="reveal-item" style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; padding: clamp(1rem, 2vw, 1.5rem); font-size: var(--body-size); line-height: 1.6;">
+                <p style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: var(--small-size); margin-bottom: 0.5em;">Background and Experience</p>
+                <p><strong>1.</strong> Tell me about the family in which you grew up.</p>
+                <p style="padding-left: 1.5em; font-size: var(--small-size); color: var(--text-secondary);"><strong>a. Probes:</strong> What did your parent(s) do for a living? What was life at home like? What do your sisters or brothers do? Tell me about the schools you attended. What did you do outside of school? Who were your friends, or, who did you spend a lot of time with?</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">22</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 24: Example Guide from Listening to People (2)
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 64%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Example guide from <em>Listening to People</em></h2>
+            <div class="reveal-item" style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; padding: clamp(1rem, 2vw, 1.5rem); font-size: var(--small-size); line-height: 1.5;">
+                <p style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: clamp(1rem, 1.6vw, 1.3rem); margin-bottom: 0.5em;">Cultural Knowledge and Mobility</p>
+                <p><strong>3.</strong> Thinking about your current situation, in what ways do you feel you belong and do not belong? Can you describe a moment when you felt confident at work? Can you describe a moment when you weren&rsquo;t confident?</p>
+                <p style="padding-left: 1.5em; color: var(--text-secondary);"><strong>a. Probes:</strong> when, where, what situation, who with, how felt, how felt in body</p>
+                <p><strong>4.</strong> We are interested in learning more about how things are different for people from the way that they grew up and the way things are now.</p>
+                <p style="padding-left: 1.5em; color: var(--text-secondary);"><strong>a.</strong> Some people tell us that they notice differences between how people in their family talk about themselves and present themselves compared to how people do this in their current world. Have you noticed any differences in this area or not so much?</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">23</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 25: What Should I Ask?
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 67%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">What should I ask?</h2>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;">
+                <div>
+                    <p class="reveal-item" style="font-size: var(--body-size); line-height: 1.5;">Ground your questions in the <strong>puzzle, process, or mechanism</strong> you are exploring.</p>
+                    <p class="reveal-item" style="font-size: var(--body-size); line-height: 1.5; margin-top: 0.5em;">1-2 icebreaker or general questions are fine, but try to narrow down to the main phenomenon early.</p>
+                </div>
+                <div class="img-placeholder" style="width: clamp(180px, 20vw, 280px); height: clamp(150px, 18vw, 230px);">Puzzle piece image</div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">24</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 26: Style of Questions — How Not Why
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 69%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Prepping your interview: Style of questions</h2>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;">
+                <p class="reveal-item" style="font-size: var(--h3-size); line-height: 1.4;"><strong>How</strong> (not why) questions tend to yield better data</p>
+                <div class="img-placeholder reveal-item" style="width: clamp(200px, 22vw, 300px); height: clamp(180px, 20vw, 260px); background: #ff9900; border: none; color: white; font-size: var(--h3-size); font-weight: 700;">Social Desirability</div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">25</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 27: Instead of "Why?"
+         ========================================== -->
+    <section class="slide" data-steps="6">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 72%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <div style="display: flex; align-items: center; gap: 1em; margin-bottom: 0.5em;">
+                <h2 class="reveal-item" style="margin: 0;">Instead of &ldquo;why?&rdquo;</h2>
+                <div class="reveal-item" style="display: flex; gap: 0.5em;">
+                    <span style="background: var(--accent); color: white; padding: 0.3em 0.8em; border-radius: 4px; font-size: var(--small-size); font-weight: 700;">Difficult to analyze (ambiguous/philosophical)</span>
+                    <span style="background: #5371ff; color: white; padding: 0.3em 0.8em; border-radius: 4px; font-size: var(--small-size); font-weight: 700;">Actual practices and behavior/what has actually happened</span>
+                </div>
+            </div>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&bull;</span><strong>Break it up:</strong>
+                    <ul style="margin-top: 0.3em;">
+                        <li style="font-size: var(--small-size);"><span class="bullet">&ndash;</span>What prompted / led up to that?</li>
+                        <li style="font-size: var(--small-size);"><span class="bullet">&ndash;</span>What are the qualities, features, or characteristics that drew you to ___?</li>
+                    </ul>
+                </li>
+                <li class="reveal-item"><span class="bullet">&bull;</span><strong>Think back to&hellip;</strong>
+                    <ul style="margin-top: 0.3em;">
+                        <li style="font-size: var(--small-size);"><span class="bullet">&ndash;</span>Visualize</li>
+                        <li style="font-size: var(--small-size);"><span class="bullet">&ndash;</span>Tell me about it</li>
+                    </ul>
+                </li>
+                <li class="reveal-item"><span class="bullet">&bull;</span><strong>Social desirability bias</strong>, especially on topics that are stigmatized</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">26</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 28: Chesterton Quote — Why Avoid "Why?" (Part 1)
+         ========================================== -->
+    <section class="slide dark" data-steps="3">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 74%"></div>
+        <div class="slide-content" style="justify-content: center; max-width: 850px; margin: 0 auto;">
+            <h2 class="reveal-item" style="color: #fff;">Why avoid asking &ldquo;why?&rdquo;</h2>
+            <blockquote class="reveal-item" style="font-size: var(--body-size); text-transform: none; font-weight: 500; line-height: 1.5; color: #ddd;">
+                Have you ever noticed this: That people never answer what you say? They answer what you mean, or what <strong style="color: #fff;">they think you mean</strong>.<br><br>
+                Suppose one lady says to another in a country house: &lsquo;Is anybody staying with you?&rsquo; The lady does not answer: &lsquo;Yes, the butler, the three footmen, the parlor maid, and so on,&rsquo; though the parlor maid may be in the room, or the butler behind her chair.<br><br>
+                She says: &lsquo;There is nobody staying with us,&rsquo; meaning nobody of the sort you mean&hellip;
+            </blockquote>
+            <cite class="reveal-item" style="font-size: var(--small-size); color: #888; margin-top: 0.5em;">&mdash; Chesterton (1911)</cite>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">27</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 29: Chesterton Quote (Part 2)
+         ========================================== -->
+    <section class="slide dark" data-steps="3">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 77%"></div>
+        <div class="slide-content" style="justify-content: center; max-width: 850px; margin: 0 auto;">
+            <h2 class="reveal-item" style="color: #fff;">Why avoid asking &ldquo;why?&rdquo;</h2>
+            <blockquote class="reveal-item" style="font-size: var(--body-size); text-transform: none; font-weight: 500; line-height: 1.5; color: #ddd;">
+                &hellip;But suppose a doctor inquiring into an epidemic asks, &lsquo;Who is staying in the house?&rsquo; then the lady will remember the butler, the parlor maid, and the rest.<br><br>
+                All language is used like that; you never get a question answered literally, even when you get it answered truly.
+            </blockquote>
+            <cite class="reveal-item" style="font-size: var(--small-size); color: #888; margin-top: 0.5em;">&mdash; Chesterton (1911)</cite>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">28</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 30: Probing on General Statements
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 79%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item" style="background: #1a1a1a; color: white; padding: clamp(0.4rem, 1vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 4px; align-self: flex-start;">Probing on general statements</h2>
+            <table class="reveal-item" style="width: 100%; border-collapse: collapse; font-size: var(--body-size); margin-top: 1em;">
+                <thead>
+                    <tr>
+                        <th style="background: var(--accent); color: white; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; font-family: 'Archivo', sans-serif;">Too abstract</th>
+                        <th style="background: #5371ff; color: white; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; font-family: 'Archivo', sans-serif;">Thicker description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="reveal-item">
+                        <td style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 2px solid #e0e0e0; font-size: var(--body-size);">&ldquo;I like teacher X best; they are just very supportive.&rdquo;</td>
+                        <td style="padding: clamp(0.8rem, 1.5vw, 1.2rem); border: 2px solid #e0e0e0; font-size: var(--body-size);">&ldquo;<strong>Tell me about a time when</strong> Teacher X supported you&hellip;&rdquo;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">29</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 31: Ask for Examples
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 82%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Prepping your interview: Ask for examples!</h2>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;">
+                <div>
+                    <p class="reveal-item" style="font-size: var(--h3-size); line-height: 1.4;"><strong>Stories</strong> and <strong>examples</strong> are interview gold.</p>
+                    <p class="reveal-item" style="font-size: var(--h3-size); line-height: 1.4; margin-top: 0.5em; color: var(--text-secondary);">&ldquo;Tell me about a time&hellip;&rdquo;</p>
+                </div>
+                <div class="img-placeholder" style="width: clamp(180px, 20vw, 280px); height: clamp(150px, 18vw, 230px); background: linear-gradient(135deg, #b8860b, #daa520); border: none; color: #fff; font-weight: 700; font-size: var(--h3-size);">Gold</div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">30</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 32: Wrapping Up Your Interview
+         ========================================== -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science" class="active">Interviewing</a><a href="#your-interview">Your Interview</a></nav>
+        <div class="progress" style="width: 84%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Wrapping up your interview</h2>
+            <div class="reveal-item" style="margin-top: 0.5em;">
+                <span style="background: var(--accent); color: white; padding: 0.3em 0.8em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">What did I forget?</span>
+                <p style="font-size: var(--body-size); margin-top: 0.5em; line-height: 1.5;">&ldquo;In this interview, I was interested in [insert research question]. Is there anything you didn&rsquo;t tell me that you wish you did?&rdquo;</p>
+            </div>
+            <div class="reveal-item" style="margin-top: 1em;">
+                <span style="background: #5371ff; color: white; padding: 0.3em 0.8em; border-radius: 4px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--body-size);">Who else should I talk to?</span>
+                <p style="font-size: var(--body-size); margin-top: 0.5em; line-height: 1.5;">&ldquo;Is there anyone else whose perspective you think I should have? Who is your most persuasive critic/best opponent?&rdquo;</p>
+            </div>
+            <div class="reveal-item" style="margin-top: 1em; align-self: flex-end; background: #e8f4f8; padding: 0.5em 1em; border-radius: 6px; font-size: var(--body-size); font-weight: 600; color: #5371ff;">&ldquo;Snowball sampling&rdquo;</div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">31</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 33: Agenda Checkpoint — Your Interview
+         ========================================== -->
+    <section class="slide" data-steps="3" id="your-interview">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 86%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Class 5: Interviewing</h2>
+            <div class="columns">
+                <div class="card reveal-item" style="opacity: 0.4;">
+                    <h3>Interviewing as Science</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Interviewing as a method</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="opacity: 0.4;">
+                    <h3>Interviewing as Art</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Listening</li>
+                        <li><span class="bullet">&bull;</span>Developing an interview guide</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Probes</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Avoiding &ldquo;why&rdquo;</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Stories &amp; examples</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border: 3px solid var(--accent);">
+                    <h3>Your Interview</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Assignment #3</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Who to interview</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Consent</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Transcription</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Revisit your protocol</li>
+                        <li style="padding-left: 1.5em;"><span class="bullet">&ndash;</span>Follow-up</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">32</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 34: Section Header — Assignment #3
+         ========================================== -->
+    <section class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 88%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Assignment #3</h1>
+            <span class="reveal-item visible" style="background: rgba(255,255,255,0.15); padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 4px; font-size: var(--h3-size); margin-top: 0.5em;">Due Wed. April 1 at 11:59 PM</span>
+        </div>
+        <span class="slide-number">33</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 35: Assignment #3 Details (Part 1)
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 90%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <div style="display: flex; align-items: center; gap: 1em; margin-bottom: 0.3em;">
+                <h2 class="reveal-item" style="margin: 0;">Assignment #3: Interview</h2>
+                <span class="reveal-item" style="background: #e8edff; border: 2px solid #5371ff; padding: 0.2em 0.8em; border-radius: 4px; font-size: var(--small-size); font-weight: 700; color: #5371ff; white-space: nowrap;">Due Wed. April 1, 11:59 PM</span>
+            </div>
+            <ul>
+                <li class="reveal-item"><span class="num" style="font-size: var(--body-size);">A.</span> <strong>Recruit an interview subject</strong> and obtain their consent to record the interview.</li>
+                <li class="reveal-item"><span class="num" style="font-size: var(--body-size);">B.</span> <strong>Write an interview guide.</strong>
+                    <ul style="margin-top: 0.3em;">
+                        <li style="font-size: var(--small-size);"><span class="bullet">&ndash;</span>Limit the guide to a realistic number of questions for a <strong>60-minute interview</strong></li>
+                        <li style="font-size: var(--small-size);"><span class="bullet">&ndash;</span>Include <em>probes</em> that will help you elicit more details</li>
+                        <li style="font-size: var(--small-size);"><span class="bullet">&ndash;</span>You may want close-ended questions for standard demographic data</li>
+                    </ul>
+                </li>
+                <li class="reveal-item"><span class="num" style="font-size: var(--body-size);">C.</span> <strong>Conduct, record, and transcribe</strong> the interview. Use a transcription service (Zoom, Otter AI, Rev.com, Trint, Happy Scribe for non-English). <em>If you conduct your interview in a language other than English, you will need to translate it.</em></li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">34</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 36: Assignment #3 Details (Part 2)
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 92%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Assignment #3: Interview <span style="font-size: var(--small-size); font-weight: 600; color: var(--text-secondary);">(cont.)</span></h2>
+            <ul>
+                <li class="reveal-item"><span class="num" style="font-size: var(--body-size);">D.</span> <strong>Carefully re-read the transcript</strong>, and edit it to correct any errors or typos introduced by AI transcription. Be sure it is presented in a legible way and is accurate.</li>
+                <li class="reveal-item"><span class="num" style="font-size: var(--body-size);">E.</span> <strong style="color: var(--accent);">Write a 250-500-word reflection memo.</strong> The memo should reflect how you chose your interview subject, what you experienced as the advantages and disadvantages of the method, and reflections on any surprises, substantive questions, or emergent findings related to your research puzzle.</li>
+                <li class="reveal-item"><span class="num" style="font-size: var(--body-size);">F.</span> <strong style="color: var(--accent);">Submit to Canvas in a combined PDF</strong>: (1) the 250-500 word reflection memo and (2) the full transcript of your interview.</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">35</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 37: Who to Interview
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 93%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">A note about <em>who</em> to interview</h2>
+            <p class="reveal-item" style="font-size: var(--body-size); line-height: 1.5;">Because we are learning and practicing a new method, students should generally <strong>not</strong> collect data from vulnerable populations, individuals in unstable contexts, or about very sensitive topics.</p>
+            <p class="reveal-item" style="font-size: var(--body-size); line-height: 1.5; margin-top: 0.5em;">&rarr; Instead, consider collecting data from <strong>issue area experts</strong> or individuals who work with vulnerable people (fellow MPPs could be great!)</p>
+            <div class="reveal-item" style="margin-top: 1em; background: #fde8e8; border: 2px solid #ef4444; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 6px;">
+                <p style="font-size: var(--body-size); font-weight: 700; color: #ef4444; margin: 0;"><strong>ABSOLUTELY NO</strong> children, incarcerated people, or individuals with diminished mental capacity. These are protected categories that require extensive ethical review.</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">36</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 38: Consent
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 95%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Prepping your interview: Consent</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem);">
+                <div class="reveal-item">
+                    <p style="font-size: var(--body-size); margin-bottom: 0.5em;">Prepare a <strong>consent script</strong> for the beginning of your interview:</p>
+                    <ul>
+                        <li style="font-size: var(--body-size);"><span class="bullet">&bull;</span>Who are you?</li>
+                        <li style="font-size: var(--body-size);"><span class="bullet">&bull;</span>Why are you doing this?</li>
+                        <li style="font-size: var(--body-size);"><span class="bullet">&bull;</span>What are the benefits and risks?
+                            <ul><li style="font-size: var(--small-size);"><span class="bullet">&ndash;</span>It&rsquo;s ok to refuse to do this!</li></ul>
+                        </li>
+                        <li style="font-size: var(--body-size);"><span class="bullet">&bull;</span>Ok to record?</li>
+                        <li style="font-size: var(--body-size);"><span class="bullet">&bull;</span>Ok to cite/quote, by name or anonymously?</li>
+                    </ul>
+                    <div style="margin-top: 0.5em; background: #fde8e8; padding: 0.5em 0.8em; border-radius: 4px; font-size: var(--small-size); font-weight: 600; color: #ef4444;">You must find at least one interviewee who agrees to be recorded for this class!</div>
+                </div>
+                <div class="reveal-item" style="background: #e8f4f8; padding: clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 8px; font-size: var(--small-size); line-height: 1.5;">
+                    <p>Thank you for responding to my email invitation for an interview. My name is ______ and I am a graduate student at Harvard conducting this interview for my coursework in a qualitative methods class.</p>
+                    <p style="margin-top: 0.5em;">The research is being conducted to explore ___________. Your participation will only be needed once for this interview which should last no more than _________.</p>
+                    <p style="margin-top: 0.5em;">I will not be providing any compensation for this interview. You can decline to proceed and you can stop the interview at any time.</p>
+                    <p style="margin-top: 0.5em;">With your permission, I&rsquo;d like to record. Is that okay?</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">37</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 39: Section Header — Following Up
+         ========================================== -->
+    <section class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 96%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Following up<br>with interviewee</h1>
+        </div>
+        <span class="slide-number">38</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 40: Section Header — Transcription
+         ========================================== -->
+    <section class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 97%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Transcription<br>and translation</h1>
+        </div>
+        <span class="slide-number">39</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 41: Transcription Tools
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 98%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Transcription</h2>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: center;">
+                <ul class="reveal-item">
+                    <li><span class="bullet">&bull;</span>Zoom transcription</li>
+                    <li><span class="bullet">&bull;</span>Otter AI</li>
+                    <li><span class="bullet">&bull;</span>Rev.com</li>
+                    <li><span class="bullet">&bull;</span>Trint.com</li>
+                    <li><span class="bullet">&bull;</span>Happy Scribe (for non-English)</li>
+                    <li><span class="bullet">&bull;</span>Manually (or combo)</li>
+                </ul>
+                <div class="img-placeholder" style="width: clamp(180px, 20vw, 280px); height: clamp(180px, 20vw, 250px);">Transcription illustration</div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">40</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 42: Teaching Team / Thank You
+         ========================================== -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#logistics">Logistics</a><a href="#interviewing-science">Interviewing</a><a href="#your-interview" class="active">Your Interview</a></nav>
+        <div class="progress" style="width: 100%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item visible" style="font-size: var(--title-size);">Thank you! Questions?</h2>
+            <div class="reveal-item visible" style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: 1em; font-size: var(--body-size);">
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong style="color: var(--accent);">Prof. Liz McKenna</strong></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: var(--small-size);">emckenna@hks.harvard.edu</p>
+                    <p style="margin: 0.8em 0 0; font-size: var(--small-size); color: var(--text-secondary);"><em>Office hours:</em> Tuesdays, 1:30-3:00, T-308</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.6em;">
+                    <p style="margin: 0; font-size: var(--small-size); font-family: 'Archivo', sans-serif; font-weight: 700; color: var(--accent);">Teaching Team:</p>
+                    <div>
+                        <p style="margin: 0 0 0.3em;"><strong>Muhammad Irfan Sadiq</strong> <span style="color: var(--accent);">(CA)</span></p>
+                        <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">muhammadirfansadiq@hks.harvard.edu</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0 0 0.3em;"><strong>Dani Schulman</strong> <span style="color: var(--accent);">(CA)</span></p>
+                        <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">danielaschulman@hks.harvard.edu</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0 0 0.3em;"><strong>Jessica De Simone</strong> <span style="color: var(--text-secondary);">(FA)</span></p>
+                        <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">jessica_de_simone@hks.harvard.edu</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0; color: var(--text-secondary); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">TF/CAs available by appointment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="slide-number">41</span>
+    </section>
+
+    <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
+    <script src="slides.js"></script>
+</body>
+</html>
