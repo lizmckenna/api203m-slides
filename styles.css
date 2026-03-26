@@ -10,10 +10,20 @@ html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+/* Reduced motion — respect OS settings, helps Windows trackpad scroll */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal-item { transition: opacity 0.15s ease; transform: none !important; }
+    .reveal-item.visible { transform: none !important; }
 }
 
 :root {
@@ -28,6 +38,7 @@ html {
     --text-secondary: #555;
     --text-light: #ffffff;
     --grid-color: rgba(0,0,0,0.05);
+    --surface: rgba(0,0,0,0.03);
 
     /* Typography */
     --title-size: clamp(2.25rem, 6.5vw, 5rem);
@@ -54,8 +65,11 @@ html {
     flex-direction: column;
     position: relative;
     background: var(--bg-white);
-    font-family: 'Nunito', system-ui, sans-serif;
+    font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
     color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .slide.dark {
