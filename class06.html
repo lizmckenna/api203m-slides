@@ -367,7 +367,7 @@
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
         <div class="progress" style="width: 35%"></div>
         <div class="slide-content" style="align-items: center; text-align: center;">
-            <h1 class="reveal-item visible" style="max-width: 100%;">What Makes for Good<br>and Bad Field Notes</h1>
+            <h1 class="reveal-item visible" style="max-width: 100%;">What Makes for Good<br>and Bad Field Notes?</h1>
         </div>
         <span class="slide-number">11</span>
     </section>
@@ -562,13 +562,15 @@
     <!-- ==========================================
          SLIDE 22: Handout #2 — big centered
          ========================================== -->
-    <section class="slide dark">
+    <section class="slide application" id="timer-slide-2">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
         <div class="progress" style="width: 68%"></div>
-        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
-            <blockquote class="reveal-item visible" style="font-size: clamp(2.2rem, 5.5vw, 4rem); text-transform: none; font-weight: 700; line-height: 1.25;">
-                Handout #2:<br>Description &rarr; <span class="highlight">Analysis</span>
-            </blockquote>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h2 class="reveal-item visible" style="font-size: clamp(2.2rem, 5.5vw, 4rem);">Handout #2:<br>Description &rarr; Analysis</h2>
+            <div class="timer-container reveal-item visible" style="margin-top: var(--content-gap);">
+                <p id="countdown-display-2" style="font-size: clamp(3rem, 10vw, 6rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">07:00</p>
+                <p id="timer-hint-2" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
+            </div>
         </div>
         <span class="slide-number">21</span>
     </section>
@@ -768,5 +770,60 @@
 
     <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
     <script src="slides.js"></script>
+    <script>
+    // Second timer for Handout #2 slide
+    (function() {
+        const display2 = document.getElementById('countdown-display-2');
+        const hint2 = document.getElementById('timer-hint-2');
+        if (!display2) return;
+        let duration = 7 * 60;
+        let remaining = duration;
+        let interval = null;
+        let running = false;
+
+        display2.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (running) { pause(); } else { start(); }
+        });
+
+        function start() {
+            if (remaining <= 0) reset();
+            running = true;
+            hint2.textContent = 'Click to pause';
+            interval = setInterval(function() {
+                remaining--;
+                updateDisplay();
+                if (remaining <= 0) complete();
+            }, 1000);
+        }
+        function pause() {
+            running = false;
+            clearInterval(interval);
+            hint2.textContent = 'Click to resume';
+        }
+        function reset() {
+            remaining = duration;
+            updateDisplay();
+            hint2.textContent = 'Click timer to start';
+            display2.style.color = '';
+            display2.style.animation = '';
+        }
+        function complete() {
+            clearInterval(interval);
+            running = false;
+            display2.textContent = "Time's up!";
+            display2.style.color = '#ff3300';
+            display2.style.animation = 'pulse 1s ease-in-out 3';
+            hint2.textContent = 'Click to reset';
+        }
+        function updateDisplay() {
+            const m = Math.floor(remaining / 60);
+            const s = remaining % 60;
+            display2.textContent = m.toString().padStart(2,'0') + ':' + s.toString().padStart(2,'0');
+            if (remaining <= 30 && remaining > 0) display2.style.color = '#ff3300';
+            else if (remaining > 30) display2.style.color = '';
+        }
+    })();
+    </script>
 </body>
 </html>
