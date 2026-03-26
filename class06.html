@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-203M: Observation Workshop | Prof. Liz McKenna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Projection-scale typography — sized for back-row legibility */
+        :root {
+            --title-size: clamp(3.5rem, 9vw, 7rem);
+            --h2-size: clamp(2.8rem, 7vw, 5rem);
+            --h3-size: clamp(2rem, 4.5vw, 3.2rem);
+            --body-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            --small-size: clamp(1.3rem, 2.4vw, 1.8rem);
+        }
+        .card h3 { font-size: var(--h3-size); }
+        .card p, .card li { font-size: var(--body-size); line-height: 1.4; }
+
+        /* Comparison tables for thick description examples */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--body-size);
+            margin-top: 0.75em;
+        }
+        .compare-table th, .compare-table td {
+            padding: clamp(0.6rem, 1.5vw, 1.2rem) clamp(0.8rem, 2vw, 1.5rem);
+            text-align: left;
+            border: 2px solid #e0e0e0;
+            vertical-align: top;
+        }
+        .compare-table th {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .compare-table th:first-child {
+            background: #fee; color: #cc2200; width: 40%;
+        }
+        .compare-table th:last-child {
+            background: #eef8ee; color: #2e7d32; width: 60%;
+        }
+        .compare-table td:first-child {
+            color: var(--text-secondary);
+        }
+        .compare-table td:last-child {
+            font-weight: 500;
+        }
+
+        /* Sentence stem cards */
+        .stem-card {
+            background: rgba(0,0,0,0.03);
+            padding: clamp(1rem, 2vw, 1.5rem);
+            border-radius: 4px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+            font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+            line-height: 1.5;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        .stem-label {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: var(--small-size);
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.3em;
+            display: block;
+        }
+
+        /* Student example block quotes */
+        .student-quote {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            line-height: 1.55;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--accent);
+            padding-left: clamp(0.8rem, 1.5vw, 1.2rem);
+            margin: 0;
+            max-height: 68vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         SLIDE 1: Title
+         ========================================== -->
+    <section class="slide" data-section="title">
+        <div class="progress" style="width: 2%"></div>
+        <div class="grid-bg"></div>
+        <div class="accent-circle"></div>
+        <div class="slide-content">
+            <h1>Empirical<br>Methods <span class="highlight">II</span></h1>
+            <p class="meta" style="margin-bottom: 0.2em;">Qualitative and Mixed Methods</p>
+            <p class="meta" style="margin-top: 0;">API-203M &middot; Spring 2026</p>
+            <span style="margin-top: 0.5em; align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; color: #5371ff;">Class 6: Observation Workshop</span>
+        </div>
+        <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2: Agenda
+         ========================================== -->
+    <section class="slide" data-steps="12">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 4%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
+            <h2 class="reveal-item">Today&rsquo;s Agenda</h2>
+            <div class="columns">
+                <div class="card reveal-item">
+                    <h3>Debriefing Observation</h3>
+                    <ul>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>How did it go?</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Key considerations</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Student examples</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Field Notes Workshop</h3>
+                    <ul>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Thick description</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Self-assessment</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Pair &amp; share</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item">
+                    <h3>Description &rarr; Analysis</h3>
+                    <ul>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Patterns &amp; inferences</li>
+                        <li class="reveal-item"><span class="bullet">&bull;</span>Systematic Social Observation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">1</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3: Module Flow
+         ========================================== -->
+    <section class="slide" data-steps="5" id="debrief">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 7%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
+            <h2 class="reveal-item" style="align-self: flex-start; font-size: clamp(2.8rem, 5vw, 3.8rem); margin-bottom: clamp(0.5rem, 1vw, 0.75rem);">Module Flow &amp; Content</h2>
+
+            <div class="timeline" style="max-width: 100%; width: 100%;">
+                <div class="timeline-row">
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Introduction</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Overview,<br>outstanding qual<br>research</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top" style="flex: 0.5;"></div>
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Introduction +<br>workshop</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Focus Groups</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Background, ethics,<br>simulation</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                </div>
+
+                <div class="timeline-bar" style="height: clamp(3.5rem, 7vh, 5.5rem);">
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">1</div>
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">2</div>
+                    <div class="week" style="background: #888; flex: 0.5; font-size: clamp(1rem, 1.6vw, 1.3rem);">Break</div>
+                    <div class="week" style="background: #5371ff; border: 3px solid #fff; box-shadow: 0 0 0 3px #5371ff; font-size: clamp(1.2rem, 2vw, 1.6rem);">Week 3</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">4</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">5</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">6</div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Observation + Ethics</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Ethnography,<br>fieldwork</p>
+                    </div>
+                    <div class="timeline-module bottom" style="flex: 0.5;"></div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing 2.0</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Workshop +<br>interview assignment</p>
+                    </div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Qual Coding + Wrap-Up</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Coding workshop,<br>Anthropic guest lecture</p>
+                    </div>
+                </div>
+
+                <div class="timeline-here-callout reveal-item" style="margin-left: 38%; font-size: clamp(1rem, 1.6vw, 1.3rem); padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.7rem, 1.4vw, 1.1rem);">YOU ARE HERE</div>
+
+                <div style="position: relative; width: 100%; min-height: clamp(5rem, 10vh, 8rem); margin-top: clamp(0.5rem, 1vh, 0.75rem);">
+                    <div class="reveal-item" style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #4caf50; display: block;">&#10003; Assignment #1</strong>
+                        <span style="color: #4caf50; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
+                    </div>
+                    <div class="reveal-item" style="position: absolute; left: 16%; top: 0; width: calc(20%); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #4caf50; display: block;">&#10003; Assignment #2 (Observation)</strong>
+                        <span style="color: #4caf50; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
+                    </div>
+                    <div class="reveal-item" style="position: absolute; left: 55%; top: 0; width: calc(22%); background: #fdf6e3; border: 2px solid #b8860b; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #b8860b; display: block;">Assignment #3 (Interview)</strong>
+                        <span style="color: #b8860b; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">Due Wed Apr 1 at 11:59 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">2</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4: Section Header — Debriefing Observation
+         ========================================== -->
+    <section class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 10%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Debriefing<br><span class="highlight">Observation</span></h1>
+        </div>
+        <span class="slide-number">3</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: Discussion — How did it go?
+         ========================================== -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 13%"></div>
+        <div class="slide-content" style="justify-content: center; max-width: 900px;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(1.8rem, 4.5vw, 3.2rem); text-transform: none; font-weight: 700; line-height: 1.25;">
+                How did you feel about your observation? Any <span class="highlight">positive surprises</span> or funny anecdotes?
+            </blockquote>
+        </div>
+        <span class="slide-number">4</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6: Discussion — Drawbacks
+         ========================================== -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 16%"></div>
+        <div class="slide-content" style="justify-content: center; max-width: 900px;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(1.8rem, 4.5vw, 3.2rem); text-transform: none; font-weight: 700; line-height: 1.25;">
+                What did you experience as some of the <span class="highlight">drawbacks</span> of the method?
+            </blockquote>
+        </div>
+        <span class="slide-number">5</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7: Key Considerations
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 19%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Review</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Key Considerations: Ethnographic Observation</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Sampling</strong> &mdash; Deep analysis of one group/place, but not necessarily representative or generalizable</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Veracity</strong> &mdash; Does the presence of a researcher change the behavior of the study population?</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Reliability</strong> &mdash; Did the researcher understand what they think they saw and heard? Is the researcher an <em>insider</em> or an <em>outsider</em>? How might this affect interpretation?</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">6</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: Section Header — Example Field Notes
+         ========================================== -->
+    <section class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 22%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Example<br>Field Notes</h1>
+        </div>
+        <span class="slide-number">7</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: Example 1 — Rebecca Lin
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 25%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item" style="font-size: var(--h3-size);">Example 1: Rebecca Lin</h2>
+            <p class="student-quote reveal-item">&ldquo;A Chinese father and young boy, likely around 4 years old, stroll onto the playground. The father, who appears to be in his 40s and wears a blue UMass Sweatshirt and bright white Nikes, pulls a bright red wagon behind him. Inside the wagon lies a red spiderman blanket that looks soft to the touch. The young boy dressed in a bulky down jacket eagerly crawls through the orange and green hexagons that are significantly taller than his short stature. A shy smile covers the boy&rsquo;s face and he intermittently giggles as he begins to crawl through the octagons. His dad stands guard by the wagon.<br><br>The boy slowly makes his way through the octagons and reaches the top of playground structure and he gleefully grins, waving down at his dad. Appearing satisfied with his conquest, the child quickly scurries down the structure, runs around it once, before hopping into the red wagon. The boy murmurs, &lsquo;I want to go home,&rsquo; growing slowly louder and more insistent as his dad tries to put the spiderman blanket on him.&rdquo;</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">8</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 10: Example 2 — Tim Dobretsov
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 28%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item" style="font-size: var(--h3-size);">Example 2: Tim Dobretsov</h2>
+            <p class="student-quote reveal-item">&ldquo;Freddy is wearing a dark button-down shirt, though the top button of his shirt is unbuttoned. He is animated and confident as he shares his perspective on fighting dictatorship, vigorously using his hands to emphasize talking points. Towards the end of his opening remarks, which he delivers while shifting his gaze from one section of the audience to another, he concludes that a multidisciplinary approach is required to fight dictatorship and promote sustainable change&hellip;&rdquo;<br><br>&ldquo;An audible &lsquo;recording in progress&rsquo; message from the computer interrupts Freddy as he wraps up, prompting laughter from the audience. This is the first explicit indication of the lighthearted mood that pervades the room. It becomes clear at this point that audience members remained engaged throughout Freddy&rsquo;s presentation, perhaps due to his energetic and animated style. His speech was characterized by a certain urgency, though he did not raise his voice or speak quickly.&rdquo;</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">9</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 11: Example 3 — Kellie Lounds
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 31%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item" style="font-size: var(--h3-size);">Example 3: Kellie Lounds</h2>
+            <p class="student-quote reveal-item">&ldquo;Another (presumably) mother is called to the lectern to give her registered public comment. She, too, wants to speak on the superintendent&rsquo;s performance review. Very quickly, however, her comments take a different tone. She hurriedly disavows the leadership&rsquo;s &lsquo;authoritarian approach&rsquo; to school governance regarding the district&rsquo;s &lsquo;COVID injection mandate&rsquo; for participating in school sports; her tone starts to get more aggressive and I can feel the people around me shifting on either side.<br><br>I catch one mom making a side eye towards another as the speaker pivots to discussing lacking academics being deprioritized in favor of &lsquo;racist, sexist DEI programs&rsquo; and &lsquo;inappropriate and disgusting&rsquo; LGBT Pride events. The student members of the school board raise their eyebrows at each other before they begin typing furiously (texting each other, if I had to guess). As her two-minute timer blares into the secretary&rsquo;s microphone, she raises her voice to be heard over the ringing &ndash; calling the district a cesspool full of &lsquo;lunatic initiatives.&rsquo;&rdquo;</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">10</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 12: Section Header — Observation Workshop
+         ========================================== -->
+    <section class="slide accent-bg section-header" id="workshop">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 34%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Field Notes<br><span class="highlight">Workshop</span></h1>
+        </div>
+        <span class="slide-number">11</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 13: What makes good field notes?
+         ========================================== -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 37%"></div>
+        <div class="slide-content" style="justify-content: center; max-width: 900px;">
+            <p class="meta reveal-item visible" style="color: rgba(255,255,255,0.5);">REVIEW</p>
+            <blockquote class="reveal-item visible" style="font-size: clamp(1.8rem, 4.5vw, 3.2rem); text-transform: none; font-weight: 700; line-height: 1.25;">
+                What makes good (and bad) <span class="highlight">field notes</span>?
+            </blockquote>
+        </div>
+        <span class="slide-number">12</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 14: What is "thick description"?
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 40%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">What Is &ldquo;Thick Description&rdquo;?</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>When we are <strong>thickly describing</strong> a field site, we are trying to <strong><em>show</em> rather than tell</strong> by using evocative language.</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>The aim is to be <strong>as specific as possible</strong> by avoiding general or abstract words.</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span>Rich field notes are ones that use <strong>anecdotes, examples, descriptions, and quotations</strong> to make the experience concrete for the reader.</li>
+            </ul>
+            <p class="reveal-item" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.75em;">Vanderbilt Writing Studio (2012)</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">13</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 15: Vague → Thick
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 43%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Moving from Vague to &ldquo;Thick&rdquo;</h2>
+            <table class="compare-table reveal-item">
+                <tr><th>Too vague</th><th>Thicker description</th></tr>
+                <tr>
+                    <td>&ldquo;Coach Rodriguez was my favorite.&rdquo;</td>
+                    <td>&ldquo;Coach Rodriguez was the only coach who spent 30 minutes working one-on-one with each athlete every week.&rdquo;</td>
+                </tr>
+            </table>
+            <table class="compare-table reveal-item" style="margin-top: 0.5em;">
+                <tr>
+                    <td style="border-top: none;">&ldquo;The chair of the meeting was ineffective.&rdquo;</td>
+                    <td style="border-top: none;">&ldquo;The chair addressed only 3 of 5 points on the agenda in the 60 minutes allotted for the meeting.&rdquo;</td>
+                </tr>
+            </table>
+            <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;">Adapted from Vanderbilt Writing Studio (2012)</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">14</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 16: Avoiding Conclusive Statements
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 46%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Avoiding Conclusive Statements</h2>
+            <table class="compare-table reveal-item">
+                <tr><th>Too conclusive</th><th>Thicker description</th></tr>
+                <tr>
+                    <td>&ldquo;The teacher likes the students.&rdquo;</td>
+                    <td>&ldquo;The teacher smiles when the students enter the room, greets them attentively and warmly, and hugs those that run to her.&rdquo;</td>
+                </tr>
+            </table>
+            <table class="compare-table reveal-item" style="margin-top: 0.5em;">
+                <tr>
+                    <td style="border-top: none;">&ldquo;The interviewee was uncomfortable with this line of questioning.&rdquo;</td>
+                    <td style="border-top: none;">&ldquo;During questions 5 thru 7 the interviewee started fidgeting in his seat, touching his hand to his mouth, and speaking more slowly while clearing his throat repeatedly. He displayed none of those behaviors in the first 4 questions.&rdquo;</td>
+                </tr>
+            </table>
+            <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;">Adapted from Vanderbilt Writing Studio (2012)</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">15</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 17: What Could Be vs. What Is
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 49%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">What Could Be vs. What Is Happening</h2>
+            <table class="compare-table reveal-item">
+                <tr><th>Too vague</th><th>Thicker description</th></tr>
+                <tr>
+                    <td>&ldquo;Students will learn math better with hands-on examples than numbers on a chalkboard.&rdquo;</td>
+                    <td>&ldquo;Yesterday, when the teacher wrote problems on the board, 3 students answered all problems correctly. Today, when the teacher used blocks and bottle caps, 8 students answered most problems correctly in under 30 seconds.&rdquo;</td>
+                </tr>
+            </table>
+            <p class="reveal-item" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;">Adapted from Vanderbilt Writing Studio (2012)</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">16</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 18: Self-Assessment Activity
+         ========================================== -->
+    <section class="slide application" id="timer-slide">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 52%"></div>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h2 class="reveal-item visible">Self-Assessment</h2>
+            <p class="reveal-item visible" style="font-size: var(--h3-size); max-width: 700px; margin-top: var(--content-gap);">
+                Review your field notes using the handout.<br>Where are they &ldquo;thick&rdquo; vs. &ldquo;thin&rdquo;?
+            </p>
+            <div class="timer-container reveal-item visible" style="margin-top: var(--content-gap);">
+                <p id="countdown-display" style="font-size: clamp(3rem, 10vw, 6rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">10:00</p>
+                <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
+            </div>
+        </div>
+        <span class="slide-number">17</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 19: Pair & Share
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 55%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator" style="color: #5371ff;">Application</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Field Notes Pair &amp; Share</h2>
+            <ul>
+                <li class="reveal-item"><span class="num">01</span><strong>What field site did you observe</strong> and how did it go for you?</li>
+                <li class="reveal-item"><span class="num">02</span><strong>Where are your notes &ldquo;thick&rdquo;</strong> (full of detail, context, emotion) versus &ldquo;thin&rdquo; (superficial, surface)? <em>See handout &mdash; follow steps 1 and 2</em></li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">18</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 20: Debrief & Share Out
+         ========================================== -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 58%"></div>
+        <div class="slide-content" style="justify-content: center; max-width: 900px;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(1.8rem, 4.5vw, 3.2rem); text-transform: none; font-weight: 700; line-height: 1.25;">
+                Debrief &amp; <span class="highlight">Share Out</span>
+            </blockquote>
+        </div>
+        <span class="slide-number">19</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 21: Growth Mindset
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 61%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">A Word on Learning Orientations&hellip;</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="border-top-color: #ef4444;">
+                    <h3 style="color: #ef4444;">Fixed Mindset</h3>
+                    <p>&ldquo;I&rsquo;m just not good at this.&rdquo;</p>
+                    <p style="font-size: var(--small-size); color: var(--text-secondary);">Avoids challenges, gives up easily, sees effort as fruitless</p>
+                </div>
+                <div class="card reveal-item" style="border-top-color: #22c55e;">
+                    <h3 style="color: #22c55e;">Growth Mindset</h3>
+                    <p>&ldquo;I can learn to do this better.&rdquo;</p>
+                    <p style="font-size: var(--small-size); color: var(--text-secondary);">Embraces challenges, persists through setbacks, sees effort as path to mastery</p>
+                </div>
+            </div>
+            <p class="reveal-item" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;"><em>Mindset: The New Psychology of Success</em> (Carol Dweck, 2006)</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">20</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 22: Section Header — Description to Analysis
+         ========================================== -->
+    <section class="slide accent-bg section-header" id="analysis">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 64%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">From Description<br>to <span class="highlight">Analysis</span></h1>
+        </div>
+        <span class="slide-number">21</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 23: FAQ — How to turn data into analysis
+         ========================================== -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 67%"></div>
+        <div class="slide-content" style="justify-content: center; max-width: 900px;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(1.6rem, 4vw, 2.8rem); text-transform: none; font-weight: 700; line-height: 1.25;">
+                FAQ: How do I turn my field note data into <span class="highlight">analysis</span>?
+            </blockquote>
+        </div>
+        <span class="slide-number">22</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 24: Common Problems
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 70%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item">Common Problems</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="text-align: center;">
+                    <h3 style="font-size: var(--body-size);">&ldquo;I don&rsquo;t know what I found.&rdquo;</h3>
+                </div>
+                <div class="card reveal-item" style="text-align: center;">
+                    <h3 style="font-size: var(--body-size);">&ldquo;I know what I found but I don&rsquo;t know how to write about it.&rdquo;</h3>
+                </div>
+            </div>
+            <div class="reveal-item" style="margin-top: 1em; background: #fdf6e3; border: 2px solid #b8860b; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 6px; font-size: var(--body-size); font-weight: 600; color: #b8860b; text-align: center;">Go back to your data. Try writing a <strong>reflection memo</strong> before writing an <strong>analytic memo</strong>.</div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">23</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 25: Description → Analysis: Handout #2
+         ========================================== -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 73%"></div>
+        <div class="slide-content" style="justify-content: center; max-width: 900px;">
+            <blockquote class="reveal-item visible" style="font-size: clamp(1.8rem, 4.5vw, 3.2rem); text-transform: none; font-weight: 700; line-height: 1.25;">
+                Handout #2:<br>Description &rarr; <span class="highlight">Analysis</span>
+            </blockquote>
+        </div>
+        <span class="slide-number">24</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 26: Sentence Stems — Patterns
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 76%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Patterns, Connections, Contrasts</h2>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Pattern</span>
+                &ldquo;In my observations, I noticed a general pattern of _________ as exemplified by _________, __________, and _________.&rdquo;
+            </div>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Connection</span>
+                &ldquo;Each time that ______________ occurred, _________________.&rdquo;
+            </div>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Contrast</span>
+                &ldquo;Although I generally observed ____________, ___________ stood out by ______________.&rdquo;
+            </div>
+            <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.3em;">Vanderbilt Writing Studio (2012)</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">25</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 27: Sentence Stems — Inferences
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 79%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Inferences and Implications</h2>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Implication</span>
+                &ldquo;One implication of what I observed could be __________________________.&rdquo;
+            </div>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Theory &rarr; Evidence</span>
+                &ldquo;One element of [insert concept/theory] involves _____________. This can be seen in [insert detail from field notes].&rdquo;
+            </div>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Indirect observation</span>
+                &ldquo;Although I did not observe X directly / explicitly, it is implied by ________________________.&rdquo;
+            </div>
+            <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.3em;">Vanderbilt Writing Studio (2012)</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">26</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 28: Sentence Stems — Frameworks
+         ========================================== -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 82%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Relate to Frameworks &amp; Hypotheses</h2>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Surprise</span>
+                &ldquo;At first I thought __________________________, but after conducting my research, what I found is that ___________________________.&rdquo;
+            </div>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Test a hypothesis</span>
+                &ldquo;The work of [insert scholar] hypothesizes _________________________. My fieldwork shows ___________________________.&rdquo;
+            </div>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Confirm</span>
+                &ldquo;In my fieldwork, I found ________________. This coincides with my [or someone else&rsquo;s] hypothesis in that _________________.&rdquo;
+            </div>
+            <div class="stem-card reveal-item">
+                <span class="stem-label">Challenge</span>
+                &ldquo;It conflicts with my [or someone else&rsquo;s] hypothesis in that _________________.&rdquo;
+            </div>
+            <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.3em;">Vanderbilt Writing Studio (2012)</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">27</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 29: Systematic Observation
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Description &rarr; Analysis</a><a href="#forward">Looking Forward</a></nav>
+        <div class="progress" style="width: 85%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Making It Systematic: SSO</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Systematic Social Observation (SSO)</strong> &mdash; A structured approach to comparing observations across sites, times, or contexts</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>How?</strong> &mdash; Use a consistent coding scheme to categorize what you observe (e.g., coding &ldquo;in/out&rdquo; groups, types of interactions, physical characteristics of spaces)</li>
+            </ul>
+            <p class="reveal-item" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.75em;">Baggetta and Bradenkamp (2021)</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">28</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 30: Section Header — Looking Forward
+         ========================================== -->
+    <section class="slide accent-bg section-header application" id="forward">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward" class="active">Looking Forward</a></nav>
+        <div class="progress" style="width: 88%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Looking<br><span class="highlight">Forward</span></h1>
+        </div>
+        <span class="slide-number">29</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 31: Preparing for Your Interview
+         ========================================== -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward" class="active">Looking Forward</a></nav>
+        <div class="progress" style="width: 91%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Preparing for Your Interview</h2>
+            <ul>
+                <li class="reveal-item"><span class="num">01</span><strong>Assignment #3</strong> &mdash; Interview assignment due Wed Apr 1 at 11:59 PM</li>
+                <li class="reveal-item"><span class="num">02</span><strong>Next class (Tue Mar 31)</strong> &mdash; Interviewing 2.0: advanced techniques, probes, and common pitfalls</li>
+                <li class="reveal-item"><span class="num">03</span><strong>Start scheduling now</strong> &mdash; Reach out to potential interviewees early; scheduling is the #1 bottleneck</li>
+                <li class="reveal-item"><span class="num">04</span><strong>Draft your interview guide</strong> &mdash; Revisit the principles from Class 5 (open-ended questions, avoiding &ldquo;why,&rdquo; using probes)</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">30</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 32: Closing
+         ========================================== -->
+    <section class="slide dark">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Description &rarr; Analysis</a><a href="#forward" class="active">Looking Forward</a></nav>
+        <div class="progress" style="width: 100%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <h1 class="reveal-item visible" style="font-size: var(--title-size);">See You <span class="highlight">Tuesday</span></h1>
+            <p class="meta reveal-item visible" style="margin-top: 0.5em; font-size: var(--h3-size); color: rgba(255,255,255,0.6);">Interviewing 2.0 &middot; Mar 31</p>
+        </div>
+        <span class="slide-number">31</span>
+    </section>
+
+    <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
+    <script src="slides.js"></script>
+</body>
+</html>
