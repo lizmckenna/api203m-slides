@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-203M: Interviewing 2.0 | Prof. Liz McKenna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Projection-scale typography — sized for back-row legibility */
+        :root {
+            --title-size: clamp(3.5rem, 9vw, 7rem);
+            --h2-size: clamp(2.8rem, 7vw, 5rem);
+            --h3-size: clamp(2rem, 4.5vw, 3.2rem);
+            --body-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            --small-size: clamp(1.3rem, 2.4vw, 1.8rem);
+        }
+        .card h3 { font-size: var(--h3-size); }
+        .card p, .card li { font-size: var(--body-size); line-height: 1.4; }
+
+        /* Troubleshooting layout — two rows with label + content */
+        .troubleshoot-row {
+            display: grid;
+            grid-template-columns: clamp(10rem, 22vw, 18rem) 1fr;
+            gap: clamp(0.8rem, 1.5vw, 1.2rem);
+            align-items: start;
+            margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+        .troubleshoot-label {
+            background: var(--accent);
+            color: #fff;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: var(--small-size);
+            text-align: center;
+            padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            border-radius: 4px;
+            text-transform: uppercase;
+            align-self: center;
+        }
+        .troubleshoot-content {
+            background: #0097a7;
+            color: #fff;
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+            border-radius: 4px;
+            font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+            line-height: 1.5;
+        }
+        .troubleshoot-content ul {
+            list-style: disc;
+            padding-left: 1.5em;
+            margin: 0;
+        }
+        .troubleshoot-content li {
+            font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+            display: list-item;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .troubleshoot-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Transcript exercise table */
+        .transcript-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin-top: 0.5em;
+        }
+        .transcript-table td {
+            padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1vw, 0.8rem);
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        .transcript-table td:first-child {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            color: var(--accent);
+            width: 3em;
+            text-align: center;
+        }
+        .error-callout {
+            background: var(--accent);
+            color: #fff;
+            padding: clamp(0.5rem, 1vw, 0.8rem);
+            border-radius: 4px;
+            font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+            line-height: 1.4;
+            margin-top: 0.5em;
+        }
+        .error-callout strong {
+            display: block;
+            margin-bottom: 0.2em;
+        }
+
+        /* Interview excerpt layout */
+        .excerpt-layout {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.5rem, 1vw, 0.8rem);
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            line-height: 1.6;
+            max-height: 78vh;
+            overflow-y: auto;
+        }
+        .excerpt-rq {
+            background: var(--accent);
+            color: #fff;
+            padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            border-radius: 4px;
+            font-size: clamp(1rem, 1.8vw, 1.35rem);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .excerpt-speaker {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .excerpt-speaker.interviewer {
+            color: #0097a7;
+        }
+
+        /* Image placeholder */
+        .img-placeholder {
+            background: var(--surface);
+            border: 2px dashed rgba(0,0,0,0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: var(--small-size);
+            text-align: center;
+            padding: 1em;
+        }
+
+        /* Coding definition highlights */
+        .code-highlight {
+            background: #0097a7;
+            color: #fff;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+        .code-highlight-red {
+            background: var(--accent);
+            color: #fff;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        /* Two-column analysis layout */
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 2.5vw, 2rem);
+            margin-top: var(--content-gap);
+        }
+        .analysis-stack {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.6vw, 0.5rem);
+        }
+        .analysis-label {
+            background: var(--accent);
+            color: #fff;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: var(--small-size);
+            text-align: center;
+            padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.6rem, 1vw, 0.8rem);
+            border-radius: 4px;
+        }
+        .analysis-label.teal {
+            background: #0097a7;
+        }
+        @media (max-width: 768px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         SLIDE 1: Title
+         ========================================== -->
+    <section class="slide" data-section="title">
+        <div class="progress" style="width: 2%"></div>
+        <div class="grid-bg"></div>
+        <div class="accent-circle"></div>
+        <div class="slide-content">
+            <h1>Empirical<br>Methods <span class="highlight">II</span></h1>
+            <p class="meta" style="margin-bottom: 0.2em;">Qualitative and Mixed Methods</p>
+            <p class="meta" style="margin-top: 0;">API-203M &middot; Spring 2026</p>
+            <span style="margin-top: 0.5em; align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; color: #5371ff;">Class 7: Interviewing 2.0</span>
+        </div>
+        <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2: Module Flow
+         ========================================== -->
+    <section class="slide" data-steps="3" id="challenges">
+        <nav class="section-nav"><a href="#challenges" class="active">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 4%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
+            <h2 class="reveal-item" style="align-self: flex-start; font-size: clamp(2.8rem, 5vw, 3.8rem); margin-bottom: clamp(0.5rem, 1vw, 0.75rem);">Module Flow &amp; Content</h2>
+
+            <div class="timeline" style="max-width: 100%; width: 100%;">
+                <div class="timeline-row">
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Introduction</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Overview,<br>outstanding qual<br>research</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top" style="flex: 0.5;"></div>
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing &amp;<br>Observation Workshop</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Introduction +<br>workshop</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Focus Groups</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Background, ethics,<br>simulation</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                </div>
+
+                <div class="timeline-bar" style="height: clamp(3.5rem, 7vh, 5.5rem);">
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">1</div>
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">2</div>
+                    <div class="week" style="background: #888; flex: 0.5; font-size: clamp(1rem, 1.6vw, 1.3rem);">Break</div>
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">3</div>
+                    <div class="week" style="background: #5371ff; border: 3px solid #fff; box-shadow: 0 0 0 3px #5371ff; font-size: clamp(1.2rem, 2vw, 1.6rem);">Week 4</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">5</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">6</div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Observation + Ethics</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Ethnography,<br>fieldwork</p>
+                    </div>
+                    <div class="timeline-module bottom" style="flex: 0.5;"></div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing 2.0</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Workshop +<br>interview assignment</p>
+                    </div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Qual Coding + Wrap-Up</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Coding workshop,<br>Anthropic guest lecture</p>
+                    </div>
+                </div>
+
+                <div class="timeline-here-callout reveal-item" style="margin-left: 52%; font-size: clamp(1rem, 1.6vw, 1.3rem); padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.7rem, 1.4vw, 1.1rem);">YOU ARE HERE</div>
+
+                <div style="position: relative; width: 100%; min-height: clamp(5rem, 10vh, 8rem); margin-top: clamp(0.5rem, 1vh, 0.75rem);">
+                    <div class="reveal-item" data-group="1" style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #4caf50; display: block;">&#10003; Assignment #1</strong>
+                        <span style="color: #4caf50; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
+                    </div>
+                    <div class="reveal-item" data-group="1" style="position: absolute; left: 16%; top: 0; width: calc(20%); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #4caf50; display: block;">&#10003; Assignment #2 (Observation)</strong>
+                        <span style="color: #4caf50; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
+                    </div>
+                    <div class="reveal-item" data-group="1" style="position: absolute; left: 55%; top: 0; width: calc(22%); background: #fff3e0; border: 2px solid #e65100; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #e65100; display: block;">Assignment #3 (Interview)</strong>
+                        <span style="color: #e65100; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">Due TOMORROW &mdash; Wed Apr 1 at 11:59 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">2</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3: Agenda
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#challenges" class="active">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 7%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
+            <h2 class="reveal-item">Agenda</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="card reveal-item">
+                    <h3 style="color: var(--accent);">Conducting a Good Interview</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Common challenges</li>
+                        <li style="padding-left: 1.5em; font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--text-secondary);">Recruitment</li>
+                        <li style="padding-left: 1.5em; font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--text-secondary);">Consenting</li>
+                        <li style="padding-left: 1.5em; font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--text-secondary);">The interview</li>
+                        <li style="padding-left: 1.5em; font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--text-secondary);">Transcription</li>
+                        <li><span class="bullet">&bull;</span>Excerpt/example</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item">
+                    <h3 style="color: #0097a7;">Analyzing Interview Data</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Introduction to qualitative coding</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item">
+                    <h3 style="color: var(--accent);">Final Tips for this Assignment</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>What we noticed students did well/struggled with in the past</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">3</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4: Section Header — What have you struggled with?
+         ========================================== -->
+    <section class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#challenges" class="active">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 11%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">What have you <span class="highlight">struggled</span> with in this assignment so far?</h1>
+        </div>
+        <span class="slide-number">4</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: Common Problems — Logistical & Key Themes
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#challenges" class="active">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 14%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Some Common Problems<br>(and How to Troubleshoot)</h2>
+            <div class="reveal-item">
+                <div class="troubleshoot-row">
+                    <div class="troubleshoot-label">Logistical hurdles</div>
+                    <div class="troubleshoot-content">
+                        <ul>
+                            <li>Recruitment: persistence; warm introductions</li>
+                            <li>Confirmation calls/emails</li>
+                            <li>Run multiple recorders</li>
+                            <li>Good etiquette (especially helpful for snowball sampling and goodwill for future referrals/intros)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-item">
+                <div class="troubleshoot-row">
+                    <div class="troubleshoot-label">Getting to your key themes</div>
+                    <div class="troubleshoot-content">
+                        <ul>
+                            <li>Pare question guide down to essentials</li>
+                            <li>Plan your probes</li>
+                            <li>Consider &ldquo;the list&rdquo; technique (pp. 80&ndash;1) in <em>Listening to People</em></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="position: absolute; bottom: clamp(1rem, 3vw, 2rem); left: clamp(1rem, 3vw, 2rem); font-family: 'Archivo', sans-serif; font-size: var(--small-size); color: var(--text-secondary); margin: 0;">Lareau, Ch. 4</p>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">5</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6: Survey Image (placeholder)
+         ========================================== -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#challenges" class="active">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 18%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; justify-content: center;">
+            <div class="img-placeholder" style="width: 70%; max-width: 700px; height: 60vh;">
+                [Image: Survey checklist &mdash; &ldquo;Have you experienced any of the following academic issues in your time in college?&rdquo;<br><br>Example of a closed-ended checklist from <em>Learning to Interview</em>]
+            </div>
+        </div>
+        <span class="slide-number">6</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7: Troubleshooting — Vague Answers & Power
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#challenges" class="active">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 21%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Troubleshooting Common Problems</h2>
+            <div class="reveal-item">
+                <div class="troubleshoot-row">
+                    <div class="troubleshoot-label">Answers are vague</div>
+                    <div class="troubleshoot-content">
+                        <ul>
+                            <li>Ask about a specific action, event, or experience (&ldquo;tell me about a time when&rdquo;)</li>
+                            <li><em>Stay with a question</em> long enough</li>
+                            <li>General question followed by probe (vs. starting with narrow question)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-item">
+                <div class="troubleshoot-row">
+                    <div class="troubleshoot-label">Power inequalities</div>
+                    <div class="troubleshoot-content">
+                        <ul>
+                            <li>Acknowledge shared/similar experiences</li>
+                            <li>Dress, etc. are important signals of who you are</li>
+                            <li>Listen closely &amp; respond sensitively</li>
+                            <li>Always remember principles of ethical research &mdash; follow letter &amp; spirit of informed consent</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="position: absolute; bottom: clamp(1rem, 3vw, 2rem); left: clamp(1rem, 3vw, 2rem); font-family: 'Archivo', sans-serif; font-size: var(--small-size); color: var(--text-secondary); margin: 0;">Lareau, Ch. 5</p>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">7</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: Troubleshooting — Talkative & Succinct
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#challenges" class="active">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 25%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Troubleshooting Common Problems</h2>
+            <div class="reveal-item">
+                <div class="troubleshoot-row">
+                    <div class="troubleshoot-label">Overly talkative respondent</div>
+                    <div class="troubleshoot-content">
+                        <ul>
+                            <li>Intervene early to set the tone</li>
+                            <li>Repeat your question if response is off-track</li>
+                            <li>Examine &amp; debrief your own transcripts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-item">
+                <div class="troubleshoot-row">
+                    <div class="troubleshoot-label">Overly succinct respondent</div>
+                    <div class="troubleshoot-content">
+                        <ul>
+                            <li>Intervene early to set the tone</li>
+                            <li>Consider stopping or diverting from your line of questions to build rapport</li>
+                            <li>Allow respondent to elaborate on something they care about even if it is off-track</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="position: absolute; bottom: clamp(1rem, 3vw, 2rem); left: clamp(1rem, 3vw, 2rem); font-family: 'Archivo', sans-serif; font-size: var(--small-size); color: var(--text-secondary); margin: 0;">Lareau, Ch. 5</p>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">8</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: Transcript Exercise — Spot the Errors
+         ========================================== -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#challenges" class="active">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 29%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Application</span>
+        <div class="slide-content" style="padding-top: clamp(0.5rem, 1vw, 0.8rem);">
+            <h2 class="reveal-item" style="font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2;">Spot the errors in this excerpt from a transcript of an interview by Prof. Liz McKenna<br><span style="color: var(--accent);">(There are at least three!)</span></h2>
+            <div class="reveal-item" style="margin-top: 0.5em;">
+                <table class="transcript-table">
+                    <tr><td>EM</td><td>And, why might you and Tram differ on that question?</td></tr>
+                    <tr><td>JL</td><td>Why? I don&rsquo;t know how. It&mdash;</td></tr>
+                    <tr><td>EM</td><td>Or, what is the difference, a&mdash;</td></tr>
+                    <tr><td>JL</td><td>How? I can tell you how&mdash;</td></tr>
+                    <tr><td>EM</td><td>The how, yeah.</td></tr>
+                    <tr><td>JL</td><td>[inaudible 00:04:41] I can&rsquo;t read her mind, and keep [inaudible 00:04:43]. But, it&rsquo;s like&mdash;</td></tr>
+                </table>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: clamp(0.5rem, 1vw, 0.8rem); margin-top: clamp(0.5rem, 1vw, 0.8rem);">
+                <div class="error-callout reveal-item" style="flex: 1; min-width: 200px;">
+                    <strong>Error #1: &ldquo;Why&rdquo; questions</strong>
+                    A &ldquo;why&rdquo; question in an interview is rarely a good idea. Invites defensiveness, assumes a simple reason behind often complex actions. Responses are often vague/philosophical. &ldquo;What/how&rdquo; questions are more likely to elicit storytelling.
+                </div>
+                <div class="error-callout reveal-item" style="flex: 1; min-width: 200px;">
+                    <strong>Error #2: Speculating on others</strong>
+                    Do not ask the interviewee to speculate on someone else&rsquo;s state of mind. It does not yield good data.
+                </div>
+                <div class="error-callout reveal-item" style="flex: 1; min-width: 200px;">
+                    <strong>Error #3: &ldquo;Inaudible&rdquo; portions</strong>
+                    Sometimes the transcript will return &ldquo;inaudible&rdquo; portions. It&rsquo;s your job to go back, re-listen, and clean up the transcript &mdash; remember it is your valuable primary data!
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">9</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 10: Section Header — Sample Interview Excerpt
+         ========================================== -->
+    <section class="slide accent-bg section-header application" id="excerpt">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt" class="active">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 32%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Sample Interview<br><span class="highlight">Excerpt</span></h1>
+        </div>
+        <span class="slide-number">10</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 11: Interview Excerpt — Wei Wei Liu (Part 1)
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt" class="active">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 36%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(0.5rem, 1vw, 0.8rem);">
+            <div class="excerpt-rq reveal-item">What has led to many students coming to HKS wanting to work on critical social and political issues but often ending up in industries such as consulting?</div>
+            <h2 class="reveal-item" style="margin-top: 0.3em; font-size: clamp(2rem, 4vw, 3rem);">Interview Excerpt &mdash; Wei Wei Liu</h2>
+            <div class="reveal-item excerpt-layout">
+                <p><span class="excerpt-speaker interviewer">WL:</span> How did you end up with McKinsey and what did you want to do when you came into HKS?</p>
+                <p><span class="excerpt-speaker">Interviewee:</span> Well, I don&rsquo;t actually know (laugh). It was kinda unexpected. As you know that I was selected by the Ministry of Foreign Affairs (MFA) right after my undergrad and due to some weird circumstances, I could not take up the post. After that I came to HKS but I don&rsquo;t actually have a clear goal in mind in terms of what to do next, instead of going to the MFA.</p>
+                <p>I know that I want to eventually go back to China as all my family are there and if I&rsquo;m not going to the MFA, I will have to go through some other organizations. Consulting is considered a good choice: prestigious, pays well, and allows me to go back. You know, there aren&rsquo;t many prestigious NGOs that are doing well or making big impacts. So I&rsquo;m not planning to do that in China either. Apart from that, I also don&rsquo;t know what else I could do.</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">11</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 12: Interview Excerpt — Wei Wei Liu (Part 2)
+         ========================================== -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt" class="active">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 39%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <div class="excerpt-layout">
+                <p><span class="excerpt-speaker">Interviewee:</span> McKinsey and other consulting firms have at least some clear structures to recruitment. I went for their info session and talked to friends who were in consulting. By the time I applied, I was relatively familiar with the industry and thought it was a good idea to give it a try. Of course, I was not betting on McKinsey or any of the MBB [top 3 management consulting firms] at that time. As you know they are not easy to get in. But they not only accepted me but also raised my rank to the next level, to my surprise. With such a good offer, I cannot refuse it!</p>
+                <p><span class="excerpt-speaker interviewer">WL:</span> Hahaha. okay, I was a consultant too, as you know. But people in HKS often half-jokingly say that we &ldquo;sell our souls&rdquo; to the capitalist world. What do you think of that?</p>
+                <p><span class="excerpt-speaker">Interviewee:</span> Well, I also jokingly say that sometimes (laugh). It is kinda true, but what can I do? At least it pays my bills. Somehow I also need to earn money to pay for this expensive school.</p>
+                <p>But seriously, I don&rsquo;t necessarily think we are &ldquo;selling our souls.&rdquo; There are some really cool projects that McKinsey does in China and some of them are also very impactful. I will try to get on those projects if possible. Again, I think it is probably the best for myself to explore various industries first. I didn&rsquo;t really have work experience before coming to HKS so I cannot fully commit myself to anything just yet. Probably McKinsey will help me figure a way forward, too. I don&rsquo;t think it is a horrible idea, to be honest.</p>
+            </div>
+        </div>
+        <span class="slide-number">12</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 13: Agenda — Checkpoint
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 43%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
+            <h2 class="reveal-item">Agenda</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="card reveal-item" style="opacity: 0.5; border-top-color: #999;">
+                    <h3 style="color: #999;">Conducting a Good Interview</h3>
+                    <ul>
+                        <li><span class="bullet" style="color: #999;">&bull;</span><span style="color: var(--text-secondary);">Common challenges</span></li>
+                        <li><span class="bullet" style="color: #999;">&bull;</span><span style="color: var(--text-secondary);">Excerpt/example</span></li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border-top-color: #0097a7;">
+                    <h3 style="color: #0097a7;">Analyzing Interview Data</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Introduction to qualitative coding</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border-top-color: var(--accent);">
+                    <h3 style="color: var(--accent);">Final Tips for this Assignment</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>What we noticed students did well/struggled with in the past</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">13</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 14: Section Header — Turning Toward Analysis
+         ========================================== -->
+    <section class="slide accent-bg section-header application" id="analysis">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 46%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Turning Toward<br><span class="highlight">Analysis</span></h1>
+        </div>
+        <span class="slide-number">14</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 15: Analyzing Interview Data
+         ========================================== -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 50%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator" style="color: #5371ff;">Application</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Analyzing Interview Data</h2>
+            <div class="analysis-grid">
+                <div class="reveal-item">
+                    <div class="analysis-stack">
+                        <div class="analysis-label">Re-listen</div>
+                        <div class="analysis-label" style="opacity: 0.85;">Close read</div>
+                        <div class="analysis-label" style="opacity: 0.7;">Memo</div>
+                    </div>
+                    <ul style="margin-top: 0.5em;">
+                        <li><span class="bullet">&bull;</span>Return to the analytic writing handout from last week</li>
+                    </ul>
+                    <div class="analysis-label" style="margin-top: 0.5em;">Do more interviews!</div>
+                    <ul style="margin-top: 0.3em;">
+                        <li><span class="bullet">&bull;</span>PAEs: 10&ndash;30 interviews</li>
+                        <li><span class="bullet">&bull;</span>Until &ldquo;saturation&rdquo;</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="reveal-item">
+                        <div class="analysis-label teal">Narrative analysis</div>
+                        <ul style="margin-top: 0.5em;">
+                            <li><span class="bullet">&bull;</span>Analyze how respondents construct stories and narratives from their own personal experience</li>
+                            <li style="padding-left: 1.5em; font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--text-secondary);">Chronology, plot, character</li>
+                            <li><span class="bullet">&bull;</span>Compare and contrast different stories; look for interpretations</li>
+                            <li><span class="bullet">&bull;</span>Systematically look at meanings that people associate with different life experiences</li>
+                        </ul>
+                    </div>
+                    <div class="reveal-item" style="margin-top: 0.5em;">
+                        <div class="analysis-label teal">Code your data (we&rsquo;ll go deeper in Class #11)</div>
+                        <ul style="margin-top: 0.3em;">
+                            <li><span class="bullet">&bull;</span>Identifying patterns across transcripts, and then larger themes across different sources of qualitative data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">15</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 16: Section Header — What is (qualitative) coding?
+         ========================================== -->
+    <section class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 54%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">What is<br>(qualitative)<br><span class="highlight">coding</span>?</h1>
+        </div>
+        <span class="slide-number">16</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 17: What is a code? — Miles & Huberman (Dark)
+         ========================================== -->
+    <section class="slide dark" data-steps="2">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 57%"></div>
+        <div class="slide-content" style="max-width: 900px;">
+            <h2 class="reveal-item" style="font-size: var(--h3-size); color: rgba(255,255,255,0.6);">What is a <span class="code-highlight">code</span> ?</h2>
+            <blockquote class="reveal-item" style="font-size: clamp(1.4rem, 3.5vw, 2.5rem); text-transform: none; font-weight: 600; line-height: 1.4;">
+                &ldquo;<span class="code-highlight">Tags or labels</span> for assigning units of meaning &hellip;usually attached to &lsquo;chunks&rsquo; of varying size: words, phrases, sentences, or even whole paragraphs.&rdquo;
+            </blockquote>
+            <cite>Miles and Huberman (1994)</cite>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">17</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 18: What is a code? — Saldaña
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 61%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="max-width: 900px;">
+            <h2 class="reveal-item" style="font-size: var(--h3-size); color: var(--text-secondary);">What is a <span class="code-highlight">code</span> ?</h2>
+            <blockquote class="reveal-item" style="font-size: clamp(1.6rem, 4vw, 3rem); text-transform: none; font-weight: 700; line-height: 1.3; color: var(--text-primary);">
+                [Assigns] a <span class="code-highlight-red">summative</span> or <span class="code-highlight-red">evocative</span> attribute for a portion of qualitative data.
+            </blockquote>
+            <cite style="color: var(--text-secondary);">Salda&ntilde;a (2021)</cite>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">18</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 19: What is qualitative coding?
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 64%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">What Is Qualitative Coding?</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); align-items: start;">
+                <div>
+                    <ul>
+                        <li class="reveal-item"><span class="bullet">&rarr;</span>Coding is the <strong>analytical workhorse</strong> for qualitative research</li>
+                        <li class="reveal-item"><span class="bullet">&rarr;</span>Applying labels (or &ldquo;codes&rdquo;) to your data in order to find <strong>patterns</strong> across participants, evidence of interesting <strong>processes</strong> at play, and broader <strong>takeaways</strong> from the research</li>
+                        <li class="reveal-item"><span class="bullet">&rarr;</span>Codes are the middle step that take us <strong>from raw data</strong> to a set of <strong>findings</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="img-placeholder" style="height: 45vh;">
+                        [Images: Cyclical coding process &mdash; notebook &rarr; annotated transcript &rarr; lightbulb (insight) &rarr; concept map &rarr; repeat]<br><br>&ldquo;Coding is cyclical&rdquo;<br><br><em>Source: Cat O&rsquo;Donnell (TF)</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">19</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 20: Why code? — Charmaz (Dark)
+         ========================================== -->
+    <section class="slide dark" data-steps="2">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 68%"></div>
+        <div class="slide-content" style="max-width: 900px;">
+            <h2 class="reveal-item" style="font-size: var(--h3-size); color: rgba(255,255,255,0.6);">Why <span class="code-highlight">code</span> ?</h2>
+            <blockquote class="reveal-item" style="font-size: clamp(1.6rem, 4vw, 3rem); text-transform: none; font-weight: 700; line-height: 1.3;">
+                Coding is the <span class="code-highlight-red">&ldquo;critical link&rdquo;</span> between data collection and their explanation of <span class="code-highlight-red">meaning</span>.
+            </blockquote>
+            <cite>Charmaz (2001)</cite>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">20</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 21: Coding is Creative
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 71%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Coding Is <span style="color: var(--accent);">Creative</span></h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); align-items: start;">
+                <div>
+                    <ul>
+                        <li class="reveal-item"><span class="bullet">&rarr;</span>You can use software, but it is not fundamentally a <strong>mechanical</strong> or <strong>technical</strong> exercise</li>
+                        <li class="reveal-item"><span class="bullet">&rarr;</span>It is a <strong>dynamic, intuitive and creative</strong> process of:
+                            <ul style="margin-top: 0.3em; padding-left: 1em;">
+                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--text-secondary);">Inductive reasoning</li>
+                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--text-secondary);">Thinking</li>
+                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--text-secondary);">Theorizing</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="img-placeholder" style="height: 40vh;">
+                    [Images: &ldquo;CREATIVE&rdquo; typography banner + photo of sticky-note coding wall]
+                </div>
+            </div>
+        </div>
+        <p style="position: absolute; bottom: clamp(1rem, 3vw, 2rem); left: clamp(1rem, 3vw, 2rem); font-family: 'Archivo', sans-serif; font-size: var(--small-size); color: var(--text-secondary); margin: 0;">Basit (2003)</p>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">21</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 22: What Makes a Good Code?
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a></nav>
+        <div class="progress" style="width: 75%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">What Makes a Good Code?</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item">
+                    <ul>
+                        <li><span class="bullet">+</span><strong>&ldquo;Essence-capturing&rdquo;</strong></li>
+                        <li><span class="bullet">+</span>Research-question dependent</li>
+                        <li><span class="bullet">+</span>Generative codes are often:
+                            <ul style="margin-top: 0.3em; padding-left: 1em;">
+                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);"><em>Descriptive of the phenomenon</em></li>
+                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Identify <em>causal conditions</em></li>
+                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);"><em>Strategies</em></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card reveal-item">
+                    <ul>
+                        <li><span class="bullet">+</span><strong>Thoroughness</strong>
+                            <ul style="margin-top: 0.3em; padding-left: 1em;">
+                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Memo writing</li>
+                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Cross-referencing w/ literature review</li>
+                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Constantly referring back to research question</li>
+                            </ul>
+                        </li>
+                        <li><span class="bullet">+</span><strong>Iterative</strong> &mdash; rarely will we get coding &ldquo;right&rdquo; on a first pass</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">22</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 23: Section Header — Examples from our work
+         ========================================== -->
+    <section class="slide accent-bg section-header application" id="examples">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples" class="active">Examples</a></nav>
+        <div class="progress" style="width: 79%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Examples From<br><span class="highlight">Our Work</span></h1>
+        </div>
+        <span class="slide-number">23</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 24: Transcription → Coding for Themes (East Timor)
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples" class="active">Examples</a></nav>
+        <div class="progress" style="width: 82%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Transcription of Interviews &rarr; Coding for Themes</h2>
+            <div style="display: grid; grid-template-columns: clamp(10rem, 20vw, 16rem) 1fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); align-items: start;">
+                <div class="reveal-item" style="display: flex; flex-direction: column; gap: 0.3em;">
+                    <div style="background: var(--surface); padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; border-left: 4px solid var(--accent);">
+                        <strong style="font-size: var(--small-size);">Interviewee #3</strong><br>
+                        <span style="font-size: clamp(1rem, 1.6vw, 1.2rem);">Falintil Ex-combatant</span><br>
+                        <em style="font-size: clamp(0.9rem, 1.4vw, 1.1rem); color: var(--text-secondary);">Dili, East Timor<br>June 19, 2012</em>
+                    </div>
+                    <div style="margin-top: 0.5em; display: flex; flex-direction: column; gap: 0.3em;">
+                        <div style="background: #ff0; padding: 0.3em 0.5em; border-radius: 3px; font-size: clamp(0.9rem, 1.4vw, 1.1rem); font-weight: 600;">Timorese working for Indonesia</div>
+                        <div style="background: #0ff; padding: 0.3em 0.5em; border-radius: 3px; font-size: clamp(0.9rem, 1.4vw, 1.1rem); font-weight: 600;">Training by guerrillas</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="reveal-item" style="font-size: clamp(1rem, 1.8vw, 1.35rem); line-height: 1.6; background: var(--surface); padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px;">
+                        <span style="background: #ff0; padding: 0 0.2em;">The Indonesians wanted me to spy for them. They gave me a radio and a pistol.</span> But then I told all of the guerrillas that I was a spy. I worked as a double agent and would distract the Indonesians with something far away if I knew the guerrillas were coming. I would say, &ldquo;Today, there will be an attack over here,&rdquo; and the guerrillas would plan a small, fake attack with a few shots while the real operation happened somewhere else.
+                    </div>
+                    <div class="reveal-item" style="font-size: clamp(1rem, 1.8vw, 1.35rem); line-height: 1.6; background: var(--surface); padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; margin-top: 0.5em;">
+                        I did not enjoy my teenage years like normal people in the world.<br><br>
+                        <span style="background: #0ff; padding: 0 0.2em;">The training I received from Falintil was how to shoot, how to make observations in towns and cities, how to serve as a link between guerrillas and the towns, how to ambush the Indonesians and grab their weapons. I never really touched the weapons; I was an organizer.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">24</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 25: NVivo Coding Screenshot (placeholder)
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples" class="active">Examples</a></nav>
+        <div class="progress" style="width: 86%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item" style="font-size: clamp(1.8rem, 4vw, 3rem);">Full Set of Codes or Concepts for 1 Case (of 6) in a Book Project</h2>
+            <div style="display: grid; grid-template-columns: 1fr clamp(12rem, 25vw, 20rem); gap: clamp(0.8rem, 1.5vw, 1.2rem); align-items: start;">
+                <div class="img-placeholder reveal-item" style="height: 55vh;">
+                    [Image: NVivo screenshot showing hierarchical coding tree &mdash; themes include: base, capacity, committed, distributed strategists, flexible, in relationship, fragility, ally betrayal, base capacity loss, coalition challenges, idealism, persistent power imbalance, turnover, leadership, campaign trajectory, challenges, choices &amp; decision-making, cultivating other leaders, strategy, power, countermovement, invisible win, perceived influence, t1-t2, target interest shift, visible win]
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5em;">
+                    <div class="reveal-item" style="background: var(--surface); padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; border-left: 4px solid #5371ff; font-size: clamp(1rem, 1.8vw, 1.35rem); line-height: 1.5;">
+                        Many of these terms sound very abstract!<br><br>
+                        Coding lets you see the underlying data (evidence) that illustrates the theme or concept
+                    </div>
+                    <div class="reveal-item" style="background: var(--surface); padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; border-left: 4px solid var(--accent); font-size: clamp(1rem, 1.8vw, 1.35rem); line-height: 1.5;">
+                        In most projects, you will also need a <strong>codebook</strong> that defines your final set of codes.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">25</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 26: Prisms of the People — Ally Betrayal
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples" class="active">Examples</a></nav>
+        <div class="progress" style="width: 89%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <div style="display: grid; grid-template-columns: clamp(10rem, 20vw, 16rem) 1fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); align-items: start;">
+                <div class="reveal-item" style="display: flex; flex-direction: column; gap: 0.5em;">
+                    <div class="img-placeholder" style="height: 20vh;">
+                        [Image: Book cover &mdash; <em>Prisms of the People</em>]
+                    </div>
+                    <div style="background: var(--accent); color: #fff; padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; font-size: clamp(1rem, 1.6vw, 1.2rem); line-height: 1.4;">
+                        <strong>Example:</strong> Identifying a theme of &ldquo;ally betrayal&rdquo; among young immigrant organizers in Arizona
+                    </div>
+                    <p style="font-size: clamp(0.85rem, 1.3vw, 1rem); color: var(--text-secondary); margin: 0;">The process of coding links the abstract term to the underlying empirical evidence</p>
+                </div>
+                <div>
+                    <div class="img-placeholder reveal-item" style="height: 55vh;">
+                        [Image: NVivo references showing interview transcripts coded with &ldquo;ally betrayal&rdquo; theme &mdash; Speaker 1 discussing student walkouts, immigration crowd, Democratic Party tensions, becoming precinct committee members &mdash; with code stripes showing: ally betrayal, bio-story, high-risk activism, campaign trajectory, countermovement]
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="position: absolute; bottom: clamp(1rem, 3vw, 2rem); left: clamp(1rem, 3vw, 2rem); font-family: 'Archivo', sans-serif; font-size: var(--small-size); color: var(--text-secondary); margin: 0;">Han, McKenna, Oyakawa (2021)</p>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">26</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 27: Agenda — Final Checkpoint
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples" class="active">Examples</a></nav>
+        <div class="progress" style="width: 93%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
+            <h2 class="reveal-item">Agenda</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="card reveal-item" style="opacity: 0.5; border-top-color: #999;">
+                    <h3 style="color: #999;">Conducting a Good Interview</h3>
+                    <ul>
+                        <li><span class="bullet" style="color: #999;">&bull;</span><span style="color: var(--text-secondary);">Common challenges</span></li>
+                        <li><span class="bullet" style="color: #999;">&bull;</span><span style="color: var(--text-secondary);">Excerpt/example</span></li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="opacity: 0.5; border-top-color: #999;">
+                    <h3 style="color: #999;">Analyzing Interview Data</h3>
+                    <ul>
+                        <li><span class="bullet" style="color: #999;">&bull;</span><span style="color: var(--text-secondary);">Introduction to qualitative coding</span></li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border-top-color: var(--accent);">
+                    <h3 style="color: var(--accent);">Final Tips for this Assignment</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>What we noticed students did well/struggled with in the past</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">27</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 28: Thank You / Teaching Team
+         ========================================== -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis">Analysis</a><a href="#examples" class="active">Examples</a></nav>
+        <div class="progress" style="width: 100%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h1 style="font-size: clamp(2.5rem, 7vw, 5rem);">Thank You!</h1>
+            <div style="margin-top: calc(var(--content-gap) * 1.5); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; font-size: clamp(1.2rem, 2.2vw, 1.7rem); max-width: 900px; width: 100%;">
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Prof. Liz McKenna</strong></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">emckenna@hks.harvard.edu</p>
+                    <p style="margin: 0.3em 0 0; color: var(--text-secondary); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">Office hours: via Calendly, T-308 or Zoom</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Katie Tucker</strong> <span style="color: #5371ff;">(TF)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">ktucker@g.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Liam Chai</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">liam_chai@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Christina Iruela Lane</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">ciruelalane@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Muhammad Irfan Sadiq</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">muhammadirfansadiq@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Dani Schulman</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">danielaschulman@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Jessica De Simone</strong> <span style="color: var(--text-secondary);">(FA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">jessica_de_simone@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">TF/CAs available by appointment</p>
+                </div>
+            </div>
+        </div>
+        <span class="slide-number">28</span>
+    </section>
+
+    <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
+    <script src="slides.js"></script>
+</body>
+</html>
