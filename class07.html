@@ -95,6 +95,25 @@
             margin-bottom: 0.2em;
         }
 
+        /* Error sequence — show only the most recently revealed error */
+        .error-sequence {
+            position: relative;
+            min-height: clamp(6rem, 12vw, 10rem);
+        }
+        .error-sequence .error-callout {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+            line-height: 1.5;
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+        .error-sequence .error-callout.reveal-item.visible:has(~ .error-callout.reveal-item.visible) {
+            opacity: 0 !important;
+            pointer-events: none;
+        }
+
         /* Interview excerpt layout */
         .excerpt-layout {
             display: flex;
@@ -378,9 +397,7 @@
         <div class="progress" style="width: 18%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center;">
-            <div class="img-placeholder" style="width: 70%; max-width: 700px; height: 60vh;">
-                [Image: Survey checklist &mdash; &ldquo;Have you experienced any of the following academic issues in your time in college?&rdquo;<br><br>Example of a closed-ended checklist from <em>Learning to Interview</em>]
-            </div>
+            <img src="img/list.png" alt="Survey checklist — Have you experienced any of the following academic issues?" style="max-width: 70%; max-height: 75vh; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
         </div>
         <span class="slide-number">6</span>
     </section>
@@ -454,18 +471,18 @@
                     <tr><td>JL</td><td>[inaudible 00:04:41] I can&rsquo;t read her mind, and keep [inaudible 00:04:43]. But, it&rsquo;s like&mdash;</td></tr>
                 </table>
             </div>
-            <div style="display: flex; flex-wrap: wrap; gap: clamp(0.5rem, 1vw, 0.8rem); margin-top: clamp(0.5rem, 1vw, 0.8rem);">
-                <div class="error-callout reveal-item" style="flex: 1; min-width: 200px;">
+            <div class="error-sequence" style="margin-top: clamp(0.5rem, 1vw, 0.8rem);">
+                <div class="error-callout reveal-item">
                     <strong>Error #1: &ldquo;Why&rdquo; questions</strong>
-                    A &ldquo;why&rdquo; question in an interview is rarely a good idea. Invites defensiveness, assumes a simple reason behind often complex actions. Responses are often vague/philosophical. &ldquo;What/how&rdquo; questions are more likely to elicit storytelling.
+                    &ldquo;And, why might you and Tram differ&hellip;&rdquo; &mdash; A &ldquo;why&rdquo; question in an interview is rarely a good idea. Invites defensiveness, assumes a simple reason behind often complex actions. Responses are often vague/philosophical. &ldquo;What/how&rdquo; questions are more likely to elicit storytelling.
                 </div>
-                <div class="error-callout reveal-item" style="flex: 1; min-width: 200px;">
+                <div class="error-callout reveal-item">
                     <strong>Error #2: Speculating on others</strong>
-                    Do not ask the interviewee to speculate on someone else&rsquo;s state of mind. It does not yield good data.
+                    &ldquo;&hellip;why might you and Tram differ&hellip;&rdquo; &mdash; Do not ask the interviewee to speculate on someone else&rsquo;s state of mind. It does not yield good data.
                 </div>
-                <div class="error-callout reveal-item" style="flex: 1; min-width: 200px;">
+                <div class="error-callout reveal-item">
                     <strong>Error #3: &ldquo;Inaudible&rdquo; portions</strong>
-                    Sometimes the transcript will return &ldquo;inaudible&rdquo; portions. It&rsquo;s your job to go back, re-listen, and clean up the transcript &mdash; remember it is your valuable primary data!
+                    &ldquo;[inaudible 00:04:41]&hellip; [inaudible 00:04:43]&rdquo; &mdash; Sometimes the transcript will return &ldquo;inaudible&rdquo; portions. It&rsquo;s your job to go back, re-listen, and clean up the transcript &mdash; remember it is your valuable primary data!
                 </div>
             </div>
         </div>
@@ -496,7 +513,7 @@
             <h2 class="reveal-item" style="margin-top: 0.3em; font-size: clamp(2rem, 4vw, 3rem);">Interview Excerpt &mdash; Wei Wei Liu</h2>
             <div class="excerpt-rq reveal-item">What has led to many students coming to HKS wanting to work on critical social and political issues but often ending up in industries such as consulting?</div>
             <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;"><span class="excerpt-speaker interviewer">WL:</span> How did you end up with McKinsey and what did you want to do when you came into HKS?</p>
-            <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;"><span class="excerpt-speaker interviewer">Interviewee:</span> Well, I don&rsquo;t actually know (laugh). It was kinda unexpected. As you know that I was selected by the Ministry of Foreign Affairs (MFA) right after my undergrad and due to some weird circumstances, I could not take up the post. After that I came to HKS but I don&rsquo;t actually have a clear goal in mind in terms of what to do next, instead of going to the MFA.</p>
+            <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;"><span class="excerpt-speaker">Interviewee:</span> Well, I don&rsquo;t actually know (laugh). It was kinda unexpected. As you know that I was selected by the Ministry of Foreign Affairs (MFA) right after my undergrad and due to some weird circumstances, I could not take up the post. After that I came to HKS but I don&rsquo;t actually have a clear goal in mind in terms of what to do next, instead of going to the MFA.</p>
             <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;">I know that I want to eventually go back to China as all my family are there and if I&rsquo;m not going to the MFA, I will have to go through some other organizations. Consulting is considered a good choice: prestigious, pays well, and allows me to go back. You know, there aren&rsquo;t many prestigious NGOs that are doing well or making big impacts. So I&rsquo;m not planning to do that in China either. Apart from that, I also don&rsquo;t know what else I could do.</p>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
@@ -511,9 +528,9 @@
         <div class="progress" style="width: 39%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
-            <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;"><span class="excerpt-speaker interviewer">Interviewee:</span> McKinsey and other consulting firms have at least some clear structures to recruitment. I went for their info session and talked to friends who were in consulting. By the time I applied, I was relatively familiar with the industry and thought it was a good idea to give it a try. Of course, I was not betting on McKinsey or any of the MBB [top 3 management consulting firms] at that time. As you know they are not easy to get in. But they not only accepted me but also raised my rank to the next level, to my surprise. With such a good offer, I cannot refuse it!</p>
+            <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;"><span class="excerpt-speaker">Interviewee:</span> McKinsey and other consulting firms have at least some clear structures to recruitment. I went for their info session and talked to friends who were in consulting. By the time I applied, I was relatively familiar with the industry and thought it was a good idea to give it a try. Of course, I was not betting on McKinsey or any of the MBB [top 3 management consulting firms] at that time. As you know they are not easy to get in. But they not only accepted me but also raised my rank to the next level, to my surprise. With such a good offer, I cannot refuse it!</p>
             <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;"><span class="excerpt-speaker interviewer">WL:</span> Hahaha. okay, I was a consultant too, as you know. But people in HKS often half-jokingly say that we &ldquo;sell our souls&rdquo; to the capitalist world. What do you think of that?</p>
-            <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;"><span class="excerpt-speaker interviewer">Interviewee:</span> Well, I also jokingly say that sometimes (laugh). It is kinda true, but what can I do? At least it pays my bills. Somehow I also need to earn money to pay for this expensive school.</p>
+            <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;"><span class="excerpt-speaker">Interviewee:</span> Well, I also jokingly say that sometimes (laugh). It is kinda true, but what can I do? At least it pays my bills. Somehow I also need to earn money to pay for this expensive school.</p>
             <p class="reveal-item" style="font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.6;">But seriously, I don&rsquo;t necessarily think we are &ldquo;selling our souls.&rdquo; There are some really cool projects that McKinsey does in China and some of them are also very impactful. I will try to get on those projects if possible. Again, I think it is probably the best for myself to explore various industries first. I didn&rsquo;t really have work experience before coming to HKS so I cannot fully commit myself to anything just yet. Probably McKinsey will help me figure a way forward, too. I don&rsquo;t think it is a horrible idea, to be honest.</p>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
@@ -579,8 +596,8 @@
             <div class="analysis-grid">
                 <div>
                     <div class="analysis-label reveal-item">Re-listen</div>
-                    <div class="analysis-label reveal-item" style="opacity: 0.85; margin-top: 0.3em;">Close read</div>
-                    <div class="analysis-label reveal-item" style="opacity: 0.7; margin-top: 0.3em;">Memo</div>
+                    <div class="analysis-label reveal-item" style="margin-top: 0.3em;">Close read</div>
+                    <div class="analysis-label reveal-item" style="margin-top: 0.3em;">Memo</div>
                     <ul class="reveal-item" style="margin-top: 0.5em;">
                         <li><span class="bullet">&bull;</span>Return to the analytic writing handout from last week</li>
                     </ul>
@@ -677,9 +694,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="img-placeholder" style="height: 45vh;">
-                        [Images: Cyclical coding process &mdash; notebook &rarr; annotated transcript &rarr; lightbulb (insight) &rarr; concept map &rarr; repeat]<br><br>&ldquo;Coding is cyclical&rdquo;<br><br><em>Source: Cat O&rsquo;Donnell (TF)</em>
-                    </div>
+                    <img src="img/cyclical.png" alt="Cyclical coding process" style="max-height: 45vh; max-width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
                 </div>
             </div>
         </div>
@@ -727,8 +742,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="img-placeholder" style="height: 40vh;">
-                    [Images: &ldquo;CREATIVE&rdquo; typography banner + photo of sticky-note coding wall]
+                <div style="display: flex; flex-direction: column; gap: clamp(0.5rem, 1vw, 0.8rem);">
+                    <img src="img/creative.png" alt="CREATIVE typography banner" style="max-height: 20vh; max-width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <div class="img-placeholder" style="height: 18vh;">
+                        [Image: Sticky-note coding wall — awaiting image file]
+                    </div>
                 </div>
             </div>
         </div>
@@ -740,7 +758,7 @@
     <!-- ==========================================
          SLIDE 22: What Makes a Good Code?
          ========================================== -->
-    <section class="slide" data-steps="5">
+    <section class="slide" data-steps="12">
         <nav class="section-nav"><a href="#challenges">Challenges</a><a href="#excerpt">Excerpt</a><a href="#analysis" class="active">Analysis</a><a href="#examples">Examples</a><a href="#tips">Tips</a></nav>
         <div class="progress" style="width: 75%"></div>
         <div class="grid-bg"></div>
@@ -751,30 +769,24 @@
                     <ul>
                         <li class="reveal-item"><span class="bullet">+</span><strong>&ldquo;Essence-capturing&rdquo;</strong></li>
                         <li class="reveal-item"><span class="bullet">+</span>Research-question dependent</li>
-                        <li class="reveal-item"><span class="bullet">+</span>Generative codes are often:
-                            <ul style="margin-top: 0.3em; padding-left: 1em;">
-                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);"><em>Descriptive of the phenomenon</em></li>
-                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Identify <em>causal conditions</em></li>
-                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);"><em>Strategies</em></li>
-                            </ul>
-                        </li>
+                        <li class="reveal-item"><span class="bullet">+</span>Generative codes are often:</li>
+                        <li class="reveal-item" style="padding-left: 1.5em; font-size: clamp(1.2rem, 2.2vw, 1.7rem);"><em>Descriptive of the phenomenon</em></li>
+                        <li class="reveal-item" style="padding-left: 1.5em; font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Identify <em>causal conditions</em></li>
+                        <li class="reveal-item" style="padding-left: 1.5em; font-size: clamp(1.2rem, 2.2vw, 1.7rem);"><em>Strategies</em></li>
                     </ul>
                 </div>
                 <div class="card">
                     <ul>
-                        <li class="reveal-item"><span class="bullet">+</span><strong>Thoroughness</strong>
-                            <ul style="margin-top: 0.3em; padding-left: 1em;">
-                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Memo writing</li>
-                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Cross-referencing w/ literature review</li>
-                                <li style="font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Constantly referring back to research question</li>
-                            </ul>
-                        </li>
+                        <li class="reveal-item"><span class="bullet">+</span><strong>Thoroughness</strong></li>
+                        <li class="reveal-item" style="padding-left: 1.5em; font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Memo writing</li>
+                        <li class="reveal-item" style="padding-left: 1.5em; font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Cross-referencing w/ literature review</li>
+                        <li class="reveal-item" style="padding-left: 1.5em; font-size: clamp(1.2rem, 2.2vw, 1.7rem);">Constantly referring back to research question</li>
                         <li class="reveal-item"><span class="bullet">+</span><strong>Iterative</strong> &mdash; rarely will we get coding &ldquo;right&rdquo; on a first pass</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">22</span>
     </section>
 
@@ -837,15 +849,13 @@
         <div class="slide-content">
             <h2 class="reveal-item" style="font-size: clamp(1.8rem, 4vw, 3rem);">Full Set of Codes or Concepts for 1 Case (of 6) in a Book Project</h2>
             <div style="display: grid; grid-template-columns: 1fr clamp(12rem, 25vw, 20rem); gap: clamp(0.8rem, 1.5vw, 1.2rem); align-items: start;">
-                <div class="img-placeholder reveal-item" style="height: 55vh;">
-                    [Image: NVivo screenshot showing hierarchical coding tree &mdash; themes include: base, capacity, committed, distributed strategists, flexible, in relationship, fragility, ally betrayal, base capacity loss, coalition challenges, idealism, persistent power imbalance, turnover, leadership, campaign trajectory, challenges, choices &amp; decision-making, cultivating other leaders, strategy, power, countermovement, invisible win, perceived influence, t1-t2, target interest shift, visible win]
-                </div>
+                <img class="reveal-item" src="img/AZ.png" alt="Full set of codes for one case in a book project" style="max-height: 55vh; max-width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
                 <div style="display: flex; flex-direction: column; gap: 0.5em;">
-                    <div class="reveal-item" style="background: var(--surface); padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; border-left: 4px solid #5371ff; font-size: clamp(1rem, 1.8vw, 1.35rem); line-height: 1.5;">
+                    <div class="reveal-item" style="background: var(--surface); padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; border-left: 4px solid #5371ff; font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.5;">
                         Many of these terms sound very abstract!<br><br>
                         Coding lets you see the underlying data (evidence) that illustrates the theme or concept
                     </div>
-                    <div class="reveal-item" style="background: var(--surface); padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; border-left: 4px solid var(--accent); font-size: clamp(1rem, 1.8vw, 1.35rem); line-height: 1.5;">
+                    <div class="reveal-item" style="background: var(--surface); padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; border-left: 4px solid var(--accent); font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.5;">
                         In most projects, you will also need a <strong>codebook</strong> that defines your final set of codes.
                     </div>
                 </div>
@@ -865,18 +875,14 @@
         <div class="slide-content">
             <div style="display: grid; grid-template-columns: clamp(10rem, 20vw, 16rem) 1fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); align-items: start;">
                 <div class="reveal-item" style="display: flex; flex-direction: column; gap: 0.5em;">
-                    <div class="img-placeholder" style="height: 20vh;">
-                        [Image: Book cover &mdash; <em>Prisms of the People</em>]
-                    </div>
+                    <img src="img/prisms.jpg" alt="Prisms of the People book cover" style="max-height: 20vh; max-width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
                     <div style="background: var(--accent); color: #fff; padding: clamp(0.5rem, 1vw, 0.8rem); border-radius: 4px; font-size: clamp(1rem, 1.6vw, 1.2rem); line-height: 1.4;">
                         <strong>Example:</strong> Identifying a theme of &ldquo;ally betrayal&rdquo; among young immigrant organizers in Arizona
                     </div>
                     <p style="font-size: clamp(0.85rem, 1.3vw, 1rem); color: var(--text-secondary); margin: 0;">The process of coding links the abstract term to the underlying empirical evidence</p>
                 </div>
                 <div>
-                    <div class="img-placeholder reveal-item" style="height: 55vh;">
-                        [Image: NVivo references showing interview transcripts coded with &ldquo;ally betrayal&rdquo; theme &mdash; Speaker 1 discussing student walkouts, immigration crowd, Democratic Party tensions, becoming precinct committee members &mdash; with code stripes showing: ally betrayal, bio-story, high-risk activism, campaign trajectory, countermovement]
-                    </div>
+                    <img class="reveal-item" src="img/ally.png" alt="NVivo references showing interview transcripts coded with ally betrayal theme" style="max-height: 55vh; max-width: 100%; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
                 </div>
             </div>
         </div>
@@ -935,7 +941,8 @@
             <div class="card reveal-item">
                 <p><span class="bullet">&rarr;</span><strong>Good probing</strong> (i.e., reflecting back what the interviewee said to follow up on a thread, asking for more detail vs. just moving on from question to question)</p>
                 <ul style="margin-top: 0.3em; padding-left: 1.5em;">
-                    <li style="font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--text-secondary);">A quick way to scan for this is by reading the succession of interviewer timestamped questions. Does it seem like you are just reading off your protocol or responding to what the interviewee is saying in a deeper way? (What Lareau calls <em>staying with a question long enough</em> to get the detail needed to produce good interview data)</li>
+                    <li style="font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--text-secondary);">A quick way to scan for this: read the succession of interviewer timestamped questions. Does it seem like you are just reading off your protocol, or responding to what the interviewee is saying in a deeper way?</li>
+                    <li style="font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--text-secondary);">What Lareau calls <em>&ldquo;staying with a question long enough&rdquo;</em> to get the detail needed to produce good interview data</li>
                 </ul>
             </div>
             <div class="card reveal-item">
