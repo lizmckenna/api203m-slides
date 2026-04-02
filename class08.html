@@ -9,14 +9,15 @@
     <style>
         /* Projection-scale typography — sized for back-row legibility */
         :root {
-            --title-size: clamp(3.5rem, 9vw, 7rem);
-            --h2-size: clamp(2.8rem, 7vw, 5rem);
-            --h3-size: clamp(2rem, 4.5vw, 3.2rem);
-            --body-size: clamp(1.6rem, 3.2vw, 2.4rem);
-            --small-size: clamp(1.3rem, 2.4vw, 1.8rem);
+            --title-size: clamp(4rem, 10vw, 8rem);
+            --h2-size: clamp(3.2rem, 8vw, 5.5rem);
+            --h3-size: clamp(2.3rem, 5vw, 3.6rem);
+            --body-size: clamp(1.85rem, 3.6vw, 2.7rem);
+            --small-size: clamp(1.5rem, 2.8vw, 2.1rem);
         }
         .card h3 { font-size: var(--h3-size); }
         .card p, .card li { font-size: var(--body-size); line-height: 1.4; }
+        .section-header h1 { font-size: clamp(4.5rem, 11vw, 9rem); }
 
         .excerpt-card {
             background: #f8f9fa;
@@ -42,7 +43,7 @@
          SLIDE 1: Title
          ========================================== -->
     <section class="slide" data-section="title">
-        <div class="progress" style="width: 2%"></div>
+        <div class="progress" style="width: 3%"></div>
         <div class="grid-bg"></div>
         <div class="accent-circle"></div>
         <div class="slide-content">
@@ -55,15 +56,15 @@
     </section>
 
     <!-- ==========================================
-         SLIDE 2: Agenda
+         SLIDE 2: Agenda (3 cards)
          ========================================== -->
-    <section class="slide" data-steps="12">
+    <section class="slide" data-steps="13">
         <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 4%"></div>
+        <div class="progress" style="width: 7%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
             <h2 class="reveal-item">Class 8: Interviewing Workshop</h2>
-            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
                 <div class="card reveal-item">
                     <h3>Debriefing</h3>
                     <ul>
@@ -86,9 +87,8 @@
                         <li class="reveal-item"><span class="bullet">&bull;</span>Organizing data</li>
                         <li class="reveal-item"><span class="bullet">&bull;</span>Reporting &amp; citing</li>
                     </ul>
-                </div>
-                <div class="card reveal-item">
-                    <h3>Focus Groups</h3>
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0.5em 0;">
+                    <h3 style="font-size: var(--body-size); margin-top: 0.3em;">Focus Groups</h3>
                     <ul>
                         <li class="reveal-item"><span class="bullet">&bull;</span>Previewing next week</li>
                     </ul>
@@ -96,20 +96,20 @@
             </div>
         </div>
         <div class="step-indicator">
-            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
         </div>
         <span class="slide-number">01</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 3: Module Flow
+         SLIDE 3: Module Flow (all visible at once)
          ========================================== -->
-    <section class="slide" data-steps="5" id="debrief">
+    <section class="slide" id="debrief">
         <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 7%"></div>
+        <div class="progress" style="width: 10%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
-            <h2 class="reveal-item" style="align-self: flex-start; font-size: clamp(2.8rem, 5vw, 3.8rem); margin-bottom: clamp(0.5rem, 1vw, 0.75rem);">Module Flow &amp; Content</h2>
+            <h2 style="align-self: flex-start; font-size: clamp(2.8rem, 5vw, 3.8rem); margin-bottom: clamp(0.5rem, 1vw, 0.75rem);">Module Flow &amp; Content</h2>
 
             <div class="timeline" style="max-width: 100%; width: 100%;">
                 <div class="timeline-row">
@@ -166,25 +166,24 @@
                     </div>
                 </div>
 
-                <div class="timeline-here-callout reveal-item" style="margin-left: 52%; font-size: clamp(1rem, 1.6vw, 1.3rem); padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.7rem, 1.4vw, 1.1rem);">YOU ARE HERE</div>
+                <div class="timeline-here-callout" style="margin-left: 57%; font-size: clamp(1rem, 1.6vw, 1.3rem); padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.7rem, 1.4vw, 1.1rem);">YOU ARE HERE</div>
 
                 <div style="position: relative; width: 100%; min-height: clamp(5rem, 10vh, 8rem); margin-top: clamp(0.5rem, 1vh, 0.75rem);">
-                    <div class="reveal-item" style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                    <div style="position: absolute; left: 0; top: 0; width: calc(15.4% + 20px); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
                         <strong style="color: #4caf50; display: block;">&#10003; Assignment #1</strong>
                         <span style="color: #4caf50; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
                     </div>
-                    <div class="reveal-item" style="position: absolute; left: 16%; top: 0; width: calc(20%); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                    <div style="position: absolute; left: 16%; top: 0; width: calc(20%); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
                         <strong style="color: #4caf50; display: block;">&#10003; Assignment #2 (Observation)</strong>
                         <span style="color: #4caf50; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
                     </div>
-                    <div class="reveal-item" style="position: absolute; left: 55%; top: 0; width: calc(22%); background: #fdf6e3; border: 2px solid #b8860b; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
-                        <strong style="color: #b8860b; display: block;">Assignment #3 (Interview)</strong>
-                        <span style="color: #b8860b; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">Due Wed Apr 8 at 11:59 PM</span>
+                    <div style="position: absolute; left: 55%; top: 0; width: calc(22%); background: #e8f5e9; border: 2px solid #4caf50; padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.5rem, 1vw, 1rem); font-size: clamp(1.05rem, 1.6vw, 1.3rem); text-align: center; border-radius: 4px; box-sizing: border-box;">
+                        <strong style="color: #4caf50; display: block;">&#10003; Assignment #3 (Interview)</strong>
+                        <span style="color: #4caf50; font-size: clamp(0.9rem, 1.3vw, 1.1rem);">submitted</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">02</span>
     </section>
 
@@ -193,7 +192,7 @@
          ========================================== -->
     <section class="slide accent-bg section-header application">
         <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 11%"></div>
+        <div class="progress" style="width: 13%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Debriefing<br>the Interview</h1>
         </div>
@@ -201,229 +200,224 @@
     </section>
 
     <!-- ==========================================
-         SLIDE 5: How did it go? (Discussion prompt)
+         SLIDE 5: NLP Analysis 1 (placeholder)
          ========================================== -->
-    <section class="slide accent-bg section-header application">
+    <section class="slide">
         <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 14%"></div>
-        <div class="slide-content">
-            <h1 class="reveal-item visible">How did<br>it go?</h1>
+        <div class="progress" style="width: 17%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <h2>NLP Analysis 1</h2>
+            <p style="font-size: var(--body-size); color: var(--text-secondary);">[Content TBD — NLP analysis pending]</p>
         </div>
         <span class="slide-number">04</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 6: Section Header — Example Submissions
+         SLIDE 6: NLP Analysis 2 (placeholder)
          ========================================== -->
-    <section class="slide accent-bg section-header">
+    <section class="slide">
         <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 18%"></div>
-        <div class="slide-content">
-            <h1 class="reveal-item visible">Example<br>Submissions</h1>
-            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Excerpts from student interviews</p>
+        <div class="progress" style="width: 20%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <h2>NLP Analysis 2</h2>
+            <p style="font-size: var(--body-size); color: var(--text-secondary);">[Content TBD — NLP analysis pending]</p>
         </div>
         <span class="slide-number">05</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 7: Example 1 — Nate Powell
+         SLIDE 7: NLP Analysis 3 (placeholder)
          ========================================== -->
-    <section class="slide" data-steps="2">
+    <section class="slide">
         <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 21%"></div>
+        <div class="progress" style="width: 23%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="justify-content: center;">
-            <h2 class="reveal-item" style="font-size: var(--h2-size);">Example 1: Nate Powell</h2>
-            <div class="excerpt-card reveal-item">
-                <p><span class="speaker blue">Nate:</span> So recentering on the experiences you have either solo or with friends or with Tim, like with the rowing club, what sights, sounds, feelings stand out in those experiences when you visualize them? You could take some time to think about this one, too, to build the image in your mind if you want.</p>
-                <p style="margin-top: 0.8em;"><span class="speaker">Interviewee:</span> Yeah. I mean, for rowing, there&rsquo;s a lot of sound feedback, I guess. The more you row, the more you get feedback from the sound of the boat in the water and the way the blade hits the water. So that&rsquo;s a huge piece of it&hellip; when you&rsquo;re rowing, the worst thing about rowing is when it&rsquo;s windy. It makes the whole experience terrible&hellip; But as a person, I love wind. I think it&rsquo;s one of my favorite types of weather&hellip; The last time we went to Prospect Park, and we were just sitting there, and it happened to be a really windy day, but it was warm, and we were just sitting there, and we had an almost impromptu meditation where we were just sitting there with our eyes closed and just feeling and listening to the wind, and it was so nice.</p>
-            </div>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <h2>NLP Analysis 3</h2>
+            <p style="font-size: var(--body-size); color: var(--text-secondary);">[Content TBD — NLP analysis pending]</p>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">06</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 8: Example 2 — Olivia Mallory
+         SLIDE 8: How did it go? (Discussion prompt)
          ========================================== -->
-    <section class="slide" data-steps="2">
+    <section class="slide accent-bg section-header application">
         <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 25%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content" style="justify-content: center;">
-            <h2 class="reveal-item" style="font-size: var(--h2-size);">Example 2: Olivia Mallory</h2>
-            <div class="excerpt-card reveal-item">
-                <p><span class="speaker blue">Olivia:</span> Will you tell me about your decision to go to med school?</p>
-                <p style="margin-top: 0.8em;"><span class="speaker">Noah:</span> &ldquo;My decision to go to med school I think started really long before I consciously knew it was something that I wanted to do&hellip; My father had a bad brain aneurysm, a traumatic bleed in his head when I was in high school and that was a really formative interaction&hellip; I was drawn to both the acuity of the care, the formation that it had on my family and myself and really the importance and the significance that the doctors had in such a large and memorable moment&hellip;&rdquo;</p>
-                <p style="margin-top: 0.8em;"><span class="speaker blue">Olivia:</span> &ldquo;Really interesting. And you mentioned in high school and college you continued to be drawn to those moments. Can you bring me to one of those moments in high school or college where you again felt drawn to medicine?&rdquo;</p>
-            </div>
+        <div class="progress" style="width: 27%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">How did<br>it go?</h1>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">07</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 9: Example 3 — Kim Davila
+         SLIDE 9: Section Header — Example Submissions
          ========================================== -->
-    <section class="slide" data-steps="2">
+    <section class="slide accent-bg section-header">
         <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 29%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content" style="justify-content: center;">
-            <h2 class="reveal-item" style="font-size: var(--h2-size);">Example 3: Kim Davila</h2>
-            <div class="excerpt-card reveal-item">
-                <p><span class="speaker blue">Kim:</span> Do you think you can give me some examples of how public participation processes have either supported or maybe hindered some of the advocacy?</p>
-                <p style="margin-top: 0.8em;"><span class="speaker">AT:</span> I mean, I think this example highlights how awful these processes have been set up, and how they don&rsquo;t work in any sort of equitable or predictable fashion&hellip; I just haven&rsquo;t dropped it, and I haven&rsquo;t let it go. And as a result, the company that I&rsquo;ve been speaking of &mdash; they&rsquo;ve now been issued a notice to comply&hellip; So it&rsquo;s really hard to see how this company would have had to stop what they&rsquo;re doing if it wasn&rsquo;t just for 2 people, me and Tony, who happened to care about this&hellip; And that&rsquo;s pretty troubling because it makes me think about&hellip; I wonder all the other places in East LA, where this is happening&hellip;</p>
-            </div>
+        <div class="progress" style="width: 30%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Example<br>Submissions</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Excerpts from student interviews</p>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">08</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 10: Being an Interviewee (Discussion)
+         SLIDE 10: Example 1 — Student 1
          ========================================== -->
-    <section class="slide accent-bg section-header application">
+    <section class="slide" data-steps="2">
         <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 32%"></div>
-        <div class="slide-content">
-            <h1 class="reveal-item visible">Being an<br>interviewee</h1>
-            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">What was that like? What went well? Poorly?</p>
+        <div class="progress" style="width: 33%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item" style="font-size: var(--h2-size);">Example 1: Student 1</h2>
+            <div class="excerpt-card reveal-item">
+                <p>[Interview excerpt placeholder — to be replaced with current student submission]</p>
+            </div>
         </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">09</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 11: Agenda Checkpoint — Workshop highlighted
+         SLIDE 11: Example 2 — Student 2
          ========================================== -->
-    <section class="slide" id="workshop">
-        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 36%"></div>
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
+        <div class="progress" style="width: 37%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2>Class 8: Interviewing Workshop</h2>
-            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
-                <div class="card" style="opacity: 0.4;">
-                    <h3>Debriefing</h3>
-                    <ul>
-                        <li><span class="bullet">&bull;</span>How did it go?</li>
-                        <li><span class="bullet">&bull;</span>Excerpts &amp; examples</li>
-                        <li><span class="bullet">&bull;</span>Being an interviewee</li>
-                    </ul>
-                </div>
-                <div class="card" style="border: 3px solid #5371ff;">
-                    <h3>Workshop</h3>
-                    <ul>
-                        <li><span class="bullet">&bull;</span>Self-assessment</li>
-                        <li><span class="bullet">&bull;</span>Pair &amp; share</li>
-                        <li><span class="bullet">&bull;</span>Group debrief</li>
-                    </ul>
-                </div>
-                <div class="card" style="opacity: 0.4;">
-                    <h3>Analysis</h3>
-                    <ul>
-                        <li><span class="bullet">&bull;</span>Organizing data</li>
-                        <li><span class="bullet">&bull;</span>Reporting &amp; citing</li>
-                    </ul>
-                </div>
-                <div class="card" style="opacity: 0.4;">
-                    <h3>Focus Groups</h3>
-                    <ul>
-                        <li><span class="bullet">&bull;</span>Previewing next week</li>
-                    </ul>
-                </div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item" style="font-size: var(--h2-size);">Example 2: Student 2</h2>
+            <div class="excerpt-card reveal-item">
+                <p>[Interview excerpt placeholder — to be replaced with current student submission]</p>
             </div>
         </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">10</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 12: Section Header — Self-Assessment
+         SLIDE 12: Example 3 — Student 3
          ========================================== -->
-    <section class="slide accent-bg section-header application">
-        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 39%"></div>
-        <div class="slide-content">
-            <h1 class="reveal-item visible">Step 1:<br>Self-Assessment</h1>
-            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Use the handout</p>
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
+        <div class="progress" style="width: 40%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <h2 class="reveal-item" style="font-size: var(--h2-size);">Example 3: Student 3</h2>
+            <div class="excerpt-card reveal-item">
+                <p>[Interview excerpt placeholder — to be replaced with current student submission]</p>
+            </div>
         </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">11</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 13: Self-Assessment Timer
+         SLIDE 13: Being an Interviewee (Discussion)
          ========================================== -->
-    <section class="slide application" id="timer-self-assessment">
-        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
+    <section class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#debrief" class="active">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
         <div class="progress" style="width: 43%"></div>
-        <div class="slide-content" style="align-items: center; text-align: center;">
-            <h2 class="reveal-item visible">Self-Assessment</h2>
-            <p class="reveal-item visible" style="font-size: var(--h3-size); max-width: 700px; margin-top: var(--content-gap);">
-                Review your interview transcript. Reflect on what went well and what you would do differently.
-            </p>
-            <div class="timer-container reveal-item visible" style="margin-top: var(--content-gap);">
-                <p id="countdown-display" style="font-size: clamp(3rem, 10vw, 6rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">10:00</p>
-                <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
-            </div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Being an<br>interviewee</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">What was that like? What went well? Poorly?</p>
         </div>
         <span class="slide-number">12</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 14: Section Header — Pair & Share
+         SLIDE 14: Section Header — Self-Assessment
+         (id="workshop" moved here from deleted checkpoint)
          ========================================== -->
-    <section class="slide accent-bg section-header application">
+    <section class="slide accent-bg section-header application" id="workshop">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 46%"></div>
+        <div class="progress" style="width: 47%"></div>
         <div class="slide-content">
-            <h1 class="reveal-item visible">Step 2:<br>Pair &amp; Share</h1>
+            <h1 class="reveal-item visible">Step 1:<br>Self-Assessment</h1>
             <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Use the handout</p>
         </div>
         <span class="slide-number">13</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 15: Pair & Share Timer
+         SLIDE 15: Self-Assessment Timer (7:00)
          ========================================== -->
-    <section class="slide application" id="timer-pair-share">
+    <section class="slide application" id="timer-self-assessment">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
         <div class="progress" style="width: 50%"></div>
         <div class="slide-content" style="align-items: center; text-align: center;">
-            <h2 class="reveal-item visible">Pair &amp; Share</h2>
-            <p class="reveal-item visible" style="font-size: var(--h3-size); max-width: 700px; margin-top: var(--content-gap);">
-                Share your self-assessment with a partner. Discuss what you learned about interviewing technique.
+            <h2 class="reveal-item visible" style="font-size: clamp(3.5rem, 9vw, 6rem);">Self-Assessment</h2>
+            <p class="reveal-item visible" style="font-size: clamp(2.5rem, 5.5vw, 4rem); max-width: 700px; margin-top: var(--content-gap);">
+                Review your interview transcript. Reflect on what went well and what you would do differently.
             </p>
             <div class="timer-container reveal-item visible" style="margin-top: var(--content-gap);">
-                <p id="countdown-display-2" style="font-size: clamp(3rem, 10vw, 6rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">10:00</p>
-                <p id="timer-hint-2" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
+                <p id="countdown-display" style="font-size: clamp(5rem, 14vw, 10rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">07:00</p>
+                <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
             </div>
         </div>
         <span class="slide-number">14</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 16: Sharing Out (Discussion)
+         SLIDE 16: Section Header — Pair & Share
          ========================================== -->
     <section class="slide accent-bg section-header application">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 54%"></div>
+        <div class="progress" style="width: 53%"></div>
         <div class="slide-content">
-            <h1 class="reveal-item visible">Sharing Out</h1>
-            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Group debrief</p>
+            <h1 class="reveal-item visible">Step 2:<br>Pair &amp; Share</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Use the handout</p>
         </div>
         <span class="slide-number">15</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 17: Agenda Checkpoint — Analysis highlighted
+         SLIDE 17: Pair & Share Timer (7:00)
+         ========================================== -->
+    <section class="slide application" id="timer-pair-share">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
+        <div class="progress" style="width: 57%"></div>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h2 class="reveal-item visible" style="font-size: clamp(3.5rem, 9vw, 6rem);">Pair &amp; Share</h2>
+            <p class="reveal-item visible" style="font-size: clamp(2.5rem, 5.5vw, 4rem); max-width: 700px; margin-top: var(--content-gap);">
+                Share your self-assessment with a partner. Discuss what you learned about interviewing technique.
+            </p>
+            <div class="timer-container reveal-item visible" style="margin-top: var(--content-gap);">
+                <p id="countdown-display-2" style="font-size: clamp(5rem, 14vw, 10rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">07:00</p>
+                <p id="timer-hint-2" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
+            </div>
+        </div>
+        <span class="slide-number">16</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 18: Sharing Out (Discussion)
+         ========================================== -->
+    <section class="slide accent-bg section-header application">
+        <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop" class="active">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
+        <div class="progress" style="width: 60%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Sharing Out</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Group debrief</p>
+        </div>
+        <span class="slide-number">17</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 19: Agenda Checkpoint — Analysis (3-card)
          ========================================== -->
     <section class="slide" id="analysis">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 57%"></div>
+        <div class="progress" style="width: 63%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2>Class 8: Interviewing Workshop</h2>
-            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
                 <div class="card" style="opacity: 0.4;">
                     <h3>Debriefing</h3>
                     <ul>
@@ -446,36 +440,35 @@
                         <li><span class="bullet">&bull;</span>Organizing data</li>
                         <li><span class="bullet">&bull;</span>Reporting &amp; citing</li>
                     </ul>
-                </div>
-                <div class="card" style="opacity: 0.4;">
-                    <h3>Focus Groups</h3>
-                    <ul>
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0.5em 0;">
+                    <h3 style="font-size: var(--body-size); margin-top: 0.3em; opacity: 0.5;">Focus Groups</h3>
+                    <ul style="opacity: 0.5;">
                         <li><span class="bullet">&bull;</span>Previewing next week</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <span class="slide-number">16</span>
+        <span class="slide-number">18</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 18: Section Header — Organizing & Reporting
+         SLIDE 20: Section Header — Organizing & Reporting
          ========================================== -->
     <section class="slide accent-bg section-header">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 61%"></div>
+        <div class="progress" style="width: 67%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">Organizing &amp;<br>Reporting<br>Interview Data</h1>
         </div>
-        <span class="slide-number">17</span>
+        <span class="slide-number">19</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 19: Organizing interview details (Cohen 2016)
+         SLIDE 21: Organizing interview details
          ========================================== -->
-    <section class="slide" data-steps="3">
+    <section class="slide" data-steps="4">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 64%"></div>
+        <div class="progress" style="width: 70%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Organizing interview details</h2>
@@ -493,17 +486,18 @@
                 <h3 style="color: #5371ff;">Reporting: Methods Appendix</h3>
                 <p>See <strong>Moseley, Chapter 4</strong> for best practices on documenting your interview methodology</p>
             </div>
+            <div class="reveal-item" style="background: #f0f0f0; border: 2px dashed #ccc; border-radius: 6px; padding: 2rem; text-align: center; color: #999; font-size: var(--body-size);">[Image placeholder]</div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">18</span>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">20</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 20: Citing interview data in text
+         SLIDE 22: Citing interview data in text
          ========================================== -->
-    <section class="slide" data-steps="5">
+    <section class="slide" data-steps="6">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 68%"></div>
+        <div class="progress" style="width: 73%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Citing interview data in text</h2>
@@ -524,17 +518,18 @@
                     <p style="font-size: var(--small-size); font-style: italic;">Former UN official, author interview, January 20, 2023, Cambridge, MA.</p>
                 </div>
             </div>
+            <div class="reveal-item" style="background: #f0f0f0; border: 2px dashed #ccc; border-radius: 6px; padding: 2rem; text-align: center; color: #999; font-size: var(--body-size);">[Image placeholder]</div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">19</span>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">21</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 21: Summarizing interview data in a report
+         SLIDE 23: Summarizing interview data
          ========================================== -->
-    <section class="slide" data-steps="3">
+    <section class="slide" data-steps="4">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 71%"></div>
+        <div class="progress" style="width: 77%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Summarizing interview data in a report</h2>
@@ -549,17 +544,18 @@
                     <p>Key themes and patterns, supported with illustrative examples and direct quotes</p>
                 </div>
             </div>
+            <div class="reveal-item" style="background: #f0f0f0; border: 2px dashed #ccc; border-radius: 6px; padding: 2rem; text-align: center; color: #999; font-size: var(--body-size);">[Image placeholder]</div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">20</span>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">22</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 22: Show your work
+         SLIDE 24: Show your work
          ========================================== -->
-    <section class="slide" data-steps="3">
+    <section class="slide" data-steps="4">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 75%"></div>
+        <div class="progress" style="width: 80%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Reporting interview data: Show your work</h2>
@@ -573,17 +569,18 @@
                     <p>A brief structured summary of each interview: key takeaways, surprising moments, and follow-up questions</p>
                 </div>
             </div>
+            <div class="reveal-item" style="background: #f0f0f0; border: 2px dashed #ccc; border-radius: 6px; padding: 2rem; text-align: center; color: #999; font-size: var(--body-size);">[Image placeholder]</div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">21</span>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">23</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 23: Analyzing interview data (review)
+         SLIDE 25: Analyzing interview data (review)
          ========================================== -->
-    <section class="slide" data-steps="6">
+    <section class="slide" data-steps="8">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis" class="active">Analysis</a><a href="#focus-groups">Focus Groups</a></nav>
-        <div class="progress" style="width: 79%"></div>
+        <div class="progress" style="width: 83%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Analyzing interview data (review)</h2>
@@ -595,21 +592,22 @@
                 <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Do more interviews!</strong> &mdash; PAEs: 10&ndash;30 interviews. Continue until &ldquo;saturation&rdquo;</li>
             </ul>
             <div class="reveal-item" style="margin-top: 0.5em; background: #fdf6e3; border: 2px solid #b8860b; padding: clamp(0.4rem, 0.8vw, 0.6rem) clamp(0.8rem, 1.5vw, 1.2rem); border-radius: 6px; font-family: 'Archivo', sans-serif; font-size: var(--body-size); font-weight: 700; color: #b8860b;">Return to the analytic writing handout from last week</div>
+            <div class="reveal-item" style="background: #f0f0f0; border: 2px dashed #ccc; border-radius: 6px; padding: 2rem; text-align: center; color: #999; font-size: var(--body-size);">[Image placeholder]</div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">22</span>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">24</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 24: Agenda Checkpoint — Focus Groups highlighted
+         SLIDE 26: Agenda Checkpoint — Focus Groups (3-card)
          ========================================== -->
     <section class="slide" id="focus-groups">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups" class="active">Focus Groups</a></nav>
-        <div class="progress" style="width: 82%"></div>
+        <div class="progress" style="width: 87%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2>Class 8: Interviewing Workshop</h2>
-            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
                 <div class="card" style="opacity: 0.4;">
                     <h3>Debriefing</h3>
                     <ul>
@@ -626,30 +624,29 @@
                         <li><span class="bullet">&bull;</span>Group debrief</li>
                     </ul>
                 </div>
-                <div class="card" style="opacity: 0.4;">
-                    <h3>Analysis</h3>
-                    <ul>
+                <div class="card" style="border: 3px solid var(--accent);">
+                    <h3 style="opacity: 0.5;">Analysis</h3>
+                    <ul style="opacity: 0.5;">
                         <li><span class="bullet">&bull;</span>Organizing data</li>
                         <li><span class="bullet">&bull;</span>Reporting &amp; citing</li>
                     </ul>
-                </div>
-                <div class="card" style="border: 3px solid var(--accent);">
-                    <h3>Focus Groups</h3>
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0.5em 0;">
+                    <h3 style="font-size: var(--body-size); margin-top: 0.3em;">Focus Groups</h3>
                     <ul>
                         <li><span class="bullet">&bull;</span>Previewing next week</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <span class="slide-number">23</span>
+        <span class="slide-number">25</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 25: Module flow — Focus Groups preview
+         SLIDE 27: Focus Groups preview
          ========================================== -->
     <section class="slide" data-steps="3">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups" class="active">Focus Groups</a></nav>
-        <div class="progress" style="width: 86%"></div>
+        <div class="progress" style="width: 90%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Previewing next week: Focus Groups</h2>
@@ -672,27 +669,27 @@
             </div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">24</span>
+        <span class="slide-number">26</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 26: What is a focus group?
+         SLIDE 28: What is a focus group?
          ========================================== -->
     <section class="slide accent-bg section-header">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups" class="active">Focus Groups</a></nav>
-        <div class="progress" style="width: 89%"></div>
+        <div class="progress" style="width: 93%"></div>
         <div class="slide-content">
             <h1 class="reveal-item visible">What is a<br>focus group?</h1>
         </div>
-        <span class="slide-number">25</span>
+        <span class="slide-number">27</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 27: Focus Group Definition
+         SLIDE 29: Focus Group Definition
          ========================================== -->
     <section class="slide" data-steps="4">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups" class="active">Focus Groups</a></nav>
-        <div class="progress" style="width: 93%"></div>
+        <div class="progress" style="width: 97%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">What is a focus group?</h2>
@@ -717,11 +714,11 @@
             </div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">26</span>
+        <span class="slide-number">28</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 28: Thank You / Teaching Team
+         SLIDE 30: Thank You / Teaching Team
          ========================================== -->
     <section class="slide">
         <nav class="section-nav"><a href="#debrief">Debrief</a><a href="#workshop">Workshop</a><a href="#analysis">Analysis</a><a href="#focus-groups" class="active">Focus Groups</a></nav>
@@ -764,10 +761,94 @@
                 </div>
             </div>
         </div>
-        <span class="slide-number">27</span>
+        <span class="slide-number">29</span>
     </section>
 
     <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
     <script src="slides.js"></script>
+
+    <!-- Second timer instance for Pair & Share -->
+    <script>
+    (function() {
+        var display2 = document.getElementById('countdown-display-2');
+        var hint2 = document.getElementById('timer-hint-2');
+        if (!display2 || !hint2) return;
+
+        var match = display2.textContent.trim().match(/(\d+):(\d+)/);
+        var duration = match ? parseInt(match[1]) * 60 + parseInt(match[2]) : 5 * 60;
+        var remaining = duration;
+        var interval = null;
+        var running = false;
+
+        function updateDisplay() {
+            var mins = Math.floor(remaining / 60);
+            var secs = remaining % 60;
+            display2.textContent = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+            if (remaining <= 30 && remaining > 0) {
+                display2.style.color = '#ff3300';
+            } else if (remaining > 30) {
+                display2.style.color = '';
+            }
+        }
+
+        function playChime() {
+            try {
+                var ctx = new (window.AudioContext || window.webkitAudioContext)();
+                var playTone = function(freq, startTime, dur) {
+                    var osc = ctx.createOscillator();
+                    var gain = ctx.createGain();
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.frequency.value = freq;
+                    osc.type = 'sine';
+                    gain.gain.setValueAtTime(0, startTime);
+                    gain.gain.linearRampToValueAtTime(0.3, startTime + 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.01, startTime + dur);
+                    osc.start(startTime);
+                    osc.stop(startTime + dur);
+                };
+                var now = ctx.currentTime;
+                playTone(523.25, now, 0.5);
+                playTone(659.25, now + 0.3, 0.5);
+                playTone(783.99, now + 0.6, 0.8);
+            } catch (e) { console.log('Audio not supported'); }
+        }
+
+        display2.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (running) {
+                running = false;
+                clearInterval(interval);
+                hint2.textContent = 'Click to resume';
+            } else {
+                if (remaining <= 0) {
+                    remaining = duration;
+                    updateDisplay();
+                    display2.style.color = '';
+                    display2.style.animation = '';
+                    hint2.textContent = 'Click timer to start';
+                    return;
+                }
+                running = true;
+                hint2.textContent = 'Click to pause';
+                display2.style.transform = 'scale(1.02)';
+                setTimeout(function() { display2.style.transform = ''; }, 100);
+                interval = setInterval(function() {
+                    remaining--;
+                    updateDisplay();
+                    if (remaining <= 0) {
+                        clearInterval(interval);
+                        running = false;
+                        display2.textContent = "Time's up!";
+                        display2.style.color = '#ff3300';
+                        display2.style.animation = 'pulse 1s ease-in-out 3';
+                        hint2.textContent = 'Click to reset';
+                        playChime();
+                    }
+                }, 1000);
+            }
+        });
+    })();
+    </script>
 </body>
 </html>
