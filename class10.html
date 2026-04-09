@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-203M: Focus Group Simulation + Intro to Archival | Prof. Liz McKenna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Projection-scale typography — sized for back-row legibility */
+        :root {
+            --title-size: clamp(4rem, 10vw, 8rem);
+            --h2-size: clamp(3.2rem, 8vw, 5.5rem);
+            --h3-size: clamp(2.3rem, 5vw, 3.6rem);
+            --body-size: clamp(1.85rem, 3.6vw, 2.7rem);
+            --small-size: clamp(1.5rem, 2.8vw, 2.1rem);
+        }
+        .card h3 { font-size: var(--h3-size); }
+        .card p, .card li { font-size: var(--body-size); line-height: 1.4; }
+        .section-header h1 { font-size: clamp(4.5rem, 11vw, 9rem); }
+
+        /* Troubleshooting table rows */
+        .trouble-row {
+            display: grid;
+            grid-template-columns: 1.1fr 1.3fr 2fr;
+            gap: clamp(0.6rem, 1.2vw, 1rem);
+            padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(0.6rem, 1.2vw, 1rem);
+            border-bottom: 1px solid #e5e5e5;
+            align-items: start;
+            font-size: var(--small-size);
+            line-height: 1.4;
+        }
+        .trouble-row.header {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+        }
+        .trouble-row .dynamic {
+            font-weight: 700;
+            font-size: var(--body-size);
+            color: var(--accent);
+        }
+        .trouble-row .tag {
+            display: inline-block;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1rem, 1.7vw, 1.35rem);
+            padding: 0.15em 0.5em;
+            border-radius: 3px;
+            margin-right: 0.4em;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .trouble-row .tag.indirect {
+            background: #e8edff;
+            color: #5371ff;
+        }
+        .trouble-row .tag.direct {
+            background: #ffe8e3;
+            color: #ff3300;
+        }
+
+        /* Scenario cards */
+        .scenario-box {
+            background: #f8f9fa;
+            border-left: 6px solid var(--accent);
+            padding: clamp(1rem, 2vw, 1.6rem);
+            border-radius: 4px;
+            font-family: 'Nunito', sans-serif;
+        }
+        .scenario-label {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--accent);
+            margin-bottom: 0.2em;
+        }
+        .scenario-box p {
+            font-size: var(--small-size);
+            line-height: 1.45;
+            margin: 0.3em 0 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         SLIDE 1: Title
+         ========================================== -->
+    <section class="slide" data-section="title">
+        <div class="progress" style="width: 3%"></div>
+        <div class="grid-bg"></div>
+        <div class="accent-circle"></div>
+        <div class="slide-content">
+            <h1>Empirical<br>Methods <span class="highlight">II</span></h1>
+            <p class="meta" style="margin-bottom: 0.2em;">Qualitative and Mixed Methods</p>
+            <p class="meta" style="margin-top: 0;">API-203M &middot; Spring 2026</p>
+            <span style="margin-top: 0.5em; align-self: flex-start; background: #e8edff; border: 2px solid #5371ff; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(1rem, 2vw, 1.5rem); border-radius: 4px; font-family: 'Archivo', system-ui, sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; color: #5371ff;">Class 10: Focus Group Simulation + Intro to Archival</span>
+        </div>
+        <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2: Module Flow
+         ========================================== -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#simulation" class="active">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 7%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
+            <h2 style="align-self: flex-start; font-size: clamp(2.8rem, 5vw, 3.8rem); margin-bottom: clamp(0.5rem, 1vw, 0.75rem);">Module Flow &amp; Content</h2>
+
+            <div class="timeline" style="max-width: 100%; width: 100%;">
+                <div class="timeline-row">
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Introduction</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Overview,<br>outstanding qual<br>research</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top" style="flex: 0.5;"></div>
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Introduction +<br>workshop</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                    <div class="timeline-module top">
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Focus Groups</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Background, ethics,<br>simulation</p>
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                    </div>
+                    <div class="timeline-module top"></div>
+                </div>
+
+                <div class="timeline-bar" style="height: clamp(3.5rem, 7vh, 5.5rem);">
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">1</div>
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">2</div>
+                    <div class="week" style="background: #888; flex: 0.5; font-size: clamp(1rem, 1.6vw, 1.3rem);">Break</div>
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">3</div>
+                    <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">4</div>
+                    <div class="week" style="background: #5371ff; border: 3px solid #fff; box-shadow: 0 0 0 3px #5371ff; font-size: clamp(1.2rem, 2vw, 1.6rem);">Week 5</div>
+                    <div class="week" style="background: var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">6</div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Observation + Ethics</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Ethnography,<br>fieldwork</p>
+                    </div>
+                    <div class="timeline-module bottom" style="flex: 0.5;"></div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing 2.0</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Workshop</p>
+                    </div>
+                    <div class="timeline-module bottom"></div>
+                    <div class="timeline-module bottom">
+                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
+                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Archival + Wrap-Up</h4>
+                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Documents, coding,<br>guest lecture</p>
+                    </div>
+                </div>
+
+                <div class="timeline-here-callout" style="margin-left: 72%; font-size: clamp(1rem, 1.6vw, 1.3rem); padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.7rem, 1.4vw, 1.1rem);">YOU ARE HERE</div>
+            </div>
+        </div>
+        <span class="slide-number">02</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3: Agenda (4 cards)
+         ========================================== -->
+    <section class="slide" data-steps="5">
+        <nav class="section-nav"><a href="#simulation" class="active">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 10%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
+            <h2 class="reveal-item">Class 10 Agenda</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Simulation</h3>
+                    <ul>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Focus group exercise</li>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Moderator, notetaker, scribe, participants</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Debrief</h3>
+                    <ul>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>What worked?</li>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>What didn&rsquo;t?</li>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Troubleshooting</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3>Intro to Archival</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Primary vs. secondary</li>
+                        <li><span class="bullet">&bull;</span>When to use which</li>
+                        <li><span class="bullet">&bull;</span>Ethics of archives</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3>Next Steps</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Prep for Tues. 4/14</li>
+                        <li><span class="bullet">&bull;</span>Examples from prior students</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator">
+            <div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div>
+        </div>
+        <span class="slide-number">03</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4: Section Header — Focus Group Simulation
+         ========================================== -->
+    <section class="slide accent-bg section-header application" id="simulation">
+        <nav class="section-nav"><a href="#simulation" class="active">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 13%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Focus Group<br>Simulation</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Understanding how HKS students think about and pursue research</p>
+        </div>
+        <span class="slide-number">04</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: Instructions (3 steps)
+         ========================================== -->
+    <section class="slide application" data-steps="4">
+        <nav class="section-nav"><a href="#simulation" class="active">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 17%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Application</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Simulation Instructions <span style="color: var(--text-secondary); font-weight: 400;">(30 mins)</span></h2>
+            <ul>
+                <li class="reveal-item"><span class="num" style="background: #5371ff; color: #fff;">01</span><strong>Split into groups</strong> — Count off into four even groups</li>
+                <li class="reveal-item"><span class="num" style="background: #5371ff; color: #fff;">02</span><strong>Assign roles</strong> — 1 moderator, 1 scribe, 1&ndash;2 notetakers, 4&ndash;5 participants</li>
+                <li class="reveal-item"><span class="num" style="background: #5371ff; color: #fff;">03</span><strong>Run the focus group</strong> — Moderator leads the protocol &amp; activities</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">05</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6: Roles Breakdown
+         ========================================== -->
+    <section class="slide application" data-steps="3">
+        <nav class="section-nav"><a href="#simulation" class="active">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 20%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Roles in each group</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Moderator</h3>
+                    <p>Leads the protocol. Invites quiet participants in, redirects tangents, manages time.</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Scribe</h3>
+                    <p>Captures the <em>discussion flow</em> — who said what, in what order, and the key themes as they emerge.</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Notetakers</h3>
+                    <p>Capture <em>nonverbal cues</em>, affect, interruptions, silences, body language, group dynamics.</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">06</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7: Simulation Timer (30:00)
+         ========================================== -->
+    <section class="slide application" id="timer-simulation">
+        <nav class="section-nav"><a href="#simulation" class="active">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 23%"></div>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h2 class="reveal-item visible" style="font-size: clamp(3.5rem, 9vw, 6rem);">Focus Group Simulation</h2>
+            <p class="reveal-item visible" style="font-size: clamp(2rem, 4.5vw, 3.2rem); max-width: 800px; margin-top: var(--content-gap);">
+                Run your focus group. Moderators lead; everyone else stays in role.
+            </p>
+            <div class="timer-container reveal-item visible" style="margin-top: var(--content-gap);">
+                <p id="countdown-display" style="font-size: clamp(5rem, 14vw, 10rem); font-family: 'Archivo', sans-serif; font-weight: 800; color: var(--accent); margin: 0; cursor: pointer; transition: transform 0.1s;">30:00</p>
+                <p id="timer-hint" style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5rem;">Click timer to start</p>
+            </div>
+        </div>
+        <span class="slide-number">07</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: Section Header — Debrief
+         ========================================== -->
+    <section class="slide accent-bg section-header application" id="debrief">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief" class="active">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 27%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Debrief</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">What worked? What didn&rsquo;t? What would you do differently?</p>
+        </div>
+        <span class="slide-number">08</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: What worked? — by role
+         ========================================== -->
+    <section class="slide application" data-steps="3">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief" class="active">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 30%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">What worked? What didn&rsquo;t?</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="card reveal-item" style="border-left: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Participants</h3>
+                    <p>How did it feel to be part of this discussion? What did you like? What did you not?</p>
+                </div>
+                <div class="card reveal-item" style="border-left: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Moderators</h3>
+                    <p>What do you like about what you did? What would you do differently next time? How was this different from an interview?</p>
+                </div>
+                <div class="card reveal-item" style="border-left: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Notetakers &amp; Scribes</h3>
+                    <p>What went well? What processes were smooth? What challenges did the moderator face? What suggestions do you have?</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">09</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 10: Troubleshooting table 1
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief" class="active">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 33%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Troubleshooting <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.6em;">Cyr, p. 79</span></h2>
+
+            <div class="trouble-row header">
+                <div>Dynamic</div>
+                <div>Why problematic</div>
+                <div>Potential solution</div>
+            </div>
+
+            <div class="trouble-row reveal-item">
+                <div class="dynamic">Passivity</div>
+                <div>Less data collected</div>
+                <div>
+                    <div><span class="tag indirect">Indirect</span>Eye contact</div>
+                    <div style="margin-top: 0.3em;"><span class="tag direct">Direct</span>Invite the participant to intervene</div>
+                </div>
+            </div>
+
+            <div class="trouble-row reveal-item">
+                <div class="dynamic">Dominance</div>
+                <div>Over-representation of one perspective</div>
+                <div>
+                    <div><span class="tag indirect">Indirect</span>Turn toward someone else; avoid eye contact</div>
+                    <div style="margin-top: 0.3em;"><span class="tag direct">Direct</span>Invite others to speak</div>
+                </div>
+            </div>
+
+            <div class="trouble-row reveal-item">
+                <div class="dynamic">Group think</div>
+                <div>May reflect false consensus</div>
+                <div>Ask for written before spoken responses; probe for dissenting ideas</div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">10</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 11: Troubleshooting table 2
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief" class="active">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 37%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Troubleshooting, cont. <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.6em;">Cyr, p. 79</span></h2>
+
+            <div class="trouble-row header">
+                <div>Dynamic</div>
+                <div>Why problematic</div>
+                <div>Potential solution</div>
+            </div>
+
+            <div class="trouble-row reveal-item">
+                <div class="dynamic">Hostility</div>
+                <div>Creates a stressful environment</div>
+                <div>
+                    <div><span class="tag indirect">Indirect</span>Turn toward someone else; avoid eye contact</div>
+                    <div style="margin-top: 0.3em;"><span class="tag direct">Direct</span>Invite the participant to take a break or leave</div>
+                </div>
+            </div>
+
+            <div class="trouble-row reveal-item">
+                <div class="dynamic">Group silence</div>
+                <div>Foments discomfort, loss of data</div>
+                <div>Ask more specific follow-ups; provide example responses; employ a focusing exercise</div>
+            </div>
+
+            <div class="trouble-row reveal-item">
+                <div class="dynamic">Losing focus</div>
+                <div>Can denote misuse of time</div>
+                <div>Revisit the original question; turn to the next question</div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">11</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 12: Key Takeaways — Best uses for focus groups
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief" class="active">Debrief</a><a href="#archival">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 40%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Key takeaway: best uses for focus groups</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent); font-size: var(--body-size);">Socially constructed phenomena</h3>
+                    <p style="font-size: var(--small-size); font-style: italic; color: var(--text-secondary);">How do people develop an understanding of their relative political orientation?</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent); font-size: var(--body-size);">Group processes</h3>
+                    <p style="font-size: var(--small-size); font-style: italic; color: var(--text-secondary);">What do veterans think about mental health?</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent); font-size: var(--body-size);">Individuals interacting in social settings</h3>
+                    <p style="font-size: var(--small-size); font-style: italic; color: var(--text-secondary);">How is someone&rsquo;s understanding of climate change affected by the understanding of those around them?</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent); font-size: var(--body-size);">Exploring a topic we know little about</h3>
+                    <p style="font-size: var(--small-size); font-style: italic; color: var(--text-secondary);">How do college professors think we should handle new AI tools?</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">12</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 13: Section Header — Intro to Archival
+         ========================================== -->
+    <section class="slide accent-bg section-header" id="archival">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 43%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Intro to<br>Archival</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Documents, sources, and the ethics of secondary data</p>
+        </div>
+        <span class="slide-number">13</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 14: Documentary analysis is everywhere
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 47%"></div>
+        <div class="grid-bg"></div>
+        <span class="mode-indicator">Theory</span>
+        <div class="slide-content">
+            <h2 class="reveal-item">Almost any job involves documentary analysis</h2>
+            <p class="reveal-item" style="font-size: var(--body-size); color: var(--text-secondary); margin-top: 0;">
+                Collecting, evaluating, and interpreting (usually secondary) documents and archives
+            </p>
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent); font-size: var(--body-size);">Before</h3>
+                    <p>Gain a basic understanding of the field and scope a research question</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent); font-size: var(--body-size);">During</h3>
+                    <p>Refine data collection and analysis; transform into your own primary database</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent); font-size: var(--body-size);">After</h3>
+                    <p>Compare your findings against a broader range of existing sources</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">14</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 15: Primary vs. Secondary — What
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 50%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Primary vs. secondary data <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.5em;">&mdash; What</span></h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent);">Primary</h3>
+                    <p><strong>Original data collected directly for the present project.</strong></p>
+                    <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;"><em>Examples:</em> interviews, surveys, focus groups, observations you conduct to answer a research question</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Secondary</h3>
+                    <p><strong>Data produced by someone else or collected for a separate purpose.</strong></p>
+                    <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: 0.5em;"><em>Examples:</em> internet sources, NGO &amp; government agencies, public libraries, educational institutions, commercial/business information</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">15</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 16: Primary vs. Secondary — Why (advantages)
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 53%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Primary vs. secondary data <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.5em;">&mdash; Why (advantages)</span></h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent);">Primary</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Data collected is first-hand</li>
+                        <li><span class="bullet">&bull;</span>Data collection can be controlled</li>
+                        <li><span class="bullet">&bull;</span>Method customized to the research question</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Secondary</h3>
+                    <ul>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Information is often readily available</li>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Less expensive and time-consuming</li>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Can aid in hypothesis testing and generalizability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">16</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 17: Primary vs. Secondary — Why not (disadvantages)
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 57%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Primary vs. secondary data <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.5em;">&mdash; Why not (disadvantages)</span></h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent);">Primary</h3>
+                    <ul>
+                        <li><span class="bullet">&bull;</span>Can be expensive &mdash; time &amp; resources</li>
+                        <li><span class="bullet">&bull;</span>One method is often not enough; mixed methods require more time, personnel</li>
+                    </ul>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Secondary</h3>
+                    <ul>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Credibility sometimes unknown or unverifiable</li>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>May be dated</li>
+                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Dependent on quality of prior research</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">17</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 18: Scenario quiz intro
+         ========================================== -->
+    <section class="slide accent-bg section-header">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 60%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">Primary or<br>secondary?</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Three quick scenarios &mdash; Watkins (2023)</p>
+        </div>
+        <span class="slide-number">18</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 19: Scenario 1 — Smoking cessation
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 63%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Scenario 1: Smoking cessation</h2>
+            <div class="scenario-box reveal-item">
+                <div class="scenario-label">Purpose Statement</div>
+                <p>This study aims to test the Health Belief Model by comparing male and female smokers in our smoking cessation program.</p>
+                <div class="scenario-label">Research Question</div>
+                <p>Are there sex differences in smoking cessation as demonstrated by the program participants?</p>
+                <div class="scenario-label">Study Context</div>
+                <p style="margin-bottom: 0;">Quantitatively oriented; unique to a specific smoking cessation program.</p>
+            </div>
+            <div class="card reveal-item" style="border-left: 4px solid var(--accent); background: #fff5f2;">
+                <p style="font-size: var(--body-size); margin: 0;"><strong style="color: var(--accent);">&rarr; Primary.</strong> No existing dataset captures this specific program; you&rsquo;ll need to collect your own.</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">19</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 20: Scenario 2 — Depression across race/ethnicity
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 67%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Scenario 2: Racial/ethnic differences in depression</h2>
+            <div class="scenario-box reveal-item">
+                <div class="scenario-label">Purpose Statement</div>
+                <p>This study aims to examine the depressive symptoms of African Americans, Caribbean Blacks, and Whites in the United States.</p>
+                <div class="scenario-label">Research Question</div>
+                <p>Are there racial/ethnic differences in depression symptoms for adults in the US?</p>
+                <div class="scenario-label">Study Context</div>
+                <p style="margin-bottom: 0;">Quantitatively oriented; several national data sources exist (e.g., National Comorbidity Study, National Survey of American Life).</p>
+            </div>
+            <div class="card reveal-item" style="border-left: 4px solid #5371ff; background: #eef1ff;">
+                <p style="font-size: var(--body-size); margin: 0;"><strong style="color: #5371ff;">&rarr; Secondary.</strong> High-quality national datasets already exist &mdash; cheaper, faster, and generalizable.</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">20</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 21: Scenario 3 — First-gen counseling
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 70%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Scenario 3: First-gen counseling experiences</h2>
+            <div class="scenario-box reveal-item">
+                <div class="scenario-label">Purpose Statement</div>
+                <p>This qualitative study explores the counseling experiences of first-generation first-year students at UC Berkeley.</p>
+                <div class="scenario-label">Research Question</div>
+                <p>What are the advantages and disadvantages of counseling for first-generation students?</p>
+                <div class="scenario-label">Study Context</div>
+                <p style="margin-bottom: 0;">Qualitatively oriented; unique to first-generation freshmen at UC Berkeley.</p>
+            </div>
+            <div class="card reveal-item" style="border-left: 4px solid var(--accent); background: #fff5f2;">
+                <p style="font-size: var(--body-size); margin: 0;"><strong style="color: var(--accent);">&rarr; Primary.</strong> Population is narrow and experiential; no existing dataset will capture their counseling stories.</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">21</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 22: Ethics of secondary data
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival" class="active">Archival</a><a href="#next-steps">Next</a></nav>
+        <div class="progress" style="width: 73%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Ethics of secondary data</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&bull;</span><strong>Consent</strong> &mdash; Obtain permission/informed consent for any data not in the public domain</li>
+                <li class="reveal-item"><span class="bullet">&bull;</span><strong>De-identification</strong> &mdash; Can be much harder than it seems; very few details are needed to uniquely identify a person</li>
+                <li class="reveal-item"><span class="bullet">&bull;</span><strong>Attribution</strong> &mdash; Full and accurate acknowledgment of the source</li>
+            </ul>
+            <div class="card reveal-item" style="border-left: 4px solid #5371ff; background: #eef1ff;">
+                <p style="font-size: var(--body-size); margin: 0;"><strong style="color: #5371ff;">Emerging debate:</strong> Do tweets &mdash; or YouTube comments, or Reddit posts &mdash; require consent?</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">22</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 23: Section Header — Next Steps
+         ========================================== -->
+    <section class="slide accent-bg section-header" id="next-steps">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps" class="active">Next</a></nav>
+        <div class="progress" style="width: 77%"></div>
+        <div class="slide-content">
+            <h1 class="reveal-item visible">What&rsquo;s next</h1>
+            <p class="meta reveal-item visible" style="font-size: var(--h3-size); margin-top: 0.5em;">Prep for Tuesday 4/14 &mdash; in-class archival coding workshop</p>
+        </div>
+        <span class="slide-number">23</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 24: In-class assignment prep
+         ========================================== -->
+    <section class="slide" data-steps="4">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps" class="active">Next</a></nav>
+        <div class="progress" style="width: 80%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Bring to class Tuesday 4/14</h2>
+            <div class="card reveal-item" style="border-left: 6px solid var(--accent); background: #fff5f2;">
+                <p style="font-size: var(--body-size); margin: 0 0 0.3em;"><strong style="color: var(--accent);">Curate a body of secondary/existing qualitative data</strong> related to your policy problem.</p>
+                <p style="font-size: var(--small-size); margin: 0; color: var(--text-secondary);">10&ndash;20 pages total &mdash; one source or several. You can excerpt portions of a longer study. Bring it as a single PDF and bring your laptop.</p>
+            </div>
+            <div class="columns reveal-item" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="card">
+                    <h3 style="font-size: var(--body-size); color: var(--accent);">Gray literature</h3>
+                    <p style="font-size: var(--small-size);">NGO &amp; government reports, congressional archives, policy speeches</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: var(--body-size); color: var(--accent);">News &amp; web</h3>
+                    <p style="font-size: var(--small-size);">Newspaper articles, administrative records, organizational documents</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: var(--body-size); color: var(--accent);">Social media</h3>
+                    <p style="font-size: var(--small-size);">Posts, comments, digital records &mdash; be creative</p>
+                </div>
+            </div>
+            <p class="reveal-item" style="font-size: var(--small-size); color: var(--text-secondary); font-style: italic; margin-top: 0.5em;">
+                You will analyze this corpus in class, with AI-assisted coding tools.
+            </p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">24</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 25: Examples — Migrant youth in Spain
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps" class="active">Next</a></nav>
+        <div class="progress" style="width: 84%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Example from a prior student <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.6em;">&mdash; migrant youth in Spain</span></h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent); font-size: var(--body-size);">Puzzle &amp; source</h3>
+                    <p style="font-size: var(--small-size);">Analyzed <em>&ldquo;M&rdquo;</em>, a documentary by Nicol&aacute;s Castellano with interviews of 17 young adults who migrated to Spain as unaccompanied minors from Morocco, Mali, and Guinea.</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff; font-size: var(--body-size);">Analysis</h3>
+                    <p style="font-size: var(--small-size);">Two interviewees independently noted that <strong>Moroccan youth are treated especially poorly</strong> in Spain &mdash; the student had heard this informally but was surprised to hear it from migrants themselves.</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">25</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 26: Examples — Genetic databases
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps" class="active">Next</a></nav>
+        <div class="progress" style="width: 87%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Example from a prior student <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.6em;">&mdash; genetic databases</span></h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent); font-size: var(--body-size);">Puzzle &amp; source</h3>
+                    <p style="font-size: var(--small-size);"><strong>Lack of African ancestral representation</strong> in genetic databases. Sought secondary data from <em>YouTube comments</em> on videos about genetic genealogy and DNA tests.</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff; font-size: var(--body-size);">Analysis</h3>
+                    <p style="font-size: var(--small-size);">Themes on slavery and learning ancestral origins matched the primary data, but <strong>&ldquo;inadequacies of the tests&rdquo;</strong> emerged as a new, archival-only theme &mdash; commenters flagged DTC companies&rsquo; &ldquo;deprioritization&rdquo; of African regions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">26</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 27: Looking ahead — Class 11 & 12
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps" class="active">Next</a></nav>
+        <div class="progress" style="width: 93%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item">Looking ahead</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3 style="color: var(--accent);">Class 11 &mdash; Tue 4/14</h3>
+                    <p><strong>Qual Coding Workshop.</strong> Bring your 10&ndash;20pp archival corpus &amp; your laptop. We&rsquo;ll code secondary data together with AI-assisted tools.</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
+                    <h3 style="color: #5371ff;">Class 12 &mdash; Thu 4/16</h3>
+                    <p><strong>Guest lecture + wrap-up.</strong> Kunal Handa (Anthropic) on societal impacts of AI and the Anthropic Interviewer. Final assignment tips.</p>
+                </div>
+            </div>
+            <p class="reveal-item" style="font-size: var(--small-size); color: var(--text-secondary); font-style: italic; margin-top: 0.3em;">
+                Final assignment (5-page PAE-like proposal with instrument) due by May 7 on Canvas.
+            </p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">27</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 28: Thank You / Teaching Team
+         ========================================== -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#simulation">Simulation</a><a href="#debrief">Debrief</a><a href="#archival">Archival</a><a href="#next-steps" class="active">Next</a></nav>
+        <div class="progress" style="width: 100%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="align-items: center; text-align: center;">
+            <h1 style="font-size: clamp(2.5rem, 7vw, 5rem);">Thank You!</h1>
+            <p style="font-size: var(--h3-size); color: var(--text-secondary); margin-top: 0.3em;">Questions?</p>
+            <div style="margin-top: calc(var(--content-gap) * 1.5); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); text-align: left; font-size: clamp(1.2rem, 2.2vw, 1.7rem); max-width: 900px; width: 100%;">
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Prof. Liz McKenna</strong></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">emckenna@hks.harvard.edu</p>
+                    <p style="margin: 0.3em 0 0; color: var(--text-secondary); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">Office hours: via Calendly, T-308 or Zoom</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Katie Tucker</strong> <span style="color: #5371ff;">(TF)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">ktucker@g.harvard.edu</p>
+                </div>
+                <div style="font-size: clamp(1.4rem, 2.6vw, 2rem);">
+                    <p style="margin: 0 0 0.3em;"><strong>Liam Chai</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1.2rem, 2.2vw, 1.6rem);">liam_chai@hks.harvard.edu</p>
+                </div>
+                <div style="font-size: clamp(1.4rem, 2.6vw, 2rem);">
+                    <p style="margin: 0 0 0.3em;"><strong>Christina Iruela Lane</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1.2rem, 2.2vw, 1.6rem);">ciruelalane@hks.harvard.edu</p>
+                </div>
+                <div style="font-size: clamp(1.4rem, 2.6vw, 2rem);">
+                    <p style="margin: 0 0 0.3em;"><strong>Muhammad Irfan Sadiq</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1.2rem, 2.2vw, 1.6rem);">muhammadirfansadiq@hks.harvard.edu</p>
+                </div>
+                <div style="font-size: clamp(1.4rem, 2.6vw, 2rem);">
+                    <p style="margin: 0 0 0.3em;"><strong>Dani Schulman</strong> <span style="color: var(--accent);">(CA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1.2rem, 2.2vw, 1.6rem);">danielaschulman@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0 0 0.3em;"><strong>Jessica De Simone</strong> <span style="color: var(--text-secondary);">(FA)</span></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(1rem, 1.8vw, 1.3rem);">jessica_de_simone@hks.harvard.edu</p>
+                </div>
+                <div>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: clamp(0.9rem, 1.4vw, 1.1rem);">TF/CAs available by appointment</p>
+                </div>
+            </div>
+        </div>
+        <span class="slide-number">28</span>
+    </section>
+
+    <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
+    <script src="slides.js"></script>
+</body>
+</html>
