@@ -141,6 +141,24 @@
         /* Deductive: mechanical, grid */
         .slide-deductive .margin-col { border-left-color: #d0d8f0; }
 
+        /* Bump body text + speaker tag for coding slides */
+        .slide-deductive .student-voice,
+        .slide-inductive .student-voice,
+        .slide-invivo .student-voice {
+          font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+          line-height: 1.55;
+        }
+        .slide-deductive .speaker-tag,
+        .slide-inductive .speaker-tag,
+        .slide-invivo .speaker-tag {
+          font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+        }
+        .slide-deductive .margin-pill,
+        .slide-inductive .margin-pill,
+        .slide-invivo .margin-pill {
+          font-size: clamp(0.95rem, 1.55vw, 1.2rem);
+        }
+
         /* Inductive: warm, soft */
         .slide-inductive { background: #faf9f6 !important; }
         .slide-inductive .speaker-tag { color: #8b7355; }
@@ -196,6 +214,11 @@
         .invivo-sapphire .invivo-card-head { color: #1b3a85; }
         .invivo-garnet { background: #f5e4e8; border-left-color: #8a1538; }
         .invivo-garnet .invivo-card-head { color: #8a1538; }
+
+        /* Jewel-tone inline highlights on the in vivo quote column */
+        .slide-invivo .hl-emerald { background: #c9ebdb; padding: 0 3px; border-radius: 2px; }
+        .slide-invivo .hl-sapphire { background: #c9d6f0; padding: 0 3px; border-radius: 2px; }
+        .slide-invivo .hl-garnet { background: #eecdd5; padding: 0 3px; border-radius: 2px; }
 
         /* ---- Annotation / callout ---- */
         .slide-annotation {
@@ -535,20 +558,16 @@
     <!-- ==========================================
          SLIDE 5: Biernacki / Three Little Pigs (dark, centered)
          ========================================== -->
-    <section class="slide dark" data-steps="3">
+    <section class="slide dark" data-steps="2">
         <div class="progress" style="width: 18%"></div>
         <div class="slide-content" style="max-width: 1400px; margin: 0 auto; justify-content: center; align-items: center; text-align: center;">
-            <p style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.8rem); text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: clamp(1rem, 2vw, 1.5rem);">Counting is not understanding</p>
+            <p style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.8rem); text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: clamp(1rem, 2vw, 1.5rem);">HOWEVER, counting is not understanding</p>
             <blockquote class="reveal-item" style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: 1.4; color: rgba(255,255,255,0.95); text-transform: none; font-weight: 400; border-left: none; padding: 0; max-width: 1250px; margin: 0 auto;">
                 &ldquo;To assess the plot of the three little pigs, no child would count the number of times that the wolf blew down a house &hellip; because the meaning of the three little pigs is in the story that is there to convey the meaning.&rdquo;
             </blockquote>
             <cite class="reveal-item" style="display: block; margin-top: clamp(1rem, 2vw, 1.5rem); font-family: 'Nunito', sans-serif; font-style: normal; font-size: clamp(1.1rem, 1.9vw, 1.5rem); color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em;">Richard Biernacki, Reinventing Evidence in Social Inquiry</cite>
-            <p class="reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.2rem); font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: rgba(255,255,255,0.75); line-height: 1.55; border-top: 1px solid rgba(255,255,255,0.15); padding-top: clamp(0.8rem, 1.5vw, 1.2rem); max-width: 1100px; margin-left: auto; margin-right: auto;">
-                Natural-science coding <strong style="color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em;">uncovers</strong> patterns hidden from perception.<br>
-                Cultural analysis coding can <strong style="color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em;">cover over</strong> meaning that was already there.
-            </p>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">05</span>
     </section>
 
@@ -584,24 +603,25 @@
         margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
         align-self: flex-start;
       }
+      .fg-slide .slide-content { padding-top: clamp(3rem, 6vw, 5rem) !important; padding-left: clamp(2rem, 5vw, 5rem) !important; padding-right: clamp(2rem, 5vw, 5rem) !important; }
       .fg-slide .fg-quote {
         font-family: 'Lora', Georgia, serif;
         font-style: italic;
-        font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+        font-size: clamp(1.4rem, 2.2vw, 1.95rem);
         line-height: 1.5;
         color: var(--text-primary);
         margin: 0 0 clamp(0.8rem, 1.4vw, 1.1rem) 0;
-        max-width: 1200px;
+        max-width: none;
       }
       .fg-slide .fg-mod-line {
         font-family: 'Archivo', sans-serif;
         font-style: normal;
         font-weight: 600;
-        font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+        font-size: clamp(1.4rem, 2.2vw, 1.95rem);
         line-height: 1.45;
         color: var(--text-primary);
         margin: 0 0 clamp(0.8rem, 1.4vw, 1.1rem) 0;
-        max-width: 1200px;
+        max-width: none;
       }
       .fg-slide .fg-mod-line.indent { padding-left: clamp(2rem, 3.5vw, 3rem); }
       .fg-slide .fg-mod-num {
@@ -619,7 +639,7 @@
         <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 21%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+        <div class="slide-content">
             <p class="fg-eyebrow">Focus Group Exchange</p>
             <h2 class="fg-subtitle">In-class coding exercise (also on your handout)</h2>
 
@@ -644,7 +664,7 @@
         <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 24%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+        <div class="slide-content">
             <p class="fg-eyebrow">Focus Group Exchange</p>
             <span class="fg-speaker">A</span>
             <p class="fg-quote reveal-item">&ldquo;This is something I&rsquo;ve been struggling with a lot. When I first came to HKS, I&rsquo;d really never used AI before. When I was in college it wasn&rsquo;t a thing; when I was in the workforce it wasn&rsquo;t a thing. Maybe I&rsquo;d use it to come up with punchy titles for pitches in my past comms job, but that was really it. Then, the busier I&rsquo;ve gotten at school, the more readings, the more helpful I found it. And I always feel guilty when I use it. Like, <em>wow, I should really be figuring out how to rework the sentence myself</em> versus putting my own thought in and having it put it back in a way where I&rsquo;m like, &lsquo;I don&rsquo;t like how I said this, fix it.&rsquo;&rdquo;</p>
@@ -661,7 +681,7 @@
         <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 27%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+        <div class="slide-content">
             <p class="fg-eyebrow">Focus Group Exchange</p>
             <span class="fg-speaker">B</span>
             <p class="fg-quote reveal-item">&ldquo;I&rsquo;m doing research with a couple of other people, with a fellow, on intellectual atrophy from AI. It&rsquo;s a real concern &mdash; that your ability to use judgment, especially if you&rsquo;re not doing first passes on things, you lose that muscle.&rdquo;</p>
@@ -678,7 +698,7 @@
         <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 30%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+        <div class="slide-content">
             <p class="fg-eyebrow">Focus Group Exchange</p>
             <span class="fg-speaker">C</span>
             <p class="fg-quote reveal-item">&ldquo;I used to worry more about the losing-skills part, but my partner is doing a gap year right now, and he spends eight hours a day using Claude to build different things, because it helps him on all kinds of projects. Seeing that has made me realize that that is something I would not be able to do right now. Of course, our situation is a little bit special because he&rsquo;s doing a gap year&hellip;&rdquo;</p>
@@ -689,20 +709,35 @@
     </section>
 
     <!-- ==========================================
-         SLIDE 6e: Speaker A, turn 2 (3 fragments)
+         SLIDE 6e.1: Speaker A, turn 2, part 1 (2 fragments)
          ========================================== -->
-    <section class="slide application fg-slide" data-steps="3">
+    <section class="slide application fg-slide" data-steps="2">
         <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
-        <div class="progress" style="width: 33%"></div>
+        <div class="progress" style="width: 32%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+        <div class="slide-content">
             <p class="fg-eyebrow">Focus Group Exchange</p>
             <span class="fg-speaker">A</span>
             <p class="fg-quote reveal-item">&ldquo;I don&rsquo;t know if other people feel this way too, but there&rsquo;s some anxiety surrounding it, in the sense that &mdash; <em>oh, if I used AI for this and someone else didn&rsquo;t, are they better than me? Are they doing school better? How can they manage their time and get all this done without AI, when I&rsquo;m drowning in work almost all hours of the day</em> &mdash; and sometimes need to use it, not to do the work but to summarize a reading or clean up a sentence. Then you hear someone else say, &lsquo;No, I don&rsquo;t really use AI for that,&rsquo; and you&rsquo;re like, <em>well, what am I doing wrong?</em>&rdquo;</p>
             <p class="fg-quote reveal-item">&ldquo;So that&rsquo;s another interesting aspect of being at a very competitive and hard time. I almost have the opposite anxiety, where I&rsquo;m like, <em>where&rsquo;s the fine line?</em> Turning in something where maybe I had some help editing a sentence through AI &mdash; where&rsquo;s the line of me being allowed to do that, and me getting expelled for plagiarism? Not that I abuse AI in that way, but especially coming here, I&rsquo;m like, <em>oh my gosh, I got to Harvard, I did it &mdash; what if I get expelled because I used AI in the wrong way?</em>&rdquo;</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">06</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6e.2: Speaker A, turn 2, part 2
+         ========================================== -->
+    <section class="slide application fg-slide" data-steps="1">
+        <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
+        <div class="progress" style="width: 34%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <p class="fg-eyebrow">Focus Group Exchange &mdash; A (continued)</p>
+            <span class="fg-speaker">A</span>
             <p class="fg-quote reveal-item">&ldquo;So I almost have anxiety from that. I think the other piece is, some of the assignments we got for this class I felt very proud of, because I didn&rsquo;t use AI at all &mdash; like for the interview, you&rsquo;re not really using AI, or for observation, you&rsquo;re not using AI. It felt good. I felt a lot more proud of things I&rsquo;ve turned in where I haven&rsquo;t touched AI at all. Has anyone else felt that anxiety of, <em>oh no, did I use too much AI, am I going to get in trouble?</em>&rdquo;</p>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div></div>
         <span class="slide-number">06</span>
     </section>
 
@@ -713,7 +748,7 @@
         <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 36%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+        <div class="slide-content">
             <p class="fg-eyebrow">Focus Group Exchange</p>
             <span class="fg-speaker">D</span>
             <p class="fg-quote reveal-item">&ldquo;There are no days when we don&rsquo;t use AI. I&rsquo;m taking a writing course where I have to refrain from using it, since it&rsquo;s a writing course, and otherwise I wouldn&rsquo;t learn anything. But we are so habitual &mdash; we give everything to AI. So it&rsquo;s going to be very hard in the coming days: if there are some courses in which we really learn something on our own, then we have to make our brain habitual <em>not</em> using it for some stuff. I&rsquo;m struggling.&rdquo;</p>
@@ -729,8 +764,8 @@
         <nav class="section-nav"><a href="#three-codings" class="active">Three Codings</a><a href="#gabriel">Measurement vs Interpretation</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 39%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(3rem, 6vw, 5rem);">
-            <h2 class="reveal-item visible" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);">LLM deductive coding is fast, <em style="font-style: italic;">(usually pretty)</em> accurate, and unsurprising</h2>
+        <div class="slide-content" style="padding-top: clamp(4rem, 7vw, 6rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem);">
+            <h2 class="reveal-item visible" style="font-size: clamp(2rem, 3.6vw, 2.9rem); margin-bottom: clamp(1.2rem, 2vw, 1.6rem);">LLM deductive coding is fast, <em style="font-style: italic;">(usually pretty)</em> accurate, and unsurprising</h2>
             <div class="coding-layout">
                 <div class="exchange-col">
                     <div class="exchange-turn mod-turn">
@@ -768,8 +803,8 @@
                         <span class="margin-pill pill-ded pill-displacement">anxiety.displacement</span>
                         <span class="margin-pill pill-ded pill-anxiety">anxiety.learning_loss</span>
                     </div>
-                    <p class="reveal-item" style="font-size: clamp(1rem, 1.7vw, 1.3rem); line-height: 1.45; color: var(--text-primary); margin-top: clamp(0.8rem, 1.5vw, 1.2rem); border-top: 1px solid rgba(0,0,0,0.1); padding-top: clamp(0.5rem, 1vw, 0.8rem);">The LLM applied the codebook fairly accurately and very quickly; every tag is mostly defensible.</p>
-                    <p class="reveal-item" style="font-size: clamp(1rem, 1.7vw, 1.3rem); line-height: 1.45; color: var(--text-primary); margin-top: clamp(0.6rem, 1.2vw, 0.9rem);">A proponent might say that better prompting fixes some shortcomings &mdash; but you usually have to already know what is worth looking for.</p>
+                    <p class="reveal-item" style="font-size: clamp(1.25rem, 2.1vw, 1.65rem); line-height: 1.45; color: var(--text-primary); margin-top: clamp(1rem, 2vw, 1.5rem); border-top: 1px solid rgba(0,0,0,0.1); padding-top: clamp(0.7rem, 1.3vw, 1rem);">The LLM applied the codebook fairly accurately and very quickly; every tag is mostly defensible.</p>
+                    <p class="reveal-item" style="font-size: clamp(1.25rem, 2.1vw, 1.65rem); line-height: 1.45; color: var(--text-primary); margin-top: clamp(0.8rem, 1.5vw, 1.2rem);">A proponent might say that better prompting fixes some shortcomings, but you usually have to already know what is worth looking for.</p>
                 </div>
             </div>
         </div>
@@ -783,8 +818,8 @@
     <section class="slide application slide-inductive" data-steps="3">
         <nav class="section-nav"><a href="#three-codings" class="active">Three Codings</a><a href="#gabriel">Measurement vs Interpretation</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 43%"></div>
-        <div class="slide-content" style="padding-top: clamp(3rem, 6vw, 5rem);">
-            <h2 class="reveal-item visible" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);">LLM inductive coding summarizes rather than discovers</h2>
+        <div class="slide-content" style="padding-top: clamp(4rem, 7vw, 6rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem);">
+            <h2 class="reveal-item visible" style="font-size: clamp(2rem, 3.6vw, 2.9rem); margin-bottom: clamp(1.2rem, 2vw, 1.6rem);">LLM inductive coding summarizes rather than discovers</h2>
             <div class="coding-layout">
                 <div class="exchange-col">
                     <div class="exchange-turn mod-turn">
@@ -813,18 +848,24 @@
                     </div>
                 </div>
                 <div class="margin-col">
-                    <div class="codes-reveal visible" style="margin-bottom: clamp(0.6rem, 1.2vw, 0.9rem);">
-                        <span class="margin-pill pill-ind pill-risk-framing" style="opacity: 1; transform: none;">Competing Risk Framings</span>
-                        <span class="margin-pill pill-ind pill-prosthetic" style="opacity: 1; transform: none;">AI as Cognitive Prosthetic</span>
-                        <span class="margin-pill pill-ind pill-peer" style="opacity: 1; transform: none;">Peer Influence on AI Adoption</span>
-                        <span class="margin-pill pill-ind pill-gap" style="opacity: 1; transform: none;">Fear of Capability Gap</span>
-                        <span class="margin-pill pill-ind pill-gender" style="opacity: 1; transform: none;">Gendered Technology Access</span>
+                    <div class="codes-reveal visible" style="display: flex; flex-direction: column; gap: clamp(0.3rem, 0.5vw, 0.4rem);">
+                        <span class="margin-pill pill-ind pill-risk-framing" style="opacity: 1; transform: none; white-space: normal;">Competing Risk Framings</span>
+                        <span class="margin-pill pill-ind pill-prosthetic" style="opacity: 1; transform: none; white-space: normal;">AI as Cognitive Prosthetic</span>
+                        <span class="margin-pill pill-ind pill-peer" style="opacity: 1; transform: none; white-space: normal;">Peer Influence on AI Adoption</span>
+                        <span class="margin-pill pill-ind pill-gap" style="opacity: 1; transform: none; white-space: normal;">Fear of Capability Gap</span>
+                        <span class="margin-pill pill-ind pill-gender" style="opacity: 1; transform: none; white-space: normal;">Gendered Technology Access</span>
                     </div>
-                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: clamp(0.6rem, 1.2vw, 0.9rem);">
-                        <li class="reveal-item" style="font-size: clamp(1rem, 1.65vw, 1.25rem); line-height: 1.45; color: var(--text-primary); border-left: 3px solid #8b7355; padding-left: clamp(0.5rem, 1vw, 0.8rem);">LLM-generated themes may <em>look</em> inductive, but they are not truly emerging from the data. Instead, they reflect patterns the model has already learned from vast prior texts about topics like AI, anxiety, gender, and work. Without a defined codebook, the model defaults to the most statistically common frames &mdash; not necessarily what is specific or novel in the data.</li>
-                        <li class="reveal-item" style="font-size: clamp(1rem, 1.65vw, 1.25rem); line-height: 1.45; color: var(--text-primary); border-left: 3px solid #8b7355; padding-left: clamp(0.5rem, 1vw, 0.8rem);">This means it can miss moments where the data resists easy categorization. <strong>Those moments of friction are where real insight and discovery happen.</strong></li>
-                        <li class="reveal-item" style="font-size: clamp(1rem, 1.65vw, 1.25rem); line-height: 1.45; color: var(--text-primary); border-left: 3px solid #8b7355; padding-left: clamp(0.5rem, 1vw, 0.8rem);">For example, labeling a response as &ldquo;Gendered Technology Access&rdquo; may be technically accurate, but it overlooks the deeper context &mdash; such as how these dynamics play out within personal relationships and everyday life.</li>
-                    </ul>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(0.8rem, 1.6vw, 1.3rem); margin-top: clamp(1rem, 2vw, 1.5rem);">
+                <div class="reveal-item" style="background: #faf6ef; border-left: 4px solid #8b7355; padding: clamp(0.8rem, 1.4vw, 1.1rem) clamp(0.9rem, 1.5vw, 1.2rem); border-radius: 4px;">
+                    <p style="font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.5; color: var(--text-primary); margin: 0;">LLM-generated themes <em>look</em> inductive, but they are not truly emerging from the data &mdash; they reflect patterns the model has already learned from vast prior texts about AI, anxiety, gender, and work. Without a codebook, the model defaults to the most statistically common frames.</p>
+                </div>
+                <div class="reveal-item" style="background: #faf6ef; border-left: 4px solid #8b7355; padding: clamp(0.8rem, 1.4vw, 1.1rem) clamp(0.9rem, 1.5vw, 1.2rem); border-radius: 4px;">
+                    <p style="font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.5; color: var(--text-primary); margin: 0;">This means it can miss moments where the data resists easy categorization. <strong>Those moments of friction are where real insight and discovery happen.</strong></p>
+                </div>
+                <div class="reveal-item" style="background: #faf6ef; border-left: 4px solid #8b7355; padding: clamp(0.8rem, 1.4vw, 1.1rem) clamp(0.9rem, 1.5vw, 1.2rem); border-radius: 4px;">
+                    <p style="font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.5; color: var(--text-primary); margin: 0;">For example, labeling a response as &ldquo;Gendered Technology Access&rdquo; may be technically accurate, but it overlooks how these dynamics play out within personal relationships and everyday life.</p>
                 </div>
             </div>
         </div>
@@ -848,11 +889,11 @@
                     </div>
                     <div class="exchange-turn">
                         <span class="speaker-tag">A</span>
-                        <span class="student-voice">&ldquo;I always feel like guilty when I use it&hellip; I love writing, I think writing is such a good way to learn&hellip; I just struggle with wanting to feel like I&rsquo;m learning and not using a crutch.&rdquo;</span>
+                        <span class="student-voice">&ldquo;<span class="hl-emerald">I always feel guilty when I use it&hellip; I love writing, I think writing is such a good way to learn&hellip; I just struggle with wanting to feel like I&rsquo;m learning and not using a crutch.</span>&rdquo;</span>
                     </div>
                     <div class="exchange-turn">
                         <span class="speaker-tag">B</span>
-                        <span class="student-voice">&ldquo;I&rsquo;m doing research on intellectual atrophy from AI&hellip; I think not using AI is more costly than learning how to use AI in a way that is still conducive to your learning&hellip; that&rsquo;s kind of like the thesis of the paper.&rdquo;</span>
+                        <span class="student-voice">&ldquo;I&rsquo;m doing research on intellectual atrophy from AI&hellip; <span class="hl-sapphire">I think not using AI is more costly than learning how to use AI in a way that is still conducive to your learning</span>&hellip; that&rsquo;s kind of like the thesis of the paper.&rdquo;</span>
                     </div>
                     <div class="exchange-turn">
                         <span class="speaker-tag">C</span>
@@ -860,7 +901,7 @@
                     </div>
                     <div class="exchange-turn">
                         <span class="speaker-tag">A</span>
-                        <span class="student-voice">&ldquo;I got to Harvard, I did it&hellip; what if I get expelled because I used AI in the wrong way&hellip; I felt very proud of things I&rsquo;ve turned in where I haven&rsquo;t touched it at all.&rdquo;</span>
+                        <span class="student-voice">&ldquo;<span class="hl-garnet">I got to Harvard, I did it&hellip; what if I get expelled because I used AI in the wrong way?</span> I felt very proud of things I&rsquo;ve turned in where I haven&rsquo;t touched it at all.&rdquo;</span>
                     </div>
                     <div class="exchange-turn">
                         <span class="speaker-tag">D</span>
@@ -888,16 +929,29 @@
     </section>
 
     <!-- ==========================================
-         SLIDE 8: Accent Quote Three Ways
+         SLIDE 8.5: Invitation — what did you notice?
+         ========================================== -->
+    <section class="slide dark" data-section="invitation">
+        <div class="progress" style="width: 34%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center; max-width: 1200px; margin: 0 auto;">
+            <p style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 2.2vw, 1.7rem); text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: clamp(1.5rem, 3vw, 2.2rem);">Your turn</p>
+            <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2; color: rgba(255,255,255,0.95); margin-bottom: clamp(1.2rem, 2.5vw, 1.8rem);">What did you notice<br>in the exchange?</h2>
+            <p style="font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.45; color: rgba(255,255,255,0.8); margin-top: clamp(0.5rem, 1vw, 0.8rem);">What are <em>your</em> in vivo codes?<br>What did we <strong style="color: var(--accent); font-style: normal;">not</strong> code?</p>
+        </div>
+        <span class="slide-number">08</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: Accent Quote Three Ways
          ========================================== -->
     <section class="slide application" data-steps="2">
         <nav class="section-nav"><a href="#three-codings" class="active">Three Codings</a><a href="#gabriel">Measurement vs Interpretation</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 32%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(0.5rem, 1vw, 0.8rem);">
-            <h2 class="reveal-item visible" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem); padding-top: clamp(2rem, 4vw, 3.5rem);">&ldquo;English slash chatchapity accent&rdquo;</h2>
-            <div style="border-left: 4px solid var(--accent); padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.4vw, 1.2rem); background: rgba(83,113,255,0.03); border-radius: 0 4px 4px 0; margin-bottom: clamp(0.8rem, 1.4vw, 1.2rem);">
-                <span class="student-voice" style="font-size: clamp(1rem, 1.7vw, 1.35rem); line-height: 1.5;">&ldquo;One of my goals here, doing a master&rsquo;s degree not in my native language, is to guarantee that I evolve in that sense and write academic papers in English. And of course chatchapity has helped me a lot to be as productive as someone who is a native English speaker. Because I think that&rsquo;s what&rsquo;s demanded here at HKS. But I&rsquo;m scared that I won&rsquo;t evolve a skill that I think I was supposed to. Or that my English would be&hellip; English slash chatchapity accent.&rdquo;</span>
+        <div class="slide-content" style="padding-top: clamp(3rem, 6vw, 5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem);">
+            <h2 class="reveal-item visible" style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: clamp(1rem, 2vw, 1.5rem);">&ldquo;English slash chatchapity accent&rdquo;</h2>
+            <div style="border-left: 4px solid var(--accent); padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1rem, 1.8vw, 1.5rem); background: rgba(83,113,255,0.03); border-radius: 0 4px 4px 0; margin-bottom: clamp(1rem, 1.8vw, 1.5rem);">
+                <span class="student-voice" style="font-size: clamp(1.2rem, 2vw, 1.65rem); line-height: 1.55;">&ldquo;One of my goals here, doing a master&rsquo;s degree not in my native language, is to guarantee that I evolve in that sense and write academic papers in English. And of course chatchapity has helped me a lot to be as productive as someone who is a native English speaker. Because I think that&rsquo;s what&rsquo;s demanded here at HKS. But I&rsquo;m scared that I won&rsquo;t evolve a skill that I think I was supposed to. Or that my English would be&hellip; English slash chatchapity accent.&rdquo;</span>
             </div>
             <div class="three-col-compare reveal-item">
                 <div class="compare-panel" style="background: #eef1ff;">
@@ -936,26 +990,26 @@
         <nav class="section-nav"><a href="#three-codings" class="active">Three Codings</a><a href="#gabriel">Measurement vs Interpretation</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 36%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(0.5rem, 1vw, 0.8rem);">
-            <h2 class="reveal-item visible" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: clamp(0.3rem, 0.5vw, 0.4rem);">Same data. Different theory. Different discovery.</h2>
-            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
-                <div class="card reveal-item" style="border-top: 4px solid #8b5cf6; padding-top: clamp(0.5rem, 1vw, 0.8rem);">
-                    <h3 style="font-size: clamp(1.1rem, 2vw, 1.5rem); color: #8b5cf6;">Gender lens</h3>
-                    <p style="font-size: clamp(0.85rem, 1.4vw, 1.05rem); color: var(--text-secondary); margin-bottom: 0.3em; font-style: italic;">Wajcman, feminist technology studies</p>
-                    <p style="font-size: clamp(0.9rem, 1.5vw, 1.1rem); line-height: 1.4;">C names a gender gap: the only student to do so. Who has unstructured time to build capability? Whose domestic arrangements free them to experiment? The gap is not just skill. It is structural access to the conditions that produce skill.</p>
+        <div class="slide-content" style="padding-top: clamp(3rem, 6vw, 5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); justify-content: center;">
+            <h2 class="reveal-item visible" style="font-size: clamp(2rem, 3.6vw, 2.9rem); margin-bottom: clamp(1.2rem, 2.2vw, 1.8rem); text-align: center;">Same data. Different theory. Different discovery.</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr; align-items: stretch;">
+                <div class="card reveal-item" style="border-top: 4px solid #8b5cf6; padding: clamp(1rem, 1.8vw, 1.4rem); display: flex; flex-direction: column; justify-content: center;">
+                    <h3 style="font-size: clamp(1.4rem, 2.4vw, 1.85rem); color: #8b5cf6; margin-bottom: 0.25em;">Gender lens</h3>
+                    <p style="font-size: clamp(1rem, 1.6vw, 1.25rem); color: var(--text-secondary); margin-bottom: 0.5em; font-style: italic;">Wajcman, feminist technology studies</p>
+                    <p style="font-size: clamp(1.1rem, 1.8vw, 1.35rem); line-height: 1.5;">C names a gender gap: the only student to do so. Who has unstructured time to build capability? Whose domestic arrangements free them to experiment? The gap is not just skill &mdash; it is structural access to the conditions that produce skill.</p>
                 </div>
-                <div class="card reveal-item" style="border-top: 4px solid #e45c2b; padding-top: clamp(0.5rem, 1vw, 0.8rem);">
-                    <h3 style="font-size: clamp(1.1rem, 2vw, 1.5rem); color: #e45c2b;">Class and credential lens</h3>
-                    <p style="font-size: clamp(0.85rem, 1.4vw, 1.05rem); color: var(--text-secondary); margin-bottom: 0.3em; font-style: italic;">Bourdieu</p>
-                    <p style="font-size: clamp(0.9rem, 1.5vw, 1.1rem); line-height: 1.4;">Students have invested enormously in what a Harvard MPP means as cultural capital. AI is destabilizing the conversion rate in real time. The field is changing the rules while they play. Learning loss is the surface. Credential devaluation is underneath.</p>
+                <div class="card reveal-item" style="border-top: 4px solid #e45c2b; padding: clamp(1rem, 1.8vw, 1.4rem); display: flex; flex-direction: column; justify-content: center;">
+                    <h3 style="font-size: clamp(1.4rem, 2.4vw, 1.85rem); color: #e45c2b; margin-bottom: 0.25em;">Class and credential lens</h3>
+                    <p style="font-size: clamp(1rem, 1.6vw, 1.25rem); color: var(--text-secondary); margin-bottom: 0.5em; font-style: italic;">Bourdieu</p>
+                    <p style="font-size: clamp(1.1rem, 1.8vw, 1.35rem); line-height: 1.5;">Students have invested in what a Harvard MPP means as cultural capital. AI is destabilizing the conversion rate in real time. Learning loss is the surface &mdash; credential devaluation is underneath.</p>
                 </div>
-                <div class="card reveal-item" style="border-top: 4px solid #10b981; padding-top: clamp(0.5rem, 1vw, 0.8rem);">
-                    <h3 style="font-size: clamp(1.1rem, 2vw, 1.5rem); color: #10b981;">Status loss lens</h3>
-                    <p style="font-size: clamp(0.85rem, 1.4vw, 1.05rem); color: var(--text-secondary); margin-bottom: 0.3em; font-style: italic;">Relative deprivation</p>
-                    <p style="font-size: clamp(0.9rem, 1.5vw, 1.1rem); line-height: 1.4;">&ldquo;When you said you don&rsquo;t use it, my brain went, oh she must be so smart.&rdquo; &ldquo;I&rsquo;m not smart enough to use it.&rdquo; Status is relational, running in both directions. Non-use is read as sufficiency. Use is read as inadequacy. Not learning loss: status loss.</p>
+                <div class="card reveal-item" style="border-top: 4px solid #10b981; padding: clamp(1rem, 1.8vw, 1.4rem); display: flex; flex-direction: column; justify-content: center;">
+                    <h3 style="font-size: clamp(1.4rem, 2.4vw, 1.85rem); color: #10b981; margin-bottom: 0.25em;">Status loss lens</h3>
+                    <p style="font-size: clamp(1rem, 1.6vw, 1.25rem); color: var(--text-secondary); margin-bottom: 0.5em; font-style: italic;">Relative deprivation</p>
+                    <p style="font-size: clamp(1.1rem, 1.8vw, 1.35rem); line-height: 1.5;">&ldquo;When you said you don&rsquo;t use it, my brain went, oh she must be so smart.&rdquo; Status is relational. Non-use reads as sufficiency; use reads as inadequacy. Not learning loss: status loss.</p>
                 </div>
             </div>
-            <p class="slide-annotation reveal-item">Deductive coding finds what you named in advance. Inductive coding finds patterns on the surface. Theory tells you what those patterns mean and why they matter.</p>
+            <p class="reveal-item" style="font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.5; color: var(--text-primary); margin-top: clamp(1.5rem, 2.8vw, 2.2rem); text-align: center; max-width: 1200px; margin-left: auto; margin-right: auto;">Deductive coding finds what you named in advance. Inductive coding <strong>surfaces patterns from the data</strong>. Theory can help tell you what those patterns <em>mean</em>, and why they matter.</p>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">10</span>
@@ -964,13 +1018,31 @@
     <!-- ==========================================
          SLIDE 10: Comparison Table
          ========================================== -->
-    <section class="slide application" data-steps="2">
+    <style>
+      .compare-table .cmp-pill {
+        display: inline-block;
+        padding: 0.35em 1em;
+        border-radius: 999px;
+        font-family: 'Archivo', sans-serif;
+        font-weight: 700;
+        font-size: clamp(1rem, 1.7vw, 1.4rem);
+        letter-spacing: 0.03em;
+      }
+      .cmp-good { background: #bff0c6; color: #0e6b1d; }
+      .cmp-bad { background: #fccfcf; color: #a01616; }
+      .cmp-mid { background: #fff1b8; color: #8a6a00; }
+      .compare-table-bigger td, .compare-table-bigger th { font-size: clamp(1.1rem, 1.85vw, 1.5rem) !important; padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.6rem, 1.2vw, 1rem) !important; }
+      .compare-table-bigger .row-label { font-size: clamp(1.15rem, 1.95vw, 1.55rem) !important; }
+      .compare-table-bigger tbody tr.reveal-item { opacity: 0; transition: opacity 0.4s ease; }
+      .compare-table-bigger tbody tr.reveal-item.visible { opacity: 1; }
+    </style>
+    <section class="slide application" data-steps="6">
         <nav class="section-nav"><a href="#three-codings" class="active">Three Codings</a><a href="#gabriel">Measurement vs Interpretation</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 39%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item visible" style="font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: clamp(0.5rem, 1vw, 0.8rem);">LLM deductive and human in vivo are sequential, not competing</h2>
-            <table class="compare-table reveal-item visible">
+        <div class="slide-content" style="padding-top: clamp(3rem, 6vw, 5rem);">
+            <h2 class="reveal-item visible" style="font-size: clamp(2rem, 3.6vw, 2.9rem); margin-bottom: clamp(1rem, 2vw, 1.5rem);">LLM deductive and human in vivo can be used sequentially</h2>
+            <table class="compare-table compare-table-bigger">
                 <thead>
                     <tr>
                         <th></th>
@@ -980,17 +1052,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td class="row-label">Speed</td><td>Fast</td><td>Fast</td><td>Slow</td></tr>
-                    <tr><td class="row-label">Replicability</td><td>High</td><td>Medium</td><td>Low</td></tr>
-                    <tr><td class="row-label">Surprises you</td><td>No</td><td>Rarely</td><td>Yes</td></tr>
-                    <tr><td class="row-label">Catches transcription as data</td><td>No</td><td>No</td><td>Yes</td></tr>
-                    <tr><td class="row-label">Reads social dynamics</td><td>No</td><td>Partially</td><td>Yes</td></tr>
-                    <tr><td class="row-label">Theory-ready</td><td>No</td><td>No</td><td>Yes</td></tr>
+                    <tr class="reveal-item"><td class="row-label">Speed</td><td><span class="cmp-pill cmp-good">Fast</span></td><td><span class="cmp-pill cmp-good">Fast</span></td><td><span class="cmp-pill cmp-bad">Slow</span></td></tr>
+                    <tr class="reveal-item"><td class="row-label">Replicability</td><td><span class="cmp-pill cmp-good">High</span></td><td><span class="cmp-pill cmp-mid">Medium</span></td><td><span class="cmp-pill cmp-bad">Low</span></td></tr>
+                    <tr class="reveal-item"><td class="row-label">Surprises you</td><td><span class="cmp-pill cmp-bad">No</span></td><td><span class="cmp-pill cmp-mid">Rarely</span></td><td><span class="cmp-pill cmp-good">Yes</span></td></tr>
+                    <tr class="reveal-item"><td class="row-label">Catches transcription as data</td><td><span class="cmp-pill cmp-bad">No</span></td><td><span class="cmp-pill cmp-bad">No</span></td><td><span class="cmp-pill cmp-good">Yes</span></td></tr>
+                    <tr class="reveal-item"><td class="row-label">Reads social dynamics</td><td><span class="cmp-pill cmp-bad">No</span></td><td><span class="cmp-pill cmp-mid">Partially</span></td><td><span class="cmp-pill cmp-good">Yes</span></td></tr>
+                    <tr class="reveal-item"><td class="row-label">Theory-ready</td><td><span class="cmp-pill cmp-bad">No</span></td><td><span class="cmp-pill cmp-bad">No</span></td><td><span class="cmp-pill cmp-good">Yes</span></td></tr>
                 </tbody>
             </table>
-            <div class="callout-box reveal-item" style="margin-top: clamp(0.5rem, 1vw, 0.8rem);">LLM deductive is a power tool for applying a codebook you have already built. Human in vivo is how you build the codebook worth having. They are sequential. But you have to know which one you are doing and why.</div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">11</span>
     </section>
 
@@ -999,11 +1070,37 @@
          ========================================== -->
     <section class="slide dark application">
         <div class="progress" style="width: 43%"></div>
-        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center; max-width: 900px;">
-            <p class="big-statement reveal-item visible">The prompt can only capture what you <span class="em">already know</span> to look for. The human reader discovers what she <span class="em">didn&rsquo;t expect.</span></p>
-            <p class="reveal-item" style="font-size: var(--body-size); color: rgba(255,255,255,0.7); margin-top: 1em;">What did you notice in the exchange that we did not code?</p>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center; max-width: 1200px; margin: 0 auto;">
+            <p style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 2.6vw, 2rem); text-transform: uppercase; letter-spacing: 0.2em; color: #ff5a5a; margin-bottom: clamp(2rem, 4vw, 3rem);">Takeaway</p>
+            <p class="big-statement reveal-item visible" style="text-align: center;">The prompt can only capture what you <span class="em">already know</span> to look for. The human reader discovers what she <span class="em">didn&rsquo;t expect.</span></p>
         </div>
         <span class="slide-number">12</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 12.5: Manual coding exercise — 10 minute timer
+         ========================================== -->
+    <section class="slide application" data-section="exercise">
+        <div class="progress" style="width: 46%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center; max-width: 1200px; margin: 0 auto;">
+            <p style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 2.2vw, 1.7rem); text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: clamp(1.2rem, 2.5vw, 1.8rem);">Manual coding exercise</p>
+            <h2 style="font-size: clamp(2.4rem, 4.5vw, 3.6rem); line-height: 1.2; margin-bottom: clamp(1.5rem, 3vw, 2.2rem);">Code the exchange.<br>What are <em style="color: var(--accent);">your</em> in vivo codes?</h2>
+            <div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(5rem, 11vw, 10rem); color: var(--accent); line-height: 1; letter-spacing: -0.02em; margin-top: clamp(1rem, 2vw, 1.5rem);">10:00</div>
+            <p style="font-family: 'Nunito', sans-serif; font-size: clamp(1.2rem, 2vw, 1.55rem); color: var(--text-secondary); margin-top: clamp(1rem, 2vw, 1.5rem);">Work individually or in pairs. Pencil on your handout.</p>
+        </div>
+        <span class="slide-number">13</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 12.6: Pause
+         ========================================== -->
+    <section class="slide dark" data-section="pause">
+        <div class="progress" style="width: 47%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center;">
+            <p style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: clamp(4rem, 9vw, 8rem); text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.95);">Pause</p>
+        </div>
+        <span class="slide-number">13</span>
     </section>
 
     <!-- ==========================================
