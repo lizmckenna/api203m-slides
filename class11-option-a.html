@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 11: Coding Is the Workhorse of Qualitative Analysis | API-203M</title>
+
+<!-- Google Fonts: Archivo (800) + Nunito (400, 500) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Nunito:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================
+   VIEWPORT BASE CSS (required)
+   ========================================================== */
+html, body { height: 100%; overflow-x: hidden; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+.slide { width: 100vw; height: 100vh; height: 100dvh; overflow: hidden; scroll-snap-align: start; display: flex; flex-direction: column; position: relative; }
+.slide-content { flex: 1; display: flex; flex-direction: column; justify-content: center; max-height: 100%; overflow: hidden; padding: var(--slide-padding); }
+:root {
+  --title-size: clamp(1.5rem, 5vw, 4rem);
+  --h2-size: clamp(1.25rem, 3.5vw, 2.5rem);
+  --h3-size: clamp(1rem, 2.5vw, 1.75rem);
+  --body-size: clamp(0.75rem, 1.5vw, 1.125rem);
+  --small-size: clamp(0.65rem, 1vw, 0.875rem);
+  --slide-padding: clamp(1rem, 4vw, 4rem);
+  --content-gap: clamp(0.5rem, 2vw, 2rem);
+  --element-gap: clamp(0.25rem, 1vw, 1rem);
+}
+.card, .container, .content-box { max-width: min(90vw, 1000px); max-height: min(80vh, 700px); }
+img, .image-container { max-width: 100%; max-height: min(50vh, 400px); object-fit: contain; }
+@media (max-height: 700px) { :root { --slide-padding: clamp(0.75rem, 3vw, 2rem); --content-gap: clamp(0.4rem, 1.5vw, 1rem); --title-size: clamp(1.25rem, 4.5vw, 2.5rem); --h2-size: clamp(1rem, 3vw, 1.75rem); } }
+@media (max-height: 600px) { :root { --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem); --content-gap: clamp(0.3rem, 1vw, 0.75rem); --title-size: clamp(1.1rem, 4vw, 2rem); --body-size: clamp(0.7rem, 1.2vw, 0.95rem); } .nav-dots, .keyboard-hint, .decorative { display: none; } }
+@media (max-height: 500px) { :root { --slide-padding: clamp(0.4rem, 2vw, 1rem); --title-size: clamp(1rem, 3.5vw, 1.5rem); --h2-size: clamp(0.9rem, 2.5vw, 1.25rem); --body-size: clamp(0.65rem, 1vw, 0.85rem); } }
+@media (max-width: 600px) { :root { --title-size: clamp(1.25rem, 7vw, 2.5rem); } .grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; } html { scroll-behavior: auto; } }
+
+/* ==========================================================
+   SWISS MODERNIST THEME
+   ========================================================== */
+:root {
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --accent: #5371ff;
+  --warm-bg: #faf9f6;
+
+  /* Deductive code colors (each code gets its own) */
+  --ded-anxiety-bg: #fce8e8;       --ded-anxiety: #c43030;
+  --ded-academic-bg: #e8ecff;      --ded-academic: #3a4fbf;
+  --ded-meta-bg: #f0e8ff;          --ded-meta: #7040bf;
+  --ded-underuse-bg: #fff3e0;      --ded-underuse: #b87020;
+  --ded-uncertain-bg: #e8f5e8;     --ded-uncertain: #2d7a2d;
+  --ded-displacement-bg: #f5e0e4;  --ded-displacement: #943050;
+
+  /* Inductive code colors (each code gets its own) */
+  --ind-risk-bg: #e0f0ee;          --ind-risk: #1a6b5e;
+  --ind-peer-bg: #ece0f5;          --ind-peer: #6b3fbf;
+  --ind-gap-bg: #fff3e0;           --ind-gap: #b87020;
+  --ind-prosthetic-bg: #e8ecff;    --ind-prosthetic: #3a4fbf;
+  --ind-gender-bg: #fce8f0;        --ind-gender: #b03060;
+
+  /* Lecture-hall font sizes (larger than defaults) */
+  --speaker-size: clamp(0.7rem, 1.2vw, 0.95rem);
+  --dialogue-size: clamp(0.85rem, 1.6vw, 1.2rem);
+  --code-pill-size: clamp(0.6rem, 1vw, 0.8rem);
+  --annotation-size: clamp(0.65rem, 1.1vw, 0.85rem);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================
+   GRID BACKGROUND (subtle Swiss grid)
+   ========================================================== */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(83,113,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(83,113,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ==========================================================
+   GEOMETRIC ACCENTS (decorative)
+   ========================================================== */
+.decorative { pointer-events: none; position: absolute; z-index: 0; }
+
+.circle-outline {
+  width: clamp(80px, 12vw, 180px);
+  height: clamp(80px, 12vw, 180px);
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  top: clamp(1rem, 4vw, 3rem);
+  right: clamp(1rem, 5vw, 4rem);
+}
+
+.line-dot {
+  bottom: clamp(1.5rem, 4vw, 3.5rem);
+  left: clamp(1rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.line-dot .line {
+  width: clamp(40px, 8vw, 100px);
+  height: 3px;
+  background: var(--accent);
+}
+.line-dot .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ==========================================================
+   SLIDE 1: Title
+   ========================================================== */
+.slide--title .slide-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.slide--title h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 5.5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.slide--title .subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  color: #555;
+  margin-top: var(--content-gap);
+}
+
+.slide--title .meta {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.65rem, 1vw, 0.85rem);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-top: var(--content-gap);
+}
+
+.slide--title .professor {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+  color: #777;
+  margin-top: var(--element-gap);
+}
+
+/* ==========================================================
+   SLIDE 2: Quote (dark)
+   ========================================================== */
+.slide--quote {
+  background: var(--black);
+  color: var(--white);
+}
+
+.slide--quote .slide-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.slide--quote .header-label {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.65rem, 1vw, 0.85rem);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: var(--content-gap);
+}
+
+.slide--quote blockquote {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.4vw, 1.8rem);
+  line-height: 1.5;
+  color: rgba(255,255,255,0.92);
+  border-left: 3px solid var(--accent);
+  padding-left: clamp(0.75rem, 2vw, 1.5rem);
+  text-align: left;
+  max-width: 800px;
+}
+
+.slide--quote .attribution {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+  color: rgba(255,255,255,0.5);
+  margin-top: var(--element-gap);
+  text-align: left;
+  max-width: 800px;
+  width: 100%;
+}
+
+.slide--quote .frame-text {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 1.3vw, 1rem);
+  color: rgba(255,255,255,0.65);
+  margin-top: calc(var(--content-gap) * 1.5);
+  max-width: 800px;
+  text-align: left;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: var(--element-gap);
+}
+
+.slide--quote .frame-text strong {
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================
+   CODING SLIDES: 2-column exchange + margin
+   ========================================================== */
+.coding-slide .slide-content {
+  padding: clamp(0.75rem, 2.5vw, 2rem) clamp(1rem, 3vw, 3rem);
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.coding-slide .slide-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1rem, 2.8vw, 2.2rem);
+  line-height: 1.1;
+  color: var(--black);
+  margin-bottom: clamp(0.5rem, 1.5vw, 1.2rem);
+  width: 100%;
+  text-align: left;
+}
+
+/* Two-column container */
+.coding-columns {
+  display: flex;
+  flex: 1;
+  gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  min-height: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.exchange-col {
+  flex: 0 0 65%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.margin-col {
+  flex: 1;
+  position: relative;
+  border-left: 2px solid rgba(0,0,0,0.06);
+  padding-left: clamp(0.4rem, 1vw, 1rem);
+  overflow: hidden;
+}
+
+/* Individual exchange turns */
+.turn {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: clamp(0.3rem, 0.6vw, 0.5rem) 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.1rem, 0.3vw, 0.25rem);
+}
+.turn:last-child { border-bottom: none; }
+
+.speaker-label {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: var(--speaker-size);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.dialogue {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: var(--dialogue-size);
+  line-height: 1.45;
+  color: var(--black);
+}
+
+/* Highlighted spans within dialogue (hidden by default, shown on reveal) */
+.hl {
+  background: transparent;
+  transition: background 0.4s ease;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* Deductive highlights: per-code colors */
+.revealed .hl-anxiety      { background: var(--ded-anxiety-bg); }
+.revealed .hl-academic      { background: var(--ded-academic-bg); }
+.revealed .hl-meta          { background: var(--ded-meta-bg); }
+.revealed .hl-underuse      { background: var(--ded-underuse-bg); }
+.revealed .hl-uncertain     { background: var(--ded-uncertain-bg); }
+.revealed .hl-displacement  { background: var(--ded-displacement-bg); }
+
+/* Inductive highlights: per-code colors */
+.revealed .hl-risk-framing  { background: var(--ind-risk-bg); }
+.revealed .hl-peer          { background: var(--ind-peer-bg); }
+.revealed .hl-gap           { background: var(--ind-gap-bg); }
+.revealed .hl-prosthetic    { background: var(--ind-prosthetic-bg); }
+.revealed .hl-gender        { background: var(--ind-gender-bg); }
+
+/* Margin code pills (hidden until reveal) */
+.margin-code {
+  position: absolute;
+  right: 0;
+  left: clamp(0.4rem, 1vw, 1rem);
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  font-size: var(--code-pill-size);
+  padding: clamp(0.15rem, 0.3vw, 0.25rem) clamp(0.3rem, 0.6vw, 0.5rem);
+  border-radius: 3px;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.revealed .margin-code {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Deductive code pills: per-code colors */
+.margin-code--ded {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-style: normal;
+  font-weight: 500;
+}
+.mc-anxiety      { background: var(--ded-anxiety-bg);      color: var(--ded-anxiety); }
+.mc-academic     { background: var(--ded-academic-bg);     color: var(--ded-academic); }
+.mc-meta         { background: var(--ded-meta-bg);         color: var(--ded-meta); }
+.mc-underuse     { background: var(--ded-underuse-bg);     color: var(--ded-underuse); }
+.mc-uncertain    { background: var(--ded-uncertain-bg);    color: var(--ded-uncertain); }
+.mc-displacement { background: var(--ded-displacement-bg); color: var(--ded-displacement); }
+
+/* Inductive code pills: per-code colors */
+.margin-code--ind {
+  font-family: 'Nunito', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  border-radius: 12px;
+}
+.mc-risk-framing { background: var(--ind-risk-bg);      color: var(--ind-risk); }
+.mc-peer         { background: var(--ind-peer-bg);      color: var(--ind-peer); }
+.mc-gap          { background: var(--ind-gap-bg);       color: var(--ind-gap); }
+.mc-prosthetic   { background: var(--ind-prosthetic-bg); color: var(--ind-prosthetic); }
+.mc-gender       { background: var(--ind-gender-bg);    color: var(--ind-gender); }
+
+/* Bottom annotation */
+.bottom-annotation {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: var(--annotation-size);
+  color: #777;
+  line-height: 1.5;
+  padding-top: clamp(0.3rem, 0.7vw, 0.6rem);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  margin-top: auto;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.revealed .bottom-annotation { opacity: 1; }
+
+.bottom-annotation .callout {
+  display: block;
+  margin-top: clamp(0.2rem, 0.4vw, 0.4rem);
+  font-style: italic;
+  color: var(--ind-text);
+  border-left: 3px solid var(--ind-bg);
+  padding-left: clamp(0.3rem, 0.6vw, 0.6rem);
+}
+
+/* Slide 4 warm tint overrides */
+.slide--inductive {
+  background: var(--warm-bg);
+}
+.slide--inductive .slide-title {
+  color: #3a3225;
+}
+.slide--inductive .speaker-label {
+  color: #8b7355;
+}
+.slide--inductive .turn {
+  border-bottom-color: rgba(107,93,62,0.1);
+}
+.slide--inductive .margin-col {
+  border-left-color: rgba(107,93,62,0.12);
+}
+.slide--inductive .bottom-annotation {
+  border-top-color: rgba(107,93,62,0.12);
+  color: #8b7355;
+}
+
+/* ==========================================================
+   NAV DOTS
+   ========================================================== */
+.nav-dots {
+  position: fixed;
+  bottom: clamp(0.75rem, 2vw, 1.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+.nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.15);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  padding: 0;
+}
+.nav-dot:hover { transform: scale(1.3); }
+.nav-dot.active { background: var(--accent); }
+
+/* Dark slide dots */
+.slide--quote .nav-dot-context { background: rgba(255,255,255,0.25); }
+
+/* Keyboard hint */
+.keyboard-hint {
+  position: fixed;
+  bottom: clamp(0.5rem, 1.5vw, 1rem);
+  right: clamp(0.75rem, 2vw, 1.5rem);
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+  color: rgba(0,0,0,0.25);
+  z-index: 100;
+  letter-spacing: 0.05em;
+}
+
+/* Slide entry animation */
+.slide { opacity: 0; transition: opacity 0.5s ease; }
+.slide.visible { opacity: 1; }
+</style>
+</head>
+
+<body>
+
+<!-- ====================================================
+     SLIDE 1: TITLE
+     ==================================================== -->
+<section class="slide slide--title grid-bg" data-steps="1" id="slide-1">
+  <!-- Geometric accents -->
+  <div class="decorative circle-outline"></div>
+  <div class="decorative line-dot">
+    <span class="line"></span>
+    <span class="dot"></span>
+  </div>
+
+  <div class="slide-content">
+    <h1>CODING IS THE WORKHORSE OF QUALITATIVE ANALYSIS</h1>
+    <p class="subtitle">Three ways of reading the same data</p>
+    <p class="meta">API-203M &middot; Spring 2026 &middot; Class #11</p>
+    <p class="professor">Prof. Liz McKenna &middot; Harvard Kennedy School</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SLIDE 2: QUOTE (dark)
+     ==================================================== -->
+<section class="slide slide--quote" data-steps="1" id="slide-2">
+  <div class="slide-content">
+    <p class="header-label">Counting Is Not Understanding</p>
+    <blockquote>
+      &ldquo;To assess the plot of the three little pigs, no child would count the number of times that the wolf blew down a house &hellip; because the meaning of the three little pigs is in the story that is there to convey the meaning.&rdquo;
+    </blockquote>
+    <p class="attribution">Richard Biernacki, <em>Reinventing Evidence in Social Inquiry</em></p>
+    <p class="frame-text">
+      Natural-science coding <strong>uncovers</strong> patterns hidden from perception.<br>
+      Cultural analysis coding can <strong>cover over</strong> meaning that was already there.
+    </p>
+  </div>
+</section>
+
+<!-- ====================================================
+     SLIDE 3: DEDUCTIVE CODING
+     ==================================================== -->
+<section class="slide coding-slide slide--deductive grid-bg" data-steps="2" id="slide-3">
+  <div class="slide-content">
+    <h2 class="slide-title">LLM DEDUCTIVE CODING IS FAST, ACCURATE, AND UNSURPRISING</h2>
+
+    <div class="coding-columns">
+      <!-- LEFT: Exchange -->
+      <div class="exchange-col">
+        <div class="turn">
+          <span class="speaker-label">A</span>
+          <p class="dialogue">&ldquo;I always feel <span class="hl hl-anxiety">guilty</span> when I use it &hellip; I love <span class="hl hl-academic">writing, I think writing is such a good way to learn</span> &hellip; I just struggle with wanting to feel like I'm learning and not using a <span class="hl hl-anxiety">crutch</span>.&rdquo;</p>
+        </div>
+
+        <div class="turn">
+          <span class="speaker-label">B</span>
+          <p class="dialogue">&ldquo;I'm doing research on intellectual atrophy from AI &hellip; I think <span class="hl hl-underuse">not using AI is more costly</span> than learning how to use AI in a way that is still conducive to your learning &hellip; that's kind of <span class="hl hl-meta">the thesis of the paper</span>.&rdquo;</p>
+        </div>
+
+        <div class="turn">
+          <span class="speaker-label">C</span>
+          <p class="dialogue">&ldquo;My partner spends eight hours a day using Fluid to build different things &hellip; that is something <span class="hl hl-uncertain">I would not be able to do right now</span> &hellip; I think there's also a gender gap emerging in how we're using AI &hellip; everyone who is not capable might be <span class="hl hl-displacement">at risk of losing their job</span>.&rdquo;</p>
+        </div>
+
+        <div class="turn">
+          <span class="speaker-label">D</span>
+          <p class="dialogue">&ldquo;There are no days when we don't use AI and I'm taking some writing course where I have to refrain myself &hellip; <span class="hl hl-anxiety">I'm struggling</span> not using it for writing course because that's <span class="hl hl-anxiety">one of the major things I wanted to learn</span> here.&rdquo;</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Margin codes (color-matched to highlights) -->
+      <div class="margin-col">
+        <div class="margin-code margin-code--ded mc-anxiety" style="top: 3%;">anxiety.learning_loss</div>
+        <div class="margin-code margin-code--ded mc-academic" style="top: 11%;">use.academic</div>
+
+        <div class="margin-code margin-code--ded mc-underuse" style="top: 30%;">risk.underuse</div>
+        <div class="margin-code margin-code--ded mc-meta" style="top: 38%;">use.meta</div>
+
+        <div class="margin-code margin-code--ded mc-uncertain" style="top: 55%;">readiness.uncertain</div>
+        <div class="margin-code margin-code--ded mc-displacement" style="top: 65%;">anxiety.displacement</div>
+
+        <div class="margin-code margin-code--ded mc-anxiety" style="top: 82%;">anxiety.learning_loss</div>
+      </div>
+    </div>
+
+    <div class="bottom-annotation reveal-target">
+      The LLM applied the codebook accurately and fast. Every tag is defensible. What it missed: &ldquo;chatchapity.&rdquo; Corrected silently or flagged as error. The transcription artifact as data: gone.
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SLIDE 4: INDUCTIVE CODING (warm palette)
+     ==================================================== -->
+<section class="slide coding-slide slide--inductive" data-steps="2" id="slide-4">
+  <div class="slide-content">
+    <h2 class="slide-title">LLM INDUCTIVE CODING SUMMARIZES RATHER THAN DISCOVERS</h2>
+
+    <div class="coding-columns">
+      <!-- LEFT: Exchange (same text, different highlights) -->
+      <div class="exchange-col">
+        <div class="turn">
+          <span class="speaker-label">A</span>
+          <p class="dialogue">&ldquo;I always feel <span class="hl hl-risk-framing">guilty when I use it</span> &hellip; I love <span class="hl hl-prosthetic">writing, I think writing is such a good way to learn &hellip; the cleaning up is so helpful, it'll spark another thought</span> &hellip; I just struggle with wanting to feel like I'm learning and not using a crutch.&rdquo;</p>
+        </div>
+
+        <div class="turn">
+          <span class="speaker-label">B</span>
+          <p class="dialogue">&ldquo;I'm doing research on <span class="hl hl-peer">intellectual atrophy from AI</span> &hellip; I think <span class="hl hl-risk-framing">not using AI is more costly than learning how to use AI</span> in a way that is still conducive to your learning &hellip; that's kind of the thesis of the paper.&rdquo;</p>
+        </div>
+
+        <div class="turn">
+          <span class="speaker-label">C</span>
+          <p class="dialogue">&ldquo;<span class="hl hl-gap">My partner spends eight hours a day using Fluid to build different things &hellip; that is something I would not be able to do right now</span> &hellip; I think there's also a <span class="hl hl-gender">gender gap emerging in how we're using AI</span> &hellip; everyone who is not capable might be at risk.&rdquo;</p>
+        </div>
+
+        <div class="turn">
+          <span class="speaker-label">D</span>
+          <p class="dialogue">&ldquo;There are no days when we don't use AI and I'm taking some writing course where I have to refrain myself &hellip; I'm struggling not using it for writing course because that's one of the major things I wanted to learn here.&rdquo;</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Margin codes (inductive themes, color-matched) -->
+      <div class="margin-col">
+        <div class="margin-code margin-code--ind mc-risk-framing" style="top: 3%;">Competing Risk Framings</div>
+        <div class="margin-code margin-code--ind mc-prosthetic" style="top: 12%;">AI as Cognitive Prosthetic</div>
+
+        <div class="margin-code margin-code--ind mc-peer" style="top: 28%;">Peer Influence on AI Adoption</div>
+        <div class="margin-code margin-code--ind mc-risk-framing" style="top: 37%;">Competing Risk Framings</div>
+
+        <div class="margin-code margin-code--ind mc-gap" style="top: 55%;">Fear of Capability Gap</div>
+        <div class="margin-code margin-code--ind mc-gender" style="top: 65%;">Gendered Technology Access</div>
+      </div>
+    </div>
+
+    <div class="bottom-annotation reveal-target">
+      Plausible. Thematic. But these are summaries, not discoveries. The LLM named what is already visible on the surface.
+      <span class="callout">&ldquo;Gendered Technology Access&rdquo; is technically correct. But it misses that she is talking about her partner, her household, her intimate life as the site where differentiation is happening.</span>
+      <span class="callout" style="border-left-color: var(--ind-risk-bg); color: var(--ind-risk); margin-top: clamp(0.15rem, 0.3vw, 0.3rem);">A proponent would say: better prompting fixes this. &ldquo;Flag where speakers locate anxiety in specific relationships rather than abstract peer comparisons.&rdquo; Fair. But you have to already know that is worth looking for.</span>
+    </div>
+  </div>
+</section>
+
+<!-- Nav dots -->
+<nav class="nav-dots" aria-label="Slide navigation">
+  <button class="nav-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+  <button class="nav-dot" data-slide="1" aria-label="Go to slide 2"></button>
+  <button class="nav-dot" data-slide="2" aria-label="Go to slide 3"></button>
+  <button class="nav-dot" data-slide="3" aria-label="Go to slide 4"></button>
+</nav>
+
+<div class="keyboard-hint">Arrow keys or click to navigate</div>
+
+<!-- ====================================================
+     JAVASCRIPT: SlidePresentation class
+     ==================================================== -->
+<script>
+class SlidePresentation {
+  constructor() {
+    this.slides = Array.from(document.querySelectorAll('.slide'));
+    this.dots = Array.from(document.querySelectorAll('.nav-dot'));
+    this.currentSlide = 0;
+
+    // Track reveal step per slide: 0 = base, increments up to data-steps - 1
+    this.slideStep = this.slides.map(() => 0);
+
+    this.isTransitioning = false;
+    this.touchStartY = 0;
+    this.touchStartX = 0;
+
+    this._bindEvents();
+    this._setupIntersectionObserver();
+    this._updateVisibility();
+  }
+
+  /* --------------------------------------------------
+     Event binding
+     -------------------------------------------------- */
+  _bindEvents() {
+    // Keyboard
+    document.addEventListener('keydown', (e) => this._onKey(e));
+
+    // Click to advance (not on nav dots)
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.nav-dots')) return;
+      this.advance();
+    });
+
+    // Touch / swipe
+    document.addEventListener('touchstart', (e) => {
+      this.touchStartY = e.changedTouches[0].screenY;
+      this.touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+      const dy = this.touchStartY - e.changedTouches[0].screenY;
+      const dx = this.touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(dy) < 40 && Math.abs(dx) < 40) return; // tap, not swipe
+      if (Math.abs(dy) > Math.abs(dx)) {
+        // Vertical swipe
+        if (dy > 40) this.advance();
+        else if (dy < -40) this.retreat();
+      }
+    }, { passive: true });
+
+    // Nav dots
+    this.dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = parseInt(dot.dataset.slide, 10);
+        this.goToSlide(target);
+      });
+    });
+  }
+
+  /* --------------------------------------------------
+     Keyboard handler
+     -------------------------------------------------- */
+  _onKey(e) {
+    switch (e.key) {
+      case 'ArrowDown':
+      case 'ArrowRight':
+      case ' ':
+      case 'PageDown':
+        e.preventDefault();
+        this.advance();
+        break;
+      case 'ArrowUp':
+      case 'ArrowLeft':
+      case 'PageUp':
+        e.preventDefault();
+        this.retreat();
+        break;
+      case 'Home':
+        e.preventDefault();
+        this.goToSlide(0);
+        break;
+      case 'End':
+        e.preventDefault();
+        this.goToSlide(this.slides.length - 1);
+        break;
+    }
+  }
+
+  /* --------------------------------------------------
+     Navigation
+     -------------------------------------------------- */
+  advance() {
+    if (this.isTransitioning) return;
+    const maxSteps = parseInt(this.slides[this.currentSlide].dataset.steps || '1', 10);
+    const currentStep = this.slideStep[this.currentSlide];
+
+    if (currentStep < maxSteps - 1) {
+      // Reveal next step within current slide
+      this.slideStep[this.currentSlide]++;
+      this._applyReveal(this.currentSlide);
+    } else if (this.currentSlide < this.slides.length - 1) {
+      this.goToSlide(this.currentSlide + 1);
+    }
+  }
+
+  retreat() {
+    if (this.isTransitioning) return;
+    const currentStep = this.slideStep[this.currentSlide];
+
+    if (currentStep > 0) {
+      this.slideStep[this.currentSlide]--;
+      this._applyReveal(this.currentSlide);
+    } else if (this.currentSlide > 0) {
+      this.goToSlide(this.currentSlide - 1);
+    }
+  }
+
+  goToSlide(index) {
+    if (index < 0 || index >= this.slides.length || this.isTransitioning) return;
+    this.isTransitioning = true;
+    this.currentSlide = index;
+    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+    this._updateDots();
+    this._applyReveal(index);
+
+    setTimeout(() => {
+      this.isTransitioning = false;
+    }, 600);
+  }
+
+  /* --------------------------------------------------
+     Progressive reveal
+     -------------------------------------------------- */
+  _applyReveal(slideIndex) {
+    const slide = this.slides[slideIndex];
+    const step = this.slideStep[slideIndex];
+
+    if (step >= 1) {
+      slide.classList.add('revealed');
+    } else {
+      slide.classList.remove('revealed');
+    }
+  }
+
+  /* --------------------------------------------------
+     Intersection Observer for .visible class
+     -------------------------------------------------- */
+  _setupIntersectionObserver() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          const idx = this.slides.indexOf(entry.target);
+          if (idx !== -1) {
+            this.currentSlide = idx;
+            this._updateDots();
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+
+    this.slides.forEach((slide) => observer.observe(slide));
+  }
+
+  /* --------------------------------------------------
+     Update nav dots
+     -------------------------------------------------- */
+  _updateDots() {
+    this.dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === this.currentSlide);
+    });
+  }
+
+  /* --------------------------------------------------
+     Initial visibility
+     -------------------------------------------------- */
+  _updateVisibility() {
+    if (this.slides[0]) {
+      this.slides[0].classList.add('visible');
+    }
+  }
+}
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  new SlidePresentation();
+});
+</script>
+
+</body>
+</html>
