@@ -524,42 +524,172 @@
     </section>
 
     <!-- ==========================================
-         SLIDE 6: Raw Exchange
+         Shared styles for the paginated exchange slides (6a–6f)
          ========================================== -->
-    <section class="slide application" id="three-codings">
+    <style>
+      .fg-slide .fg-eyebrow {
+        font-family: 'Archivo', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: clamp(1rem, 1.6vw, 1.35rem);
+        color: var(--accent);
+        margin: 0 0 clamp(0.3rem, 0.6vw, 0.5rem) 0;
+      }
+      .fg-slide .fg-subtitle {
+        font-family: 'Nunito', sans-serif;
+        font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+        color: var(--text-secondary);
+        margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
+      }
+      .fg-slide .fg-speaker {
+        display: inline-block;
+        font-family: 'Archivo', sans-serif;
+        font-weight: 800;
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        background: #e3e8ff;
+        padding: clamp(0.3rem, 0.7vw, 0.55rem) clamp(0.9rem, 1.6vw, 1.3rem);
+        border-radius: 4px;
+        margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
+        align-self: flex-start;
+      }
+      .fg-slide .fg-quote {
+        font-family: 'Lora', Georgia, serif;
+        font-style: italic;
+        font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+        line-height: 1.5;
+        color: var(--text-primary);
+        margin: 0 0 clamp(0.8rem, 1.4vw, 1.1rem) 0;
+        max-width: 1200px;
+      }
+      .fg-slide .fg-mod-line {
+        font-family: 'Archivo', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+        line-height: 1.45;
+        color: var(--text-primary);
+        margin: 0 0 clamp(0.8rem, 1.4vw, 1.1rem) 0;
+        max-width: 1200px;
+      }
+      .fg-slide .fg-mod-line.indent { padding-left: clamp(2rem, 3.5vw, 3rem); }
+      .fg-slide .fg-mod-num {
+        display: inline-block;
+        font-weight: 800;
+        color: var(--accent);
+        min-width: 1.5em;
+      }
+    </style>
+
+    <!-- ==========================================
+         SLIDE 6a: Focus Group Exchange — MOD setup
+         ========================================== -->
+    <section class="slide application fg-slide" id="three-codings" data-steps="4">
         <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
         <div class="progress" style="width: 21%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(0.5rem, 1vw, 0.8rem);">
-            <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);">The raw exchange</h2>
-            <div class="exchange-compact" style="flex: 1; overflow: hidden;">
-                <div class="exchange-turn mod-turn">
-                    <span class="speaker-tag mod">MOD</span>
-                    <span class="student-voice">ones okay um so anyone wants to defend their their vote?</span>
-                </div>
-                <div class="exchange-turn">
-                    <span class="speaker-tag">A</span>
-                    <span class="student-voice">This is something I&rsquo;ve been struggling with a lot like when I first came to HKS um I&rsquo;d really never used AI before um just like when I was in college it wasn&rsquo;t a thing when I was in the workforce it wasn&rsquo;t a thing maybe I&rsquo;d use it to come up with like punchy titles for like pitches for in my past comms job um but that was really and then like the busier I&rsquo;ve gotten at school the more readings and the more helpful I found it um and I always feel like guilty when I use it like wow I should really be figuring out how to rework the sentence myself versus like put my own thought in um and have it put it back in a way if I&rsquo;m like I don&rsquo;t like how I said this fix it oh that is what I wanted to say um but that is something that like really upsets me too because I&rsquo;m like I love writing I think writing is such a good way to learn um and I&rsquo;m always like doing the thoughts and concepts myself it&rsquo;s just sometimes like the cleaning up that it&rsquo;s so helpful it&rsquo;ll be like it&rsquo;ll spark another thought for me where it&rsquo;s like oh yeah now I know what I want to say because I saw it written a different way um but then yeah I just also just struggle with wanting to feel like I&rsquo;m learning and like not using a crutch to accomplish stuff and contrasting that with being so busy and overwhelmed at school</span>
-                </div>
-                <div class="exchange-turn">
-                    <span class="speaker-tag">B</span>
-                    <span class="student-voice">I&rsquo;m doing research with a couple other people with a fellow on intellectual atrophy from AI and it&rsquo;s like a real concern that like your ability to use judgment and especially if you&rsquo;re not doing first passes on things to lose that muscle but I think that like when I thought about how you frame the two options like I think not using AI is more costly than like learning how to use AI in a way that is still conducive to your learning which I think is totally possible and that&rsquo;s kind of like the thesis of the paper which is like there is a way to use AI that still preserves your ability to learn and also focuses on like enduring human skills um as opposed to just ignoring it and losing out because I&rsquo;m working in like an AI native like not profit right now and like it&rsquo;s really important that we understand how to build and use AI or else we can&rsquo;t compete</span>
-                </div>
-                <div class="exchange-turn">
-                    <span class="speaker-tag">C</span>
-                    <span class="student-voice">I used to worry more about like the losing skills part but my partner he is doing a gap year right now and he spends eight hours a day using fluid to build different things um because it helps him all kinds of projects and I think like seeing that has made me realize that that is something I would not be able to do right now and I feel like that might also be like of course our situation is a little bit special because he is doing a gap year but I think that there&rsquo;s also a gender gap emerging and how we&rsquo;re using AI and I think if you just use it to outsource your learning then it&rsquo;s a problem for you but if you use it to enhance your skills like for instance your coding abilities and then it can really help you succeed and I fear that if like if AI takes over a lot of jobs in the labor market then everyone who is not capable of using it in that way might be at risk of using their job at least if they have like desk jobs um so I&rsquo;ve started to become more worried</span>
-                </div>
-                <div class="exchange-turn">
-                    <span class="speaker-tag">A</span>
-                    <span class="student-voice">I don&rsquo;t know if other people feel this way too but there&rsquo;s some like anxiety surrounding it in the sense that like oh if I used AI for this and someone else didn&rsquo;t like are they better than me are they doing school better how can they manage their time and like get all this done without AI when like I&rsquo;m drowning in work and almost all hours of the day and sometimes need to use it to help me not like do the work but like summarize a reading or clean up the sentence as I mentioned before um then you hear like someone else like no I don&rsquo;t really use AI for that or no I haven&rsquo;t and then you&rsquo;re like well what am I doing wrong so I think that&rsquo;s another interesting aspect of just like being at a very like competitive and like hard time I feel like I almost I have the opposite anxiety where I&rsquo;m like where&rsquo;s the fine line of turning in something that like the sentences like maybe I had some help editing it through AI like like where&rsquo;s the line of like me being allowed to do that and then me like getting expelled for plagiarism like not like I don&rsquo;t abuse AI in that way but I feel like especially coming here I&rsquo;m like oh my gosh I got to Harvard I did it what if I get expelled because I used AI in the wrong way and so I almost have anxiety from that I think the other piece is like some of the assignments we got for this class I felt very proud of because I didn&rsquo;t use AI at all like for the like the interview you&rsquo;re not really using AI or for observation you&rsquo;re not using AI and so it felt good I felt a lot more proud of things I&rsquo;ve turned in where I haven&rsquo;t touched at all anyone else felt that anxiety of like oh no did I use too much AI am I gonna get in trouble you know</span>
-                </div>
-                <div class="exchange-turn">
-                    <span class="speaker-tag">D</span>
-                    <span class="student-voice">since there are no days when we don&rsquo;t use AI and I&rsquo;m taking some writing course where I have to refrain myself not using since it&rsquo;s a writing course and otherwise I wouldn&rsquo;t learn anything but we are so habitual to give everything to AI so it&rsquo;s gonna be very hard in the coming days that if there are some courses in which we learn really something on our own then we have to make our brain habitual not using it for some stuff and in some cases that we just but I&rsquo;m struggling I&rsquo;m not using it for writing course because that&rsquo;s the one of the major thing I wanted to learn here</span>
-                </div>
-            </div>
-            <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: clamp(0.3rem, 0.6vw, 0.5rem); border-top: 1px solid rgba(0,0,0,0.08); padding-top: clamp(0.3rem, 0.5vw, 0.4rem);">Read it. What do you notice?</p>
+        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+            <p class="fg-eyebrow">Focus Group Exchange</p>
+            <h2 class="fg-subtitle">In-class coding exercise (also on your handout)</h2>
+
+            <span class="fg-speaker" style="background: #eee; color: var(--text-secondary);">MOD</span>
+
+            <p class="fg-mod-line reveal-item">Okay, I&rsquo;m going to describe two concerns about AI, and I&rsquo;m going to ask you to vote on which feels more real to you. You have to pick one of the two. I&rsquo;ll read them both, and then I&rsquo;ll ask you to vote.</p>
+
+            <p class="fg-mod-line indent reveal-item"><span class="fg-mod-num">1.</span> The first concern is that using AI too heavily has costs you should worry about for your learning, your writing, or your ability to think independently.</p>
+
+            <p class="fg-mod-line indent reveal-item"><span class="fg-mod-num">2.</span> The second concern is that not using AI well, or not using it enough, is a cost you should worry about, that it leaves you less efficient or less prepared than peers and future colleagues who are more fluent with these tools.</p>
+
+            <p class="fg-mod-line reveal-item">So, just a show of hands &mdash; hold up a one or a two &mdash; which concern feels more present for you? <em style="color: var(--text-secondary); font-weight: 500;">[votes come in &mdash; roughly split, three to four]</em>. Okay, so anyone want to defend their vote?</p>
         </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">06</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6b: Speaker A, turn 1 (2 fragments)
+         ========================================== -->
+    <section class="slide application fg-slide" data-steps="2">
+        <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
+        <div class="progress" style="width: 24%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+            <p class="fg-eyebrow">Focus Group Exchange</p>
+            <span class="fg-speaker">A</span>
+            <p class="fg-quote reveal-item">&ldquo;This is something I&rsquo;ve been struggling with a lot. When I first came to HKS, I&rsquo;d really never used AI before. When I was in college it wasn&rsquo;t a thing; when I was in the workforce it wasn&rsquo;t a thing. Maybe I&rsquo;d use it to come up with punchy titles for pitches in my past comms job, but that was really it. Then, the busier I&rsquo;ve gotten at school, the more readings, the more helpful I found it. And I always feel guilty when I use it. Like, <em>wow, I should really be figuring out how to rework the sentence myself</em> versus putting my own thought in and having it put it back in a way where I&rsquo;m like, &lsquo;I don&rsquo;t like how I said this, fix it.&rsquo;&rdquo;</p>
+            <p class="fg-quote reveal-item">&ldquo;&hellip;But that really upsets me too, because I love writing. I think writing is such a good way to learn, and I&rsquo;m always doing the thoughts and concepts myself. It&rsquo;s just sometimes the cleaning up that&rsquo;s so helpful &mdash; it&rsquo;ll spark another thought for me, where it&rsquo;s like, <em>oh yeah, now I know what I want to say</em>, because I saw it written a different way. But then, yeah, I also just struggle with wanting to feel like I&rsquo;m learning and not using a crutch to accomplish stuff, and contrasting that with being so busy and overwhelmed at school.&rdquo;</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">06</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6c: Speaker B (2 fragments)
+         ========================================== -->
+    <section class="slide application fg-slide" data-steps="2">
+        <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
+        <div class="progress" style="width: 27%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+            <p class="fg-eyebrow">Focus Group Exchange</p>
+            <span class="fg-speaker">B</span>
+            <p class="fg-quote reveal-item">&ldquo;I&rsquo;m doing research with a couple of other people, with a fellow, on intellectual atrophy from AI. It&rsquo;s a real concern &mdash; that your ability to use judgment, especially if you&rsquo;re not doing first passes on things, you lose that muscle.&rdquo;</p>
+            <p class="fg-quote reveal-item">&ldquo;But when I thought about how you framed the two options, I think not using AI is more costly than learning how to use AI in a way that is still conducive to your learning. Which I think is totally possible, and that&rsquo;s kind of the thesis of the paper: there <em>is</em> a way to use AI that still preserves your ability to learn and also focuses on enduring human skills, as opposed to just ignoring it and losing out. Because I&rsquo;m working in an AI-native nonprofit right now, and it&rsquo;s really important that we understand how to build and use AI, or else we can&rsquo;t compete.&rdquo;</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">06</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6d: Speaker C (2 fragments)
+         ========================================== -->
+    <section class="slide application fg-slide" data-steps="2">
+        <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
+        <div class="progress" style="width: 30%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+            <p class="fg-eyebrow">Focus Group Exchange</p>
+            <span class="fg-speaker">C</span>
+            <p class="fg-quote reveal-item">&ldquo;I used to worry more about the losing-skills part, but my partner is doing a gap year right now, and he spends eight hours a day using Claude to build different things, because it helps him on all kinds of projects. Seeing that has made me realize that that is something I would not be able to do right now. Of course, our situation is a little bit special because he&rsquo;s doing a gap year&hellip;&rdquo;</p>
+            <p class="fg-quote reveal-item">&ldquo;&hellip;but I think there&rsquo;s also a gender gap emerging in how we&rsquo;re using AI. If you just use it to outsource your learning, then it&rsquo;s a problem for you. But if you use it to enhance your skills &mdash; for instance, your coding abilities &mdash; it can really help you succeed. And I fear that if AI takes over a lot of jobs in the labor market, then everyone who is not capable of using it in that way might be at risk of losing their job, at least if they have desk jobs. So I&rsquo;ve started to become more worried.&rdquo;</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">06</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6e: Speaker A, turn 2 (3 fragments)
+         ========================================== -->
+    <section class="slide application fg-slide" data-steps="3">
+        <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
+        <div class="progress" style="width: 33%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+            <p class="fg-eyebrow">Focus Group Exchange</p>
+            <span class="fg-speaker">A</span>
+            <p class="fg-quote reveal-item">&ldquo;I don&rsquo;t know if other people feel this way too, but there&rsquo;s some anxiety surrounding it, in the sense that &mdash; <em>oh, if I used AI for this and someone else didn&rsquo;t, are they better than me? Are they doing school better? How can they manage their time and get all this done without AI, when I&rsquo;m drowning in work almost all hours of the day</em> &mdash; and sometimes need to use it, not to do the work but to summarize a reading or clean up a sentence. Then you hear someone else say, &lsquo;No, I don&rsquo;t really use AI for that,&rsquo; and you&rsquo;re like, <em>well, what am I doing wrong?</em>&rdquo;</p>
+            <p class="fg-quote reveal-item">&ldquo;So that&rsquo;s another interesting aspect of being at a very competitive and hard time. I almost have the opposite anxiety, where I&rsquo;m like, <em>where&rsquo;s the fine line?</em> Turning in something where maybe I had some help editing a sentence through AI &mdash; where&rsquo;s the line of me being allowed to do that, and me getting expelled for plagiarism? Not that I abuse AI in that way, but especially coming here, I&rsquo;m like, <em>oh my gosh, I got to Harvard, I did it &mdash; what if I get expelled because I used AI in the wrong way?</em>&rdquo;</p>
+            <p class="fg-quote reveal-item">&ldquo;So I almost have anxiety from that. I think the other piece is, some of the assignments we got for this class I felt very proud of, because I didn&rsquo;t use AI at all &mdash; like for the interview, you&rsquo;re not really using AI, or for observation, you&rsquo;re not using AI. It felt good. I felt a lot more proud of things I&rsquo;ve turned in where I haven&rsquo;t touched AI at all. Has anyone else felt that anxiety of, <em>oh no, did I use too much AI, am I going to get in trouble?</em>&rdquo;</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">06</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6f: Speaker D
+         ========================================== -->
+    <section class="slide application fg-slide" data-steps="1">
+        <nav class="section-nav"><a href="#three-codings" class="active">Three Ways of Coding</a><a href="#gabriel">AI Live Demo</a><a href="#synthesis">Synthesis</a></nav>
+        <div class="progress" style="width: 36%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="padding-top: clamp(1rem, 2vw, 1.5rem);">
+            <p class="fg-eyebrow">Focus Group Exchange</p>
+            <span class="fg-speaker">D</span>
+            <p class="fg-quote reveal-item">&ldquo;There are no days when we don&rsquo;t use AI. I&rsquo;m taking a writing course where I have to refrain from using it, since it&rsquo;s a writing course, and otherwise I wouldn&rsquo;t learn anything. But we are so habitual &mdash; we give everything to AI. So it&rsquo;s going to be very hard in the coming days: if there are some courses in which we really learn something on our own, then we have to make our brain habitual <em>not</em> using it for some stuff. I&rsquo;m struggling.&rdquo;</p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div></div>
         <span class="slide-number">06</span>
     </section>
 
