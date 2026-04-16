@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API-203M: Wrapping Up + Guest Lecture | Prof. Liz McKenna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Nunito:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* ========== CLASS 12 CUSTOM STYLES ========== */
@@ -25,12 +25,13 @@
         .speaker-intro {
             display: grid;
             grid-template-columns: auto 1fr;
-            gap: clamp(2rem, 4vw, 3.5rem);
+            gap: clamp(2.5rem, 5vw, 4rem);
             align-items: center;
+            width: 100%;
         }
         .speaker-photo {
-            width: clamp(180px, 22vw, 300px);
-            height: clamp(180px, 22vw, 300px);
+            width: clamp(200px, 25vw, 340px);
+            height: clamp(200px, 25vw, 340px);
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent);
@@ -38,7 +39,7 @@
         }
         .speaker-info h2 {
             font-size: var(--h2-size);
-            margin: 0 0 0.2em;
+            margin: 0 0 0.3em;
             line-height: 1.1;
         }
         .speaker-info .role {
@@ -46,17 +47,19 @@
             font-size: var(--body-size);
             color: var(--text-secondary);
             line-height: 1.4;
-            margin: 0 0 0.8em;
+            margin: 0 0 1em;
         }
         .speaker-logos {
             display: flex;
             align-items: center;
-            gap: clamp(1rem, 2vw, 1.5rem);
-            margin-top: clamp(0.5rem, 1vw, 0.8rem);
+            gap: clamp(1.2rem, 2.5vw, 2rem);
         }
         .speaker-logos img {
-            height: clamp(28px, 4vw, 50px);
+            height: clamp(40px, 6vw, 70px);
             object-fit: contain;
+        }
+        .speaker-logos img.logo-claude {
+            height: clamp(50px, 7vw, 85px);
         }
 
         /* Takeaway emphasis box */
@@ -67,6 +70,19 @@
             border-radius: 4px;
             font-size: var(--body-size);
             line-height: 1.5;
+        }
+
+        /* Blue callout */
+        .blue-callout {
+            background: #e8edff;
+            border: 2px solid #5371ff;
+            border-radius: 6px;
+            padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            margin-top: clamp(0.5rem, 1vw, 0.8rem);
+            font-size: var(--small-size);
+            color: #5371ff;
+            font-weight: 600;
+            text-align: center;
         }
 
         /* Big date display */
@@ -133,6 +149,87 @@
             color: var(--accent);
             font-weight: 600;
         }
+
+        /* Dark quote slide for Cook quotes */
+        .slide-dark {
+            background: #1a1a1a;
+        }
+        .slide-dark blockquote {
+            font-family: 'Lora', Georgia, serif;
+            font-style: italic;
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            color: #e8e4df;
+            line-height: 1.5;
+            margin: 0;
+            max-width: 1000px;
+        }
+        .slide-dark cite {
+            font-family: 'Archivo', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: var(--small-size);
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: block;
+            margin-top: clamp(1.2rem, 2.5vw, 2rem);
+        }
+
+        /* Student example cards */
+        .example-card {
+            background: #f8f9fa;
+            border-left: 6px solid #5371ff;
+            border-radius: 4px;
+            padding: clamp(1.2rem, 2.5vw, 2rem);
+        }
+        .example-card h3 {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: var(--h3-size);
+            color: #5371ff;
+            margin: 0 0 0.3em;
+        }
+        .example-card p {
+            font-family: 'Nunito', sans-serif;
+            font-size: var(--body-size);
+            line-height: 1.45;
+            margin: 0.3em 0 0;
+        }
+
+        /* Field notes block */
+        .field-notes {
+            font-family: 'Lora', Georgia, serif;
+            font-style: italic;
+            font-size: clamp(1.3rem, 2.6vw, 2rem);
+            line-height: 1.6;
+            color: #2c2c2c;
+            border-left: 4px solid #5371ff;
+            padding-left: clamp(1rem, 2vw, 1.5rem);
+            max-width: 1000px;
+        }
+
+        /* Quant vs qual comparison */
+        .compare-block {
+            padding: clamp(1rem, 2vw, 1.6rem) clamp(1.2rem, 2.5vw, 2rem);
+            border-radius: 6px;
+            font-size: var(--body-size);
+            line-height: 1.5;
+            max-width: 1000px;
+        }
+        .compare-quant {
+            background: #f0f0f0;
+            border-left: 6px solid #888;
+        }
+        .compare-qual {
+            background: #e8edff;
+            border-left: 6px solid #5371ff;
+        }
+        .compare-block strong {
+            display: block;
+            font-family: 'Archivo', sans-serif;
+            font-size: var(--h3-size);
+            margin-bottom: 0.4em;
+        }
     </style>
 </head>
 <body>
@@ -141,7 +238,7 @@
          SLIDE 1: Title
          ========================================== -->
     <section class="slide" data-section="title">
-        <div class="progress" style="width: 3%"></div>
+        <div class="progress" style="width: 2%"></div>
         <div class="grid-bg"></div>
         <div class="accent-circle"></div>
         <div class="slide-content">
@@ -157,8 +254,8 @@
          SLIDE 2: Module Flow
          ========================================== -->
     <section class="slide">
-        <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 5%"></div>
+        <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 4%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
             <h2 style="align-self: flex-start; font-size: clamp(2.8rem, 5vw, 3.8rem); margin-bottom: clamp(0.5rem, 1vw, 0.75rem);">Module Flow &amp; Content</h2>
@@ -225,15 +322,15 @@
     </section>
 
     <!-- ==========================================
-         SLIDE 3: Agenda (4 cards)
+         SLIDE 3: Agenda (3 cards)
          ========================================== -->
-    <section class="slide" data-steps="5" id="agenda">
-        <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 8%"></div>
+    <section class="slide" data-steps="4" id="agenda">
+        <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 6%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
             <h2 class="reveal-item">Class 12 Agenda</h2>
-            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
                 <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
                     <h3>Guest Lecture</h3>
                     <ul>
@@ -244,8 +341,9 @@
                 <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
                     <h3>Takeaways</h3>
                     <ul>
-                        <li><span class="bullet">&bull;</span>Craft, generalizability, creativity</li>
-                        <li><span class="bullet">&bull;</span>Question &rarr; methods</li>
+                        <li><span class="bullet">&bull;</span>Qual research: why you should care</li>
+                        <li><span class="bullet">&bull;</span>Creativity and new frontiers</li>
+                        <li><span class="bullet">&bull;</span>Craft</li>
                     </ul>
                 </div>
                 <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
@@ -254,17 +352,11 @@
                         <li><span class="bullet">&bull;</span>Mock PAE proposal</li>
                         <li><span class="bullet">&bull;</span>Rubric &amp; examples</li>
                     </ul>
-                </div>
-                <div class="card reveal-item" style="border-top: 4px solid #5371ff;">
-                    <h3 style="color: #5371ff;">Course Eval</h3>
-                    <ul>
-                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Your feedback matters</li>
-                        <li><span class="bullet" style="color: #5371ff;">&bull;</span>Link &amp; QR at the end</li>
-                    </ul>
+                    <div class="blue-callout">&#128591; Course Eval</div>
                 </div>
             </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">03</span>
     </section>
 
@@ -272,7 +364,7 @@
          SLIDE 4: Section Header — Guest Lecture
          ========================================== -->
     <section class="slide accent-bg section-header" id="guest">
-        <div class="progress" style="width: 12%"></div>
+        <div class="progress" style="width: 9%"></div>
         <h1 class="reveal-item visible">Guest<br>Lecture</h1>
         <span class="slide-number">04</span>
     </section>
@@ -281,24 +373,24 @@
          SLIDE 5: Kunal Handa Introduction
          ========================================== -->
     <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 16%"></div>
+        <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 12%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="justify-content: center;">
+        <div class="slide-content" style="justify-content: center; padding-top: clamp(2rem, 5vw, 4rem); padding-bottom: clamp(2rem, 5vw, 4rem);">
             <div class="speaker-intro reveal-item">
                 <img src="img/kunal-handa.jpeg" alt="Kunal Handa" class="speaker-photo">
                 <div class="speaker-info">
                     <h2>Kunal Handa</h2>
                     <p class="role">Research Engineer, Anthropic<br>Lead developer of the AI-assisted Interviewer tool</p>
                     <div class="speaker-logos">
-                        <img src="img/anthropic.png" alt="Anthropic">
-                        <img src="img/claude.png" alt="Claude">
+                        <img src="img/ai-logo.webp" alt="AI">
+                        <img src="img/claude.png" alt="Claude" class="logo-claude">
                     </div>
                 </div>
             </div>
-            <div class="reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
+            <div class="reveal-item" style="margin-top: clamp(2rem, 4vw, 3rem);">
                 <div class="takeaway-box">
-                    <strong>Topic:</strong> How Anthropic used Claude to conduct 81,000+ qualitative interviews &mdash; what they learned about AI-assisted research at scale
+                    <strong>Topic:</strong> How Anthropic used Claude to conduct 81,000+ qualitative interviews (and what they learned about AI-assisted research at scale)
                 </div>
             </div>
             <p class="reveal-item" style="font-size: var(--small-size); margin-top: clamp(0.8rem, 1.5vw, 1.2rem);"><a href="https://www.anthropic.com/features/81k-interviews" target="_blank" rel="noopener" style="color: var(--accent);">anthropic.com/features/81k-interviews &rarr;</a></p>
@@ -308,153 +400,281 @@
     </section>
 
     <!-- ==========================================
-         SLIDE 6: Placeholder — Kunal's presentation
+         SLIDE 6: Guest Lecture & Q&A
          ========================================== -->
     <section class="slide">
-        <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 22%"></div>
+        <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 15%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center; text-align: center;">
-            <p style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent); margin-bottom: 0.5em;">Guest Presentation</p>
-            <h2 style="font-size: var(--h2-size); margin-bottom: 0.3em;">Kunal Handa</h2>
-            <p style="font-size: var(--body-size); color: var(--text-secondary);">[ Kunal&rsquo;s slides here ]</p>
+            <p style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent); margin-bottom: 0.5em;">Kunal Handa &middot; Anthropic</p>
+            <h2 style="font-size: var(--h2-size); margin-bottom: 0.3em;">Guest Lecture &amp; Q&amp;A</h2>
         </div>
         <span class="slide-number">06</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 7: Placeholder — Q&A with Kunal
+         SLIDE 7: Section Header — Debrief (blue)
          ========================================== -->
-    <section class="slide">
-        <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 28%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content" style="align-items: center; justify-content: center; text-align: center;">
-            <p style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent); margin-bottom: 0.5em;">Discussion</p>
-            <h2 style="font-size: var(--h2-size); margin-bottom: 0.3em;">Q&amp;A with Kunal</h2>
-            <p style="font-size: var(--body-size); color: var(--text-secondary);">What questions do you have about AI-assisted interviewing?</p>
+    <section class="slide section-header" id="debrief" style="background: #5371ff;">
+        <div class="progress" style="width: 18%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; padding: clamp(3rem, 6vw, 5rem);">
+            <h1 class="reveal-item visible" style="color: #fff; font-size: clamp(4.5rem, 11vw, 9rem);">Debrief</h1>
         </div>
         <span class="slide-number">07</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 8: Section Header — Takeaways
+         SLIDE 8: Cook Quote 1
          ========================================== -->
-    <section class="slide accent-bg section-header" id="takeaways">
-        <div class="progress" style="width: 32%"></div>
-        <h1 class="reveal-item visible">Take&shy;aways</h1>
+    <section class="slide slide-dark" data-steps="2">
+        <div class="progress" style="width: 21%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: flex-start; padding: clamp(3rem, 6vw, 5rem);">
+            <blockquote class="reveal-item">&ldquo;Anthropic, and other generative AI businesses, are attempting to redefine what qualitative research is so that it can replace genuine qualitative research with AI chat bots. Unfortunately, many people are falling for it, and talking about qualitative research as if it includes any research that involves analysis of human language.&rdquo;</blockquote>
+            <cite class="reveal-item">&mdash; Jonathan Cook</cite>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">08</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 9: Takeaway — Craft
+         SLIDE 9: Cook Quote 2
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 36%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Takeaway 01</p>
-            <h2 class="reveal-item">Qualitative research is a craft</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Practice, not just reading</strong> &mdash; you learned observation, interviewing, focus groups, and coding by doing them, not just reading about them</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Reflexivity matters</strong> &mdash; your positionality shapes what you see, what you ask, and what you conclude</li>
-            </ul>
+    <section class="slide slide-dark" data-steps="2">
+        <div class="progress" style="width: 24%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: flex-start; padding: clamp(3rem, 6vw, 5rem);">
+            <blockquote class="reveal-item">&ldquo;Anthropic did provide a searchable &lsquo;quote wall&rsquo;, but the quote wall provides absolutely no analysis of the meaning of what people typed in, and doesn&rsquo;t enable searching of all the survey responses, just a small portion of them, without explanation of why or how this selection was made.&rdquo;</blockquote>
+            <blockquote class="reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">&ldquo;Quotes from the fill-in-the-blank survey are never explained in Anthropic&rsquo;s short report. They are merely categorized, through quantitative means, and presented as a kind of window dressing around the main quantitative findings.&rdquo;</blockquote>
+            <cite>&mdash; Jonathan Cook</cite>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">09</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 10: Takeaway — Small / Calarco
+         SLIDE 10: Cook Quote 3
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 40%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Takeaway 02</p>
-            <h2 class="reveal-item">Small &amp; Calarco: what good looks like</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Small&rsquo;s <em>Someone Knows</em></strong> &mdash; showed us how interviews and ethnography can reveal mechanisms that surveys miss entirely</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Calarco&rsquo;s <em>Holding It Together</em></strong> &mdash; demonstrated how qualitative methods capture lived experience behind structural inequality</li>
-            </ul>
+    <section class="slide slide-dark">
+        <div class="progress" style="width: 27%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center; padding: clamp(3rem, 8vw, 6rem);">
+            <blockquote style="font-size: clamp(1.8rem, 3.5vw, 2.8rem);">&ldquo;So, I ask again: Is it time for qualitative researchers to come up with a new term to refer to genuine qualitative research? What language can we use to define the work that we do?&rdquo;</blockquote>
+            <cite>&mdash; Jonathan Cook</cite>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">10</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 11: Takeaway — Generalizability / Causality
+         SLIDE 11: Section Header — Wrap-Up and Takeaways
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 44%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Takeaway 03</p>
-            <h2 class="reveal-item">Generalizability &amp; causality</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Different standards, not lower ones</strong> &mdash; qualitative research offers depth, mechanism, and context &mdash; not statistical generalizability, and that&rsquo;s by design</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Causal claims require causal designs</strong> &mdash; qual work excels at theory-building and understanding <em>how</em> and <em>why</em>, which complements causal inference</li>
-            </ul>
+    <section class="slide accent-bg section-header" id="takeaways">
+        <div class="progress" style="width: 30%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; padding: clamp(3rem, 6vw, 5rem);">
+            <h1 class="reveal-item visible">Wrap-Up &amp;<br>Takeaways</h1>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">11</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 12: Takeaway — Question → Methods
+         SLIDE 12: Qual research — why you should care + Kara intro
          ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 48%"></div>
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 33%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Takeaway 04</p>
-            <h2 class="reveal-item">Let the question drive the method</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Start with what you want to know</strong> &mdash; don&rsquo;t pick a method first and then look for questions it can answer</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Mixed methods aren&rsquo;t always better</strong> &mdash; they&rsquo;re better when the research question demands multiple forms of evidence</li>
-            </ul>
+            <h2 class="reveal-item">Qual research: why you should care</h2>
+            <p class="reveal-item" style="font-size: var(--body-size); line-height: 1.5; max-width: 1000px; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">Qualitative research is a type of research that explores and provides deep, palpable insights into real-world problems.</p>
+            <div class="example-card reveal-item">
+                <h3>Kara Chyung &mdash; CareerLink Job Assistance Event, North Philadelphia Library</h3>
+                <p><strong>Real-world problem:</strong> Unemployment services and how institutions serve structurally disadvantaged communities.</p>
+            </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">12</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 13: Section Header — Creativity
+         SLIDE 13: Kara — Field notes excerpt
          ========================================== -->
-    <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 52%"></div>
-        <h1 class="reveal-item visible">Creativity<br>in Qual</h1>
+    <section class="slide">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 36%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <div class="field-notes">
+                As I walk past the front of the library, a man is lying across the steps, his face obscured by his black sweatshirt and his bare feet and ankles gray with dirt. A grocery shopping cart positioned lopsidedly next to him holds a child-size tricycle. [...] As I walk into the main library room, I am immediately struck by the architecture: intricately carved columns and panels line the ivory walls and ceiling. The room is vast, with tall ceilings. Golden chandeliers descend from the ceiling. [...] Button Down Man sits leaning forward slightly, with his elbows resting on his knees. His laptop sits slightly to the side, so that it is not directly between them. He maintains eye contact with Sparkly Bag Client and talks in a soft but confident tone.
+            </div>
+        </div>
         <span class="slide-number">13</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 14: Takeaway — Creativity intro / James' point
+         SLIDE 14: Kara — What quant would capture
          ========================================== -->
-    <section class="slide" data-steps="3">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 56%"></div>
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 39%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <div class="compare-block compare-quant reveal-item">
+                <strong>What a survey or quantitative variable would have captured:</strong>
+                This young woman is unemployed, expecting, lacks a degree, and is seeking services. It could code her as a &ldquo;CareerLink participant&rdquo; in an administrative dataset. A regression could estimate the effect of degree-requirement removal on hiring rates for people like her.
+            </div>
+            <div class="compare-block compare-qual reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
+                <strong>What that would not capture:</strong>
+                Why the gap between policy and outcome persists. The field notes suggest some potential mechanisms: the counselors are warm, competent, and caring, and they still can&rsquo;t place her.
+                <ul style="margin: 0.5em 0 0 1.2em; font-size: var(--small-size);">
+                    <li>The system is designed to serve everyone (a pregnant teenager, an aging veteran, a mother doing homework with her kids), which means it&rsquo;s designed to serve no one in particular and mechanisms are heterogeneous (age, loneliness, digital literacy for elderly veteran)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">14</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 15: Kara — The felt experience
+         ========================================== -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 42%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <div class="compare-block compare-qual">
+                <p style="font-size: var(--body-size); line-height: 1.55; margin: 0;">You also can&rsquo;t survey the moment she says her resume might not &ldquo;count,&rdquo; or the silence after &ldquo;Did you say <em>babies</em>?&rdquo;, or the way she clutches her bag the entire time and doesn&rsquo;t shift in her seat once.</p>
+                <p style="font-size: var(--body-size); line-height: 1.55; margin: 1em 0 0; font-style: italic; color: #5371ff;">(Those details tell you something about the felt experience of navigating the system in a way that quant research cannot)</p>
+            </div>
+        </div>
+        <span class="slide-number">15</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 16: Qual goes beyond surface — Michelle Fausto intro
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 45%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Takeaway 05</p>
+            <p class="reveal-item" style="font-size: var(--body-size); line-height: 1.55; max-width: 1000px; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">Qualitative research goes beyond surface-level observations to uncover motivations, beliefs, and lived experiences. It allows you to step into the shoes of the people you are working with or for, to understand the world from their perspective.</p>
+            <div class="example-card reveal-item">
+                <h3>Michelle Fausto &mdash; Interview with a SNAP Case Navigator</h3>
+                <p><strong>Real-world problem:</strong> Why does California have a comparatively low CalFresh enrollment rate among people who are eligible?</p>
+                <p style="margin-top: 0.6em; font-size: var(--small-size); color: var(--text-secondary);">The interviewee occupies two pairs of shoes at once and Michelle had the instinct to ask about both. At 01:04, the interviewee starts with her professional bio. At 01:37, Michelle asks: &ldquo;Can I step us back for a moment and, if you feel comfortable in answering, ask about your childhood involvement with SNAP?&rdquo;</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">16</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 17: Michelle — Interview quote
+         ========================================== -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 48%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <div class="field-notes">
+                &ldquo;As a kid, I vividly remember going to the health and human services office in El Monte, California and going in and, like, being stripped down as a child of, like, maybe I had a toy in my pocket. This was so dehumanizing. I&rsquo;m sure my mom was already feeling some type of way bringing me here, her kid after school when she wished she would just be home, sitting in uncomfortable chairs in a place that it&rsquo;s, like, dead silent. People don&rsquo;t even want to look at each other in the eye.&rdquo;
+            </div>
+            <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: clamp(1.5rem, 3vw, 2.5rem); max-width: 1000px; font-style: italic;">When she describes meeting families at grocery stores and WIC offices instead of making them come to a government building, she seems to be describing what she wished had existed for her mother.</p>
+        </div>
+        <span class="slide-number">17</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 18: Michelle — What quant would capture
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 51%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <div class="compare-block compare-quant reveal-item">
+                <strong>What a survey or quantitative variable could capture:</strong>
+                <p style="margin: 0.4em 0 0; font-size: var(--body-size); line-height: 1.5;">SNAP enrollment data can tell you that California&rsquo;s participation rate among eligible households is lower than the national average. Administrative records can tell you how many applications were started, denied, or abandoned. A regression could estimate the effect of application complexity on completion rates, or the effect of public charge rhetoric on enrollment among immigrant households.</p>
+            </div>
+            <div class="compare-block compare-qual reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
+                <strong>But none of that would tell you:</strong>
+                <p style="margin: 0.4em 0 0; font-size: var(--body-size); line-height: 1.5;">Why the gap persists despite the program being designed to serve exactly these families. Nor would they have produced the interviewee&rsquo;s dual perspective (from the child&rsquo;s POV and the bureaucratic mechanics that she sees from the navigator&rsquo;s desk).</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">18</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 19: Michelle — Layers of why (part 1)
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 54%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <h2 class="reveal-item" style="margin-bottom: clamp(1rem, 2vw, 1.5rem);">The interview surfaces layer after layer of <em>why</em></h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Fear as a rational calculation, not ignorance.</strong> Undocumented mothers (95% of the HOH she works with) refuse to apply because they believe it will trigger public charge consequences for their immigration cases. Even after months of trust-building, &ldquo;other families just didn&rsquo;t think the risk was worth it and we respected that.&rdquo;</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Shame as community enforcement.</strong> People &ldquo;frankly didn&rsquo;t want to be seen coming out of a health and human services building&hellip; walking out of that building felt like you labeled yourself, you gave yourself an A on your chest.&rdquo;</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">19</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 20: Michelle — Layers of why (part 2)
+         ========================================== -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 57%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <div class="field-notes reveal-item" style="margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">
+                The verification interviews felt like interrogation. &ldquo;When applicants miss the call, because they&rsquo;re at work, because the number is undisclosed, because they&rsquo;re afraid of unknown callers, they have to start over. &lsquo;You did everything right!&rsquo; It&rsquo;s just a phone call. I&rsquo;m so sorry that we have to start all over again.&rdquo;
+            </div>
+            <div class="compare-block compare-qual reveal-item">
+                <strong style="font-size: var(--body-size); color: #5371ff;">&hellip;That&rsquo;s what qualitative research does that nothing else can:</strong>
+                <p style="margin: 0.4em 0 0; font-size: var(--body-size); line-height: 1.55;">it lets you understand a system from the perspective of someone who lives inside it.</p>
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">20</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 21: Section Header — Creativity in Qual
+         ========================================== -->
+    <section class="slide accent-bg section-header">
+        <div class="progress" style="width: 60%"></div>
+        <h1 class="reveal-item visible">Creativity<br>in Qual</h1>
+        <span class="slide-number">21</span>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 22: Takeaway — Creativity / James' point
+         ========================================== -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 63%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Creativity &amp; New Frontiers</p>
             <h2 class="reveal-item">There&rsquo;s room for creativity</h2>
             <div class="takeaway-box reveal-item" style="max-width: 1000px;">
                 <strong>James&rsquo; point:</strong> The best qualitative work doesn&rsquo;t just follow a template &mdash; it finds inventive ways to answer the question. The methods you choose should fit the world you&rsquo;re studying, not the other way around.
             </div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">14</span>
+        <span class="slide-number">22</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 15: Creativity showcase (FG site, ABCD/Telegram, etc.)
+         SLIDE 23: Creativity showcase
          ========================================== -->
     <section class="slide" data-steps="5">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 60%"></div>
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 66%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Examples from this class</h2>
@@ -479,18 +699,18 @@
             </div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">15</span>
+        <span class="slide-number">23</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 16: Acknowledging Limitations
+         SLIDE 24: Acknowledging Limitations
          ========================================== -->
     <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 64%"></div>
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 69%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Takeaway 06</p>
+            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Craft</p>
             <h2 class="reveal-item">Acknowledging limitations honestly</h2>
             <ul>
                 <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Every method has trade-offs</strong> &mdash; the mark of a sophisticated researcher is naming them upfront, not burying them in a footnote</li>
@@ -498,24 +718,24 @@
             </ul>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">16</span>
+        <span class="slide-number">24</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 17: Section Header — Final Assignment
+         SLIDE 25: Section Header — Final Assignment
          ========================================== -->
     <section class="slide accent-bg section-header" id="assignment">
-        <div class="progress" style="width: 68%"></div>
+        <div class="progress" style="width: 72%"></div>
         <h1 class="reveal-item visible">Final<br>Assignment</h1>
-        <span class="slide-number">17</span>
+        <span class="slide-number">25</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 18: Mock PAE Proposal — Overview
+         SLIDE 26: Mock PAE Proposal — Overview
          ========================================== -->
     <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
-        <div class="progress" style="width: 72%"></div>
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
+        <div class="progress" style="width: 75%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Final Assignment</p>
@@ -526,15 +746,15 @@
             </ul>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">18</span>
+        <span class="slide-number">26</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 19: Rubric
+         SLIDE 27: Rubric
          ========================================== -->
     <section class="slide" data-steps="6">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
-        <div class="progress" style="width: 76%"></div>
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
+        <div class="progress" style="width: 78%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
             <h2 class="reveal-item">Rubric Highlights</h2>
@@ -562,15 +782,15 @@
             </div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">19</span>
+        <span class="slide-number">27</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 20: Examples / Tips
+         SLIDE 28: Examples / Tips
          ========================================== -->
     <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
-        <div class="progress" style="width: 80%"></div>
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
+        <div class="progress" style="width: 81%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Tips &amp; Examples</h2>
@@ -581,14 +801,14 @@
             </ul>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">20</span>
+        <span class="slide-number">28</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 21: Due Date + Canvas Link
+         SLIDE 29: Due Date + Canvas Link
          ========================================== -->
     <section class="slide" data-steps="2">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
         <div class="progress" style="width: 84%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center; text-align: center;">
@@ -600,11 +820,11 @@
             </div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">21</span>
+        <span class="slide-number">29</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 22: Q&A
+         SLIDE 30: Q&A
          ========================================== -->
     <section class="slide">
         <div class="progress" style="width: 88%"></div>
@@ -612,14 +832,14 @@
         <div class="slide-content" style="align-items: center; justify-content: center; text-align: center;">
             <p class="qa-text">Q&amp;A</p>
         </div>
-        <span class="slide-number">22</span>
+        <span class="slide-number">30</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 23: Thank You
+         SLIDE 31: Thank You
          ========================================== -->
     <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 92%"></div>
+        <div class="progress" style="width: 94%"></div>
         <div class="slide-content" style="justify-content: center; align-items: flex-start;">
             <h1 style="font-size: clamp(3rem, 6vw, 5rem); line-height: 1.1; margin-bottom: clamp(1.5rem, 2.8vw, 2.2rem);">Thank you.</h1>
             <div style="font-family: 'Nunito', sans-serif; font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.6; color: rgba(255,255,255,0.92);">
@@ -629,11 +849,11 @@
                 <p style="margin: 1.2em 0 0 0; font-size: clamp(1rem, 1.7vw, 1.3rem); opacity: 0.8;">It has been a privilege teaching this class. Go do great research.</p>
             </div>
         </div>
-        <span class="slide-number">23</span>
+        <span class="slide-number">31</span>
     </section>
 
     <!-- ==========================================
-         SLIDE 24: Course Evaluation — QR + Link
+         SLIDE 32: Course Evaluation — QR + Link
          ========================================== -->
     <section class="slide">
         <div class="progress" style="width: 100%"></div>
@@ -653,7 +873,7 @@
                 </div>
             </div>
         </div>
-        <span class="slide-number">24</span>
+        <span class="slide-number">32</span>
     </section>
 
     <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
