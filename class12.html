@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* ========== CLASS 12 CUSTOM STYLES ========== */
-
-        /* Projection-scale typography */
         :root {
             --title-size: clamp(3.5rem, 9vw, 7rem);
             --h2-size: clamp(2.8rem, 7vw, 5rem);
@@ -21,215 +19,63 @@
         .card p, .card li { font-size: var(--body-size); line-height: 1.4; }
         .section-header h1 { font-size: clamp(4.5rem, 11vw, 9rem); }
 
-        /* Guest speaker layout */
-        .speaker-intro {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: clamp(2.5rem, 5vw, 4rem);
-            align-items: center;
-            width: 100%;
-        }
-        .speaker-photo {
-            width: clamp(200px, 25vw, 340px);
-            height: clamp(200px, 25vw, 340px);
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--accent);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-        .speaker-info h2 {
-            font-size: var(--h2-size);
-            margin: 0 0 0.3em;
-            line-height: 1.1;
-        }
-        .speaker-info .role {
-            font-family: 'Nunito', sans-serif;
-            font-size: var(--body-size);
-            color: var(--text-secondary);
-            line-height: 1.4;
-            margin: 0 0 1em;
-        }
-        .speaker-logos {
-            display: flex;
-            align-items: center;
-            gap: clamp(1.2rem, 2.5vw, 2rem);
-        }
-        .speaker-logos img {
-            height: clamp(40px, 6vw, 70px);
-            object-fit: contain;
-        }
-        .speaker-logos img.logo-claude {
-            height: clamp(50px, 7vw, 85px);
-        }
-
-        /* Takeaway emphasis box */
-        .takeaway-box {
-            background: #f8f9fa;
-            border-left: 6px solid var(--accent);
-            padding: clamp(1rem, 2vw, 1.6rem) clamp(1.2rem, 2.5vw, 2rem);
-            border-radius: 4px;
-            font-size: var(--body-size);
-            line-height: 1.5;
-        }
-
-        /* Blue callout */
-        .blue-callout {
-            background: #e8edff;
-            border: 2px solid #5371ff;
-            border-radius: 6px;
-            padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem);
-            margin-top: clamp(0.5rem, 1vw, 0.8rem);
-            font-size: var(--small-size);
-            color: #5371ff;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        /* Big date display */
-        .big-date {
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-weight: 800;
-            font-size: clamp(4rem, 10vw, 8rem);
-            color: var(--accent);
-            line-height: 1;
-            text-transform: uppercase;
-        }
-
-        /* Eval slide */
-        .eval-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 4vw, 3.5rem);
-            align-items: center;
-            width: 100%;
-        }
-        .eval-qr img {
-            max-width: clamp(200px, 28vw, 380px);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        /* Q&A slide */
-        .qa-text {
-            font-family: 'Archivo', system-ui, sans-serif;
-            font-weight: 800;
-            font-size: clamp(5rem, 14vw, 12rem);
-            text-transform: uppercase;
-            line-height: 1;
-            color: var(--accent);
-            letter-spacing: -0.02em;
-        }
-
-        /* Creativity showcase grid */
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(1rem, 2vw, 1.5rem);
-        }
-        .showcase-card {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: clamp(1.2rem, 2.5vw, 2rem);
-            border-top: 4px solid var(--accent);
-        }
-        .showcase-card h3 {
+        /* Persistent section label */
+        .section-label {
             font-family: 'Archivo', sans-serif;
             font-weight: 700;
-            font-size: var(--h3-size);
-            margin: 0 0 0.4em;
-        }
-        .showcase-card p {
-            font-family: 'Nunito', sans-serif;
-            font-size: var(--body-size);
-            line-height: 1.45;
-            margin: 0;
-            color: var(--text-secondary);
-        }
-        .showcase-card a {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        /* Dark quote slide for Cook quotes */
-        .slide-dark {
-            background: #1a1a1a;
-        }
-        .slide-dark blockquote {
-            font-family: 'Lora', Georgia, serif;
-            font-style: italic;
-            font-size: clamp(1.5rem, 3vw, 2.4rem);
-            color: #e8e4df;
-            line-height: 1.5;
-            margin: 0;
-            max-width: 1000px;
-        }
-        .slide-dark cite {
-            font-family: 'Archivo', sans-serif;
-            font-style: normal;
-            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
             font-size: var(--small-size);
             color: var(--accent);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            display: block;
-            margin-top: clamp(1.2rem, 2.5vw, 2rem);
+            margin-bottom: clamp(0.3rem, 0.8vw, 0.5rem);
         }
 
-        /* Student example cards */
-        .example-card {
-            background: #f8f9fa;
-            border-left: 6px solid #5371ff;
-            border-radius: 4px;
-            padding: clamp(1.2rem, 2.5vw, 2rem);
-        }
-        .example-card h3 {
-            font-family: 'Archivo', sans-serif;
-            font-weight: 700;
-            font-size: var(--h3-size);
-            color: #5371ff;
-            margin: 0 0 0.3em;
-        }
-        .example-card p {
-            font-family: 'Nunito', sans-serif;
-            font-size: var(--body-size);
-            line-height: 1.45;
-            margin: 0.3em 0 0;
-        }
+        /* Speaker */
+        .speaker-intro { display: grid; grid-template-columns: auto 1fr; gap: clamp(2.5rem, 5vw, 4rem); align-items: center; width: 100%; }
+        .speaker-photo { width: clamp(200px, 25vw, 340px); height: clamp(200px, 25vw, 340px); border-radius: 50%; object-fit: cover; border: 4px solid var(--accent); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .speaker-info h2 { font-size: var(--h2-size); margin: 0 0 0.3em; line-height: 1.1; }
+        .speaker-info .role { font-family: 'Nunito', sans-serif; font-size: var(--body-size); color: var(--text-secondary); line-height: 1.4; margin: 0 0 1em; }
+        .speaker-logos { display: flex; align-items: center; gap: clamp(1.2rem, 2.5vw, 2rem); }
+        .speaker-logos img { height: clamp(40px, 6vw, 70px); object-fit: contain; }
+        .speaker-logos img.logo-claude { height: clamp(50px, 7vw, 85px); }
 
-        /* Field notes block */
-        .field-notes {
-            font-family: 'Lora', Georgia, serif;
-            font-style: italic;
-            font-size: clamp(1.3rem, 2.6vw, 2rem);
-            line-height: 1.6;
-            color: #2c2c2c;
-            border-left: 4px solid #5371ff;
-            padding-left: clamp(1rem, 2vw, 1.5rem);
-            max-width: 1000px;
-        }
+        /* Boxes */
+        .takeaway-box { background: #f8f9fa; border-left: 6px solid var(--accent); padding: clamp(1rem, 2vw, 1.6rem) clamp(1.2rem, 2.5vw, 2rem); border-radius: 4px; font-size: var(--body-size); line-height: 1.5; }
+        .blue-callout { background: #e8edff; border: 2px solid #5371ff; border-radius: 6px; padding: clamp(0.6rem, 1.2vw, 1rem) clamp(0.8rem, 1.5vw, 1.2rem); margin-top: clamp(0.5rem, 1vw, 0.8rem); font-size: var(--small-size); color: #5371ff; font-weight: 600; text-align: center; }
 
-        /* Quant vs qual comparison */
-        .compare-block {
-            padding: clamp(1rem, 2vw, 1.6rem) clamp(1.2rem, 2.5vw, 2rem);
-            border-radius: 6px;
-            font-size: var(--body-size);
-            line-height: 1.5;
-            max-width: 1000px;
-        }
-        .compare-quant {
-            background: #f0f0f0;
-            border-left: 6px solid #888;
-        }
-        .compare-qual {
-            background: #e8edff;
-            border-left: 6px solid #5371ff;
-        }
-        .compare-block strong {
-            display: block;
-            font-family: 'Archivo', sans-serif;
-            font-size: var(--h3-size);
-            margin-bottom: 0.4em;
-        }
+        /* Big text */
+        .big-date { font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-size: clamp(3.5rem, 9vw, 7rem); color: var(--accent); line-height: 1.1; }
+        .qa-text { font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-size: clamp(5rem, 14vw, 12rem); text-transform: uppercase; line-height: 1; color: var(--accent); letter-spacing: -0.02em; }
+
+        /* Dark quote */
+        .slide-dark { background: #1a1a1a; }
+        .slide-dark blockquote { font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(1.5rem, 3vw, 2.4rem); color: #e8e4df; line-height: 1.5; margin: 0; max-width: 1000px; }
+        .slide-dark cite { font-family: 'Archivo', sans-serif; font-style: normal; font-weight: 600; font-size: var(--small-size); color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-top: clamp(1.2rem, 2.5vw, 2rem); }
+
+        /* Student example */
+        .example-card { background: #f8f9fa; border-left: 6px solid #5371ff; border-radius: 4px; padding: clamp(1.2rem, 2.5vw, 2rem); }
+        .example-card h3 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--h3-size); color: #5371ff; margin: 0 0 0.3em; }
+        .example-card p { font-family: 'Nunito', sans-serif; font-size: var(--body-size); line-height: 1.45; margin: 0.3em 0 0; }
+
+        /* Field notes */
+        .field-notes { font-family: 'Lora', Georgia, serif; font-style: italic; font-size: clamp(1.3rem, 2.6vw, 2rem); line-height: 1.6; color: #2c2c2c; border-left: 4px solid #5371ff; padding-left: clamp(1rem, 2vw, 1.5rem); max-width: 1000px; }
+
+        /* Compare blocks */
+        .compare-block { padding: clamp(1rem, 2vw, 1.6rem) clamp(1.2rem, 2.5vw, 2rem); border-radius: 6px; font-size: var(--body-size); line-height: 1.5; max-width: 1000px; }
+        .compare-quant { background: #f0f0f0; border-left: 6px solid #888; }
+        .compare-qual { background: #e8edff; border-left: 6px solid #5371ff; }
+        .compare-block strong { display: block; font-family: 'Archivo', sans-serif; font-size: var(--h3-size); margin-bottom: 0.4em; }
+
+        /* Placeholder cards */
+        .placeholder-slide { border: 3px dashed rgba(0,0,0,0.12); border-radius: 12px; padding: clamp(2rem, 4vw, 3rem); text-align: center; max-width: 700px; }
+        .placeholder-slide h2 { font-size: var(--h2-size); margin: 0 0 0.3em; }
+        .placeholder-slide p { font-size: var(--body-size); color: var(--text-secondary); margin: 0; }
+
+        /* Assignment cards */
+        .assign-cards { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2vw, 1.5rem); width: 100%; max-width: 1100px; }
+        .assign-card { background: #f8f9fa; border-radius: 8px; padding: clamp(1.2rem, 2.5vw, 2rem); border-top: 4px solid var(--accent); }
+        .assign-card h3 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: var(--h3-size); margin: 0 0 0.4em; }
+        .assign-card p { font-family: 'Nunito', sans-serif; font-size: var(--body-size); line-height: 1.45; margin: 0.2em 0 0; color: var(--text-secondary); }
     </style>
 </head>
 <body>
@@ -250,39 +96,23 @@
         <div class="title-branding" style="font-family: 'Nunito', system-ui, sans-serif; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; font-size: var(--body-size);">Prof. Liz McKenna<br>Harvard Kennedy School</div>
     </section>
 
-    <!-- ==========================================
-         SLIDE 2: Module Flow
-         ========================================== -->
+    <!-- SLIDE 2: Module Flow -->
     <section class="slide">
         <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 4%"></div>
+        <div class="progress" style="width: 3%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center; padding: clamp(1rem, 2vw, 1.5rem);">
             <h2 style="align-self: flex-start; font-size: clamp(2.8rem, 5vw, 3.8rem); margin-bottom: clamp(0.5rem, 1vw, 0.75rem);">Module Flow &amp; Content</h2>
-
             <div class="timeline" style="max-width: 100%; width: 100%;">
                 <div class="timeline-row">
-                    <div class="timeline-module top">
-                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Introduction</h4>
-                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Overview,<br>outstanding qual<br>research</p>
-                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
-                    </div>
+                    <div class="timeline-module top"><h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Introduction</h4><p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Overview,<br>outstanding qual<br>research</p><div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div></div>
                     <div class="timeline-module top"></div>
                     <div class="timeline-module top" style="flex: 0.5;"></div>
-                    <div class="timeline-module top">
-                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing</h4>
-                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Introduction +<br>workshop</p>
-                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
-                    </div>
+                    <div class="timeline-module top"><h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing</h4><p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Introduction +<br>workshop</p><div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div></div>
                     <div class="timeline-module top"></div>
-                    <div class="timeline-module top">
-                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Focus Groups</h4>
-                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Background, ethics,<br>simulation</p>
-                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
-                    </div>
+                    <div class="timeline-module top"><h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Focus Groups</h4><p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Background, ethics,<br>simulation</p><div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div></div>
                     <div class="timeline-module top"></div>
                 </div>
-
                 <div class="timeline-bar" style="height: clamp(3.5rem, 7vh, 5.5rem);">
                     <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">1</div>
                     <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">2</div>
@@ -292,89 +122,49 @@
                     <div class="week" style="background: #888; font-size: clamp(1.2rem, 2vw, 1.6rem);">5</div>
                     <div class="week" style="background: var(--accent); border: 3px solid #fff; box-shadow: 0 0 0 3px var(--accent); font-size: clamp(1.2rem, 2vw, 1.6rem);">Week 6</div>
                 </div>
-
                 <div class="timeline-row">
                     <div class="timeline-module bottom"></div>
-                    <div class="timeline-module bottom">
-                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
-                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Observation + Ethics</h4>
-                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Ethnography,<br>fieldwork</p>
-                    </div>
+                    <div class="timeline-module bottom"><div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div><h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Observation + Ethics</h4><p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Ethnography,<br>fieldwork</p></div>
                     <div class="timeline-module bottom" style="flex: 0.5;"></div>
                     <div class="timeline-module bottom"></div>
-                    <div class="timeline-module bottom">
-                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
-                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing 2.0</h4>
-                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Workshop</p>
-                    </div>
+                    <div class="timeline-module bottom"><div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div><h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Interviewing 2.0</h4><p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Workshop</p></div>
                     <div class="timeline-module bottom"></div>
-                    <div class="timeline-module bottom">
-                        <div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div>
-                        <h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Archival + Wrap-Up</h4>
-                        <p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Guest lecture,<br>takeaways, eval</p>
-                    </div>
+                    <div class="timeline-module bottom"><div class="connector" style="height: clamp(1.4rem, 3vh, 2.2rem);"></div><h4 style="font-size: clamp(1.3rem, 2.4vw, 1.8rem);">Archival + Wrap-Up</h4><p style="font-size: clamp(1.05rem, 1.8vw, 1.4rem);">Guest lecture,<br>takeaways, eval</p></div>
                 </div>
-
                 <div class="timeline-here-callout" style="margin-left: 85%; font-size: clamp(1rem, 1.6vw, 1.3rem); padding: clamp(0.5rem, 1.2vw, 0.85rem) clamp(0.7rem, 1.4vw, 1.1rem);">YOU ARE HERE</div>
             </div>
         </div>
         <span class="slide-number">02</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 3: Agenda (3 cards)
-         ========================================== -->
+    <!-- SLIDE 3: Agenda -->
     <section class="slide" data-steps="4" id="agenda">
         <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 6%"></div>
+        <div class="progress" style="width: 5%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
             <h2 class="reveal-item">Class 12 Agenda</h2>
             <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
-                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
-                    <h3>Guest Lecture</h3>
-                    <ul>
-                        <li><span class="bullet">&bull;</span>Kunal Handa, Anthropic</li>
-                        <li><span class="bullet">&bull;</span>AI-assisted interviewing at scale</li>
-                    </ul>
-                </div>
-                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
-                    <h3>Takeaways</h3>
-                    <ul>
-                        <li><span class="bullet">&bull;</span>Qual research: why you should care</li>
-                        <li><span class="bullet">&bull;</span>Creativity and new frontiers</li>
-                        <li><span class="bullet">&bull;</span>Craft</li>
-                    </ul>
-                </div>
-                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
-                    <h3>Final Assignment</h3>
-                    <ul>
-                        <li><span class="bullet">&bull;</span>Mock PAE proposal</li>
-                        <li><span class="bullet">&bull;</span>Rubric &amp; examples</li>
-                    </ul>
-                    <div class="blue-callout">&#128591; Course Eval</div>
-                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);"><h3>Guest Lecture</h3><ul><li><span class="bullet">&bull;</span>Kunal Handa, Anthropic</li><li><span class="bullet">&bull;</span>AI-assisted interviewing at scale</li></ul></div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);"><h3>Takeaways</h3><ul><li><span class="bullet">&bull;</span>Qual research: why you should care</li><li><span class="bullet">&bull;</span>Creativity and new frontiers</li><li><span class="bullet">&bull;</span>Craft</li></ul></div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);"><h3>Final Assignment</h3><ul><li><span class="bullet">&bull;</span>Mock PAE proposal</li><li><span class="bullet">&bull;</span>Rubric &amp; examples</li></ul><div class="blue-callout">&#128591; Course Eval</div></div>
             </div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">03</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 4: Section Header — Guest Lecture
-         ========================================== -->
+    <!-- SLIDE 4: Guest Lecture header -->
     <section class="slide accent-bg section-header" id="guest">
-        <div class="progress" style="width: 9%"></div>
+        <div class="progress" style="width: 7%"></div>
         <h1 class="reveal-item visible">Guest<br>Lecture</h1>
         <span class="slide-number">04</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 5: Kunal Handa Introduction
-         ========================================== -->
+    <!-- SLIDE 5: Kunal Handa -->
     <section class="slide" data-steps="3">
         <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 12%"></div>
+        <div class="progress" style="width: 9%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center; padding-top: clamp(2rem, 5vw, 4rem); padding-bottom: clamp(2rem, 5vw, 4rem);">
             <div class="speaker-intro reveal-item">
@@ -382,16 +172,11 @@
                 <div class="speaker-info">
                     <h2>Kunal Handa</h2>
                     <p class="role">Research Engineer, Anthropic<br>Lead developer of the AI-assisted Interviewer tool</p>
-                    <div class="speaker-logos">
-                        <img src="img/ai-logo.webp" alt="AI">
-                        <img src="img/claude.png" alt="Claude" class="logo-claude">
-                    </div>
+                    <div class="speaker-logos"><img src="img/ai-logo.webp" alt="AI"><img src="img/claude.png" alt="Claude" class="logo-claude"></div>
                 </div>
             </div>
             <div class="reveal-item" style="margin-top: clamp(2rem, 4vw, 3rem);">
-                <div class="takeaway-box">
-                    <strong>Topic:</strong> How Anthropic used Claude to conduct 81,000+ qualitative interviews (and what they learned about AI-assisted research at scale)
-                </div>
+                <div class="takeaway-box"><strong>Topic:</strong> How Anthropic used Claude to conduct 81,000+ qualitative interviews (and what they learned about AI-assisted research at scale)</div>
             </div>
             <p class="reveal-item" style="font-size: var(--small-size); margin-top: clamp(0.8rem, 1.5vw, 1.2rem);"><a href="https://www.anthropic.com/features/81k-interviews" target="_blank" rel="noopener" style="color: var(--accent);">anthropic.com/features/81k-interviews &rarr;</a></p>
         </div>
@@ -399,36 +184,30 @@
         <span class="slide-number">05</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 6: Guest Lecture & Q&A
-         ========================================== -->
+    <!-- SLIDE 6: Guest Lecture & Q&A -->
     <section class="slide">
         <nav class="section-nav"><a href="#guest" class="active">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 15%"></div>
+        <div class="progress" style="width: 11%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center; text-align: center;">
             <p style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent); margin-bottom: 0.5em;">Kunal Handa &middot; Anthropic</p>
-            <h2 style="font-size: var(--h2-size); margin-bottom: 0.3em;">Guest Lecture &amp; Q&amp;A</h2>
+            <h2 style="font-size: var(--h2-size);">Guest Lecture &amp; Q&amp;A</h2>
         </div>
         <span class="slide-number">06</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 7: Section Header — Debrief (blue)
-         ========================================== -->
+    <!-- SLIDE 7: Debrief header (blue) -->
     <section class="slide section-header" id="debrief" style="background: #5371ff;">
-        <div class="progress" style="width: 18%"></div>
+        <div class="progress" style="width: 13%"></div>
         <div class="slide-content" style="justify-content: center; align-items: center; padding: clamp(3rem, 6vw, 5rem);">
             <h1 class="reveal-item visible" style="color: #fff; font-size: clamp(4.5rem, 11vw, 9rem);">Debrief</h1>
         </div>
         <span class="slide-number">07</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 8: Cook Quote 1
-         ========================================== -->
+    <!-- SLIDE 8: Cook Quote 1 -->
     <section class="slide slide-dark" data-steps="2">
-        <div class="progress" style="width: 21%"></div>
+        <div class="progress" style="width: 15%"></div>
         <div class="slide-content" style="justify-content: center; align-items: flex-start; padding: clamp(3rem, 6vw, 5rem);">
             <blockquote class="reveal-item">&ldquo;Anthropic, and other generative AI businesses, are attempting to redefine what qualitative research is so that it can replace genuine qualitative research with AI chat bots. Unfortunately, many people are falling for it, and talking about qualitative research as if it includes any research that involves analysis of human language.&rdquo;</blockquote>
             <cite class="reveal-item">&mdash; Jonathan Cook</cite>
@@ -437,11 +216,9 @@
         <span class="slide-number">08</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 9: Cook Quote 2
-         ========================================== -->
+    <!-- SLIDE 9: Cook Quote 2 -->
     <section class="slide slide-dark" data-steps="2">
-        <div class="progress" style="width: 24%"></div>
+        <div class="progress" style="width: 17%"></div>
         <div class="slide-content" style="justify-content: center; align-items: flex-start; padding: clamp(3rem, 6vw, 5rem);">
             <blockquote class="reveal-item">&ldquo;Anthropic did provide a searchable &lsquo;quote wall&rsquo;, but the quote wall provides absolutely no analysis of the meaning of what people typed in, and doesn&rsquo;t enable searching of all the survey responses, just a small portion of them, without explanation of why or how this selection was made.&rdquo;</blockquote>
             <blockquote class="reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">&ldquo;Quotes from the fill-in-the-blank survey are never explained in Anthropic&rsquo;s short report. They are merely categorized, through quantitative means, and presented as a kind of window dressing around the main quantitative findings.&rdquo;</blockquote>
@@ -451,11 +228,9 @@
         <span class="slide-number">09</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 10: Cook Quote 3
-         ========================================== -->
+    <!-- SLIDE 10: Cook Quote 3 -->
     <section class="slide slide-dark">
-        <div class="progress" style="width: 27%"></div>
+        <div class="progress" style="width: 19%"></div>
         <div class="slide-content" style="justify-content: center; align-items: center; text-align: center; padding: clamp(3rem, 8vw, 6rem);">
             <blockquote style="font-size: clamp(1.8rem, 3.5vw, 2.8rem);">&ldquo;So, I ask again: Is it time for qualitative researchers to come up with a new term to refer to genuine qualitative research? What language can we use to define the work that we do?&rdquo;</blockquote>
             <cite>&mdash; Jonathan Cook</cite>
@@ -463,23 +238,17 @@
         <span class="slide-number">10</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 11: Section Header — Wrap-Up and Takeaways
-         ========================================== -->
+    <!-- SLIDE 11: Wrap-Up & Takeaways header -->
     <section class="slide accent-bg section-header" id="takeaways">
-        <div class="progress" style="width: 30%"></div>
-        <div class="slide-content" style="justify-content: center; align-items: center; padding: clamp(3rem, 6vw, 5rem);">
-            <h1 class="reveal-item visible">Wrap-Up &amp;<br>Takeaways</h1>
-        </div>
+        <div class="progress" style="width: 21%"></div>
+        <h1 class="reveal-item visible">Wrap-Up &amp;<br>Takeaways</h1>
         <span class="slide-number">11</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 12: Qual research — why you should care + Kara intro
-         ========================================== -->
+    <!-- SLIDE 12: Qual: why you should care + Kara intro -->
     <section class="slide" data-steps="3">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 33%"></div>
+        <div class="progress" style="width: 23%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
             <h2 class="reveal-item">Qual research: why you should care</h2>
@@ -493,53 +262,39 @@
         <span class="slide-number">12</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 13: Kara — Field notes excerpt
-         ========================================== -->
+    <!-- SLIDE 13: Kara field notes -->
     <section class="slide">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 36%"></div>
+        <div class="progress" style="width: 25%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
-            <div class="field-notes">
-                As I walk past the front of the library, a man is lying across the steps, his face obscured by his black sweatshirt and his bare feet and ankles gray with dirt. A grocery shopping cart positioned lopsidedly next to him holds a child-size tricycle. [...] As I walk into the main library room, I am immediately struck by the architecture: intricately carved columns and panels line the ivory walls and ceiling. The room is vast, with tall ceilings. Golden chandeliers descend from the ceiling. [...] Button Down Man sits leaning forward slightly, with his elbows resting on his knees. His laptop sits slightly to the side, so that it is not directly between them. He maintains eye contact with Sparkly Bag Client and talks in a soft but confident tone.
-            </div>
+            <p class="section-label">Qual research: why you should care</p>
+            <div class="field-notes">As I walk past the front of the library, a man is lying across the steps, his face obscured by his black sweatshirt and his bare feet and ankles gray with dirt. A grocery shopping cart positioned lopsidedly next to him holds a child-size tricycle. [...] As I walk into the main library room, I am immediately struck by the architecture: intricately carved columns and panels line the ivory walls and ceiling. The room is vast, with tall ceilings. Golden chandeliers descend from the ceiling. [...] Button Down Man sits leaning forward slightly, with his elbows resting on his knees. His laptop sits slightly to the side, so that it is not directly between them. He maintains eye contact with Sparkly Bag Client and talks in a soft but confident tone.</div>
         </div>
         <span class="slide-number">13</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 14: Kara — What quant would capture
-         ========================================== -->
+    <!-- SLIDE 14: Kara quant vs qual -->
     <section class="slide" data-steps="2">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 39%"></div>
+        <div class="progress" style="width: 27%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
-            <div class="compare-block compare-quant reveal-item">
-                <strong>What a survey or quantitative variable would have captured:</strong>
-                This young woman is unemployed, expecting, lacks a degree, and is seeking services. It could code her as a &ldquo;CareerLink participant&rdquo; in an administrative dataset. A regression could estimate the effect of degree-requirement removal on hiring rates for people like her.
-            </div>
-            <div class="compare-block compare-qual reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
-                <strong>What that would not capture:</strong>
-                Why the gap between policy and outcome persists. The field notes suggest some potential mechanisms: the counselors are warm, competent, and caring, and they still can&rsquo;t place her.
-                <ul style="margin: 0.5em 0 0 1.2em; font-size: var(--small-size);">
-                    <li>The system is designed to serve everyone (a pregnant teenager, an aging veteran, a mother doing homework with her kids), which means it&rsquo;s designed to serve no one in particular and mechanisms are heterogeneous (age, loneliness, digital literacy for elderly veteran)</li>
-                </ul>
-            </div>
+            <p class="section-label">Qual research: why you should care</p>
+            <div class="compare-block compare-quant reveal-item"><strong>What a survey or quantitative variable would have captured:</strong>This young woman is unemployed, expecting, lacks a degree, and is seeking services. It could code her as a &ldquo;CareerLink participant&rdquo; in an administrative dataset. A regression could estimate the effect of degree-requirement removal on hiring rates for people like her.</div>
+            <div class="compare-block compare-qual reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);"><strong>What that would not capture:</strong>Why the gap between policy and outcome persists. The field notes suggest some potential mechanisms: the counselors are warm, competent, and caring, and they still can&rsquo;t place her.<ul style="margin: 0.5em 0 0 1.2em; font-size: var(--small-size);"><li>The system is designed to serve everyone (a pregnant teenager, an aging veteran, a mother doing homework with her kids), which means it&rsquo;s designed to serve no one in particular and mechanisms are heterogeneous</li></ul></div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">14</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 15: Kara — The felt experience
-         ========================================== -->
+    <!-- SLIDE 15: Kara felt experience -->
     <section class="slide">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 42%"></div>
+        <div class="progress" style="width: 29%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
+            <p class="section-label">Qual research: why you should care</p>
             <div class="compare-block compare-qual">
                 <p style="font-size: var(--body-size); line-height: 1.55; margin: 0;">You also can&rsquo;t survey the moment she says her resume might not &ldquo;count,&rdquo; or the silence after &ldquo;Did you say <em>babies</em>?&rdquo;, or the way she clutches her bag the entire time and doesn&rsquo;t shift in her seat once.</p>
                 <p style="font-size: var(--body-size); line-height: 1.55; margin: 1em 0 0; font-style: italic; color: #5371ff;">(Those details tell you something about the felt experience of navigating the system in a way that quant research cannot)</p>
@@ -548,14 +303,13 @@
         <span class="slide-number">15</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 16: Qual goes beyond surface — Michelle Fausto intro
-         ========================================== -->
+    <!-- SLIDE 16: Michelle Fausto intro -->
     <section class="slide" data-steps="2">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 45%"></div>
+        <div class="progress" style="width: 31%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
+            <p class="section-label">Qual research: why you should care</p>
             <p class="reveal-item" style="font-size: var(--body-size); line-height: 1.55; max-width: 1000px; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">Qualitative research goes beyond surface-level observations to uncover motivations, beliefs, and lived experiences. It allows you to step into the shoes of the people you are working with or for, to understand the world from their perspective.</p>
             <div class="example-card reveal-item">
                 <h3>Michelle Fausto &mdash; Interview with a SNAP Case Navigator</h3>
@@ -567,51 +321,40 @@
         <span class="slide-number">16</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 17: Michelle — Interview quote
-         ========================================== -->
+    <!-- SLIDE 17: Michelle quote -->
     <section class="slide">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 48%"></div>
+        <div class="progress" style="width: 33%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
-            <div class="field-notes">
-                &ldquo;As a kid, I vividly remember going to the health and human services office in El Monte, California and going in and, like, being stripped down as a child of, like, maybe I had a toy in my pocket. This was so dehumanizing. I&rsquo;m sure my mom was already feeling some type of way bringing me here, her kid after school when she wished she would just be home, sitting in uncomfortable chairs in a place that it&rsquo;s, like, dead silent. People don&rsquo;t even want to look at each other in the eye.&rdquo;
-            </div>
+            <p class="section-label">Qual research: why you should care</p>
+            <div class="field-notes">&ldquo;As a kid, I vividly remember going to the health and human services office in El Monte, California and going in and, like, being stripped down as a child of, like, maybe I had a toy in my pocket. This was so dehumanizing. I&rsquo;m sure my mom was already feeling some type of way bringing me here, her kid after school when she wished she would just be home, sitting in uncomfortable chairs in a place that it&rsquo;s, like, dead silent. People don&rsquo;t even want to look at each other in the eye.&rdquo;</div>
             <p style="font-size: var(--small-size); color: var(--text-secondary); margin-top: clamp(1.5rem, 3vw, 2.5rem); max-width: 1000px; font-style: italic;">When she describes meeting families at grocery stores and WIC offices instead of making them come to a government building, she seems to be describing what she wished had existed for her mother.</p>
         </div>
         <span class="slide-number">17</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 18: Michelle — What quant would capture
-         ========================================== -->
+    <!-- SLIDE 18: Michelle quant vs qual -->
     <section class="slide" data-steps="2">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 51%"></div>
+        <div class="progress" style="width: 35%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
-            <div class="compare-block compare-quant reveal-item">
-                <strong>What a survey or quantitative variable could capture:</strong>
-                <p style="margin: 0.4em 0 0; font-size: var(--body-size); line-height: 1.5;">SNAP enrollment data can tell you that California&rsquo;s participation rate among eligible households is lower than the national average. Administrative records can tell you how many applications were started, denied, or abandoned. A regression could estimate the effect of application complexity on completion rates, or the effect of public charge rhetoric on enrollment among immigrant households.</p>
-            </div>
-            <div class="compare-block compare-qual reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
-                <strong>But none of that would tell you:</strong>
-                <p style="margin: 0.4em 0 0; font-size: var(--body-size); line-height: 1.5;">Why the gap persists despite the program being designed to serve exactly these families. Nor would they have produced the interviewee&rsquo;s dual perspective (from the child&rsquo;s POV and the bureaucratic mechanics that she sees from the navigator&rsquo;s desk).</p>
-            </div>
+            <p class="section-label">Qual research: why you should care</p>
+            <div class="compare-block compare-quant reveal-item"><strong>What a survey or quantitative variable could capture:</strong><p style="margin: 0.4em 0 0; font-size: var(--body-size); line-height: 1.5;">SNAP enrollment data can tell you that California&rsquo;s participation rate among eligible households is lower than the national average. Administrative records can tell you how many applications were started, denied, or abandoned. A regression could estimate the effect of application complexity on completion rates, or the effect of public charge rhetoric on enrollment among immigrant households.</p></div>
+            <div class="compare-block compare-qual reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);"><strong>But none of that would tell you:</strong><p style="margin: 0.4em 0 0; font-size: var(--body-size); line-height: 1.5;">Why the gap persists despite the program being designed to serve exactly these families. Nor would they have produced the interviewee&rsquo;s dual perspective (from the child&rsquo;s POV and the bureaucratic mechanics that she sees from the navigator&rsquo;s desk).</p></div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">18</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 19: Michelle — Layers of why (part 1)
-         ========================================== -->
+    <!-- SLIDE 19: Michelle layers 1 -->
     <section class="slide" data-steps="3">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 54%"></div>
+        <div class="progress" style="width: 37%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
+            <p class="section-label">Qual research: why you should care</p>
             <h2 class="reveal-item" style="margin-bottom: clamp(1rem, 2vw, 1.5rem);">The interview surfaces layer after layer of <em>why</em></h2>
             <ul>
                 <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Fear as a rational calculation, not ignorance.</strong> Undocumented mothers (95% of the HOH she works with) refuse to apply because they believe it will trigger public charge consequences for their immigration cases. Even after months of trust-building, &ldquo;other families just didn&rsquo;t think the risk was worth it and we respected that.&rdquo;</li>
@@ -622,258 +365,362 @@
         <span class="slide-number">19</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 20: Michelle — Layers of why (part 2)
-         ========================================== -->
+    <!-- SLIDE 20: Michelle layers 2 -->
     <section class="slide" data-steps="2">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 57%"></div>
+        <div class="progress" style="width: 39%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="justify-content: center;">
-            <div class="field-notes reveal-item" style="margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">
-                The verification interviews felt like interrogation. &ldquo;When applicants miss the call, because they&rsquo;re at work, because the number is undisclosed, because they&rsquo;re afraid of unknown callers, they have to start over. &lsquo;You did everything right!&rsquo; It&rsquo;s just a phone call. I&rsquo;m so sorry that we have to start all over again.&rdquo;
-            </div>
-            <div class="compare-block compare-qual reveal-item">
-                <strong style="font-size: var(--body-size); color: #5371ff;">&hellip;That&rsquo;s what qualitative research does that nothing else can:</strong>
-                <p style="margin: 0.4em 0 0; font-size: var(--body-size); line-height: 1.55;">it lets you understand a system from the perspective of someone who lives inside it.</p>
-            </div>
+            <p class="section-label">Qual research: why you should care</p>
+            <div class="field-notes reveal-item" style="margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">The verification interviews felt like interrogation. &ldquo;When applicants miss the call, because they&rsquo;re at work, because the number is undisclosed, because they&rsquo;re afraid of unknown callers, they have to start over. &lsquo;You did everything right!&rsquo; It&rsquo;s just a phone call. I&rsquo;m so sorry that we have to start all over again.&rdquo;</div>
+            <div class="compare-block compare-qual reveal-item"><strong style="font-size: var(--body-size); color: #5371ff;">&hellip;That&rsquo;s what qualitative research does that nothing else can:</strong><p style="margin: 0.4em 0 0; font-size: var(--body-size); line-height: 1.55;">it lets you understand a system from the perspective of someone who lives inside it.</p></div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">20</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 21: Section Header — Creativity in Qual
-         ========================================== -->
-    <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 60%"></div>
-        <h1 class="reveal-item visible">Creativity<br>in Qual</h1>
+    <!-- SLIDE 21: Industry investment 1 -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 41%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content">
+            <p class="section-label">Qual research: why you should care</p>
+            <h2 class="reveal-item">The world is investing in qual</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>$140 billion industry</strong> &mdash; the global market research industry, much of it qualitative (Backlinko)</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>57% of researchers</strong> report growing demand specifically for qualitative methods (Andreessen Horowitz). Companies like Unilever and Coca-Cola spend hundreds of millions per year on research, much of it qualitative.</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">21</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 22: Takeaway — Creativity / James' point
-         ========================================== -->
+    <!-- SLIDE 22: Industry investment 2 -->
     <section class="slide" data-steps="3">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 63%"></div>
+        <div class="progress" style="width: 43%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Creativity &amp; New Frontiers</p>
-            <h2 class="reveal-item">There&rsquo;s room for creativity</h2>
-            <div class="takeaway-box reveal-item" style="max-width: 1000px;">
-                <strong>James&rsquo; point:</strong> The best qualitative work doesn&rsquo;t just follow a template &mdash; it finds inventive ways to answer the question. The methods you choose should fit the world you&rsquo;re studying, not the other way around.
+            <p class="section-label">Qual research: why you should care</p>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>The two leading AI companies</strong> (firms that could automate everything quantitatively) are choosing to invest in qual: Anthropic&rsquo;s Interviewer tool and OpenAI&rsquo;s GABRIEL</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Despite common assumptions,</strong> many policymakers disproportionately value qual over quant</li>
+            </ul>
+            <div class="takeaway-box reveal-item" style="margin-top: clamp(1.5rem, 3vw, 2.5rem); max-width: 1000px;">
+                The organizations with the most resources and the sharpest research operations are pouring investment into qualitative research because they know what it yields.
             </div>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">22</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 23: Creativity showcase
-         ========================================== -->
-    <section class="slide" data-steps="5">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 66%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">Examples from this class</h2>
-            <div class="showcase-grid">
-                <div class="showcase-card reveal-item">
-                    <h3>Focus Group Analysis Site</h3>
-                    <p>We built an interactive website to present and explore your focus group findings collaboratively.</p>
-                    <p style="margin-top: 0.5em;"><a href="https://lizmckenna.github.io/api-203m-fg-site/" target="_blank" rel="noopener">lizmckenna.github.io/api-203m-fg-site &rarr;</a></p>
-                </div>
-                <div class="showcase-card reveal-item">
-                    <h3>ABCD / Telegram Fieldwork Bot</h3>
-                    <p>A Telegram bot for structured fieldwork data collection &mdash; demonstrating how technology can support (not replace) qualitative observation.</p>
-                </div>
-                <div class="showcase-card reveal-item">
-                    <h3>AI-Assisted Coding</h3>
-                    <p>Tuesday&rsquo;s workshop showed how AI can accelerate deductive and inductive coding while keeping the researcher in control.</p>
-                </div>
-                <div class="showcase-card reveal-item">
-                    <h3>Guest: Kunal Handa</h3>
-                    <p>Today&rsquo;s lecture shows what happens when you scale qualitative interviews with AI &mdash; 81,000 conversations, one model.</p>
-                </div>
-            </div>
+    <!-- SLIDE 23: Big blue — Qual is creative -->
+    <section class="slide section-header" style="background: #5371ff;">
+        <div class="progress" style="width: 45%"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center; padding: clamp(3rem, 6vw, 5rem);">
+            <h1 class="reveal-item visible" style="color: #fff; font-size: clamp(3rem, 8vw, 6.5rem); line-height: 1.05;">Remember: qual research is creative!<br><span style="font-weight: 400; font-size: 0.65em; opacity: 0.85;">(even more so with AI)</span></h1>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">23</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 24: Acknowledging Limitations
-         ========================================== -->
-    <section class="slide" data-steps="4">
+    <!-- SLIDE 24: Placeholder — FG Site -->
+    <section class="slide">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
-        <div class="progress" style="width: 69%"></div>
+        <div class="progress" style="width: 47%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Craft</p>
-            <h2 class="reveal-item">Acknowledging limitations honestly</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Every method has trade-offs</strong> &mdash; the mark of a sophisticated researcher is naming them upfront, not burying them in a footnote</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Limitations are not apologies</strong> &mdash; they are a transparent account of what your design can and cannot tell us</li>
-            </ul>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <div class="placeholder-slide">
+                <p class="section-label">Creativity &amp; New Frontiers</p>
+                <h2>Focus Group Analysis Site</h2>
+                <p>[ live demo / walkthrough ]</p>
+                <p style="margin-top: 0.8em;"><a href="https://lizmckenna.github.io/api-203m-fg-site/" target="_blank" rel="noopener" style="color: var(--accent); font-weight: 600;">lizmckenna.github.io/api-203m-fg-site &rarr;</a></p>
+            </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">24</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 25: Section Header — Final Assignment
-         ========================================== -->
-    <section class="slide accent-bg section-header" id="assignment">
-        <div class="progress" style="width: 72%"></div>
-        <h1 class="reveal-item visible">Final<br>Assignment</h1>
+    <!-- SLIDE 25: Placeholder — HTML Slides -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 49%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <div class="placeholder-slide">
+                <p class="section-label">Creativity &amp; New Frontiers</p>
+                <h2>HTML Slide Decks</h2>
+                <p>[ demo / walkthrough ]</p>
+            </div>
+        </div>
         <span class="slide-number">25</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 26: Mock PAE Proposal — Overview
-         ========================================== -->
-    <section class="slide" data-steps="4">
-        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
-        <div class="progress" style="width: 75%"></div>
+    <!-- SLIDE 26: Placeholder — ISAIAH Survey -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 51%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent);">Final Assignment</p>
-            <h2 class="reveal-item">Mock PAE Proposal</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>What is it?</strong> &mdash; A research proposal that identifies a policy-relevant question and designs a qualitative or mixed-methods study to answer it</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Why a proposal?</strong> &mdash; Writing a proposal forces you to connect question &rarr; method &rarr; data &rarr; analysis &mdash; the full pipeline we&rsquo;ve practiced all semester</li>
-            </ul>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <div class="placeholder-slide">
+                <p class="section-label">Creativity &amp; New Frontiers</p>
+                <h2>ISAIAH Survey</h2>
+                <p>[ demo / walkthrough ]</p>
+            </div>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
         <span class="slide-number">26</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 27: Rubric
-         ========================================== -->
+    <!-- SLIDE 27: Placeholder — ABCD / Fieldwork Bot -->
+    <section class="slide">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 53%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <div class="placeholder-slide">
+                <p class="section-label">Creativity &amp; New Frontiers</p>
+                <h2>ABCD / Fieldwork Bot</h2>
+                <p>[ demo / walkthrough ]</p>
+            </div>
+        </div>
+        <span class="slide-number">27</span>
+    </section>
+
+    <!-- SLIDE 28: What I Hope You Carry With You header -->
+    <section class="slide accent-bg section-header">
+        <div class="progress" style="width: 55%"></div>
+        <h1 class="reveal-item visible" style="font-size: clamp(3.5rem, 9vw, 7rem); line-height: 1.05;">What I Hope<br>You Carry<br>With You</h1>
+        <span class="slide-number">28</span>
+    </section>
+
+    <!-- SLIDE 29: Carry 1 — Craft -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 57%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <p class="section-label">What I hope you carry with you</p>
+            <h2 class="reveal-item">Qual research is a craft</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>It can be done well or poorly</strong> &mdash; compare Example A vs. Example B</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>My interview vs. an excellent probe/follow-up</strong> &mdash; the difference is in the craft of the question, the timing, and the listening</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">29</span>
+    </section>
+
+    <!-- SLIDE 30: Carry 2 — Distinguish good vs bad -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 59%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <p class="section-label">What I hope you carry with you</p>
+            <h2 class="reveal-item">You should be able to distinguish good vs. bad qual research</h2>
+            <ul>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Small and Calarco</strong> showed you what exemplary work looks like across different traditions</li>
+                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Student submissions</strong> &mdash; exemplary examples from your own work this semester across different criteria</li>
+            </ul>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">30</span>
+    </section>
+
+    <!-- SLIDE 31: Carry 3 — Positionality -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 61%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <p class="section-label">What I hope you carry with you</p>
+            <h2 class="reveal-item">Self-awareness (positionality)</h2>
+            <div class="takeaway-box reveal-item" style="max-width: 1000px;">
+                You are not a neutral instrument. You never are. The point isn&rsquo;t to eliminate your influence &mdash; that&rsquo;s impossible &mdash; but to <strong>account for it analytically</strong>.
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">31</span>
+    </section>
+
+    <!-- SLIDE 32: Carry 4 — Generalizability -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 63%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <p class="section-label">What I hope you carry with you</p>
+            <h2 class="reveal-item">Generalizability and causality are not the aim</h2>
+            <div class="takeaway-box reveal-item" style="max-width: 1000px;">
+                Qual research offers depth, mechanism, and context &mdash; not statistical generalizability, and that&rsquo;s by design. Think of Kieran and Eliza&rsquo;s field notes as examples of what this looks like in practice.
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">32</span>
+    </section>
+
+    <!-- SLIDE 33: Carry 5 — Methods suit the question -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 65%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <p class="section-label">What I hope you carry with you</p>
+            <h2 class="reveal-item">Make the methods suit the question</h2>
+            <div class="takeaway-box reveal-item" style="max-width: 1000px;">
+                Don&rsquo;t pick a method first and then look for questions it can answer. Let the research question drive your design. Think of Mara&rsquo;s comments from Biernacki.
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">33</span>
+    </section>
+
+    <!-- SLIDE 34: Carry 6 — Limitations -->
+    <section class="slide" data-steps="2">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 67%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <p class="section-label">What I hope you carry with you</p>
+            <h2 class="reveal-item">Name your limitations</h2>
+            <div class="takeaway-box reveal-item" style="max-width: 1000px;">
+                The methodology section could use a short limitations paragraph. With a convenience-and-snowball sample and a stakeholder coding scheme, naming the limits would <strong>strengthen rather than weaken</strong> the analysis. (Learning Orientations, Dweck 2006)
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">34</span>
+    </section>
+
+    <!-- SLIDE 35: Carry 7 — Talk back -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways" class="active">Takeaways</a><a href="#assignment">Final Assignment</a></nav>
+        <div class="progress" style="width: 69%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center;">
+            <p class="section-label">What I hope you carry with you</p>
+            <h2 class="reveal-item">You want your qual research to &ldquo;talk back&rdquo; to you</h2>
+            <p class="reveal-item" style="font-size: var(--body-size); line-height: 1.55; max-width: 1000px;">A good theory or model should do more than dress up your prior intuition. It should generate an implication, tension, or mechanism that you did not fully see in advance.</p>
+            <div class="takeaway-box reveal-item" style="max-width: 1000px; margin-top: clamp(1rem, 2vw, 1.5rem);">
+                <strong>&ldquo;Talk back&rdquo; means:</strong> the model pushes back against your first intuition, reveals a consequence you didn&rsquo;t simply put in by hand, or surprises you in a useful way.
+            </div>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">35</span>
+    </section>
+
+    <!-- SLIDE 36: Final Assignment header -->
+    <section class="slide accent-bg section-header" id="assignment">
+        <div class="progress" style="width: 72%"></div>
+        <h1 class="reveal-item visible">Final<br>Assignment</h1>
+        <span class="slide-number">36</span>
+    </section>
+
+    <!-- SLIDE 37: Mock PAE (cards, centered) -->
+    <section class="slide" data-steps="3">
+        <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
+        <div class="progress" style="width: 75%"></div>
+        <div class="grid-bg"></div>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <h2 class="reveal-item" style="text-align: center; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">Mock PAE Proposal</h2>
+            <div class="assign-cards">
+                <div class="assign-card reveal-item">
+                    <h3>What is it?</h3>
+                    <p>A research proposal that identifies a policy-relevant question and designs a qualitative or mixed-methods study to answer it</p>
+                </div>
+                <div class="assign-card reveal-item">
+                    <h3>Why a proposal?</h3>
+                    <p>Writing a proposal forces you to connect question &rarr; method &rarr; data &rarr; analysis &mdash; the full pipeline we&rsquo;ve practiced all semester</p>
+                </div>
+            </div>
+            <p style="margin-top: clamp(1rem, 2vw, 1.5rem); text-align: center;"><a href="https://canvas.harvard.edu/courses/167659/assignments/1050058" target="_blank" rel="noopener" style="color: var(--accent); font-size: var(--body-size); font-weight: 600;">View on Canvas &rarr;</a></p>
+        </div>
+        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
+        <span class="slide-number">37</span>
+    </section>
+
+    <!-- SLIDE 38: Rubric (smaller text, canvas link) -->
     <section class="slide" data-steps="6">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
         <div class="progress" style="width: 78%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content" style="padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
-            <h2 class="reveal-item">Rubric Highlights</h2>
+        <div class="slide-content" style="justify-content: center; align-items: center; padding-top: clamp(0.8rem, 1.5vw, 1.2rem);">
+            <h2 class="reveal-item" style="font-size: clamp(2.2rem, 5.5vw, 4rem); text-align: center; margin-bottom: clamp(1rem, 2vw, 1.5rem);">Rubric Highlights</h2>
             <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
-                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
-                    <h3>Research Question</h3>
-                    <p>Clear, focused, policy-relevant, and answerable with qualitative or mixed methods</p>
-                </div>
-                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
-                    <h3>Methods Design</h3>
-                    <p>Appropriate method(s) for the question, with justified sampling, recruitment, and data collection plan</p>
-                </div>
-                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
-                    <h3>Analysis Plan</h3>
-                    <p>Coding strategy, analytical framework, and how you&rsquo;ll move from data to findings</p>
-                </div>
-                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
-                    <h3>Ethics</h3>
-                    <p>IRB considerations, informed consent, positionality, and potential harms</p>
-                </div>
-                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
-                    <h3>Limitations</h3>
-                    <p>Honest assessment of trade-offs and what the design cannot tell us</p>
-                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);"><h3 style="font-size: clamp(1.6rem, 3.5vw, 2.5rem);">Research Question</h3><p style="font-size: var(--small-size);">Clear, focused, policy-relevant, answerable with qual or mixed methods</p></div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);"><h3 style="font-size: clamp(1.6rem, 3.5vw, 2.5rem);">Methods Design</h3><p style="font-size: var(--small-size);">Appropriate method(s), justified sampling, recruitment, data collection plan</p></div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);"><h3 style="font-size: clamp(1.6rem, 3.5vw, 2.5rem);">Analysis Plan</h3><p style="font-size: var(--small-size);">Coding strategy, analytical framework, how you move from data to findings</p></div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);"><h3 style="font-size: clamp(1.6rem, 3.5vw, 2.5rem);">Ethics</h3><p style="font-size: var(--small-size);">IRB, informed consent, positionality, potential harms</p></div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);"><h3 style="font-size: clamp(1.6rem, 3.5vw, 2.5rem);">Limitations</h3><p style="font-size: var(--small-size);">Honest assessment of trade-offs and what the design cannot tell us</p></div>
             </div>
+            <p style="margin-top: clamp(0.8rem, 1.5vw, 1.2rem); text-align: center;"><a href="https://canvas.harvard.edu/courses/167659/assignments/1050058" target="_blank" rel="noopener" style="color: var(--accent); font-size: var(--small-size); font-weight: 600;">Full rubric on Canvas &rarr;</a></p>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">27</span>
+        <span class="slide-number">38</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 28: Examples / Tips
-         ========================================== -->
+    <!-- SLIDE 39: Tips (cards) -->
     <section class="slide" data-steps="4">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
         <div class="progress" style="width: 81%"></div>
         <div class="grid-bg"></div>
-        <div class="slide-content">
-            <h2 class="reveal-item">Tips &amp; Examples</h2>
-            <ul>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Draw on what we read</strong> &mdash; use Small, Calarco, Pager, or any of the course readings as models for how to frame a question and justify a method</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Be specific</strong> &mdash; &ldquo;I will interview 15 community health workers in Nairobi&rdquo; is stronger than &ldquo;I will conduct interviews&rdquo;</li>
-                <li class="reveal-item"><span class="bullet">&rarr;</span><strong>Past student examples</strong> are on Canvas &mdash; look at what earned strong marks and why</li>
-            </ul>
+        <div class="slide-content" style="justify-content: center; align-items: center;">
+            <h2 class="reveal-item" style="text-align: center; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">Tips &amp; Examples</h2>
+            <div class="columns" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3>Draw on readings</h3>
+                    <p>Use Small, Calarco, Pager, or any course readings as models for framing a question and justifying a method</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3>Be specific</h3>
+                    <p>&ldquo;I will interview 15 community health workers in Nairobi&rdquo; is stronger than &ldquo;I will conduct interviews&rdquo;</p>
+                </div>
+                <div class="card reveal-item" style="border-top: 4px solid var(--accent);">
+                    <h3>Past examples</h3>
+                    <p>Student examples are on Canvas (look at what earned strong marks and why)</p>
+                </div>
+            </div>
+            <p style="margin-top: clamp(0.8rem, 1.5vw, 1.2rem); text-align: center;"><a href="https://canvas.harvard.edu/courses/167659/assignments/1050058" target="_blank" rel="noopener" style="color: var(--accent); font-size: var(--small-size); font-weight: 600;">View assignment on Canvas &rarr;</a></p>
         </div>
         <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">28</span>
+        <span class="slide-number">39</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 29: Due Date + Canvas Link
-         ========================================== -->
-    <section class="slide" data-steps="2">
+    <!-- SLIDE 40: Due Date -->
+    <section class="slide">
         <nav class="section-nav"><a href="#guest">Guest Lecture</a><a href="#debrief">Debrief</a><a href="#takeaways">Takeaways</a><a href="#assignment" class="active">Final Assignment</a></nav>
         <div class="progress" style="width: 84%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center; text-align: center;">
-            <p class="reveal-item" style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent); margin-bottom: 0.3em;">Submit on Canvas</p>
-            <div class="reveal-item">
-                <p class="big-date">Due Date TBD</p>
-                <p style="font-size: var(--body-size); color: var(--text-secondary); margin-top: clamp(0.8rem, 1.5vw, 1.2rem); max-width: 800px;">Check Canvas for the exact deadline, rubric, and submission link.</p>
-                <p style="margin-top: clamp(1rem, 2vw, 1.5rem);"><a href="https://canvas.harvard.edu/courses/167659/assignments/1050058" target="_blank" rel="noopener" style="color: var(--accent); font-size: var(--body-size); font-weight: 600;">canvas.harvard.edu &rarr; Final Assignment &rarr;</a></p>
-            </div>
+            <p style="font-family: 'Archivo', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--small-size); color: var(--accent); margin-bottom: 0.3em;">Submit on Canvas</p>
+            <p class="big-date">May 10<br><span style="font-size: 0.5em; font-weight: 600;">11:59 PM</span></p>
+            <p style="margin-top: clamp(1rem, 2vw, 1.5rem);"><a href="https://canvas.harvard.edu/courses/167659/assignments/1050058" target="_blank" rel="noopener" style="color: var(--accent); font-size: var(--body-size); font-weight: 600;">canvas.harvard.edu &rarr; Final Assignment &rarr;</a></p>
         </div>
-        <div class="step-indicator"><div class="step-dot"></div><div class="step-dot"></div></div>
-        <span class="slide-number">29</span>
+        <span class="slide-number">40</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 30: Q&A
-         ========================================== -->
+    <!-- SLIDE 41: Q&A -->
     <section class="slide">
         <div class="progress" style="width: 88%"></div>
         <div class="grid-bg"></div>
         <div class="slide-content" style="align-items: center; justify-content: center; text-align: center;">
             <p class="qa-text">Q&amp;A</p>
         </div>
-        <span class="slide-number">30</span>
+        <span class="slide-number">41</span>
     </section>
 
-    <!-- ==========================================
-         SLIDE 31: Thank You
-         ========================================== -->
-    <section class="slide accent-bg section-header">
-        <div class="progress" style="width: 94%"></div>
-        <div class="slide-content" style="justify-content: center; align-items: flex-start;">
-            <h1 style="font-size: clamp(3rem, 6vw, 5rem); line-height: 1.1; margin-bottom: clamp(1.5rem, 2.8vw, 2.2rem);">Thank you.</h1>
-            <div style="font-family: 'Nunito', sans-serif; font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.6; color: rgba(255,255,255,0.92);">
-                <p style="margin: 0 0 0.4em 0; font-weight: 700;">Prof. Liz McKenna</p>
-                <p style="margin: 0 0 0.2em 0;">Harvard Kennedy School &middot; API-203M &middot; Spring 2026</p>
-                <p style="margin: 0.8em 0 0.2em 0;">emckenna@hks.harvard.edu</p>
-                <p style="margin: 1.2em 0 0 0; font-size: clamp(1rem, 1.7vw, 1.3rem); opacity: 0.8;">It has been a privilege teaching this class. Go do great research.</p>
-            </div>
-        </div>
-        <span class="slide-number">31</span>
-    </section>
-
-    <!-- ==========================================
-         SLIDE 32: Course Evaluation — QR + Link
-         ========================================== -->
-    <section class="slide">
+    <!-- SLIDE 42: Thank you + Course Eval (combined, blue) -->
+    <section class="slide section-header" style="background: #5371ff;">
         <div class="progress" style="width: 100%"></div>
-        <div class="grid-bg"></div>
-        <div class="slide-content" style="justify-content: center; align-items: center;">
-            <h2 style="text-align: center; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">Course Evaluation</h2>
-            <div class="eval-layout">
-                <div style="text-align: center;" class="eval-qr">
-                    <img src="img/eval-qr.jpeg" alt="Course evaluation QR code">
-                </div>
-                <div>
-                    <p style="font-size: var(--body-size); line-height: 1.55; margin: 0 0 1em;">Your feedback shapes how this course evolves. It takes just a few minutes and means a lot.</p>
-                    <p style="margin: 0 0 1.5em;">
-                        <a href="https://tinyurl.com/mckenna-api203-eval" target="_blank" rel="noopener" style="color: var(--accent); font-size: var(--h3-size); font-weight: 700; word-break: break-all;">tinyurl.com/mckenna-api203-eval</a>
-                    </p>
-                    <p style="font-size: var(--small-size); color: var(--text-secondary); margin: 0;">Scan the QR code or click the link above. Responses are anonymous.</p>
+        <div class="slide-content" style="justify-content: center; align-items: center; text-align: center; padding: clamp(2rem, 4vw, 3rem);">
+            <h1 style="color: #fff; font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.15; margin-bottom: clamp(1rem, 2vw, 1.5rem);">It has been so much fun<br>teaching this class!<br>Go do great research :)</h1>
+            <div style="display: flex; align-items: center; gap: clamp(2rem, 4vw, 3.5rem); margin-top: clamp(1rem, 2vw, 1.5rem);">
+                <img src="img/eval-qr.jpeg" alt="Course evaluation QR code" style="width: clamp(180px, 22vw, 320px); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                <div style="text-align: left;">
+                    <p style="font-family: 'Nunito', sans-serif; font-size: var(--body-size); color: rgba(255,255,255,0.92); margin: 0 0 0.8em; line-height: 1.5;">Your feedback shapes how this course evolves.</p>
+                    <a href="https://tinyurl.com/mckenna-api203-eval" target="_blank" rel="noopener" style="color: #fff; font-family: 'Archivo', sans-serif; font-size: var(--h3-size); font-weight: 700; word-break: break-all; text-decoration: underline; text-underline-offset: 4px;">tinyurl.com/mckenna-api203-eval</a>
                 </div>
             </div>
         </div>
-        <span class="slide-number">32</span>
+        <span class="slide-number">42</span>
     </section>
 
     <div class="nav-hint">&rarr; Next &middot; &darr; Skip slide</div>
