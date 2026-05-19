@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API-203M · A note from Liz</title>
+<meta name="description" content="A note from Liz — pluses, deltas, and what's next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Nunito:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET / TOKENS ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red: #ff3300;
+  --red-soft: #ffeae4;
+  --ink: #0a0a0a;
+  --ink-2: #1a1a2e;
+  --muted: #6b6b6b;
+  --paper: #fafaf7;
+  --paper-2: #f3f1ea;
+  --white: #ffffff;
+  --grid: rgba(0,0,0,0.06);
+  --shadow: 0 1px 0 rgba(0,0,0,0.04), 0 12px 32px -16px rgba(0,0,0,0.18);
+
+  --display: 'Archivo', system-ui, sans-serif;
+  --body: 'Nunito', system-ui, sans-serif;
+  --serif: 'Fraunces', Georgia, serif;
+
+  --pad: clamp(1.25rem, 5vw, 4rem);
+  --maxw: 760px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Grid background overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: clamp(28px, 4vw, 48px) clamp(28px, 4vw, 48px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+/* ============ PROGRESS BAR ============ */
+.progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 100;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--red);
+  transition: width 0.25s ease;
+}
+
+/* ============ LAYOUT ============ */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--pad);
+}
+
+section {
+  padding: clamp(3rem, 8vw, 6rem) 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+section.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+section:last-of-type { border-bottom: none; }
+
+.eyebrow {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.eyebrow .num {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: var(--red);
+  color: white;
+  border-radius: 2px;
+  letter-spacing: 0.1em;
+}
+.eyebrow .rule {
+  flex: 1;
+  height: 1px;
+  background: rgba(0,0,0,0.15);
+}
+
+h1 {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+}
+h1 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--red);
+}
+
+h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.65rem, 4.5vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-bottom: 1rem;
+}
+h2 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.lead {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin-bottom: 2rem;
+  max-width: 60ch;
+}
+
+.hint {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.hint::before {
+  content: '↳';
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 92vh;
+  min-height: 92dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: clamp(4rem, 10vw, 8rem) 0 clamp(2rem, 6vw, 4rem);
+  opacity: 1;
+  transform: none;
+}
+.hero-meta {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+.hero-meta .dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+  margin: 0 0.6rem 0.15rem;
+  vertical-align: middle;
+}
+.hero h1 .greeting { display: block; }
+.hero p.lead { margin-top: 1rem; }
+.scroll-cue {
+  margin-top: 3rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.scroll-cue .arrow {
+  display: inline-block;
+  width: 32px; height: 1.5px;
+  background: var(--ink);
+  position: relative;
+  animation: nudge 1.8s ease-in-out infinite;
+}
+.scroll-cue .arrow::after {
+  content: '';
+  position: absolute;
+  right: 0; top: -3px;
+  width: 8px; height: 8px;
+  border-right: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  transform: rotate(-45deg);
+}
+@keyframes nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
+/* ============ FORM CONTROLS ============ */
+.q-block { margin-bottom: 0.5rem; }
+
+label.q {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+label.q .opt {
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-left: 0.4rem;
+  letter-spacing: 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  font-family: var(--body);
+  font-size: 1rem;
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-weight: 500;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px var(--red-soft);
+}
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+/* Emoji grid */
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.emoji-btn {
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 0.75rem 0;
+  font-size: 1.65rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.emoji-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--red);
+}
+.emoji-btn.selected {
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Slider */
+.slider-wrap {
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.slider-row input[type="range"] {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: linear-gradient(to right, var(--red) 0%, var(--red) var(--val,50%), rgba(0,0,0,0.08) var(--val,50%));
+  border-radius: 999px;
+  outline: none;
+}
+.slider-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px; height: 26px;
+  background: var(--ink);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.slider-row input[type="range"]::-moz-range-thumb {
+  width: 22px; height: 22px;
+  background: var(--ink);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.slider-val {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--red);
+  min-width: 2.5rem;
+  text-align: center;
+}
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: var(--display);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Ranking */
+.rank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.rank-item:hover {
+  border-color: var(--red);
+}
+.rank-num {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--red);
+  width: 1.8rem;
+  text-align: center;
+}
+.rank-label {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+.rank-controls {
+  display: flex;
+  gap: 0.25rem;
+}
+.rank-btn {
+  width: 32px; height: 32px;
+  background: var(--paper-2);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--display);
+  font-weight: 800;
+  color: var(--ink);
+  transition: background 0.15s;
+  font-size: 0.95rem;
+}
+.rank-btn:hover {
+  background: var(--red);
+  color: white;
+}
+.rank-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Voice memo */
+.voice-box {
+  background: var(--white);
+  border: 1.5px dashed rgba(255,51,0,0.4);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.voice-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.voice-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ink);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.voice-btn:hover {
+  background: var(--red);
+}
+.voice-btn.recording {
+  background: var(--red);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+.voice-btn .ico {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+}
+.voice-btn.recording .ico {
+  background: white;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,51,0,0.6); }
+  50% { box-shadow: 0 0 0 8px rgba(255,51,0,0); }
+}
+.voice-timer {
+  font-family: var(--display);
+  font-weight: 700;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+}
+.voice-status {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+.voice-status.ok { color: #128a4d; font-style: normal; font-weight: 600; }
+audio { width: 100%; }
+
+/* Multi-select chips */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.chip {
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  user-select: none;
+}
+.chip:hover {
+  border-color: var(--red);
+}
+.chip.selected {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: white;
+}
+
+/* Submit */
+.submit-section {
+  text-align: center;
+  border-bottom: none;
+  padding-bottom: 4rem;
+}
+.submit-btn {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  border: none;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1.1rem 2.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: var(--shadow);
+}
+.submit-btn:hover {
+  transform: translateY(-2px);
+  background: var(--ink);
+}
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Done screen */
+.done {
+  display: none;
+  min-height: 90vh;
+  min-height: 90dvh;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: var(--pad);
+  position: relative;
+  z-index: 1;
+}
+.done.show { display: flex; }
+.done h1 { margin-bottom: 1.5rem; }
+.done .lead { margin: 0 auto 2rem; }
+.done .signoff {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--ink-2);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem var(--pad) 2rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: var(--display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* Save indicator */
+.save-pill {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: var(--ink);
+  color: white;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s;
+  z-index: 50;
+}
+.save-pill.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .emoji-btn { font-size: 1.4rem; padding: 0.6rem 0; }
+  .voice-row { flex-direction: column; align-items: flex-start; }
+  .rank-item { padding: 0.6rem 0.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+
+<main id="form-main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-meta">
+      API-203M <span class="dot"></span> Spring 2026 <span class="dot"></span> A note from Liz
+    </div>
+    <h1>
+      <span class="greeting">Hi <em id="taName">friend</em>.</span>
+      <span>Let's talk about <em>this semester</em>.</span>
+    </h1>
+    <p class="lead">
+      Before we close the book on Spring 2026, I want to hear from you — honestly, messily, in whatever form is easiest. Your read on what worked (and what didn't) is what shapes this class next year.
+    </p>
+    <p class="lead" style="margin-top: -1rem;">
+      About <strong>10 minutes</strong>. Skip anything that doesn't speak to you. Where you see a <strong style="color:var(--red)">🎙️</strong>, you can record a voice memo instead of typing.
+    </p>
+    <div class="scroll-cue">
+      Start <span class="arrow"></span>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 1: WARM-UP ============ -->
+  <section>
+    <div class="eyebrow"><span class="num">01</span> Warm-up <span class="rule"></span></div>
+    <h2>The <em>vibe check</em>.</h2>
+
+    <div class="q-block">
+      <label class="q" for="oneWord">In one word, this semester felt…</label>
+      <input type="text" id="oneWord" name="01_one_word" maxlength="40" placeholder="e.g., generative, chaotic, fast, alive…">
+    </div>
+
+    <div class="q-block" style="margin-top: 2rem;">
+      <label class="q">Pick the emoji that captures your TA experience.</label>
+      <div class="emoji-grid" id="emojiGrid" data-name="02_emoji">
+        <button type="button" class="emoji-btn" data-v="🚀">🚀</button>
+        <button type="button" class="emoji-btn" data-v="🌱">🌱</button>
+        <button type="button" class="emoji-btn" data-v="🎢">🎢</button>
+        <button type="button" class="emoji-btn" data-v="🔥">🔥</button>
+        <button type="button" class="emoji-btn" data-v="🧠">🧠</button>
+        <button type="button" class="emoji-btn" data-v="🤝">🤝</button>
+        <button type="button" class="emoji-btn" data-v="🌊">🌊</button>
+        <button type="button" class="emoji-btn" data-v="🫠">🫠</button>
+        <button type="button" class="emoji-btn" data-v="✨">✨</button>
+        <button type="button" class="emoji-btn" data-v="🧩">🧩</button>
+        <button type="button" class="emoji-btn" data-v="☕">☕</button>
+        <button type="button" class="emoji-btn" data-v="📚">📚</button>
+      </div>
+      <input type="hidden" name="02_emoji" id="emojiVal">
+    </div>
+
+    <div class="q-block" style="margin-top: 2rem;">
+      <label class="q">On a scale of 1–10, how supported did you feel?</label>
+      <div class="slider-wrap">
+        <div class="slider-row">
+          <input type="range" id="supportSlider" name="03_support" min="1" max="10" value="7">
+          <div class="slider-val" id="supportVal">7</div>
+        </div>
+        <div class="slider-labels">
+          <span>1 · alone in the woods</span>
+          <span>10 · fully held</span>
+        </div>
+      </div>
+      <p class="hint">One thing I could've done to make that number higher?</p>
+      <textarea name="03_support_followup" placeholder="Optional — type or skip" rows="2"></textarea>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2: PLUSES & DELTAS ============ -->
+  <section>
+    <div class="eyebrow"><span class="num">02</span> Pluses &amp; Deltas <span class="rule"></span></div>
+    <h2>What <em>worked</em>. What <em>didn't</em>.</h2>
+
+    <div class="q-block">
+      <label class="q">What worked? <span class="opt">a plus</span></label>
+      <p class="hint">A session structure, a piece of feedback, a moment with students, a behind-the-scenes process — something you'd keep exactly as is.</p>
+      <textarea name="04_plus" rows="4" placeholder="Type here…"></textarea>
+      <div class="voice-box" data-voice="04_plus_audio">
+        <div class="voice-row">
+          <button type="button" class="voice-btn" data-action="rec">
+            <span class="ico"></span> Record voice memo instead
+          </button>
+          <span class="voice-timer">0:00</span>
+          <span class="voice-status">🎙️ optional · up to 3 min</span>
+        </div>
+        <audio controls style="display:none;"></audio>
+      </div>
+    </div>
+
+    <div class="q-block" style="margin-top: 2.5rem;">
+      <label class="q">What didn't work? <span class="opt">a delta — be honest</span></label>
+      <p class="hint">What should I change, drop, or rethink?</p>
+      <textarea name="05_delta" rows="4" placeholder="Type here…"></textarea>
+      <div class="voice-box" data-voice="05_delta_audio">
+        <div class="voice-row">
+          <button type="button" class="voice-btn" data-action="rec">
+            <span class="ico"></span> Record voice memo instead
+          </button>
+          <span class="voice-timer">0:00</span>
+          <span class="voice-status">🎙️ optional</span>
+        </div>
+        <audio controls style="display:none;"></audio>
+      </div>
+    </div>
+
+    <div class="q-block" style="margin-top: 2.5rem;">
+      <label class="q">Hardest moment of the semester? <span class="opt">optional</span></label>
+      <p class="hint">No need to solve it — just naming it helps me design better support next time.</p>
+      <textarea name="06_hardest" rows="3" placeholder="If you want to share…"></textarea>
+    </div>
+
+    <div class="q-block" style="margin-top: 2.5rem;">
+      <label class="q">Moment you felt most proud — or most alive — in the role?</label>
+      <textarea name="07_proudest" rows="3" placeholder="A small one counts."></textarea>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3: ADVICE ============ -->
+  <section>
+    <div class="eyebrow"><span class="num">03</span> Pass it forward <span class="rule"></span></div>
+    <h2>For the ones <em>who come next</em>.</h2>
+
+    <div class="q-block">
+      <label class="q">One piece of advice you'd whisper to next year's API-203M students on day one?</label>
+      <p class="hint">This is the gold — I'd love to share it with them (with your permission).</p>
+      <textarea name="08_student_advice" rows="3" placeholder="Day-one wisdom…"></textarea>
+    </div>
+
+    <div class="q-block" style="margin-top: 2rem;">
+      <label class="q">Can I share it with them?</label>
+      <div class="chip-group" data-name="09_share_permission" data-single="true">
+        <span class="chip" data-v="Yes, with my name">Yes, with my name</span>
+        <span class="chip" data-v="Yes, anonymously">Yes, anonymously</span>
+        <span class="chip" data-v="Keep it between us">Keep it between us</span>
+      </div>
+      <input type="hidden" name="09_share_permission" id="sharePerm">
+    </div>
+
+    <div class="q-block" style="margin-top: 2rem;">
+      <label class="q">What should I tell the next round of TAs that I didn't tell you?</label>
+      <p class="hint">The thing you wish you'd known in week 1.</p>
+      <textarea name="10_next_ta_advice" rows="3" placeholder="Week-1 wisdom…"></textarea>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4: THE COURSE ============ -->
+  <section>
+    <div class="eyebrow"><span class="num">04</span> The course itself <span class="rule"></span></div>
+    <h2>Keep, cut, or <em>rework</em>.</h2>
+
+    <div class="q-block">
+      <label class="q">Rank these course components by how much I should keep them.</label>
+      <p class="hint">Tap the arrows to reorder — top = keep most, bottom = rethink.</p>
+      <div class="rank-list" id="rankList">
+        <!-- populated by JS -->
+      </div>
+      <input type="hidden" name="11_ranking" id="rankingVal">
+    </div>
+
+    <div class="q-block" style="margin-top: 2.5rem;">
+      <label class="q">One assignment or session I should cut or radically rework.</label>
+      <input type="text" name="12_cut" placeholder="Name names — it's safe here.">
+    </div>
+
+    <div class="q-block" style="margin-top: 2rem;">
+      <label class="q">One thing I should <em>add</em> that isn't there yet.</label>
+      <input type="text" name="13_add" placeholder="What's missing?">
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5: YOU ============ -->
+  <section>
+    <div class="eyebrow"><span class="num">05</span> You, the human <span class="rule"></span></div>
+    <h2>The part <em>about you</em>.</h2>
+
+    <div class="q-block">
+      <label class="q">What did you learn this semester that you didn't expect?</label>
+      <p class="hint">About teaching, research, yourself, the field — anything.</p>
+      <textarea name="14_learned" rows="4" placeholder="Surprise me."></textarea>
+      <div class="voice-box" data-voice="14_learned_audio">
+        <div class="voice-row">
+          <button type="button" class="voice-btn" data-action="rec">
+            <span class="ico"></span> Record voice memo instead
+          </button>
+          <span class="voice-timer">0:00</span>
+          <span class="voice-status">🎙️ optional</span>
+        </div>
+        <audio controls style="display:none;"></audio>
+      </div>
+    </div>
+
+    <div class="q-block" style="margin-top: 2.5rem;">
+      <label class="q">How can I be useful to you going forward?</label>
+      <p class="hint">Pick any that apply.</p>
+      <div class="chip-group" data-name="15_useful">
+        <span class="chip" data-v="Recommendation letter">Rec letter</span>
+        <span class="chip" data-v="Introductions">Introductions</span>
+        <span class="chip" data-v="Coffee / catch-up">Coffee</span>
+        <span class="chip" data-v="Co-author something">Co-author</span>
+        <span class="chip" data-v="Talk through career stuff">Career stuff</span>
+        <span class="chip" data-v="Stay in touch generally">Stay in touch</span>
+        <span class="chip" data-v="Nothing — we're good">We're good</span>
+      </div>
+      <input type="hidden" name="15_useful" id="usefulVal">
+      <textarea name="15_useful_more" rows="2" placeholder="Or describe something else…" style="margin-top:0.75rem;"></textarea>
+    </div>
+
+    <div class="q-block" style="margin-top: 2.5rem;">
+      <label class="q">Anything else? <span class="opt">a meme, a song, a roast, a parting thought</span></label>
+      <textarea name="16_anything" rows="3" placeholder="Truly anything."></textarea>
+      <div class="voice-box" data-voice="16_anything_audio">
+        <div class="voice-row">
+          <button type="button" class="voice-btn" data-action="rec">
+            <span class="ico"></span> Record voice memo instead
+          </button>
+          <span class="voice-timer">0:00</span>
+          <span class="voice-status">🎙️ optional</span>
+        </div>
+        <audio controls style="display:none;"></audio>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUBMIT ============ -->
+  <section class="submit-section">
+    <div class="eyebrow" style="justify-content:center;">
+      <span class="num">END</span> That's it <span class="rule" style="max-width:120px;"></span>
+    </div>
+    <h2 style="margin-bottom: 2rem;">Ready to <em>send</em>?</h2>
+    <p class="lead" style="margin: 0 auto 2rem;">
+      A small something is on its way to your inbox. And for the graduates among you — I am so proud. 🌿
+    </p>
+    <button type="button" class="submit-btn" id="submitBtn">Send to Liz →</button>
+    <p class="hint" style="justify-content:center; margin-top: 1.5rem;">
+      Your draft is saved automatically as you type. Refresh-safe.
+    </p>
+  </section>
+
+</main>
+
+<!-- ============ DONE ============ -->
+<div class="done" id="doneScreen">
+  <div class="eyebrow" style="justify-content:center;"><span class="num">✓</span> Received <span class="rule" style="max-width:120px;"></span></div>
+  <h1>Thank you, <em id="taNameDone">friend</em>.</h1>
+  <p class="lead">
+    The students felt the care you brought to this class. I felt it too. I'll read every word — and listen to every voice memo — this week.
+  </p>
+  <p class="signoff">— Liz</p>
+</div>
+
+<footer>
+  Prof. Liz McKenna · Harvard Kennedy School · API-203M · Spring 2026
+</footer>
+
+<div class="save-pill" id="savePill">✓ Draft saved</div>
+
+<script>
+/* ============ CONFIG ============ */
+// To wire up submission: get a free access key from https://web3forms.com
+// (it supports file uploads — needed for voice memos) and paste it below.
+const WEB3FORMS_ACCESS_KEY = '7380653f-bb2c-4854-9d9d-380c66e9e09c';
+const SEND_TO_EMAIL = 'liz_mckenna@hks.harvard.edu'; // info only — web3forms uses your access key
+
+const COURSE_COMPONENTS = [
+  'Weekly sections',
+  'Office hours',
+  'Qualitative methods memo',
+  'Final paper / project',
+  'Guest speakers',
+  'Slack / async communication',
+  'In-class exercises',
+  'Reading load & pacing'
+];
+
+/* ============ PERSONALIZED NAME ============ */
+const params = new URLSearchParams(location.search);
+const rawName = (params.get('name') || '').trim();
+const VALID_TAS = ['Katie', 'Liam', 'Dani', 'Christina', 'Muhammed'];
+const taName = VALID_TAS.find(n => n.toLowerCase() === rawName.toLowerCase()) || (rawName ? rawName.charAt(0).toUpperCase() + rawName.slice(1) : 'friend');
+document.getElementById('taName').textContent = taName;
+document.getElementById('taNameDone').textContent = taName;
+
+/* ============ SCROLL REVEAL + PROGRESS ============ */
+const sections = document.querySelectorAll('main section');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.12 });
+sections.forEach(s => io.observe(s));
+
+const progressFill = document.getElementById('progressFill');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  progressFill.style.width = pct + '%';
+}, { passive: true });
+
+/* ============ SLIDER ============ */
+const sup = document.getElementById('supportSlider');
+const supVal = document.getElementById('supportVal');
+const updateSlider = () => {
+  supVal.textContent = sup.value;
+  sup.style.setProperty('--val', ((sup.value - 1) / 9 * 100) + '%');
+};
+sup.addEventListener('input', updateSlider);
+updateSlider();
+
+/* ============ EMOJI PICKER ============ */
+document.getElementById('emojiGrid').addEventListener('click', (e) => {
+  const btn = e.target.closest('.emoji-btn');
+  if (!btn) return;
+  document.querySelectorAll('#emojiGrid .emoji-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  document.getElementById('emojiVal').value = btn.dataset.v;
+  save();
+});
+
+/* ============ CHIP GROUPS ============ */
+document.querySelectorAll('.chip-group').forEach(group => {
+  const single = group.dataset.single === 'true';
+  const hidden = document.querySelector(`input[type="hidden"][name="${group.dataset.name}"]`);
+  group.addEventListener('click', (e) => {
+    const chip = e.target.closest('.chip');
+    if (!chip) return;
+    if (single) {
+      group.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+    } else {
+      chip.classList.toggle('selected');
+    }
+    const selected = [...group.querySelectorAll('.chip.selected')].map(c => c.dataset.v);
+    if (hidden) hidden.value = selected.join(' | ');
+    save();
+  });
+});
+
+/* ============ RANKING ============ */
+let rankOrder = [...COURSE_COMPONENTS];
+const rankList = document.getElementById('rankList');
+const rankHidden = document.getElementById('rankingVal');
+
+function renderRank() {
+  rankList.innerHTML = '';
+  rankOrder.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.className = 'rank-item';
+    row.innerHTML = `
+      <div class="rank-num">${String(i+1).padStart(2,'0')}</div>
+      <div class="rank-label">${item}</div>
+      <div class="rank-controls">
+        <button type="button" class="rank-btn" data-dir="up" data-i="${i}" ${i===0?'disabled':''} aria-label="Move up">↑</button>
+        <button type="button" class="rank-btn" data-dir="down" data-i="${i}" ${i===rankOrder.length-1?'disabled':''} aria-label="Move down">↓</button>
+      </div>
+    `;
+    rankList.appendChild(row);
+  });
+  rankHidden.value = rankOrder.map((x,i) => `${i+1}. ${x}`).join(' | ');
+}
+rankList.addEventListener('click', (e) => {
+  const btn = e.target.closest('.rank-btn');
+  if (!btn) return;
+  const i = +btn.dataset.i;
+  const j = btn.dataset.dir === 'up' ? i - 1 : i + 1;
+  if (j < 0 || j >= rankOrder.length) return;
+  [rankOrder[i], rankOrder[j]] = [rankOrder[j], rankOrder[i]];
+  renderRank();
+  save();
+});
+renderRank();
+
+/* ============ VOICE MEMOS ============ */
+const recordings = {}; // { fieldName: Blob }
+document.querySelectorAll('.voice-box').forEach(box => {
+  const field = box.dataset.voice;
+  const btn = box.querySelector('.voice-btn');
+  const timer = box.querySelector('.voice-timer');
+  const status = box.querySelector('.voice-status');
+  const audio = box.querySelector('audio');
+  let mediaRecorder, chunks = [], startTime, tickInterval;
+  let recording = false;
+
+  btn.addEventListener('click', async () => {
+    if (!recording) {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        chunks = [];
+        mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+        mediaRecorder.onstop = () => {
+          const blob = new Blob(chunks, { type: 'audio/webm' });
+          recordings[field] = blob;
+          audio.src = URL.createObjectURL(blob);
+          audio.style.display = 'block';
+          status.textContent = '✓ recorded — you can re-record to replace';
+          status.classList.add('ok');
+          stream.getTracks().forEach(t => t.stop());
+        };
+        mediaRecorder.start();
+        recording = true;
+        startTime = Date.now();
+        btn.classList.add('recording');
+        btn.innerHTML = '<span class="ico"></span> Stop';
+        status.textContent = 'recording…';
+        status.classList.remove('ok');
+        tickInterval = setInterval(() => {
+          const s = Math.floor((Date.now() - startTime) / 1000);
+          const m = Math.floor(s / 60);
+          timer.textContent = `${m}:${String(s%60).padStart(2,'0')}`;
+          if (s >= 180) btn.click(); // auto-stop at 3 min
+        }, 250);
+      } catch (err) {
+        status.textContent = 'mic blocked — try typing instead';
+      }
+    } else {
+      mediaRecorder.stop();
+      recording = false;
+      clearInterval(tickInterval);
+      btn.classList.remove('recording');
+      btn.innerHTML = '<span class="ico"></span> Re-record';
+    }
+  });
+});
+
+/* ============ AUTOSAVE ============ */
+const STORE_KEY = 'api203m_ta_survey_' + (taName || 'anon');
+const savePill = document.getElementById('savePill');
+let saveTimeout;
+
+function save() {
+  const data = {};
+  document.querySelectorAll('input, textarea').forEach(el => {
+    if (el.type === 'hidden' || el.type === 'text' || el.type === 'email' || el.tagName === 'TEXTAREA' || el.type === 'range') {
+      data[el.name || el.id] = el.value;
+    }
+  });
+  data.__rank = rankOrder;
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(data));
+    clearTimeout(saveTimeout);
+    savePill.classList.add('show');
+    saveTimeout = setTimeout(() => savePill.classList.remove('show'), 1200);
+  } catch (e) {}
+}
+
+function restore() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    Object.entries(data).forEach(([k, v]) => {
+      if (k === '__rank') {
+        rankOrder = v;
+        renderRank();
+        return;
+      }
+      const el = document.querySelector(`[name="${k}"], #${k}`);
+      if (el) el.value = v;
+    });
+    // re-apply visual state
+    const emojiV = document.getElementById('emojiVal').value;
+    if (emojiV) {
+      const eb = document.querySelector(`#emojiGrid .emoji-btn[data-v="${emojiV}"]`);
+      if (eb) eb.classList.add('selected');
+    }
+    document.querySelectorAll('.chip-group').forEach(group => {
+      const hidden = document.querySelector(`input[type="hidden"][name="${group.dataset.name}"]`);
+      if (!hidden || !hidden.value) return;
+      const vals = hidden.value.split(' | ');
+      group.querySelectorAll('.chip').forEach(c => {
+        if (vals.includes(c.dataset.v)) c.classList.add('selected');
+      });
+    });
+    updateSlider();
+  } catch (e) {}
+}
+
+document.addEventListener('input', save);
+restore();
+
+/* ============ SUBMIT ============ */
+document.getElementById('submitBtn').addEventListener('click', async () => {
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const fd = new FormData();
+  fd.append('access_key', WEB3FORMS_ACCESS_KEY);
+  fd.append('subject', `TA survey — ${taName} (API-203M, Spring 2026)`);
+  fd.append('from_name', `${taName} (API-203M TA)`);
+  fd.append('_TA_name', taName);
+
+  document.querySelectorAll('input, textarea').forEach(el => {
+    if (!el.name) return;
+    if (el.type === 'hidden' || el.type === 'text' || el.type === 'email' || el.tagName === 'TEXTAREA' || el.type === 'range') {
+      fd.append(el.name, el.value || '');
+    }
+  });
+
+  // attach voice memos
+  Object.entries(recordings).forEach(([field, blob]) => {
+    fd.append(field, blob, `${taName}_${field}.webm`);
+  });
+
+  if (WEB3FORMS_ACCESS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY_HERE') {
+    console.warn('Web3Forms key not configured — printing payload to console instead.');
+    const obj = {};
+    fd.forEach((v, k) => { obj[k] = v instanceof Blob ? `[blob ${v.size}b]` : v; });
+    console.log(obj);
+    alert('Demo mode: form not actually sent. Liz needs to add a Web3Forms access key. (Payload logged to console.)');
+    btn.disabled = false;
+    btn.textContent = 'Send to Liz →';
+    return;
+  }
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+    if (res.ok) {
+      localStorage.removeItem(STORE_KEY);
+      document.getElementById('form-main').style.display = 'none';
+      document.getElementById('doneScreen').classList.add('show');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      throw new Error('submit failed');
+    }
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = 'Try again →';
+    alert('Something went wrong. Try once more — and if it still fails, just email Liz directly.');
+  }
+});
+</script>
+</body>
+</html>
